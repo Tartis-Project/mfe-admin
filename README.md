@@ -2,6 +2,13 @@
 
 Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 18.2.14.
 
+## A Instalar
+@angular/cli                    18.2.14
+
+npm install -g @angular/cli
+
+ng add @angular/material
+
 ## Descripción del proyecto
 
 La app consiste en un parking que manejara la entrada y salida de vehículos, este proyecto desarrolla la parte visual (front) de la interfaz para el administrador de la aplicación
