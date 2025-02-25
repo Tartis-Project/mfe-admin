@@ -5,7 +5,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 329px; // Separación por la izquierda y derecha
+    margin: 0 329px;
   }
 
   ul {
@@ -24,44 +24,52 @@ nav {
     color: black;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, border-bottom 0.1s ease-in-out;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      border-bottom: 1px solid var(--black-color);
     }
   }
 
+  a.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+  }
+
   .navbar-logo {
-    height: 70px; // Ajusta el tamaño según tus necesidades
-    margin: 0 10rem; // Espacio alrededor de la imagen
+    height: 70px;
+    margin: 0 10rem;
   }
 
   .left-items {
     display: flex;
-    gap: 2rem; // Espacio entre los elementos de la izquierda
+    gap: 2rem;
     margin-right: auto;
   }
 
   .right-items {
     display: flex;
-    gap: 2rem; // Espacio entre los elementos de la derecha
+    gap: 2rem;
     margin-left: auto;
   }
 
   .inicio {
-    margin-right: 10rem; // Ajusta la distancia de Inicio hacia la izquierda
+    margin-right: 10rem;
     margin-top: 3rem;
   }
 
-  .plazas{
-    margin-top:3rem;
+  .plazas {
+    margin-top: 3rem;
   }
 
-  .tarifas{
+  .tarifas {
     margin-top: 3rem;
   }
 
   .vehiculos {
-    margin-left: 10rem; // Ajusta la distancia de Vehículos hacia la derecha
+    margin-left: 10rem;
     margin-top: 3rem;
   }
 }
