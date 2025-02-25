@@ -1,0 +1,62 @@
+.card {
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+
+  .status,
+  .availability {
+    font-size: 14px;
+    margin-bottom: 8px;
+
+    strong {
+      font-weight: bold;
+    }
+
+    input {
+      margin-left: 8px;
+      cursor: not-allowed;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 12px;
+
+    button {
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: all 0.2s ease-in-out;
+
+      &.edit-btn {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      &.delete-btn {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

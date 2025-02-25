@@ -7,12 +7,16 @@
           Home
         </a>
       </div>
-      
     </div>
   </div>
 </nav>
 
 <!-- Componentes basados en la ruta -->
 <div class="container-router-outlet container bg-light">
+  <app-card-view
+    title="Planta 1"
+    [isOperative]="true"
+    [availableSpots]="120">
+  </app-card-view>
   <router-outlet />
 </div>
