@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 import { MaterialModule } from '../../../material/material.module';
 
 @Component({
@@ -9,7 +9,11 @@ import { MaterialModule } from '../../../material/material.module';
   styleUrl: './card-view.component.scss'
 })
 export class CardViewComponent {
-  @Input() title: string = 'Planta';
-  @Input() isOperative: boolean = true;
-  @Input() availableSpots: number = 0;
+  isOperative = signal<boolean>(true);
+
+  toggleOperative(): void {
+    this.isOperative.update(value => !value);
+  }
+
+
 }
