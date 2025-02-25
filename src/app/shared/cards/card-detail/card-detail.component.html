@@ -1,1 +1,23 @@
-<p>card-detail works!</p>
+<div class="card" *ngIf="vehicle">
+    <div class="my-2 mx-4">
+        <h2 class="name">{{ vehicle.brand }} {{ vehicle.model }}</h2>
+        <div class="m-4">
+            <p><strong>Matrícula:</strong> {{ vehicle.license }}</p>
+            <p><strong>Color:</strong> {{ vehicle.color }}</p>
+            <p><strong>Tipo de vehículo:</strong> {{ vehicle.type }}</p>
+            <p><strong>Puertas:</strong> {{ vehicle.doors }}</p>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <div class="actions">
+                    <button mat-icon-button color="primary" class="edit-btn">
+                        <mat-icon class="button-primary">edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" class="delete-btn">
+                        <mat-icon class="button-secondary">delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
