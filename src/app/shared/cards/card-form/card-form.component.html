@@ -1,1 +1,25 @@
-<p>card-form works!</p>
+<h2 mat-dialog-title>Formulario planta</h2>
+
+<mat-dialog-content class="overflow-hidden">
+  <form action="">
+    <mat-form-field class="w-100">
+      <mat-label>Numero de planta</mat-label>
+      <input matInput type="number" [value]="floor.floor" class="input-type-number">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Plazas disponibles</mat-label>
+      <input matInput type="number" [value]="floor.places" class="input-type-number">
+    </mat-form-field>
+
+    <mat-checkbox class="custom-checkbox" [checked]="floor.operative">Planta operativa</mat-checkbox>
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="actions">
+  <button class="button-primary"  cdkFocusInitial>Crear</button>
+  <button  class="button-secondary"  (click)="onNoClick()">Cancelar</button>
+
+</mat-dialog-actions>
