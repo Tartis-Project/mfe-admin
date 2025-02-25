@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output, signal } from '@angular/core';
 import { MaterialModule } from '../../../material/material.module';
+import { MatDialog } from '@angular/material/dialog';
+import { CardFormComponent } from '../card-form/card-form.component';
 
 @Component({
   selector: 'app-card-view',
@@ -9,7 +11,20 @@ import { MaterialModule } from '../../../material/material.module';
   styleUrl: './card-view.component.scss'
 })
 export class CardViewComponent {
-  @Input() title: string = 'Planta';
-  @Input() isOperative: boolean = true;
-  @Input() availableSpots: number = 0;
+  readonly dialog = inject(MatDialog);
+  isOperative = signal<boolean>(true);
+
+  toggleOperative(): void {
+    this.isOperative.update(value => !value);
+  }
+
+  openDialog(): void {
+    this.dialog.open(CardFormComponent, {
+      width: '50%',
+      height: 'auto',
+      data: { floor: 1, places: 120, operative: this.isOperative() },
+    });
+  }
+
+
 }
