@@ -1,0 +1,67 @@
+nav {
+  padding: 1rem;
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 329px; // Separación por la izquierda y derecha
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    display: inline;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .navbar-logo {
+    height: 70px; // Ajusta el tamaño según tus necesidades
+    margin: 0 10rem; // Espacio alrededor de la imagen
+  }
+
+  .left-items {
+    display: flex;
+    gap: 2rem; // Espacio entre los elementos de la izquierda
+    margin-right: auto;
+  }
+
+  .right-items {
+    display: flex;
+    gap: 2rem; // Espacio entre los elementos de la derecha
+    margin-left: auto;
+  }
+
+  .inicio {
+    margin-right: 10rem; // Ajusta la distancia de Inicio hacia la izquierda
+    margin-top: 3rem;
+  }
+
+  .plazas{
+    margin-top:3rem;
+  }
+
+  .tarifas{
+    margin-top: 3rem;
+  }
+
+  .vehiculos {
+    margin-left: 10rem; // Ajusta la distancia de Vehículos hacia la derecha
+    margin-top: 3rem;
+  }
+}
