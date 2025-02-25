@@ -1,0 +1,21 @@
+<div class="card">
+  <h3 class="title">{{ title }}</h3>
+
+  <div class="status">
+    <strong>¿Operativa?:</strong>
+    <mat-checkbox [checked]="isOperative" disabled></mat-checkbox>
+  </div>
+
+  <div class="availability">
+    <strong>Plazas disponibles -</strong> {{ availableSpots }}
+  </div>
+
+  <div class="actions">
+    <button mat-icon-button color="primary" class="edit-btn">
+      <mat-icon class="button-primary">edit</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" class="delete-btn">
+      <mat-icon class="button-secondary">delete</mat-icon>
+    </button>
+  </div>
+</div>
