@@ -5,6 +5,10 @@ import { ParkingFormComponent } from "../../../pages/parking/shared/parking-form
 import { Router } from '@angular/router';
 import { RatesFormComponent } from "../../../pages/rates/shared/rates-form/rates-form.component";
 import { VehiclesFormComponent } from "../../../pages/vehicles/shared/vehicles-form/vehicles-form.component";
+import { Floor } from '../../../pages/parking/interfaces/floor.model';
+import { Rate } from '../../../pages/rates/interfaces/rates.model';
+import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
+
 
 
 @Component({
@@ -15,24 +19,30 @@ import { VehiclesFormComponent } from "../../../pages/vehicles/shared/vehicles-f
   styleUrl: './card-form.component.scss'
 })
 export class CardFormComponent {
-  readonly dialogRef = inject(MatDialogRef<CardFormComponent> );
-  private router = inject(Router);
 
   currentRoute = computed(() => this.router.url);
   isPlazas = computed(() => this.currentRoute().includes('/parking'));
   isTarifas = computed(() => this.currentRoute().includes('/rates'));
   isVehicles = computed(() => this.currentRoute().includes('/vehicles'));
-  public floor: any;
+  public floor!: Floor;
+  public vehicle!: Vehicle;
+  public rate!: Rate;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: {floor: number, places: number, operative: boolean}) {
-    this.floor = data;
+  constructor(
+    readonly dialogRef: MatDialogRef<CardFormComponent>,
+    private router: Router,
+    @Inject(MAT_DIALOG_DATA) public data: {dialogData: any}) {
+    if(data.dialogData != undefined || data == null){
+      this.floor = data.dialogData;
+      this.vehicle = data.dialogData;
+      this.rate = data.dialogData
+    }
+
    }
 
 
 
   onNoClick(): void {
-    this.dialogRef.close(
-      console.log(this.data)
-    );
+    this.dialogRef.close();
   }
 }
