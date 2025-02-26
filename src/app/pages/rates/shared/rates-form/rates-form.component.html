@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>Formulario Tarifa</h2>
+
+<mat-dialog-content class="overflow-hidden">
+  <form [formGroup]="ratesForm">
+    <mat-form-field class="w-100">
+      <mat-label>Nombre</mat-label>
+      <input matInput type="text" formControlName="name" >
+    </mat-form-field>
+
+    <mat-form-field class="w-100" floatLabel="always">
+      <mat-label>Precio plaza</mat-label>
+      <input matInput type="number" formControlName="price" class="example-right-align" placeholder="0.00" />
+      <span matTextPrefix>€&nbsp;</span>
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="actions">
+  <button class="button-primary"  cdkFocusInitial>Crear</button>
+  <button  class="button-secondary"  (click)="onNoClick()">Cancelar</button>
+
+</mat-dialog-actions>
+
