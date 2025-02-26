@@ -1,34 +1,37 @@
 <div class="card">
-  <h4 class="title" *ngIf="isPlazas(); else otherTitles">Planta 1</h4>
-
-  <ng-template #otherTitles>
-    <h4 class="title" *ngIf="isTarifas(); else vehicleTitle">Tarifa Estándar</h4>
-  </ng-template>
-
-  <ng-template #vehicleTitle>
-    <h4 class="title">Seat León</h4>
-  </ng-template>
+  <h4 class="title" *ngIf="isPlazas(); else otherTitles">
+    Planta {{ floor.number }}
+  </h4>
 
   <div *ngIf="isPlazas()">
     <div class="status">
       <strong>¿Operativa?:</strong>
-      <mat-checkbox [checked]="isOperative()" (change)="toggleOperative()"></mat-checkbox>
+      <mat-checkbox [checked]="floor.isOperative" (change)="toggleOperative()"></mat-checkbox>
     </div>
 
     <div class="availability" [class.show]="isOperative()">
-      <strong>Plazas disponibles -</strong> 120
+      <strong>Plazas disponibles -</strong> {{ floor.numberOfSpots }}
     </div>
   </div>
 
-  <div *ngIf="isTarifas()">
-    <p><strong>Precio plaza (por minuto) -</strong> 0,035€</p>
-    <p><strong>Total por hora -</strong> {{ totalPorHora() }}€</p>
-  </div>
+  <ng-template #otherTitles>
+    <h4 class="title" *ngIf="isTarifas(); else vehicleTitle">
+      {{ rate.name }}
+    </h4>
+    <div *ngIf="isTarifas()">
+      <p><strong>Precio plaza (por minuto) -</strong> {{ rate.pricePerMinute.toFixed(2) }} €</p>
+      <p><strong>Total por hora -</strong> {{ totalPorHora.toFixed(2) }} €
+    </div>
+  </ng-template>
 
-  <div *ngIf="isVehicles()">
-    <p><strong>Matrícula -</strong> B34H XYZ</p>
-    <p><strong>Color -</strong> Negro</p>
-  </div>
+  <ng-template #vehicleTitle>
+    <h4 class="title">Seat León</h4>
+
+    <div *ngIf="isVehicles()">
+      <p><strong>Matrícula -</strong> B34H XYZ</p>
+      <p><strong>Color -</strong> Negro</p>
+    </div>
+  </ng-template>
 
   <div class="actions">
     <button *ngIf="!isVehicles()" mat-icon-button class="edit-btn">

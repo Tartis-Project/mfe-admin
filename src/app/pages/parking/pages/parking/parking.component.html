@@ -1,1 +1,15 @@
-<app-card-view></app-card-view>
+<div class="d-flex">
+
+  <div class="row ml-4 w-100" >
+
+    <app-card-view (eventLoad)="loadFloor()"  *ngFor="let floor of floors" class="col-lg-6 col-sm-12 mb-4" [floor]="floor"></app-card-view>
+
+  </div>
+
+  <div class="pl-4">
+    <button mat-icon-button (click)="openDialog()" class="edit-btn">
+      <mat-icon class="button-primary">add</mat-icon>
+    </button>
+  </div>
+
+</div>
