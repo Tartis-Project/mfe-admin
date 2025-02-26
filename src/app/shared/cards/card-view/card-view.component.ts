@@ -1,8 +1,13 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, signal, computed, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { MaterialModule } from '../../../material/material.module';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { CardFormComponent } from '../card-form/card-form.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Floor } from '../../../pages/parking/interfaces/floor.model';
+import { ParkingService } from '../../../pages/parking/services/parking.service';
+import { Rate } from '../../../pages/rates/interfaces/rates.model';
+import { RateService } from '../../../pages/rates/services/rates.service';
+
 
 @Component({
   selector: 'app-card-view',
@@ -11,9 +16,21 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './card-view.component.html',
   styleUrl: './card-view.component.scss'
 })
-export class CardViewComponent {
-  readonly dialog = inject(MatDialog);
-  private router = inject(Router);
+
+export class CardViewComponent implements OnInit{
+
+  constructor(
+    private router: Router,
+    readonly dialog: MatDialog,
+    private parkingService: ParkingService,
+    private ratesService: RateService
+    ) {}
+
+  @Input() floor!: Floor;
+  @Input() rate!: Rate;
+  @Output() eventLoad = new EventEmitter<void>();
+
+  totalPorHora = 0;
 
   currentRoute = computed(() => this.router.url);
   isPlazas = computed(() => this.currentRoute().includes('/parking'));
@@ -22,21 +39,60 @@ export class CardViewComponent {
 
   isOperative = signal<boolean>(true);
 
-  totalPorHora = computed(() => (0.035 * 60).toFixed(2));
+  ngOnInit(): void {
+    this.totalPorHora = this.rate.pricePerMinute * 60;
+  }
 
   toggleOperative(): void {
     this.isOperative.update(value => !value);
   }
 
   openDialog(): void {
-    this.dialog.open(CardFormComponent, {
+    let dialogData: any = {};
+
+    switch (true) {
+      case this.isPlazas():
+        dialogData = this.floor;
+        break;
+      case this.isTarifas():
+        dialogData = this.rate;
+        break;
+      case this.isVehicles():
+        dialogData = { brand: "seat" };
+        break;
+      default:
+        dialogData = {};
+        break;
+    }
+
+    let dialogRef = this.dialog.open(CardFormComponent, {
       width: '50%',
       height: 'auto',
-      data: { floor: 1, places: 120, operative: this.isOperative() },
+      data: { dialogData },
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.eventLoad.emit()
     });
   }
 
   viewVehicleDetail(): void {
     console.log("Ver detalles del vehículo...");
   }
+
+  deleteAction() {
+    switch (true) {
+      case this.isPlazas():
+        this.parkingService.deleteFloor(this.floor.id).subscribe(res => {
+          this.eventLoad.emit()
+        })
+        break;
+      case this.isTarifas():
+        // this.ratesService.deleteRates(this.rates.id).subscribe(res => {
+        // })
+        break;
+      case this.isVehicles():
+        break;
+      default:
+    }
 }
