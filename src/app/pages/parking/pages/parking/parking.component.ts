@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CardViewComponent } from "../../shared/cards/card-view/card-view.component";
+import { CardViewComponent } from '../../../../shared/cards/card-view/card-view.component';
 
 @Component({
   selector: 'app-parking',
