@@ -1,8 +1,7 @@
 import { Component, signal, computed, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { MaterialModule } from '../../../material/material.module';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-
-import { MaterialModule } from '../../../material/material.module';
 import { CardFormComponent } from '../card-form/card-form.component';
 import { Floor } from '../../../pages/parking/interfaces/floor.model';
 import { ParkingService } from '../../../pages/parking/services/parking.service';
@@ -17,18 +16,17 @@ import { RateService } from '../../../pages/rates/services/rates.service';
   templateUrl: './card-view.component.html',
   styleUrl: './card-view.component.scss'
 })
-export class CardViewComponent implements OnInit {
+
+export class CardViewComponent implements OnInit{
 
   constructor(
     private router: Router,
     readonly dialog: MatDialog,
     private parkingService: ParkingService,
     private ratesService: RateService
-  ) {
+    ) {}
 
-  }
-
-  @Input() floor!: Floor
+  @Input() floor!: Floor;
   @Input() rate!: Rate;
   @Output() eventLoad = new EventEmitter<void>();
 
@@ -96,7 +94,5 @@ export class CardViewComponent implements OnInit {
       case this.isVehicles():
         break;
       default:
-        break;
     }
-  }
 }

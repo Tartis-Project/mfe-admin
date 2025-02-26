@@ -9,7 +9,7 @@ import { VehiclesFormComponent } from "../../../pages/vehicles/shared/vehicles-f
 import { Floor } from '../../../pages/parking/interfaces/floor.model';
 import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
- 
+
 @Component({
   selector: 'app-card-form',
   standalone: true,
@@ -18,7 +18,7 @@ import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
   styleUrl: './card-form.component.scss'
 })
 export class CardFormComponent {
- 
+
   currentRoute = computed(() => this.router.url);
   isPlazas = computed(() => this.currentRoute().includes('/parking'));
   isTarifas = computed(() => this.currentRoute().includes('/rates'));
@@ -26,7 +26,7 @@ export class CardFormComponent {
   public floor!: Floor;
   public vehicle!: Vehicle;
   public rate!: Rate;
- 
+
   constructor(
     readonly dialogRef: MatDialogRef<CardFormComponent>,
     private router: Router,
@@ -36,6 +36,7 @@ export class CardFormComponent {
       this.vehicle = data.dialogData;
       this.rate = data.dialogData
     }
+
    }
 
   onNoClick(): void {

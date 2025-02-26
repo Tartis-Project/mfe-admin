@@ -8,7 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'parking',
-    loadComponent: () => import('./pages/parking/parking.component').then(m => m.ParkingComponent)
+    loadComponent: () => import('./pages/parking/pages/parking/parking.component').then(m => m.ParkingComponent)
   },
   {
     path: 'rates',

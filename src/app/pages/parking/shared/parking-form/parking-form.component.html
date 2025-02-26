@@ -4,23 +4,23 @@
   <form [formGroup]="parkingForm">
     <mat-form-field class="w-100">
       <mat-label>Numero de planta</mat-label>
-      <input matInput type="number" formControlName="floor" class="input-type-number">
+      <input matInput type="number" formControlName="number" class="input-type-number">
     </mat-form-field>
 
     <mat-form-field class="w-100">
       <mat-label>Plazas disponibles</mat-label>
-      <input matInput type="number" formControlName="places"  class="input-type-number">
+      <input matInput type="number" formControlName="numberOfSpots"  class="input-type-number">
     </mat-form-field>
 
-    <mat-checkbox class="custom-checkbox" formControlName="operative" >Planta operativa</mat-checkbox>
+    <mat-checkbox class="custom-checkbox" formControlName="isOperative" >Planta operativa</mat-checkbox>
 
   </form>
 
 </mat-dialog-content>
 
 <mat-dialog-actions class="actions">
-  <button class="button-primary"  cdkFocusInitial>Crear</button>
+  <button class="button-primary" *ngIf="!floor" (click)="addFloor()">Crear</button>
+  <button class="button-primary" *ngIf="floor" (click)="updateFloor()">Editar</button>
   <button  class="button-secondary"  (click)="onNoClick()">Cancelar</button>
 
 </mat-dialog-actions>
-
