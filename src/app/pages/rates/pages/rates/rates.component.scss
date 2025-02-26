@@ -1,0 +1,27 @@
+button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    mat-icon {
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.add-btn {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

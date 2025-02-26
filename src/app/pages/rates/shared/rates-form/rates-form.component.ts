@@ -1,8 +1,11 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { CardFormComponent } from '../../../../shared/cards/card-form/card-form.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+
+import { CardFormComponent } from '../../../../shared/cards/card-form/card-form.component';
 import { MaterialModule } from '../../../../material/material.module';
+import { RateService } from '../../services/rates.service';
+import { Rate } from '../../interfaces/rates.model';
 
 @Component({
   selector: 'app-rates-form',
@@ -12,17 +15,34 @@ import { MaterialModule } from '../../../../material/material.module';
   styleUrl: './rates-form.component.scss'
 })
 export class RatesFormComponent {
-readonly dialogRef = inject(MatDialogRef<CardFormComponent> );
 
-  @Input() rate:any;
+  @Input() rate!: Rate;
 
-  public fb = inject(FormBuilder)
+  public ratesForm: FormGroup;
 
-  public ratesForm: FormGroup = this.fb.group({
-    name: [""],
-    price: [],
-  })
+  constructor(
+    private dialogRef: MatDialogRef<CardFormComponent>,
+    private fb: FormBuilder,
+    private ratesService: RateService
+  ){
+    this.ratesForm = this.fb.group({
+      name: [""],
+      pricePerMinute: [],
+    })
+  }
 
+  addRate() {
+    const rateData: Rate = this.ratesForm.value;
+    this.ratesService.createRate(rateData).subscribe({
+      next: (response) => {
+        console.log('Tarifa creada exitosamente:', response);
+        this.dialogRef.close(true);
+      },
+      error: (error) => {
+        console.error('Error al crear la tarifa:', error);
+      },
+    });
+  }
 
   onNoClick(): void {
     this.dialogRef.close(

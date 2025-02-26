@@ -1,15 +1,14 @@
-import { Component, computed, Inject, inject } from '@angular/core';
+import { Component, computed, Inject } from '@angular/core';
 import { MaterialModule } from '../../../material/material.module';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ParkingFormComponent } from "../../../pages/parking/shared/parking-form/parking-form.component";
 import { Router } from '@angular/router';
+
+import { ParkingFormComponent } from "../../../pages/parking/shared/parking-form/parking-form.component";
 import { RatesFormComponent } from "../../../pages/rates/shared/rates-form/rates-form.component";
 import { VehiclesFormComponent } from "../../../pages/vehicles/shared/vehicles-form/vehicles-form.component";
 import { Floor } from '../../../pages/parking/interfaces/floor.model';
 import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
-
-
 
 @Component({
   selector: 'app-card-form',
@@ -39,8 +38,6 @@ export class CardFormComponent {
     }
 
    }
-
-
 
   onNoClick(): void {
     this.dialogRef.close();
