@@ -1,7 +1,8 @@
-import { Component, EventEmitter, inject, Input, Output, signal } from '@angular/core';
+import { Component, inject, signal, computed } from '@angular/core';
 import { MaterialModule } from '../../../material/material.module';
 import { MatDialog } from '@angular/material/dialog';
 import { CardFormComponent } from '../card-form/card-form.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-view',
@@ -12,7 +13,16 @@ import { CardFormComponent } from '../card-form/card-form.component';
 })
 export class CardViewComponent {
   readonly dialog = inject(MatDialog);
+  private router = inject(Router);
+
+  currentRoute = computed(() => this.router.url);
+  isPlazas = computed(() => this.currentRoute().includes('/parking'));
+  isTarifas = computed(() => this.currentRoute().includes('/rates'));
+  isVehicles = computed(() => this.currentRoute().includes('/vehicles'));
+
   isOperative = signal<boolean>(true);
+
+  totalPorHora = computed(() => (0.035 * 60).toFixed(2));
 
   toggleOperative(): void {
     this.isOperative.update(value => !value);
@@ -26,5 +36,7 @@ export class CardViewComponent {
     });
   }
 
-
+  viewVehicleDetail(): void {
+    console.log("Ver detalles del vehículo...");
+  }
 }
