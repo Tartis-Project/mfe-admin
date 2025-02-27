@@ -52,10 +52,6 @@ export class CardViewComponent implements OnInit {
     }
   }
 
-  toggleOperative(): void {
-    this.isOperative.update((value) => !value);
-  }
-
   openDialog(): void {
     let dialogData: any = {};
 
