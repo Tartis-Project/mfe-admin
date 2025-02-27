@@ -11,18 +11,16 @@ import { CardFormComponent } from '../../../../shared/cards/card-form/card-form.
 import { MaterialModule } from '../../../../material/material.module';
 import { RateService } from '../../services/rates.service';
 import { Rate } from '../../interfaces/rates.model';
-import { greaterThanZeroValidator } from '../../../../core/validators/greater-than-zero.validator';
+import { greaterThanZeroValidatorFixed3 } from '../../../../core/validators/greater-than-zero-fixed3.validator';
 
 @Component({
   selector: 'app-rates-form',
   standalone: true,
-  imports: [MaterialModule, FormsModule, ReactiveFormsModule],
+  imports: [MaterialModule, ReactiveFormsModule],
   templateUrl: './rates-form.component.html',
   styleUrl: './rates-form.component.scss',
 })
-
 export class RatesFormComponent implements OnInit {
-
   @Input() rate!: Rate;
 
   public ratesForm: FormGroup;
@@ -33,14 +31,17 @@ export class RatesFormComponent implements OnInit {
     private ratesService: RateService
   ) {
     this.ratesForm = this.fb.group({
-      name: ['', Validators.required],
-      pricePerMinute: ['', [Validators.required, greaterThanZeroValidator()]],
+      name: ['', [Validators.required, Validators.pattern(/^(?!\s*$).+/)]],
+      pricePerMinute: [
+        '',
+        [Validators.required, greaterThanZeroValidatorFixed3()],
+      ],
     });
+  }
 
   ngOnInit(): void {
     if (this.rate) {
       this.ratesForm.reset(this.rate);
-      console.log(this.ratesForm.value);
     }
   }
 
@@ -57,7 +58,6 @@ export class RatesFormComponent implements OnInit {
         },
       });
     }
-
   }
 
   onNoClick(): void {
@@ -71,5 +71,4 @@ export class RatesFormComponent implements OnInit {
       this.onNoClick();
     });
   }
-
 }
