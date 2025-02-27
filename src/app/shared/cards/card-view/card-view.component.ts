@@ -37,14 +37,8 @@ export class CardViewComponent implements OnInit {
   isTarifas = computed(() => this.currentRoute().includes('/rates'));
   isVehicles = computed(() => this.currentRoute().includes('/vehicles'));
 
-  isOperative = signal<boolean>(true);
-
   ngOnInit(): void {
     this.totalPorHora = this.rate?.pricePerMinute * 60;
-  }
-
-  toggleOperative(): void {
-    this.isOperative.update(value => !value);
   }
 
   openDialog(): void {

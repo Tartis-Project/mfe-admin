@@ -6,9 +6,9 @@
   <div *ngIf="isPlazas()">
     <div class="status">
       <strong>¿Operativa?:</strong>
-      <mat-checkbox [checked]="floor.isOperative" (change)="toggleOperative()"></mat-checkbox>
+      <mat-checkbox disabled [checked]="floor.isOperative"></mat-checkbox>
     </div>
-    <div class="availability" [class.show]="isOperative()">
+    <div class="availability" [class.show]="floor.isOperative">
       <strong>Plazas disponibles -</strong> {{ floor.numberOfSpots }}
     </div>
   </div>
@@ -25,7 +25,7 @@
     </div>
   </ng-template>
 
-  
+
   <ng-template #vehicleTitle>
     <h4 class="title">Seat León</h4>
     <div *ngIf="isVehicles()">
@@ -41,7 +41,7 @@
     <button *ngIf="isVehicles()" mat-icon-button class="edit-btn" (click)="viewVehicleDetail()">
       <mat-icon class="button-primary">visibility</mat-icon>
     </button>
-    <button mat-icon-button class="delete-btn">
+    <button (click)="deleteAction()" mat-icon-button class="delete-btn">
       <mat-icon class="button-secondary">delete</mat-icon>
     </button>
   </div>
