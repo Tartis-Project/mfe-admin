@@ -17,14 +17,14 @@ import { RateService } from '../../../pages/rates/services/rates.service';
   styleUrl: './card-view.component.scss'
 })
 
-export class CardViewComponent implements OnInit{
+export class CardViewComponent implements OnInit {
 
   constructor(
     private router: Router,
     readonly dialog: MatDialog,
     private parkingService: ParkingService,
     private ratesService: RateService
-    ) {}
+  ) { }
 
   @Input() floor!: Floor;
   @Input() rate!: Rate;
@@ -95,4 +95,5 @@ export class CardViewComponent implements OnInit{
         break;
       default:
     }
+  }
 }
