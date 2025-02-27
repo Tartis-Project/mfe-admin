@@ -7,6 +7,7 @@ import { Floor } from '../../../pages/parking/interfaces/floor.model';
 import { ParkingService } from '../../../pages/parking/services/parking.service';
 import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { RateService } from '../../../pages/rates/services/rates.service';
+import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -70,6 +71,19 @@ export class CardViewComponent implements OnInit {
     });
   }
 
+  openDialogDelete(dialogData: any): void {
+
+    let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '50%',
+      height: 'auto',
+      data: { dialogData },
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.eventLoad.emit()
+    });
+  }
+
   viewVehicleDetail(): void {
     console.log("Ver detalles del vehículo...");
   }
@@ -77,13 +91,10 @@ export class CardViewComponent implements OnInit {
   deleteAction() {
     switch (true) {
       case this.isPlazas():
-        this.parkingService.deleteFloor(this.floor.id).subscribe(res => {
-          this.eventLoad.emit()
-        })
+        this.openDialogDelete(this.floor)
         break;
       case this.isTarifas():
-        // this.ratesService.deleteRates(this.rates.id).subscribe(res => {
-        // })
+        this.openDialogDelete(this.rate)
         break;
       case this.isVehicles():
         break;
