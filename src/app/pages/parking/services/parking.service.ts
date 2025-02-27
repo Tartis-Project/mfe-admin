@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Floor } from '../interfaces/floor.model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParkingService {
-  private readonly apiUrl = 'http://localhost:3000/floors';
+  private readonly apiUrl = environment.apiUrl + '/floors';
   constructor(private http: HttpClient) { }
 
   getFloors(): Observable<Floor[]> {

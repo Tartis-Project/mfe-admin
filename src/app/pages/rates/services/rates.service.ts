@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, tap } from 'rxjs';
-
 import { Rate } from '../interfaces/rates.model';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RateService {
-  private apiUrl = 'http://localhost:3000/rates';
 
+  private readonly apiUrl = environment.apiUrl + '/rates';
   constructor(private http: HttpClient) { }
 
   getRates(): Observable<Rate[]> {
     return this.http.get<Rate[]>(this.apiUrl).pipe(
-      tap((data) => console.log('Datos recibidos:', data)), 
+      tap((data) => console.log('Datos recibidos:', data)),
       catchError((error) => {
         console.error('Error al cargar las tarifas:', error);
-        throw error; 
+        throw error;
       })
     );
   }
