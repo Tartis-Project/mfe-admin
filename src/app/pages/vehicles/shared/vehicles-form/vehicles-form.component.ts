@@ -9,27 +9,24 @@ import { MaterialModule } from '../../../../material/material.module';
   standalone: true,
   imports: [MaterialModule, ReactiveFormsModule],
   templateUrl: './vehicles-form.component.html',
-  styleUrl: './vehicles-form.component.scss'
+  styleUrl: './vehicles-form.component.scss',
 })
 export class VehiclesFormComponent {
-readonly dialogRef = inject(MatDialogRef<CardFormComponent> );
+  readonly dialogRef = inject(MatDialogRef<CardFormComponent>);
 
-  @Input() vehicle:any;
+  @Input() vehicle: any;
 
-  public fb = inject(FormBuilder)
+  public fb = inject(FormBuilder);
 
   public vehicleForm: FormGroup = this.fb.group({
-    brand: [""],
-    model: [""],
-    license: [""],
-    color: [""],
+    brand: [''],
+    model: [''],
+    license: [''],
+    color: [''],
     doors: [],
-  })
-
+  });
 
   onNoClick(): void {
-    this.dialogRef.close(
-      console.log()
-    );
+    this.dialogRef.close(console.log());
   }
 }

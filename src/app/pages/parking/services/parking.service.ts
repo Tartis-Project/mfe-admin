@@ -5,11 +5,11 @@ import { Floor } from '../interfaces/floor.model';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ParkingService {
   private readonly apiUrl = environment.apiUrl + '/floors';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getFloors(): Observable<Floor[]> {
     return this.http.get<Floor[]>(this.apiUrl);

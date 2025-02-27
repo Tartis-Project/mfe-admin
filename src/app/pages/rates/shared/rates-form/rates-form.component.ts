@@ -28,7 +28,7 @@ export class RatesFormComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<CardFormComponent>,
     private fb: FormBuilder,
-    private ratesService: RateService
+    private ratesService: RateService,
   ) {
     this.ratesForm = this.fb.group({
       name: ['', [Validators.required, Validators.pattern(/^(?!\s*$).+/)]],

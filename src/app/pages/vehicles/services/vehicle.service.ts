@@ -5,11 +5,11 @@ import { Vehicle } from '../interfaces/vehicle.model';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VehicleService {
   private readonly apiUrl = environment.apiUrl + '/vehicles';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getVehicles(): Observable<Vehicle[]> {
     return this.http.get<Vehicle[]>(this.apiUrl);

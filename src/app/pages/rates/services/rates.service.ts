@@ -8,7 +8,6 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root',
 })
 export class RateService {
-
   private readonly apiUrl = environment.apiUrl + '/rates';
   constructor(private http: HttpClient) {}
 
@@ -18,7 +17,7 @@ export class RateService {
       catchError((error) => {
         console.error('Error al cargar las tarifas:', error);
         throw error;
-      })
+      }),
     );
   }
 

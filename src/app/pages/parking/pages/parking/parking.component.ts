@@ -18,7 +18,7 @@ export class ParkingComponent implements OnInit {
 
   constructor(
     readonly dialog: MatDialog,
-    private parkingService: ParkingService
+    private parkingService: ParkingService,
   ) {}
 
   ngOnInit(): void {
