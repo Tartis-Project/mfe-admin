@@ -6,7 +6,10 @@
   <div *ngIf="isPlazas()">
     <div class="status">
       <strong>¿Operativa?:</strong>
-      <mat-checkbox [checked]="floor.isOperative" (change)="toggleOperative()"></mat-checkbox>
+      <mat-checkbox
+        [checked]="floor.isOperative"
+        (change)="toggleOperative()"
+      ></mat-checkbox>
     </div>
     <div class="availability" [class.show]="isOperative()">
       <strong>Plazas disponibles -</strong> {{ floor.numberOfSpots }}
@@ -18,14 +21,15 @@
       {{ rate.name }}
     </h4>
 
-
     <div *ngIf="isTarifas()">
-      <p><strong>Precio plaza (por minuto) -</strong> {{ rate.pricePerMinute.toFixed(2) }} €</p>
-      <p><strong>Total por hora -</strong> {{ totalPorHora.toFixed(2) }} €
+      <p>
+        <strong>Precio plaza (por minuto) -</strong>
+        {{ rate.pricePerMinute.toFixed(3) }} €
+      </p>
+      <p><strong>Total por hora -</strong> {{ totalPorHora.toFixed(2) }} €</p>
     </div>
   </ng-template>
 
-  
   <ng-template #vehicleTitle>
     <h4 class="title">Seat León</h4>
     <div *ngIf="isVehicles()">
@@ -38,12 +42,18 @@
     <button *ngIf="!isVehicles()" mat-icon-button class="edit-btn">
       <mat-icon (click)="openDialog()" class="button-primary">edit</mat-icon>
     </button>
-    <button *ngIf="isVehicles()" mat-icon-button class="edit-btn" (click)="viewVehicleDetail()">
+    <button
+      *ngIf="isVehicles()"
+      mat-icon-button
+      class="edit-btn"
+      (click)="viewVehicleDetail()"
+    >
       <mat-icon class="button-primary">visibility</mat-icon>
     </button>
     <button mat-icon-button class="delete-btn">
-      <mat-icon class="button-secondary">delete</mat-icon>
+      <mat-icon (click)="deleteAction()" class="button-secondary"
+        >delete</mat-icon
+      >
     </button>
   </div>
-
 </div>
