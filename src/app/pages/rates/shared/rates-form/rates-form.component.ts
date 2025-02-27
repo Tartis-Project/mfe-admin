@@ -6,12 +6,12 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
 
 import { CardFormComponent } from '../../../../shared/cards/card-form/card-form.component';
 import { MaterialModule } from '../../../../material/material.module';
 import { RateService } from '../../services/rates.service';
 import { Rate } from '../../interfaces/rates.model';
+import { greaterThanZeroValidator } from '../../../../core/validators/greater-than-zero.validator';
 
 @Component({
   selector: 'app-rates-form',
@@ -20,7 +20,9 @@ import { Rate } from '../../interfaces/rates.model';
   templateUrl: './rates-form.component.html',
   styleUrl: './rates-form.component.scss',
 })
+
 export class RatesFormComponent implements OnInit {
+
   @Input() rate!: Rate;
 
   public ratesForm: FormGroup;
@@ -32,12 +34,8 @@ export class RatesFormComponent implements OnInit {
   ) {
     this.ratesForm = this.fb.group({
       name: ['', Validators.required],
-      pricePerMinute: [
-        '',
-        [Validators.required, Validators.pattern(/^\d*\.?\d+$/)],
-      ],
+      pricePerMinute: ['', [Validators.required, greaterThanZeroValidator()]],
     });
-  }
 
   ngOnInit(): void {
     if (this.rate) {
@@ -59,6 +57,11 @@ export class RatesFormComponent implements OnInit {
         },
       });
     }
+
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
   updateRate() {
@@ -69,7 +72,4 @@ export class RatesFormComponent implements OnInit {
     });
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
 }

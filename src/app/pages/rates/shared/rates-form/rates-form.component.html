@@ -13,19 +13,21 @@
         type="number"
         formControlName="pricePerMinute"
         class="example-right-align"
-        placeholder="0.00"
+        placeholder="0.000"
       />
       <mat-icon matSuffix>euro</mat-icon>
+      <mat-error *ngIf="ratesForm.get('pricePerMinute')?.hasError('required')">
+        Este campo es obligatorio.
+      </mat-error>
+      <mat-error *ngIf="ratesForm.get('pricePerMinute')?.hasError('greaterThanZero')">
+        El precio debe ser mayor que 0.
+      </mat-error>
     </mat-form-field>
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions class="actions">
-  <button class="button-primary" *ngIf="!rate" (click)="addRate()">
-    Crear
-  </button>
-  <button class="button-primary" *ngIf="rate" (click)="updateRate()">
-    Editar
-  </button>
-  <button class="button-secondary" (click)="onNoClick()">Cancelar</button>
+  <button class="button-primary" *ngIf="!rate" (click)="addRate()" [disabled]="!ratesForm.valid">Crear</button>
+  <button class="button-primary" *ngIf="rate" (click)="updateRate() [disabled]="!ratesForm.valid"">Editar</button>
+  <button  class="button-secondary"  (click)="onNoClick()">Cancelar</button>
 </mat-dialog-actions>
