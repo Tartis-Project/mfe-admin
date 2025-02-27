@@ -4,4 +4,5 @@ export interface Vehicle {
   model: string;
   type: string;
   color: string;
+  isActive: boolean;
 }
