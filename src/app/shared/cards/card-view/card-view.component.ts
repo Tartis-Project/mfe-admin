@@ -40,7 +40,7 @@ export class CardViewComponent implements OnInit {
   isOperative = signal<boolean>(true);
 
   ngOnInit(): void {
-    this.totalPorHora = this.rate.pricePerMinute * 60;
+    this.totalPorHora = this.rate?.pricePerMinute * 60;
   }
 
   toggleOperative(): void {
