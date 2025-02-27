@@ -1,0 +1,77 @@
+nav {
+  padding: 1rem;
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 329px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    display: inline;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition:
+      color 0.3s ease-in-out,
+      border-bottom 0.1s ease-in-out;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: 1px solid var(--black-color);
+    }
+  }
+
+  a.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    font-weight: bold;
+  }
+
+  .navbar-logo {
+    height: 70px;
+    margin: 0 10rem;
+  }
+
+  .left-items {
+    display: flex;
+    gap: 2rem;
+    margin-right: auto;
+  }
+
+  .right-items {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+  }
+
+  .inicio {
+    margin-right: 10rem;
+    margin-top: 3rem;
+  }
+
+  .plazas {
+    margin-top: 3rem;
+  }
+
+  .tarifas {
+    margin-top: 3rem;
+  }
+
+  .vehiculos {
+    margin-left: 10rem;
+    margin-top: 3rem;
+  }
+}

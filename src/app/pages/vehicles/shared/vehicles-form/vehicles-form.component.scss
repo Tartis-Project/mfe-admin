@@ -1,0 +1,24 @@
+input.input-type-number::-webkit-outer-spin-button,
+input.input-type-number::-webkit-inner-spin-button {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+::ng-deep .mdc-form-field > .mdc-label {
+  margin: 0;
+}
+
+::ng-deep .mat-mdc-dialog-surface {
+  border-radius: 4px !important;
+}
+
+.horizontal-input {
+  display: flex;
+  gap: 10px;
+}

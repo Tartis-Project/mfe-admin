@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>Formulario planta</h2>
+
+<mat-dialog-content class="overflow-hidden">
+  <form [formGroup]="parkingForm">
+    <mat-form-field class="w-100">
+      <mat-label>Numero de planta</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="number"
+        class="input-type-number"
+      />
+      <mat-error *ngIf="parkingForm.get('number')?.hasError('required')">
+        Este campo es obligatorio.
+      </mat-error>
+      <mat-error *ngIf="parkingForm.get('number')?.hasError('greaterThanZero')">
+        El precio debe ser mayor que 0.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Plazas disponibles</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="numberOfSpots"
+        class="input-type-number"
+      />
+      <mat-error
+        *ngIf="parkingForm.get('numberOfSpots')?.hasError('greaterThanZero')"
+      >
+        El número de plazas debe ser un número mayor que 0.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-checkbox class="custom-checkbox" formControlName="isOperative"
+      >Planta operativa</mat-checkbox
+    >
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="actions">
+  <button
+    class="button-primary"
+    *ngIf="!floor"
+    (click)="addFloor()"
+    [disabled]="!parkingForm.valid"
+  >
+    Crear
+  </button>
+  <button
+    class="button-primary"
+    *ngIf="floor"
+    (click)="updateFloor()"
+    [disabled]="!parkingForm.valid"
+  >
+    Editar
+  </button>
+  <button class="button-secondary" (click)="onNoClick()">Cancelar</button>
+</mat-dialog-actions>
