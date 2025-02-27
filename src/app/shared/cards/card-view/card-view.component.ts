@@ -24,13 +24,16 @@ import { RateService } from '../../../pages/rates/services/rates.service';
   templateUrl: './card-view.component.html',
   styleUrl: './card-view.component.scss',
 })
+
 export class CardViewComponent implements OnInit {
+
   constructor(
     private router: Router,
     readonly dialog: MatDialog,
     private parkingService: ParkingService,
     private ratesService: RateService
-  ) {}
+
+  ) { }
 
   @Input() floor!: Floor;
   @Input() rate!: Rate;
@@ -42,8 +45,6 @@ export class CardViewComponent implements OnInit {
   isPlazas = computed(() => this.currentRoute().includes('/parking'));
   isTarifas = computed(() => this.currentRoute().includes('/rates'));
   isVehicles = computed(() => this.currentRoute().includes('/vehicles'));
-
-  isOperative = signal<boolean>(true);
 
   ngOnInit(): void {
     if (this.rate != undefined) {

@@ -11,7 +11,7 @@
         (change)="toggleOperative()"
       ></mat-checkbox>
     </div>
-    <div class="availability" [class.show]="isOperative()">
+    <div class="availability" [class.show]="floor.isOperative">
       <strong>Plazas disponibles -</strong> {{ floor.numberOfSpots }}
     </div>
   </div>
@@ -50,10 +50,9 @@
     >
       <mat-icon class="button-primary">visibility</mat-icon>
     </button>
-    <button mat-icon-button class="delete-btn">
-      <mat-icon (click)="deleteAction()" class="button-secondary"
-        >delete</mat-icon
-      >
+
+    <button (click)="deleteAction()" mat-icon-button class="delete-btn">
+      <mat-icon class="button-secondary">delete</mat-icon>
     </button>
   </div>
 </div>
