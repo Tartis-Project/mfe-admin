@@ -18,15 +18,15 @@
 
   <ng-template #otherTitles>
     <h4 class="title" *ngIf="isTarifas(); else vehicleTitle">
-      {{ rate.name }}
+      Tarifa {{ rate.name }}
     </h4>
 
     <div *ngIf="isTarifas()">
       <p>
         <strong>Precio plaza (por minuto) -</strong>
-        {{ rate.pricePerMinute.toFixed(3) }} €
+        {{ rate.pricePerMinute | euroCurrency:3 }}
       </p>
-      <p><strong>Total por hora -</strong> {{ totalPorHora.toFixed(2) }} €</p>
+      <p><strong>Total por hora -</strong> {{ totalPorHora | euroCurrency }}</p>
     </div>
   </ng-template>
 
