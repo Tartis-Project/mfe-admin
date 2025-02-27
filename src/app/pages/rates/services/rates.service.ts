@@ -5,16 +5,16 @@ import { Rate } from '../interfaces/rates.model';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RateService {
 
   private readonly apiUrl = environment.apiUrl + '/rates';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getRates(): Observable<Rate[]> {
     return this.http.get<Rate[]>(this.apiUrl).pipe(
-      tap((data) => console.log('Datos recibidos:', data)),
+      tap((data) => console.log('getRates():', data)),
       catchError((error) => {
         console.error('Error al cargar las tarifas:', error);
         throw error;
