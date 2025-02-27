@@ -27,7 +27,7 @@ export class ParkingFormComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<CardFormComponent>,
     private fb: FormBuilder,
-    private parkingService: ParkingService
+    private parkingService: ParkingService,
   ) {
     this.parkingForm = this.fb.group({
       number: ['', [Validators.required, greaterThanZeroValidator()]],

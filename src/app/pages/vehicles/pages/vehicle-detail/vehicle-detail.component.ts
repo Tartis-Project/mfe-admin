@@ -8,8 +8,6 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [MaterialModule, CardDetailComponent, RouterModule],
   templateUrl: './vehicle-detail.component.html',
-  styleUrl: './vehicle-detail.component.scss'
+  styleUrl: './vehicle-detail.component.scss',
 })
-export class VehicleDetailComponent {
-
-}
+export class VehicleDetailComponent {}

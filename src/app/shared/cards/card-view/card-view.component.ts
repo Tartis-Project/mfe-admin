@@ -7,7 +7,6 @@ import {
   OnInit,
 } from '@angular/core';
 
-
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
@@ -19,7 +18,6 @@ import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { RateService } from '../../../pages/rates/services/rates.service';
 
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
-
 
 @Component({
   selector: 'app-card-view',
@@ -33,11 +31,8 @@ export class CardViewComponent implements OnInit {
     private router: Router,
     readonly dialog: MatDialog,
     private parkingService: ParkingService,
-    private ratesService: RateService
-
-
-  ) { }
-
+    private ratesService: RateService,
+  ) {}
 
   @Input() floor!: Floor;
   @Input() rate!: Rate;

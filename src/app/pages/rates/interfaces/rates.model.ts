@@ -1,5 +1,5 @@
 export interface Rate {
-    id: string;
-    name: string;
-    pricePerMinute: number;
+  id: string;
+  name: string;
+  pricePerMinute: number;
 }

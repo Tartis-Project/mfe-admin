@@ -17,7 +17,10 @@ import { CardFormComponent } from '../../../../shared/cards/card-form/card-form.
 export class RatesComponent implements OnInit {
   rates: Rate[] = [];
 
-  constructor(private ratesService: RateService, private dialog: MatDialog) {}
+  constructor(
+    private ratesService: RateService,
+    private dialog: MatDialog,
+  ) {}
 
   ngOnInit(): void {
     this.loadRates();
