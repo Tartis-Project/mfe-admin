@@ -1,6 +1,5 @@
 import {
   Component,
-  signal,
   computed,
   Input,
   Output,
