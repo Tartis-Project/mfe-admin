@@ -7,7 +7,6 @@ import { Rate } from '../../pages/rates/interfaces/rates.model';
 import { ParkingService } from '../../pages/parking/services/parking.service';
 import { RateService } from '../../pages/rates/services/rates.service';
 
-
 @Component({
   selector: 'app-confirm-dialog',
   standalone: true,
@@ -15,12 +14,17 @@ import { RateService } from '../../pages/rates/services/rates.service';
   templateUrl: './confirm-dialog.component.html',
   styleUrl: './confirm-dialog.component.scss',
 })
-export class ConfirmDialogComponent implements OnInit{
+export class ConfirmDialogComponent implements OnInit {
+  constructor(
+    private parkingService: ParkingService,
+    private rateService: RateService,
+    readonly dialogRef: MatDialogRef<ConfirmDialogComponent>,
+    private router: Router,
+    @Inject(MAT_DIALOG_DATA) public data: { dialogData: any }
+  ) {}
 
-  constructor(private parkingService: ParkingService, private rateService: RateService, readonly dialogRef: MatDialogRef<ConfirmDialogComponent>, private router: Router, @Inject(MAT_DIALOG_DATA) public data: {dialogData: any}) {}
-
-  floor!: Floor
-  rate!: Rate
+  floor!: Floor;
+  rate!: Rate;
 
   currentRoute = computed(() => this.router.url);
   isPlazas = computed(() => this.currentRoute().includes('/parking'));
@@ -30,31 +34,31 @@ export class ConfirmDialogComponent implements OnInit{
   ngOnInit(): void {
     switch (true) {
       case this.isPlazas():
-        this.floor = this.data.dialogData
+        this.floor = this.data.dialogData;
         break;
       case this.isTarifas():
-        this.rate = this.data.dialogData
+        this.rate = this.data.dialogData;
         break;
       case this.isVehicles():
-        brand: "seat"
+        brand: 'seat';
         break;
       default:
-        this.onNoClick()
+        this.onNoClick();
         break;
     }
   }
 
-  confirm(){
+  confirm() {
     switch (true) {
       case this.isPlazas():
-        this.parkingService.deleteFloor("2").subscribe(() => {
-          this.onNoClick()
-        })
+        this.parkingService.deleteFloor('2').subscribe(() => {
+          this.onNoClick();
+        });
         break;
       case this.isTarifas():
         this.rateService.deleteRate(this.rate.id).subscribe(() => {
-          this.onNoClick()
-        })
+          this.onNoClick();
+        });
         break;
       case this.isVehicles():
         break;

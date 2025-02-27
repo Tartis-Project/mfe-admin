@@ -1,4 +1,12 @@
-import { Component, signal, computed, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import {
+  Component,
+  signal,
+  computed,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+} from '@angular/core';
 import { MaterialModule } from '../../../material/material.module';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -9,23 +17,20 @@ import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { RateService } from '../../../pages/rates/services/rates.service';
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 
-
 @Component({
   selector: 'app-card-view',
   standalone: true,
   imports: [MaterialModule],
   templateUrl: './card-view.component.html',
-  styleUrl: './card-view.component.scss'
+  styleUrl: './card-view.component.scss',
 })
-
 export class CardViewComponent implements OnInit {
-
   constructor(
     private router: Router,
     readonly dialog: MatDialog,
     private parkingService: ParkingService,
     private ratesService: RateService
-  ) { }
+  ) {}
 
   @Input() floor!: Floor;
   @Input() rate!: Rate;
@@ -53,7 +58,7 @@ export class CardViewComponent implements OnInit {
         dialogData = this.rate;
         break;
       case this.isVehicles():
-        dialogData = { brand: "seat" };
+        dialogData = { brand: 'seat' };
         break;
       default:
         dialogData = {};
@@ -67,12 +72,11 @@ export class CardViewComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      this.eventLoad.emit()
+      this.eventLoad.emit();
     });
   }
 
   openDialogDelete(dialogData: any): void {
-
     let dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '50%',
       height: 'auto',
@@ -80,21 +84,21 @@ export class CardViewComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      this.eventLoad.emit()
+      this.eventLoad.emit();
     });
   }
 
   viewVehicleDetail(): void {
-    console.log("Ver detalles del vehículo...");
+    console.log('Ver detalles del vehículo...');
   }
 
   deleteAction() {
     switch (true) {
       case this.isPlazas():
-        this.openDialogDelete(this.floor)
+        this.openDialogDelete(this.floor);
         break;
       case this.isTarifas():
-        this.openDialogDelete(this.rate)
+        this.openDialogDelete(this.rate);
         break;
       case this.isVehicles():
         break;
