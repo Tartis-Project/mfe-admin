@@ -1,20 +1,57 @@
 <div class="card">
-  <h3 class="title">{{ title }}</h3>
+  <h4 class="title" *ngIf="isPlazas(); else otherTitles">
+    Planta {{ floor.number }}
+  </h4>
 
-  <div class="status">
-    <strong>¿Operativa?:</strong>
-    <mat-checkbox [checked]="isOperative" disabled></mat-checkbox>
+  <div *ngIf="isPlazas()">
+    <div class="status">
+      <strong>¿Operativa?:</strong>
+      <mat-checkbox
+        disabled="disabled"
+        [checked]="floor.isOperative"
+      ></mat-checkbox>
+    </div>
+    <div class="availability" [class.show]="floor.isOperative">
+      <strong>Plazas disponibles -</strong> {{ floor.numberOfSpots }}
+    </div>
   </div>
 
-  <div class="availability">
-    <strong>Plazas disponibles -</strong> {{ availableSpots }}
-  </div>
+  <ng-template #otherTitles>
+    <h4 class="title" *ngIf="isTarifas(); else vehicleTitle">
+      {{ rate.name }}
+    </h4>
+
+    <div *ngIf="isTarifas()">
+      <p>
+        <strong>Precio plaza (por minuto) -</strong>
+        {{ rate.pricePerMinute.toFixed(3) }} €
+      </p>
+      <p><strong>Total por hora -</strong> {{ totalPorHora.toFixed(2) }} €</p>
+    </div>
+  </ng-template>
+
+  <ng-template #vehicleTitle>
+    <h4 class="title">Seat León</h4>
+    <div *ngIf="isVehicles()">
+      <p><strong>Matrícula -</strong> B34H XYZ</p>
+      <p><strong>Color -</strong> Negro</p>
+    </div>
+  </ng-template>
 
   <div class="actions">
-    <button mat-icon-button color="primary" class="edit-btn">
-      <mat-icon class="button-primary">edit</mat-icon>
+    <button *ngIf="!isVehicles()" mat-icon-button class="edit-btn">
+      <mat-icon (click)="openDialog()" class="button-primary">edit</mat-icon>
     </button>
-    <button mat-icon-button color="warn" class="delete-btn">
+    <button
+      *ngIf="isVehicles()"
+      mat-icon-button
+      class="edit-btn"
+      (click)="viewVehicleDetail()"
+    >
+      <mat-icon class="button-primary">visibility</mat-icon>
+    </button>
+
+    <button (click)="deleteAction()" mat-icon-button class="delete-btn">
       <mat-icon class="button-secondary">delete</mat-icon>
     </button>
   </div>

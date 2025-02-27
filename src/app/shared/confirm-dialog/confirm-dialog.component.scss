@@ -1,0 +1,10 @@
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+::ng-deep .mat-mdc-dialog-surface {
+  border-radius: 4px !important;
+}

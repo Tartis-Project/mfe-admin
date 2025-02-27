@@ -1,7 +1,7 @@
 :root {
   --primary-color: #408221;
-  --secondary-color: #B76823;
-  --white-color: #FFFFFF;
+  --secondary-color: #b76823;
+  --white-color: #ffffff;
   --black-color: #000000;
 }
 
@@ -35,7 +35,7 @@
   color: var(--white-color);
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 1px;
   cursor: pointer;
   transition: background 0.3s ease;
 
@@ -49,7 +49,7 @@
   color: var(--white-color);
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 1px;
   cursor: pointer;
   transition: background 0.3s ease;
 
@@ -58,17 +58,10 @@
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-=======
-body {
-  font-family: 'Arial', sans-serif;
-}
-
-html,
 body {
   height: 100%;
   margin: 0;
   background-color: var(--white-color);
   color: var(--black-color);
+  font-family: "Arial", sans-serif;
 }

@@ -1,22 +1,4 @@
-<!-- Navbar -->
-<nav class="navbar-responsive bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-auto m-2">
-        <a class="text-dark" routerLink="/">
-          Home
-        </a>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- Componentes basados en la ruta -->
-<div class="container-router-outlet container bg-light">
-  <app-card-view
-    title="Planta 1"
-    [isOperative]="true"
-    [availableSpots]="120">
-  </app-card-view>
-  <router-outlet />
-</div>
+<app-navbar></app-navbar>
+<main class="container-main mt-5">
+  <router-outlet></router-outlet>
+</main>

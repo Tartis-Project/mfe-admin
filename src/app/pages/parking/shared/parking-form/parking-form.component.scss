@@ -1,0 +1,29 @@
+input.input-type-number::-webkit-outer-spin-button,
+input.input-type-number::-webkit-inner-spin-button {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+::ng-deep .mdc-form-field > .mdc-label {
+  margin: 0;
+}
+
+::ng-deep .mat-mdc-dialog-surface {
+  border-radius: 4px !important;
+}
+
+::ng-deep .mat-accent.mat-mdc-checkbox {
+  --mdc-checkbox-selected-pressed-icon-color: var(--primary-color);
+  --mdc-checkbox-selected-focus-icon-color: var(--primary-color);
+  --mdc-checkbox-selected-hover-icon-color: var(--primary-color);
+  --mdc-checkbox-selected-icon-color: var(--primary-color);
+  --mdc-checkbox-selected-focus-state-layer-color: var(--primary-color);
+  --mdc-checkbox-selected-hover-state-layer-color: var(--primary-color);
+  --mdc-checkbox-unselected-pressed-state-layer-color: var(--primary-color);
+}
