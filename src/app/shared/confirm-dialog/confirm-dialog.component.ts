@@ -51,7 +51,7 @@ export class ConfirmDialogComponent implements OnInit {
   confirm() {
     switch (true) {
       case this.isPlazas():
-        this.parkingService.deleteFloor('2').subscribe(() => {
+        this.parkingService.deleteFloor(this.floor.id).subscribe(() => {
           this.onNoClick();
         });
         break;

@@ -1,14 +1,14 @@
-<h2 *ngIf="isPlazas()" mat-dialog-title>Eliminar Planta</h2>
-<h2 *ngIf="isTarifas()" mat-dialog-title>Eliminar Tarifa</h2>
-<h2 *ngIf="isVehicles()" mat-dialog-title>Eliminar Vehiculo</h2>
+<h2 *ngIf="isPlazas()" mat-dialog-title>Eliminar Planta <strong>{{ floor.number }}</strong> </h2>
+<h2 *ngIf="isTarifas()" mat-dialog-title>Eliminar Tarifa <strong> {{ rate.name }} </strong></h2>
+<h2 *ngIf="isVehicles()" mat-dialog-title>Eliminar Vehiculo <strong> {{ "vehicle" }} </strong></h2>
 <mat-dialog-content>
   <p *ngIf="isPlazas()">
-    Eliminar la Planta <strong>{{ floor.number }}</strong>
+    ¿Estás seguro que quieres eliminar esta planta?
   </p>
   <p *ngIf="isTarifas()">
-    Eliminar la Tarifa <strong> {{ rate.name }} </strong>
+    ¿Estás seguro que quieres eliminar esta tarifa?
   </p>
-  <p *ngIf="isVehicles()">Eliminar Vehiculo</p>
+  <p *ngIf="isVehicles()">¿Estás seguro que quieres eliminar este vehiculo?</p>
 </mat-dialog-content>
 <mat-dialog-actions class="actions">
   <button class="button-primary" (click)="confirm()">Confirmar</button>
