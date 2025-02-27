@@ -7,15 +7,21 @@ import {
   EventEmitter,
   OnInit,
 } from '@angular/core';
+
 import { MaterialModule } from '../../../material/material.module';
+
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
+import { MaterialModule } from '../../../material/material.module';
 import { CardFormComponent } from '../card-form/card-form.component';
 import { Floor } from '../../../pages/parking/interfaces/floor.model';
 import { ParkingService } from '../../../pages/parking/services/parking.service';
 import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { RateService } from '../../../pages/rates/services/rates.service';
+
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
+
 
 @Component({
   selector: 'app-card-view',
@@ -30,7 +36,10 @@ export class CardViewComponent implements OnInit {
     readonly dialog: MatDialog,
     private parkingService: ParkingService,
     private ratesService: RateService
-  ) {}
+
+
+  ) { }
+
 
   @Input() floor!: Floor;
   @Input() rate!: Rate;
@@ -44,7 +53,9 @@ export class CardViewComponent implements OnInit {
   isVehicles = computed(() => this.currentRoute().includes('/vehicles'));
 
   ngOnInit(): void {
-    this.totalPorHora = this.rate?.pricePerMinute * 60;
+    if (this.rate != undefined) {
+      this.totalPorHora = this.rate.pricePerMinute * 60;
+    }
   }
 
   openDialog(): void {

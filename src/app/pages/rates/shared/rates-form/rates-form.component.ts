@@ -1,20 +1,27 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 import { CardFormComponent } from '../../../../shared/cards/card-form/card-form.component';
 import { MaterialModule } from '../../../../material/material.module';
 import { RateService } from '../../services/rates.service';
 import { Rate } from '../../interfaces/rates.model';
+import { greaterThanZeroValidator } from '../../../../core/validators/greater-than-zero.validator';
 
 @Component({
   selector: 'app-rates-form',
   standalone: true,
-  imports: [MaterialModule, ReactiveFormsModule],
+  imports: [MaterialModule, FormsModule, ReactiveFormsModule],
   templateUrl: './rates-form.component.html',
-  styleUrl: './rates-form.component.scss'
+  styleUrl: './rates-form.component.scss',
 })
-export class RatesFormComponent {
+
+export class RatesFormComponent implements OnInit {
 
   @Input() rate!: Rate;
 
@@ -24,29 +31,45 @@ export class RatesFormComponent {
     private dialogRef: MatDialogRef<CardFormComponent>,
     private fb: FormBuilder,
     private ratesService: RateService
-  ){
+  ) {
     this.ratesForm = this.fb.group({
-      name: [""],
-      pricePerMinute: [],
-    })
+      name: ['', Validators.required],
+      pricePerMinute: ['', [Validators.required, greaterThanZeroValidator()]],
+    });
+
+  ngOnInit(): void {
+    if (this.rate) {
+      this.ratesForm.reset(this.rate);
+      console.log(this.ratesForm.value);
+    }
   }
 
   addRate() {
-    const rateData: Rate = this.ratesForm.value;
-    this.ratesService.createRate(rateData).subscribe({
-      next: (response) => {
-        console.log('Tarifa creada exitosamente:', response);
-        this.dialogRef.close(true);
-      },
-      error: (error) => {
-        console.error('Error al crear la tarifa:', error);
-      },
-    });
+    if (this.ratesForm.valid) {
+      const rateData: Rate = this.ratesForm.value;
+      this.ratesService.createRate(rateData).subscribe({
+        next: (response) => {
+          console.log('Tarifa creada exitosamente:', response);
+          this.dialogRef.close(true);
+        },
+        error: (error) => {
+          console.error('Error al crear la tarifa:', error);
+        },
+      });
+    }
+
   }
 
   onNoClick(): void {
-    this.dialogRef.close(
-      console.log()
-    );
+    this.dialogRef.close();
   }
+
+  updateRate() {
+    const updatedRate = this.ratesForm.value;
+    this.ratesService.updateRate(this.rate.id, updatedRate).subscribe((res) => {
+      console.log(res);
+      this.onNoClick();
+    });
+  }
+
 }
