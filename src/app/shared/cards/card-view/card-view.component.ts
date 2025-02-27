@@ -7,6 +7,9 @@ import {
   EventEmitter,
   OnInit,
 } from '@angular/core';
+
+import { MaterialModule } from '../../../material/material.module';
+
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
@@ -17,6 +20,9 @@ import { ParkingService } from '../../../pages/parking/services/parking.service'
 import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { RateService } from '../../../pages/rates/services/rates.service';
 
+import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
+
+
 @Component({
   selector: 'app-card-view',
   standalone: true,
@@ -24,16 +30,16 @@ import { RateService } from '../../../pages/rates/services/rates.service';
   templateUrl: './card-view.component.html',
   styleUrl: './card-view.component.scss',
 })
-
 export class CardViewComponent implements OnInit {
-
   constructor(
     private router: Router,
     readonly dialog: MatDialog,
     private parkingService: ParkingService,
     private ratesService: RateService
 
+
   ) { }
+
 
   @Input() floor!: Floor;
   @Input() rate!: Rate;
@@ -81,6 +87,18 @@ export class CardViewComponent implements OnInit {
     });
   }
 
+  openDialogDelete(dialogData: any): void {
+    let dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '50%',
+      height: 'auto',
+      data: { dialogData },
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.eventLoad.emit();
+    });
+  }
+
   viewVehicleDetail(): void {
     console.log('Ver detalles del vehículo...');
   }
@@ -88,14 +106,10 @@ export class CardViewComponent implements OnInit {
   deleteAction() {
     switch (true) {
       case this.isPlazas():
-        this.parkingService.deleteFloor(this.floor.id).subscribe((res) => {
-          this.eventLoad.emit();
-        });
+        this.openDialogDelete(this.floor);
         break;
       case this.isTarifas():
-        this.ratesService.deleteRate(this.rate.id).subscribe((res) => {
-          this.eventLoad.emit();
-        });
+        this.openDialogDelete(this.rate);
         break;
       case this.isVehicles():
         break;
