@@ -7,7 +7,6 @@ import {
   OnInit,
 } from '@angular/core';
 
-import { MaterialModule } from '../../../material/material.module';
 
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
