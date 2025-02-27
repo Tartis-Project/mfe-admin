@@ -4,9 +4,8 @@
   <form [formGroup]="ratesForm">
     <mat-form-field class="w-100">
       <mat-label>Nombre</mat-label>
-      <input matInput type="text" formControlName="name" >
+      <input matInput type="text" formControlName="name" />
     </mat-form-field>
-
     <mat-form-field class="w-100" floatLabel="always">
       <mat-label>Precio plaza por minuto</mat-label>
       <input
@@ -24,9 +23,7 @@
         El precio debe ser mayor que 0.
       </mat-error>
     </mat-form-field>
-
   </form>
-
 </mat-dialog-content>
 
 <mat-dialog-actions class="actions">
@@ -34,4 +31,3 @@
   <button class="button-primary" *ngIf="rate" (click)="updateRate() [disabled]="!ratesForm.valid"">Editar</button>
   <button  class="button-secondary"  (click)="onNoClick()">Cancelar</button>
 </mat-dialog-actions>
-

@@ -1,28 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
-import { CardViewComponent } from "../../../../shared/cards/card-view/card-view.component";
+import { CardViewComponent } from '../../../../shared/cards/card-view/card-view.component';
 import { RateService } from '../../services/rates.service';
 import { Rate } from '../../interfaces/rates.model';
 import { MaterialModule } from '../../../../material/material.module';
 import { CardFormComponent } from '../../../../shared/cards/card-form/card-form.component';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-rates',
   standalone: true,
   imports: [MaterialModule, CardViewComponent],
   templateUrl: './rates.component.html',
-  styleUrl: './rates.component.scss'
+  styleUrl: './rates.component.scss',
 })
 export class RatesComponent implements OnInit {
-
   rates: Rate[] = [];
 
-  constructor(
-    private ratesService: RateService,
-    private dialog: MatDialog
-  ) {
-  }
+  constructor(private ratesService: RateService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadRates();
@@ -40,16 +35,15 @@ export class RatesComponent implements OnInit {
   }
 
   openDialog(): void {
-    let dialogData: any = {}
-    this.dialog.open(CardFormComponent, {
+    let dialogData: any = {};
+    let dialogRef = this.dialog.open(CardFormComponent, {
       width: '50%',
       height: 'auto',
-      data: dialogData
+      data: dialogData,
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.loadRates();
     });
   }
-
-  onDelete(idRate: string) {
-    console.log('onDelete RATES');
-  }
-
 }

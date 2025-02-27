@@ -1,20 +1,28 @@
-import { Component, signal, computed, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { MaterialModule } from '../../../material/material.module';
+import {
+  Component,
+  signal,
+  computed,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
+import { MaterialModule } from '../../../material/material.module';
 import { CardFormComponent } from '../card-form/card-form.component';
 import { Floor } from '../../../pages/parking/interfaces/floor.model';
 import { ParkingService } from '../../../pages/parking/services/parking.service';
 import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { RateService } from '../../../pages/rates/services/rates.service';
 
-
 @Component({
   selector: 'app-card-view',
   standalone: true,
   imports: [MaterialModule],
   templateUrl: './card-view.component.html',
-  styleUrl: './card-view.component.scss'
+  styleUrl: './card-view.component.scss',
 })
 
 export class CardViewComponent implements OnInit {
@@ -24,6 +32,7 @@ export class CardViewComponent implements OnInit {
     readonly dialog: MatDialog,
     private parkingService: ParkingService,
     private ratesService: RateService
+
   ) { }
 
   @Input() floor!: Floor;
@@ -38,7 +47,9 @@ export class CardViewComponent implements OnInit {
   isVehicles = computed(() => this.currentRoute().includes('/vehicles'));
 
   ngOnInit(): void {
-    this.totalPorHora = this.rate?.pricePerMinute * 60;
+    if (this.rate != undefined) {
+      this.totalPorHora = this.rate.pricePerMinute * 60;
+    }
   }
 
   openDialog(): void {
@@ -52,7 +63,7 @@ export class CardViewComponent implements OnInit {
         dialogData = this.rate;
         break;
       case this.isVehicles():
-        dialogData = { brand: "seat" };
+        dialogData = { brand: 'seat' };
         break;
       default:
         dialogData = {};
@@ -66,24 +77,25 @@ export class CardViewComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      this.eventLoad.emit()
+      this.eventLoad.emit();
     });
   }
 
   viewVehicleDetail(): void {
-    console.log("Ver detalles del vehículo...");
+    console.log('Ver detalles del vehículo...');
   }
 
   deleteAction() {
     switch (true) {
       case this.isPlazas():
-        this.parkingService.deleteFloor(this.floor.id).subscribe(res => {
-          this.eventLoad.emit()
-        })
+        this.parkingService.deleteFloor(this.floor.id).subscribe((res) => {
+          this.eventLoad.emit();
+        });
         break;
       case this.isTarifas():
-        // this.ratesService.deleteRates(this.rates.id).subscribe(res => {
-        // })
+        this.ratesService.deleteRate(this.rate.id).subscribe((res) => {
+          this.eventLoad.emit();
+        });
         break;
       case this.isVehicles():
         break;

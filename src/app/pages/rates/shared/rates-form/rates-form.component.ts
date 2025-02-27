@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import {
   FormBuilder,
@@ -16,11 +16,13 @@ import { greaterThanZeroValidator } from '../../../../core/validators/greater-th
 @Component({
   selector: 'app-rates-form',
   standalone: true,
-  imports: [MaterialModule, ReactiveFormsModule],
+  imports: [MaterialModule, FormsModule, ReactiveFormsModule],
   templateUrl: './rates-form.component.html',
   styleUrl: './rates-form.component.scss',
 })
-export class RatesFormComponent {
+
+export class RatesFormComponent implements OnInit {
+
   @Input() rate!: Rate;
 
   public ratesForm: FormGroup;
@@ -34,6 +36,12 @@ export class RatesFormComponent {
       name: ['', Validators.required],
       pricePerMinute: ['', [Validators.required, greaterThanZeroValidator()]],
     });
+
+  ngOnInit(): void {
+    if (this.rate) {
+      this.ratesForm.reset(this.rate);
+      console.log(this.ratesForm.value);
+    }
   }
 
   addRate() {
@@ -49,9 +57,19 @@ export class RatesFormComponent {
         },
       });
     }
+
   }
 
   onNoClick(): void {
-    this.dialogRef.close(console.log());
+    this.dialogRef.close();
   }
+
+  updateRate() {
+    const updatedRate = this.ratesForm.value;
+    this.ratesService.updateRate(this.rate.id, updatedRate).subscribe((res) => {
+      console.log(res);
+      this.onNoClick();
+    });
+  }
+
 }
