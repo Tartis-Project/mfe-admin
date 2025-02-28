@@ -1,8 +1,16 @@
-import { Component, inject, Input } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, EventEmitter, Inject, inject, Input, Output } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+
 import { CardFormComponent } from '../../../../shared/cards/card-form/card-form.component';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../../../material/material.module';
+import { Vehicle } from '../../interfaces/vehicle.model';
+import { VehicleService } from '../../services/vehicle.service';
 
 @Component({
   selector: 'app-vehicles-form',
@@ -14,19 +22,40 @@ import { MaterialModule } from '../../../../material/material.module';
 export class VehiclesFormComponent {
   readonly dialogRef = inject(MatDialogRef<CardFormComponent>);
 
-  @Input() vehicle: any;
+  @Input() vehicle!: Vehicle;
+  @Output() vehicleUpdated = new EventEmitter<Vehicle>();
 
   public fb = inject(FormBuilder);
+  public vehicleForm!: FormGroup;
 
-  public vehicleForm: FormGroup = this.fb.group({
-    brand: [''],
-    model: [''],
-    license: [''],
-    color: [''],
-    doors: [],
-  });
+  constructor(
+    private vehicleService: VehicleService,
+    @Inject(MAT_DIALOG_DATA) public data: { dialogData: any },
+  ) {
+    if (data.dialogData != undefined || data == null) {
+      this.vehicle = data.dialogData;
+    }
+
+    this.vehicleForm = this.fb.group({
+      licensePlate: [this.vehicle.licensePlate, Validators.required],
+      model: [this.vehicle.model, Validators.required],
+      type: [this.vehicle.type, Validators.required],
+      color: [this.vehicle.color, Validators.required],
+      isActive: [this.vehicle.isActive],
+    });
+  }
+
+  updateVehicle() {
+    const updatedVehicle = this.vehicleForm.value;
+    this.vehicleService
+      .updateVehicle(this.vehicle.id, updatedVehicle)
+      .subscribe((res) => {
+        this.vehicleUpdated.emit(updatedVehicle); 
+        this.onNoClick();
+      });
+  }
 
   onNoClick(): void {
-    this.dialogRef.close(console.log());
+    this.dialogRef.close();
   }
 }

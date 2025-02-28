@@ -12,13 +12,6 @@ a {
     vertical-align: middle;
   }
 }
-
-.container-detalle {
-  margin-top: 6rem;
-  display: flex;
-  align-items: center;
-
-  app-card-detail {
-    width: 100%;
-  }
+.mt-10 {
+  margin-top: 6rem !important;
 }
