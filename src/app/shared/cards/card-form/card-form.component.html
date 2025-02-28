@@ -2,4 +2,8 @@
 
 <app-rates-form *ngIf="isTarifas()" [rate]="rate"></app-rates-form>
 
-<app-vehicles-form *ngIf="isVehicles()" [vehicle]="vehicle"></app-vehicles-form>
+<app-vehicles-form
+  *ngIf="isVehicles()"
+  [vehicle]="vehicle"
+  (vehicleUpdated)="onVehicleUpdated($event)"
+></app-vehicles-form>

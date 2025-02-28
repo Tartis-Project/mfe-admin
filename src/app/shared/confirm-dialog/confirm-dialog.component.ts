@@ -1,11 +1,14 @@
 import { Component, computed, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
 import { MaterialModule } from '../../material/material.module';
 import { Floor } from '../../pages/parking/interfaces/floor.model';
 import { Rate } from '../../pages/rates/interfaces/rates.model';
 import { ParkingService } from '../../pages/parking/services/parking.service';
 import { RateService } from '../../pages/rates/services/rates.service';
+import { Vehicle } from '../../pages/vehicles/interfaces/vehicle.model';
+import { VehicleService } from '../../pages/vehicles/services/vehicle.service';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -18,6 +21,7 @@ export class ConfirmDialogComponent implements OnInit {
   constructor(
     private parkingService: ParkingService,
     private rateService: RateService,
+    private vehicleService: VehicleService,
     readonly dialogRef: MatDialogRef<ConfirmDialogComponent>,
     private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: { dialogData: any },
@@ -25,6 +29,7 @@ export class ConfirmDialogComponent implements OnInit {
 
   floor!: Floor;
   rate!: Rate;
+  vehicle!: Vehicle;
 
   currentRoute = computed(() => this.router.url);
   isPlazas = computed(() => this.currentRoute().includes('/parking'));
@@ -40,7 +45,7 @@ export class ConfirmDialogComponent implements OnInit {
         this.rate = this.data.dialogData;
         break;
       case this.isVehicles():
-        brand: 'seat';
+        this.vehicle = this.data.dialogData;
         break;
       default:
         this.onNoClick();
@@ -61,6 +66,9 @@ export class ConfirmDialogComponent implements OnInit {
         });
         break;
       case this.isVehicles():
+        this.vehicleService.deleteVehicle(this.vehicle.id).subscribe(() => {
+          this.onNoClick();
+        });
         break;
       default:
     }
