@@ -20,11 +20,12 @@ import { RateService } from '../../../pages/rates/services/rates.service';
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
 import { VehicleService } from '../../../pages/vehicles/services/vehicle.service';
+import { EuroCurrencyPipe } from "../../../core/pipes/euro-currency.pipe";
 
 @Component({
   selector: 'app-card-view',
   standalone: true,
-  imports: [MaterialModule],
+  imports: [MaterialModule, EuroCurrencyPipe],
   templateUrl: './card-view.component.html',
   styleUrl: './card-view.component.scss',
 })
@@ -36,6 +37,8 @@ export class CardViewComponent implements OnInit {
     private ratesService: RateService,
     private vehicleService: VehicleService
   ) {}
+
+
 
   @Input() floor!: Floor;
   @Input() rate!: Rate;
