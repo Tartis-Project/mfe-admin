@@ -1,1 +1,22 @@
-<p>card-detail works!</p>
+<div class="card" *ngIf="vehicle">
+  <h4 class="title">{{ vehicle.model }}</h4>
+  <div class="mx-5">
+    <p><strong>Matrícula - </strong>{{ vehicle.licensePlate }}</p>
+    <p><strong>Color - </strong>{{ vehicle.color }}</p>
+    <p><strong>Tipo vehículo - </strong>{{ vehicle.type }}</p>
+    <p><strong>isActive - </strong>{{ vehicle.isActive }}</p>
+  </div>
+  <div class="actions">
+    <button (click)="openDialog()" mat-icon-button class="edit-btn">
+      <mat-icon class="button-primary">edit</mat-icon>
+    </button>
+
+    <button (click)="deleteAction()" mat-icon-button class="delete-btn">
+      <mat-icon class="button-secondary">delete</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="card" *ngIf="vehicle==undefined">
+  <p>El vehículo no se encuentra disponible</p>
+</div>

@@ -18,6 +18,8 @@ import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { RateService } from '../../../pages/rates/services/rates.service';
 
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
+import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
+import { VehicleService } from '../../../pages/vehicles/services/vehicle.service';
 import { EuroCurrencyPipe } from "../../../core/pipes/euro-currency.pipe";
 
 @Component({
@@ -33,10 +35,15 @@ export class CardViewComponent implements OnInit {
     readonly dialog: MatDialog,
     private parkingService: ParkingService,
     private ratesService: RateService,
-  ) { }
+    private vehicleService: VehicleService
+  ) {}
+
+
 
   @Input() floor!: Floor;
   @Input() rate!: Rate;
+  @Input() vehicle!: Vehicle;
+
   @Output() eventLoad = new EventEmitter<void>();
 
   totalPorHora = 0;
@@ -63,7 +70,7 @@ export class CardViewComponent implements OnInit {
         dialogData = this.rate;
         break;
       case this.isVehicles():
-        dialogData = { brand: 'seat' };
+        dialogData = this.vehicle;
         break;
       default:
         dialogData = {};
@@ -93,8 +100,8 @@ export class CardViewComponent implements OnInit {
     });
   }
 
-  viewVehicleDetail(): void {
-    console.log('Ver detalles del vehículo...');
+  viewVehicleDetail(idVehicle: string): void {
+    this.router.navigate(['/vehicles', idVehicle]);
   }
 
   deleteAction() {
@@ -106,6 +113,7 @@ export class CardViewComponent implements OnInit {
         this.openDialogDelete(this.rate);
         break;
       case this.isVehicles():
+        this.openDialogDelete(this.vehicle);
         break;
       default:
     }
