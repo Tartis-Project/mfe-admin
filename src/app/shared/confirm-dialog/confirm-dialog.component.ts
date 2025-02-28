@@ -68,6 +68,7 @@ export class ConfirmDialogComponent implements OnInit {
       case this.isVehicles():
         this.vehicleService.deleteVehicle(this.vehicle.id).subscribe(() => {
           this.onNoClick();
+          this.router.navigate(['/vehicles']);
         });
         break;
       default:
