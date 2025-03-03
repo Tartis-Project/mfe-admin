@@ -2077,5 +2077,91 @@
       "color": "Black",
       "isActive": true
     }
+  ],
+  "registry": [
+    {
+      "id": "c1646f4d-ee1b-40cf-a90a-27d85921fa3a",
+      "idParkingSpot": "106",
+      "idVehicle": "10",
+      "idRate": "35cd",
+      "entryTime": "2025-02-27 13:35:27.613576"
+    },
+    {
+      "id": "6a7de47d-c05d-4605-bba3-a28832372cd8",
+      "idParkingSpot": "238",
+      "idVehicle": "16",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 03:45:27.614054"
+    },
+    {
+      "id": "5d38c71d-dcc4-4c8b-9624-390cb18e7783",
+      "idParkingSpot": "235",
+      "idVehicle": "8",
+      "idRate": "35cd",
+      "entryTime": "2025-02-25 06:30:27.614131"
+    },
+    {
+      "id": "88fa0290-105a-450f-8c0c-64bddf2f64ae",
+      "idParkingSpot": "111",
+      "idVehicle": "12",
+      "idRate": "35cd",
+      "entryTime": "2025-03-02 11:21:27.614168"
+    },
+    {
+      "id": "2c6dbced-6c07-4f79-9241-d7421a28dde6",
+      "idParkingSpot": "22",
+      "idVehicle": "11",
+      "idRate": "35cd",
+      "entryTime": "2025-02-24 16:56:27.614243"
+    },
+    {
+      "id": "87db1ffe-d5c3-40be-a1e3-035bf07c4bd7",
+      "idParkingSpot": "112",
+      "idVehicle": "5",
+      "idRate": "35cd",
+      "entryTime": "2025-03-02 01:40:27.614280"
+    },
+    {
+      "id": "e122ab02-6695-46c7-9b70-e7953d733ef0",
+      "idParkingSpot": "26",
+      "idVehicle": "4",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 18:05:27.614315"
+    },
+    {
+      "id": "a6d9967c-d7c2-4c3f-b30b-4e2cdc7d6400",
+      "idParkingSpot": "275",
+      "idVehicle": "15",
+      "idRate": "35cd",
+      "entryTime": "2025-02-26 10:16:27.614331"
+    },
+    {
+      "id": "97655639-def8-4e9a-86d3-0a58f1e6f20c",
+      "idParkingSpot": "225",
+      "idVehicle": "3",
+      "idRate": "35cd",
+      "entryTime": "2025-02-27 22:30:27.614347"
+    },
+    {
+      "id": "dd0b7ca3-e685-4543-be1e-93a83a2cc8f9",
+      "idParkingSpot": "120",
+      "idVehicle": "14",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 10:36:27.614396"
+    },
+    {
+      "id": "2bfd9184-0ba8-43df-9252-e3e3c2954b96",
+      "idParkingSpot": "222",
+      "idVehicle": "7",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 15:31:27.614451"
+    },
+    {
+      "id": "8c3b2b35-500b-4daa-af6e-3e6492ffa173",
+      "idParkingSpot": "228",
+      "idVehicle": "1",
+      "idRate": "35cd",
+      "entryTime": "2025-02-26 11:44:27.614482"
+    }
   ]
 }
