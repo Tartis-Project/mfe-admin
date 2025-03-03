@@ -5,31 +5,37 @@ import { Vehicle } from '../../interfaces/vehicle.model';
 import { MaterialModule } from '../../../../material/material.module';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
+import { SearchVehiclePipe } from '../../../../core/pipes/search-vehicle.pipe';
 
 @Component({
   selector: 'app-vehicle-list',
   standalone: true,
-  imports: [CardViewComponent, MaterialModule, ReactiveFormsModule],
-  providers: [
-    { provide: MatPaginatorIntl, useClass: MatPaginatorIntl }
+  imports: [
+    CardViewComponent,
+    MaterialModule,
+    ReactiveFormsModule,
+    SearchVehiclePipe,
   ],
+  providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntl }],
   templateUrl: './vehicle-list.component.html',
   styleUrl: './vehicle-list.component.scss',
 })
-export class VehicleListComponent implements OnInit{
-
+export class VehicleListComponent implements OnInit {
   public filterForm: FormGroup;
-  allVehicles: Vehicle[] = [];
-  vehiclesFilter: Vehicle[] = [];
-  vehiclesActive: Vehicle[] = []
-  vehiclesInactive: Vehicle[] = []
-  currentPage: number = 0;
-  pageSize: number = 8;
-  pageSizeState: number = 8
+  vehiclesActive: Vehicle[] = [];
+  vehiclesInactive: Vehicle[] = [];
+  currentPageActive: number = 0;
+  currentPageInactive: number = 0;
+  pageSizeActive: number = 8;
+  pageSizeInactive: number = 8;
   isActive: boolean = true;
   isInactive: boolean = true;
+  isOpen = false;
 
-  constructor(private vehicleService: VehicleService, private fb: FormBuilder, private cdr: ChangeDetectorRef) {
+  constructor(
+    private vehicleService: VehicleService,
+    private fb: FormBuilder,
+  ) {
     this.filterForm = this.fb.group({
       search: [''],
       state: ['active'],
@@ -38,17 +44,19 @@ export class VehicleListComponent implements OnInit{
 
   ngOnInit(): void {
     this.loadVehicles();
-    this.filterForm.valueChanges.subscribe(changes => {
+    this.filterForm.valueChanges.subscribe((changes) => {
       this.filterVehicles(changes);
     });
-    // this.onPageChange()
+  }
+
+  toggleSelect() {
+    this.isOpen = !this.isOpen;
   }
 
   loadVehicles() {
-    this.vehicleService.getVehicles().subscribe(res => {
-      this.allVehicles = res;
-      this.vehiclesInactive = this.allVehicles.filter(v => !v.isActive)
-      this.vehiclesActive = this.allVehicles.filter(v => v.isActive)
+    this.vehicleService.getVehicles().subscribe((res) => {
+      this.vehiclesInactive = res.filter((v) => !v.isActive);
+      this.vehiclesActive = res.filter((v) => v.isActive);
       this.filterVehicles(this.filterForm.value);
     });
   }
@@ -56,59 +64,46 @@ export class VehicleListComponent implements OnInit{
   filterVehicles(filters: any) {
     const { search, state } = filters;
 
-    this.pageSizeState = this.pageSize
-    switch(state){
-      case('active'):
-        this.vehiclesFilter = [...this.allVehicles.filter(v => v.isActive)]
+    switch (state) {
+      case 'active':
         this.isActive = true;
         this.isInactive = false;
-      break;
-      case('inactive'):
-      this.vehiclesFilter = [...this.allVehicles.filter(v => !v.isActive)]
-      this.isActive = false;
-      this.isInactive = true;
-      break;
+        break;
+      case 'inactive':
+        this.isActive = false;
+        this.isInactive = true;
+        break;
       default:
-        this.vehiclesFilter = [...this.allVehicles]
         this.isActive = true;
         this.isInactive = true;
-        this.pageSizeState = this.pageSize / 2
 
-      break;
+        break;
     }
   }
 
-  onPageChange(event: PageEvent): void {
-    this.currentPage = event.pageIndex;
-    this.pageSize = event.pageSize;
-    this.pageSizeState = this.pageSize
-    console.log(event)
-    if (this.filterForm.value.state === 'all') {
-      this.pageSizeState = this.pageSize / 2
-    }
+  onPageInactiveChange(event: PageEvent): void {
+    this.currentPageInactive = event.pageIndex;
+    this.pageSizeInactive = event.pageSize;
+  }
+
+  onPageActiveChange(event: PageEvent): void {
+    this.currentPageActive = event.pageIndex;
+    this.pageSizeActive = event.pageSize;
   }
 
   cleanFilter() {
     this.filterForm.reset({ search: '', state: 'active' });
-    this.currentPage = 0;
-    this.pageSize = this.pageSizeState = 8;  // Restablecer el tamaño de la página a su valor inicial (puedes cambiarlo a cualquier tamaño predeterminado que prefieras)
+    this.currentPageActive = this.currentPageInactive = 0;
+    this.pageSizeActive = this.pageSizeInactive = 8;
 
-      let pageEvent: PageEvent = {
-        pageIndex: 0,
-        pageSize: this.pageSize, // Tamaño de la página
-        length: this.vehiclesFilter.length  // Total de vehículos
+    let pageEvent: PageEvent = {
+      pageIndex: 0,
+      pageSize: this.pageSizeActive,
+      length: this.vehiclesActive.length,
+    };
 
-      };
-
-      this.onPageChange(pageEvent);
-
-      this.cdr.detectChanges();
+    this.onPageInactiveChange(pageEvent);
+    this.onPageActiveChange(pageEvent);
 
   }
-
-  get totalVehicles(): number {
-    return this.vehiclesFilter.length;
-  }
-
-
 }

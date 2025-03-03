@@ -1,47 +1,123 @@
-<form [formGroup]="filterForm" class="row justify-content-between align-items-center mb-5">
-  <input formControlName="search" class="col-md-8 form-control filter-bar px-3 py-2" type="text" placeholder="Busca por matrícula, tipo de vehículo o color" />
+<form
+  [formGroup]="filterForm"
+  class="row justify-content-between align-items-center mb-5"
+>
+  <input
+    formControlName="search"
+    class="col-md-8 form-control filter-bar px-3 py-2"
+    type="text"
+    placeholder="Busca por matrícula, tipo de vehículo o color"
+  />
 
   <div class="col-4 row align-items-center justify-content-end">
-    <div class="col-6">
-      <select formControlName="state" class="filter-bar custom-selectt mx-1">
+    <div class="col-6 pl-0 select-container" [class.open]="isOpen">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+      <select
+        formControlName="state"
+        (click)="toggleSelect()"
+        class="filter-bar custom-selectt"
+      >
         <option value="active">Activo</option>
         <option value="inactive">Inactivo</option>
         <option value="all">Todos</option>
       </select>
     </div>
 
-    <button (click)="cleanFilter()" class="col-6 clean-filter">Limpiar filtros</button>
+    <div class="col-6 pl-0">
+      <button (click)="cleanFilter()" class="clean-filter">
+        Limpiar filtros
+      </button>
+    </div>
   </div>
 </form>
 
 <!-- Vehículos activos -->
-<div *ngIf="isActive && vehiclesActive.slice(currentPage * pageSizeState, (currentPage + 1) * pageSizeState).length != 0 " class="mb-5">
+<div
+  *ngIf="
+    isActive &&
+    vehiclesActive.slice(
+      currentPageActive * pageSizeActive,
+      (currentPageActive + 1) * pageSizeActive
+    ).length != 0
+  "
+  class="mb-5"
+>
   <h4 class="title mb-5">Coches activos</h4>
   <div class="row ml-4 w-100">
     <app-card-view
-      *ngFor="let vehicle of vehiclesActive.slice(currentPage * pageSizeState, (currentPage + 1) * pageSizeState)"
+      *ngFor="
+        let vehicle of (
+          vehiclesActive | searchVehicle: filterForm.value.search
+        ).slice(
+          currentPageActive * pageSizeActive,
+          (currentPageActive + 1) * pageSizeActive
+        )
+      "
       class="col-lg-3 col-sm-6 mb-4"
-      [vehicle]="vehicle">
+      [vehicle]="vehicle"
+    >
     </app-card-view>
   </div>
 </div>
+<mat-paginator
+  class="mb-5"
+  *ngIf="
+    isActive &&
+    vehiclesActive.slice(
+      currentPageActive * pageSizeActive,
+      (currentPageActive + 1) * pageSizeActive
+    ).length != 0
+  "
+  [length]="(vehiclesActive | searchVehicle: filterForm.value.search).length"
+  [pageSize]="pageSizeActive"
+  [pageSizeOptions]="[8, 16, 64, 128]"
+  (page)="onPageActiveChange($event)"
+  aria-label="Selecciona página"
+>
+</mat-paginator>
 
 <!-- Vehículos inactivos -->
-<div *ngIf="isInactive && vehiclesInactive.slice(currentPage * pageSizeState, (currentPage + 1) * pageSizeState).length != 0" class="mb-5">
+<div
+  *ngIf="
+    isInactive &&
+    vehiclesInactive.slice(
+      currentPageInactive * pageSizeInactive,
+      (currentPageInactive + 1) * pageSizeInactive
+    ).length != 0
+  "
+  class="mb-5"
+>
   <h4 class="title mb-5">Coches inactivos</h4>
   <div class="row ml-4 w-100">
     <app-card-view
-      *ngFor="let vehicle of vehiclesInactive.slice(currentPage * pageSizeState, (currentPage + 1) * pageSizeState)"
+      *ngFor="
+        let vehicle of (
+          vehiclesInactive | searchVehicle: filterForm.value.search
+        ).slice(
+          currentPageInactive * pageSizeInactive,
+          (currentPageInactive + 1) * pageSizeInactive
+        )
+      "
       class="col-lg-3 col-sm-6 mb-4"
-      [vehicle]="vehicle">
+      [vehicle]="vehicle"
+    >
     </app-card-view>
   </div>
 </div>
 
 <!-- Paginador -->
-<mat-paginator [length]="totalVehicles"
-               [pageSize]="pageSize"
-               [pageSizeOptions]="[8, 16, 64, 128]"
-               (page)="onPageChange($event)"
-               aria-label="Selecciona página">
+<mat-paginator
+  *ngIf="
+    isInactive &&
+    vehiclesInactive.slice(
+      currentPageInactive * pageSizeInactive,
+      (currentPageInactive + 1) * pageSizeInactive
+    ).length != 0
+  "
+  [length]="(vehiclesInactive | searchVehicle: filterForm.value.search).length"
+  [pageSize]="pageSizeInactive"
+  [pageSizeOptions]="[8, 16, 64, 128]"
+  (page)="onPageInactiveChange($event)"
+  aria-label="Selecciona página"
+>
 </mat-paginator>

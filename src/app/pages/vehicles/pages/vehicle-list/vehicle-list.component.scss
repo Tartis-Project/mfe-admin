@@ -31,20 +31,28 @@
   padding-top: 5.5px;
   padding-bottom: 5.5px;
   width: 100%;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
- text-align: center;
-
+  text-align: center;
 }
-
-
-
-.select-wrapper {
+.select-container {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
-
+.select-container mat-icon {
+  position: absolute;
+  right: 25%;
+  font-size: 22px;
+  color: #000000cc;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+.select-container.open mat-icon {
+  transform: rotate(180deg);
+}
 
 .filter-bar:focus,
 .clean-filter:focus {
@@ -52,4 +60,6 @@
   box-shadow: none;
 }
 
-
+mat-paginator {
+  background-color: white;
+}
