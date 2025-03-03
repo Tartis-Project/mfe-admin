@@ -26,7 +26,6 @@ export class ParkingComponent implements OnInit {
   }
 
   loadFloor() {
-    console.log('hola');
     this.parkingService.getFloors().subscribe((floors) => {
       this.floors = floors;
     });
