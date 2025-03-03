@@ -6,11 +6,11 @@
 }
 
 .text-primary {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 .text-secondary {
-  color: var(--secondary-color);
+  color: var(--secondary-color) !important;
 }
 
 .bg-primary {
@@ -37,7 +37,7 @@
   border: none;
   border-radius: 1px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: 0.5s ease-in-out;
 
   &:hover {
     opacity: 0.8;
@@ -51,12 +51,46 @@
   border: none;
   border-radius: 1px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: 0.5s ease-in-out;
 
   &:hover {
     opacity: 0.8;
   }
 }
+
+// .button-primary {
+//   background-color: var(--primary-color);
+//   color: var(--white-color);
+//   padding: 10px 15px;
+//   border: none;
+//   border-radius: 1px;
+//   cursor: pointer;
+//   transition: 0.3s ease-in-out;
+
+//   &:hover {
+//     filter: drop-shadow(0 0 0.1rem var(--primary-color));
+//     background-color: var(--white-color);
+//     color: var(--primary-color);
+//     border: 1px solid var(--primary-color);
+//   }
+// }
+
+// .button-secondary {
+//   background-color: var(--secondary-color);
+//   color: var(--white-color);
+//   padding: 10px 15px;
+//   border: none;
+//   border-radius: 1px;
+//   cursor: pointer;
+//   transition: 0.3s ease-in-out;
+
+//   &:hover {
+//     filter: drop-shadow(0 0 0.1rem var(--secondary-color));
+//     background-color: var(--white-color);
+//     color: var(--secondary-color);
+//     border: 1px solid var(--secondary-color);
+//   }
+// }
 
 body {
   height: 100%;

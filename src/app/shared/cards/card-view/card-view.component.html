@@ -18,23 +18,23 @@
 
   <ng-template #otherTitles>
     <h4 class="title" *ngIf="isTarifas(); else vehicleTitle">
-      {{ rate.name }}
+      Tarifa {{ rate.name }}
     </h4>
 
     <div *ngIf="isTarifas()">
       <p>
         <strong>Precio plaza (por minuto) -</strong>
-        {{ rate.pricePerMinute.toFixed(3) }} €
+        {{ rate.pricePerMinute | euroCurrency:3 }}
       </p>
-      <p><strong>Total por hora -</strong> {{ totalPorHora.toFixed(2) }} €</p>
+      <p><strong>Total por hora -</strong> {{ totalPorHora | euroCurrency }}</p>
     </div>
   </ng-template>
 
   <ng-template #vehicleTitle>
-    <h4 class="title">Seat León</h4>
+    <h4 class="title">{{ vehicle.model }}</h4>
     <div *ngIf="isVehicles()">
-      <p><strong>Matrícula -</strong> B34H XYZ</p>
-      <p><strong>Color -</strong> Negro</p>
+      <p><strong>Matrícula - </strong>{{ vehicle.licensePlate }}</p>
+      <p><strong>Color - </strong>{{ vehicle.color }}</p>
     </div>
   </ng-template>
 
@@ -46,7 +46,7 @@
       *ngIf="isVehicles()"
       mat-icon-button
       class="edit-btn"
-      (click)="viewVehicleDetail()"
+      (click)="viewVehicleDetail( vehicle.id )"
     >
       <mat-icon class="button-primary">visibility</mat-icon>
     </button>

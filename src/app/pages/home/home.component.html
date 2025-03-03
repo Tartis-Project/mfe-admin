@@ -1,3 +1,54 @@
-<section class="home-container">
-  <h2>Bienvenido a AutoParking</h2>
-</section>
+<div class="row d-flex justify-content-between w-100">
+  <div class="card-spot">
+    <h5 class="title">Plazas disponibles</h5>
+
+    <div class="floors d-flex flex-wrap">
+      <ng-container *ngIf="floors$ | async as floors">
+        <ng-container *ngIf="floors.length > 0; else noFloors">
+          <div class="d-flex" *ngFor="let floor of floors">
+            <p>
+              <strong>Planta {{ floor.number }} - </strong>
+              <span class="mr-3">
+                {{ floor.isOperative ? (floor.numberOfSpots) : 'No disponible' }}
+              </span>
+            </p>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <ng-template #noFloors>
+        <p class="no-plants text-muted">No hay plantas</p>
+      </ng-template>
+    </div>
+
+
+    <div class="buttons d-flex justify-content-end w-100">
+      <button class="button-primary mr-3 mb-3" routerLink="/parking">Gestionar</button>
+    </div>
+  </div>
+
+  <div class="card-name">
+    <h5 class="title">
+      Bienvenido <strong>Nombre!</strong>
+    </h5>
+    <div class="logout d-flex justify-content-start align-content-center w-100">
+      <p class="text-secondary">Cerrar sesión <mat-icon>logout</mat-icon></p>
+    </div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center mt-5 w-100">
+  <div class="card-vehicles">
+    <h5 class="title">
+      Últimos movimientos
+    </h5>
+
+    <div class="movements d-flex flex-column">
+      <div class="row movement-row">1</div>
+      <div class="row movement-row">2</div>
+      <div class="row movement-row">3</div>
+      <div class="row movement-row">4</div>
+    </div>
+
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 import { SearchVehiclePipe } from '../../../../core/pipes/search-vehicle.pipe';
 
+
 @Component({
   selector: 'app-vehicle-list',
   standalone: true,
@@ -17,6 +18,7 @@ import { SearchVehiclePipe } from '../../../../core/pipes/search-vehicle.pipe';
     SearchVehiclePipe,
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntl }],
+
   templateUrl: './vehicle-list.component.html',
   styleUrl: './vehicle-list.component.scss',
 })
