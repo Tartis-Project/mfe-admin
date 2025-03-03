@@ -25,7 +25,7 @@ export class ConfirmDialogComponent implements OnInit {
     readonly dialogRef: MatDialogRef<ConfirmDialogComponent>,
     private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: { dialogData: any },
-  ) {}
+  ) { }
 
   floor!: Floor;
   rate!: Rate;
