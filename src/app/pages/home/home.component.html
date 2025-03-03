@@ -3,13 +3,19 @@
     <h5 class="title">Plazas disponibles</h5>
 
     <div class="floors d-flex flex-wrap">
-      <ng-container *ngIf="floors$ | async as floors">
+      <ng-container *ngIf="floorsWithOccupiedSpots$ | async as floors">
         <ng-container *ngIf="floors.length > 0; else noFloors">
           <div class="d-flex" *ngFor="let floor of floors">
             <p>
               <strong>Planta {{ floor.number }} - </strong>
-              <span class="mr-3">
-                {{ floor.isOperative ? (floor.numberOfSpots) : 'No disponible' }}
+              <span
+                class="mr-3"
+                [ngClass]="{
+                  'text-primary': floor.isOperative && floor.occupiedSpots < floor.numberOfSpots,
+                  'text-secondary': floor.isOperative && floor.occupiedSpots === floor.numberOfSpots
+                }"
+              >
+                {{ floor.isOperative ? (floor.occupiedSpots + '/' + floor.numberOfSpots) : 'No disponible' }}
               </span>
             </p>
           </div>
@@ -20,7 +26,6 @@
         <p class="no-plants text-muted">No hay plantas</p>
       </ng-template>
     </div>
-
 
     <div class="buttons d-flex justify-content-end w-100">
       <button class="button-primary mr-3 mb-3" routerLink="/parking">Gestionar</button>
