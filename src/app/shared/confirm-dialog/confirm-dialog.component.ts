@@ -6,6 +6,8 @@ import { Floor } from '../../pages/parking/interfaces/floor.model';
 import { Rate } from '../../pages/rates/interfaces/rates.model';
 import { ParkingService } from '../../pages/parking/services/parking.service';
 import { RateService } from '../../pages/rates/services/rates.service';
+import { forkJoin } from 'rxjs';
+import { ParkingSpotService } from '../../pages/parking/services/parkingSpot.service';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -17,6 +19,7 @@ import { RateService } from '../../pages/rates/services/rates.service';
 export class ConfirmDialogComponent implements OnInit {
   constructor(
     private parkingService: ParkingService,
+    private parkingSpotService: ParkingSpotService,
     private rateService: RateService,
     readonly dialogRef: MatDialogRef<ConfirmDialogComponent>,
     private router: Router,
@@ -51,9 +54,7 @@ export class ConfirmDialogComponent implements OnInit {
   confirm() {
     switch (true) {
       case this.isPlazas():
-        this.parkingService.deleteFloor(this.floor.id).subscribe(() => {
-          this.onNoClick();
-        });
+        this.deleteFloor(this.floor.id);
         break;
       case this.isTarifas():
         this.rateService.deleteRate(this.rate.id).subscribe(() => {
@@ -68,5 +69,31 @@ export class ConfirmDialogComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  deleteFloor(floorId: string) {
+    this.parkingSpotService.getSpotsByFloorId(floorId).subscribe((spots) => {
+      console.log('Plazas relacionadas:', spots);
+      const deleteSpotRequests = spots.map((spot) =>
+        this.parkingSpotService.deleteParkingSpot(spot.id),
+      );
+      forkJoin(deleteSpotRequests).subscribe({
+        next: () => {
+          console.log('Todas las plazas relacionadas han sido eliminadas');
+          this.parkingService.deleteFloor(floorId).subscribe({
+            next: () => {
+              console.log('Planta eliminada:', floorId);
+              this.onNoClick();
+            },
+            error: (err) => {
+              console.error('Error al eliminar la planta:', err);
+            },
+          });
+        },
+        error: (err) => {
+          console.error('Error al eliminar las plazas:', err);
+        },
+      });
+    });
   }
 }

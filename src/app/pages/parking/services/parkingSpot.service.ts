@@ -20,6 +20,10 @@ export class ParkingSpotService {
     return this.http.get<ParkingSpot>(`${this.apiUrl}/${id}`);
   }
 
+  getSpotsByFloorId(floorId: string) {
+    return this.http.get<ParkingSpot[]>(`${this.apiUrl}?idFloor=${floorId}`);
+  }
+
   addParkingSpot(ParkingSpot: ParkingSpot): Observable<ParkingSpot> {
     return this.http.post<ParkingSpot>(this.apiUrl, ParkingSpot);
   }
