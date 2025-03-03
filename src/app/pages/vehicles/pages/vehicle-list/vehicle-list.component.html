@@ -1,1 +1,9 @@
-<app-card-view></app-card-view>
+<div class="row ml-4 w-100">
+    <app-card-view
+      [vehicle]="vehicle"
+      (eventLoad)="loadVehicles()"
+      class="col-lg-6 col-sm-12 mb-4"
+      *ngFor="let vehicle of vehicles"
+    >
+    </app-card-view>
+  </div>

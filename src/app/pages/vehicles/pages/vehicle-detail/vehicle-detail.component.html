@@ -3,6 +3,9 @@
   Volver
 </a>
 
-<div class="container-detalle">
-  <app-card-detail />
+<div class="mt-10 mx-5">
+  <app-card-detail
+    [vehicle]="vehicle"
+    (vehicleUpdated)="onVehicleUpdated($event)"
+  />
 </div>

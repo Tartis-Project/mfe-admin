@@ -12,6 +12,9 @@ import { CardFormComponent } from '../../../../shared/cards/card-form/card-form.
 import { ParkingService } from '../../services/parking.service';
 import { Floor } from '../../interfaces/floor.model';
 import { greaterThanZeroValidator } from '../../../../core/validators/greater-than-zero.validator';
+import { ParkingSpot } from '../../interfaces/parkingSpot.model';
+import { ParkingSpotService } from '../../services/parkingSpot.service';
+import { forkJoin, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-parking-form',
@@ -22,12 +25,17 @@ import { greaterThanZeroValidator } from '../../../../core/validators/greater-th
 })
 export class ParkingFormComponent implements OnInit {
   @Input() floor!: Floor;
+
+  //parkingSpot!: ParkingSpot;
+  arrayParkingSpot: ParkingSpot[] = [];
+
   public parkingForm: FormGroup;
 
   constructor(
     private dialogRef: MatDialogRef<CardFormComponent>,
     private fb: FormBuilder,
     private parkingService: ParkingService,
+    private parkingSpotService: ParkingSpotService,
   ) {
     this.parkingForm = this.fb.group({
       number: ['', [Validators.required, greaterThanZeroValidator()]],
@@ -46,11 +54,35 @@ export class ParkingFormComponent implements OnInit {
   addFloor() {
     if (this.parkingForm.valid) {
       const newFloor = this.parkingForm.value;
-      console.log(newFloor);
-      this.parkingService.addFloor(newFloor).subscribe((res) => {
-        console.log(res);
-        this.onNoClick();
-      });
+      this.parkingSpotService
+        .getLastSpotNumber()
+        .subscribe((lastSpotNumber) => {
+          console.log('Último número de plaza:', lastSpotNumber);
+          this.parkingService.addFloor(newFloor).subscribe((res) => {
+            this.onNoClick();
+            console.log('idPlanta ' + res.id);
+            const parkingSpots: ParkingSpot[] = [];
+            for (let index = 0; index < newFloor.numberOfSpots; index++) {
+              const auxSpot = {
+                idFloor: res.id,
+                spotNumber: lastSpotNumber + index + 1,
+                isOccupied: false,
+              } as ParkingSpot;
+              parkingSpots.push(auxSpot);
+            }
+            const addSpotRequests = parkingSpots.map((spot) =>
+              this.parkingSpotService.addParkingSpot(spot),
+            );
+            forkJoin(addSpotRequests).subscribe({
+              next: (responses) => {
+                console.log('Todas las plazas añadidas:', responses);
+              },
+              error: (err) => {
+                console.error('Error al añadir una o más plazas:', err);
+              },
+            });
+          });
+        });
     }
   }
 

@@ -1,53 +1,49 @@
-<h2 mat-dialog-title>Formulario Vehiculo</h2>
+<h2 mat-dialog-title>Formulario Vehículo</h2>
 
 <mat-dialog-content class="overflow-hidden">
   <form [formGroup]="vehicleForm">
     <div class="horizontal-input">
       <mat-form-field class="w-100">
-        <mat-label>Marca</mat-label>
-        <input matInput type="text" formControlName="brand" />
+        <mat-label>Matrícula</mat-label>
+        <input matInput type="text" formControlName="licensePlate" required />
+        <mat-error *ngIf="vehicleForm.get('licensePlate')">
+          La matrícula es requerida.
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="w-100">
         <mat-label>Modelo</mat-label>
-        <input matInput type="text" formControlName="model" />
+        <input matInput type="text" formControlName="model" required />
+        <mat-error *ngIf="vehicleForm.get('model')">
+          El modelo es requerido.
+        </mat-error>
       </mat-form-field>
     </div>
 
     <mat-form-field class="w-100">
       <mat-label>Tipo</mat-label>
-      <mat-select>
-        <mat-option value="car">Coche</mat-option>
-        <mat-option value="motorbike">Moto</mat-option>
-        <mat-option value="sidecar">Sidecar</mat-option>
+      <mat-select formControlName="type" required>
+        <mat-option value="Coche">Coche</mat-option>
+        <mat-option value="Moto">Moto</mat-option>
       </mat-select>
+      <mat-error *ngIf="vehicleForm.get('type')">
+        El tipo es requerido.
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field class="w-100">
-      <mat-label>Matricula</mat-label>
-      <input matInput type="text" formControlName="license" />
+      <mat-label>Color</mat-label>
+      <input matInput type="text" formControlName="color" required />
+      <mat-error *ngIf="vehicleForm.get('color')">
+        El color es requerido.
+      </mat-error>
     </mat-form-field>
 
-    <div class="horizontal-input">
-      <mat-form-field class="w-100">
-        <mat-label>Color</mat-label>
-        <input matInput type="text" formControlName="color" />
-      </mat-form-field>
-
-      <mat-form-field class="w-100">
-        <mat-label>Nº Puertas</mat-label>
-        <input
-          matInput
-          type="number"
-          class="input-type-number"
-          formControlName="doors"
-        />
-      </mat-form-field>
-    </div>
+    <mat-checkbox formControlName="isActive">Activo</mat-checkbox>
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions class="actions">
-  <button class="button-primary" cdkFocusInitial>Crear</button>
+  <button class="button-primary" [disabled]="vehicleForm.invalid" (click)="updateVehicle()">Editar</button>
   <button class="button-secondary" (click)="onNoClick()">Cancelar</button>
 </mat-dialog-actions>
