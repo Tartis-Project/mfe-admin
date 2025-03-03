@@ -1,12 +1,6 @@
 {
   "rates": [],
-  "floors": [
-    {
-      "number": 1,
-      "numberOfSpots": 120,
-      "isOperative": true,
-      "id": "0949"
-    }
-  ],
+  "floors": [],
+  "spots": [],
   "vehicles": []
 }
