@@ -157,7 +157,7 @@
       "id": "1faf",
       "idFloor": "8617",
       "spotNumber": 22,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "1317",
@@ -181,7 +181,7 @@
       "id": "5f56",
       "idFloor": "8617",
       "spotNumber": 26,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "ee3b",
@@ -661,7 +661,7 @@
       "id": "6dbd",
       "idFloor": "8617",
       "spotNumber": 106,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "71a7",
@@ -691,13 +691,13 @@
       "id": "34c7",
       "idFloor": "8617",
       "spotNumber": 111,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "d29f",
       "idFloor": "8617",
       "spotNumber": 112,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "c5db",
@@ -745,7 +745,7 @@
       "id": "a7a7",
       "idFloor": "8617",
       "spotNumber": 120,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "f342",
@@ -1357,7 +1357,7 @@
       "id": "8b75",
       "idFloor": "e16b",
       "spotNumber": 222,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "0fcb",
@@ -1375,7 +1375,7 @@
       "id": "21b4",
       "idFloor": "e16b",
       "spotNumber": 225,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "45a6",
@@ -1393,7 +1393,7 @@
       "id": "e822",
       "idFloor": "e16b",
       "spotNumber": 228,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "ad83",
@@ -1435,7 +1435,7 @@
       "id": "c4cf",
       "idFloor": "e16b",
       "spotNumber": 235,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "db91",
@@ -1453,7 +1453,7 @@
       "id": "46ce",
       "idFloor": "e16b",
       "spotNumber": 238,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "5e0d",
@@ -1675,7 +1675,7 @@
       "id": "33a1",
       "idFloor": "e16b",
       "spotNumber": 275,
-      "isOccupied": false
+      "isOccupied": true
     },
     {
       "id": "7ee4",
