@@ -15,11 +15,10 @@
 2. [Características](#-características)
 3. [Tecnologías Utilizadas](#-tecnologías-utilizadas)
 4. [Instalación](#-instalación)
-5. [Configuración](#-configuración)
-6. [Uso](#-uso)
-7. [Autenticación con Keycloak](#-autenticación-con-keycloak)
-8. [Estructura del Proyecto](#-estructura-del-proyecto)
-9. [Endpoints API](#-endpoints-api)
+5. [Uso](#-uso)
+6. [Estructura del Proyecto](#-estructura-del-proyecto)
+7. [Endpoints API](#-endpoints-api)
+8. [Próximas Mejoras](#-próxiimas-mejoras)
 
 ---
 
