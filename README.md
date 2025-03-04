@@ -1,4 +1,8 @@
-# 🚀 AutoParking - Frontend del Sistema de Gestión de Estacionamiento
+<p align="center">
+  <img src="src/assets/imagenparking.png" alt="AutoParking" width="200">
+</p>
+
+#  AutoParking - Frontend del Sistema de Gestión de Estacionamiento
 
 **Versión:** 1.0  
 📅 _Última actualización: Marzo 2025_  
