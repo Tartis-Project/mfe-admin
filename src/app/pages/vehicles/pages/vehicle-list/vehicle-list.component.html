@@ -53,6 +53,7 @@
           (currentPageActive + 1) * pageSizeActive
         )
       "
+      (eventLoad)="loadVehicles()"
       class="col-lg-3 col-sm-6 mb-4"
       [vehicle]="vehicle"
     >
@@ -68,6 +69,7 @@
       (currentPageActive + 1) * pageSizeActive
     ).length != 0
   "
+
   [length]="(vehiclesActive | searchVehicle: filterForm.value.search).length"
   [pageSize]="pageSizeActive"
   [pageSizeOptions]="[8, 16, 64, 128]"
@@ -98,6 +100,7 @@
           (currentPageInactive + 1) * pageSizeInactive
         )
       "
+      (eventLoad)="loadVehicles()"
       class="col-lg-3 col-sm-6 mb-4"
       [vehicle]="vehicle"
     >
