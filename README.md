@@ -18,7 +18,7 @@
 5. [Uso](#-uso)
 6. [Estructura del Proyecto](#-estructura-del-proyecto)
 7. [Endpoints API](#-endpoints-api)
-8. [Próximas Mejoras](#-próxiimas-mejoras)
+8. [Próximas Mejoras](#-próximas-mejoras)
 
 ---
 
