@@ -4,7 +4,19 @@
     <p><strong>Matrícula - </strong>{{ vehicle.licensePlate }}</p>
     <p><strong>Color - </strong>{{ vehicle.color }}</p>
     <p><strong>Tipo vehículo - </strong>{{ vehicle.type }}</p>
-    <p><strong>isActive - </strong>{{ vehicle.isActive }}</p>
+    <p><strong>Estado - </strong>{{ vehicle.isActive ? 'Activo' : 'Inactivo' }}</p>
+    <div *ngIf="registry">
+      <p>
+        <strong>Plaza - </strong>{{ parkingSpot?.spotNumber }}
+      </p>
+      <p>
+        <strong>Tarifa - </strong>{{ rate?.name || "" }}
+      </p>
+      <p>
+        <strong>Entrada - </strong
+        >{{ registry.entryTime | date: "dd/MM/yyyy HH:mm:ss" }}
+      </p>
+    </div>
   </div>
   <div class="actions">
     <button (click)="openDialog()" mat-icon-button class="edit-btn">
@@ -17,6 +29,6 @@
   </div>
 </div>
 
-<div class="card" *ngIf="vehicle==undefined">
+<div class="card" *ngIf="vehicle == undefined">
   <p>El vehículo no se encuentra disponible</p>
 </div>

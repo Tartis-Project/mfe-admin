@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
@@ -6,6 +6,9 @@ import { MaterialModule } from '../../../material/material.module';
 import { CardFormComponent } from '../card-form/card-form.component';
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 import { VehicleService } from '../../../pages/vehicles/services/vehicle.service';
+import { Registry } from '../../registry/interfaces/registry.model';
+import { Rate } from '../../../pages/rates/interfaces/rates.model';
+import { ParkingSpot } from '../../../pages/parking/interfaces/parkingSpot.model';
 
 @Component({
   selector: 'app-card-detail',
@@ -16,11 +19,18 @@ import { VehicleService } from '../../../pages/vehicles/services/vehicle.service
 })
 export class CardDetailComponent {
   @Input() vehicle!: Vehicle;
+  @Input() registry?: Registry;
   @Output() vehicleUpdated = new EventEmitter<Vehicle>();
+
+  @Input() rate?: Rate;
+  @Input() parkingSpot?: ParkingSpot;
 
   constructor(
     private vehicleService: VehicleService,
-    readonly dialog: MatDialog) {}
+    readonly dialog: MatDialog,
+  ) {
+    console.log(this.registry, this.vehicle);
+  }
 
   openDialog(): void {
     let dialogData: any = {};
@@ -38,7 +48,7 @@ export class CardDetailComponent {
       this.vehicleService.getVehicleById(dialogData.id).subscribe({
         next: (updatedVehicle) => {
           if (updatedVehicle) {
-            this.vehicleUpdated.emit(updatedVehicle); 
+            this.vehicleUpdated.emit(updatedVehicle);
           }
         },
         error: (error) => {
@@ -46,7 +56,7 @@ export class CardDetailComponent {
         },
         complete: () => {
           console.log('Llamada a getVehicleById completada');
-        }
+        },
       });
     });
   }
