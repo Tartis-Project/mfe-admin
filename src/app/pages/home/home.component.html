@@ -8,13 +8,11 @@
           <div class="d-flex" *ngFor="let floor of floors">
             <p>
               <strong>Planta {{ floor.number }} - </strong>
-              <span
-                class="mr-3"
-                [ngClass]="{
-                  'text-primary': floor.isOperative && floor.occupiedSpots < floor.numberOfSpots,
-                  'text-secondary': floor.isOperative && floor.occupiedSpots === floor.numberOfSpots
-                }"
-              >
+              <span class="mr-3"
+                    [ngClass]="{
+                      'text-primary': floor.isOperative && floor.occupiedSpots < floor.numberOfSpots,
+                      'text-secondary': floor.isOperative && floor.occupiedSpots === floor.numberOfSpots
+                    }">
                 {{ floor.isOperative ? (floor.occupiedSpots + '/' + floor.numberOfSpots) : 'No disponible' }}
               </span>
             </p>
