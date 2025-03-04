@@ -1,10 +1,11 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
+
 import { CardViewComponent } from '../../../../shared/cards/card-view/card-view.component';
 import { VehicleService } from '../../services/vehicle.service';
 import { Vehicle } from '../../interfaces/vehicle.model';
 import { MaterialModule } from '../../../../material/material.module';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 import { SearchVehiclePipe } from '../../../../core/pipes/search-vehicle.pipe';
 
 
@@ -21,8 +22,11 @@ import { SearchVehiclePipe } from '../../../../core/pipes/search-vehicle.pipe';
 
   templateUrl: './vehicle-list.component.html',
   styleUrl: './vehicle-list.component.scss',
+  encapsulation: ViewEncapsulation.None
+
 })
 export class VehicleListComponent implements OnInit {
+
   public filterForm: FormGroup;
   vehiclesActive: Vehicle[] = [];
   vehiclesInactive: Vehicle[] = [];

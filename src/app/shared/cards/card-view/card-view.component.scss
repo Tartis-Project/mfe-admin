@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 20rem;
+  min-height: 15rem;
 
   .title {
     color: #000000ba;
@@ -96,11 +96,5 @@
 
     --mdc-checkbox-focus-indicator-color: var(--primary-color);
     --mdc-checkbox-selected-focus-icon-color: var(--primary-color);
-  }
-}
-
-@media (max-width: 992px) {
-  .card {
-    min-height: 10rem;
   }
 }
