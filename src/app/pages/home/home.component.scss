@@ -16,7 +16,7 @@
     width: fit-content;
   }
 
-  .logout{
+  .logout {
 
     p {
       font-size: 14px;
@@ -111,5 +111,23 @@
     .movement-row {
       height: 25px;
     }
+  }
+}
+
+
+tbody tr:first-child td {
+  border-top: none !important;
+}
+
+td {
+  border-color: #b768232d;
+}
+
+tr {
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #ff77001b;
+    cursor: pointer;
   }
 }

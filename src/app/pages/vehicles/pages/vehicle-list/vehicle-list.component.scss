@@ -3,8 +3,14 @@
   border-bottom: 1px solid #000000;
   padding-bottom: 8px;
   margin-bottom: 1rem;
+  font-size: 1.5rem !important;
   width: fit-content;
 }
+
+.card {
+  min-height: 17rem !important;
+}
+
 .filter-bar {
   border: 1px solid #d3dad1;
   color: #000000cc;
@@ -36,11 +42,13 @@
   -moz-appearance: none;
   text-align: center;
 }
+
 .select-container {
   position: relative;
   display: flex;
   align-items: center;
 }
+
 .select-container mat-icon {
   position: absolute;
   right: 25%;
@@ -50,6 +58,7 @@
   transition: transform 0.3s ease;
   z-index: 1;
 }
+
 .select-container.open mat-icon {
   transform: rotate(180deg);
 }
@@ -61,5 +70,11 @@
 }
 
 mat-paginator {
-  background-color: white;
+  background-color: white !important;
+}
+
+@media (max-width: 992px) {
+  .card {
+    min-height: 10rem;
+  }
 }
