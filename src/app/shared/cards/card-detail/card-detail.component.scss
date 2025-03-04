@@ -1,104 +1,102 @@
 .card {
-    border: 1px solid #d3dad1;
-    border-radius: 1px;
-    padding: 16px;
-    filter: drop-shadow(1px 1px 2px #90c578);
-    font-family: Arial, sans-serif;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 225px;
+  border: 1px solid #d3dad1;
+  border-radius: 1px;
+  padding: 16px;
+  filter: drop-shadow(1px 1px 2px #90c578);
+  font-family: Arial, sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 225px;
 
-    p {
-      margin: 0px;
+  p {
+    margin: 0px;
+  }
+
+  .title {
+    color: #000000ba;
+    border-bottom: 1px solid #000000ba;
+    margin: 1rem;
+    width: fit-content;
+  }
+
+  .status {
+    font-size: 16px;
+    margin-bottom: 8px;
+
+    strong {
+      font-weight: bold;
     }
-  
-    .title {
-      color: #000000ba;
-      border-bottom: 1px solid #000000ba;
-      padding-bottom: 8px;
-      margin-bottom: 1rem;
-      width: fit-content;
+  }
+
+  .availability {
+    font-size: 16px;
+    min-height: 24px;
+    visibility: hidden;
+
+    strong {
+      font-weight: bold;
     }
-  
-    .status {
-      font-size: 16px;
-      margin-bottom: 8px;
-  
-      strong {
-        font-weight: bold;
-      }
+
+    &.show {
+      visibility: visible;
     }
-  
-    .availability {
-      font-size: 16px;
-      min-height: 24px;
-      visibility: hidden;
-  
-      strong {
-        font-weight: bold;
-      }
-  
-      &.show {
-        visibility: visible;
-      }
-    }
-  
-    .actions {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 10px;
-      margin-top: auto;
-    }
-  
-    button {
-      width: 40px;
-      height: 40px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    mat-icon {
+      font-size: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 1px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s ease;
-  
-      mat-icon {
-        font-size: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-  
-      &.edit-btn {
-        background-color: var(--primary-color);
-      }
-  
-      &.delete-btn {
-        background-color: var(--secondary-color);
-      }
-  
-      &:hover {
-        opacity: 0.8;
-      }
     }
-  
-    ::ng-deep .mat-mdc-checkbox .mdc-checkbox {
-      --mdc-checkbox-selected-checkmark-color: var(--white-color);
-      --mdc-checkbox-selected-hover-checkmark-color: var(--white-color);
-      --mdc-checkbox-selected-pressed-checkmark-color: var(--white-color);
-  
-      --mdc-checkbox-selected-icon-color: var(--primary-color);
-      --mdc-checkbox-selected-hover-icon-color: var(--primary-color);
-      --mdc-checkbox-selected-pressed-icon-color: var(--primary-color);
-  
-      --mdc-checkbox-unselected-icon-color: var(--primary-color);
-      --mdc-checkbox-unselected-hover-icon-color: var(--primary-color);
-      --mdc-checkbox-unselected-pressed-icon-color: var(--primary-color);
-  
-      --mdc-checkbox-focus-indicator-color: var(--primary-color);
-      --mdc-checkbox-selected-focus-icon-color: var(--primary-color);
+
+    &.edit-btn {
+      background-color: var(--primary-color);
+    }
+
+    &.delete-btn {
+      background-color: var(--secondary-color);
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
   }
-  
+
+  ::ng-deep .mat-mdc-checkbox .mdc-checkbox {
+    --mdc-checkbox-selected-checkmark-color: var(--white-color);
+    --mdc-checkbox-selected-hover-checkmark-color: var(--white-color);
+    --mdc-checkbox-selected-pressed-checkmark-color: var(--white-color);
+
+    --mdc-checkbox-selected-icon-color: var(--primary-color);
+    --mdc-checkbox-selected-hover-icon-color: var(--primary-color);
+    --mdc-checkbox-selected-pressed-icon-color: var(--primary-color);
+
+    --mdc-checkbox-unselected-icon-color: var(--primary-color);
+    --mdc-checkbox-unselected-hover-icon-color: var(--primary-color);
+    --mdc-checkbox-unselected-pressed-icon-color: var(--primary-color);
+
+    --mdc-checkbox-focus-indicator-color: var(--primary-color);
+    --mdc-checkbox-selected-focus-icon-color: var(--primary-color);
+  }
+}

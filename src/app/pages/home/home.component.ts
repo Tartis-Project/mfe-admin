@@ -3,7 +3,7 @@ import { MaterialModule } from '../../material/material.module';
 import { Observable, combineLatest, map } from 'rxjs';
 import { Floor } from '../parking/interfaces/floor.model';
 import { ParkingService } from '../parking/services/parking.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ParkingSpot } from '../parking/interfaces/parkingSpot.model';
 import { ParkingSpotService } from '../parking/services/parkingSpot.service';
 import { Registry } from '../../shared/registry/interfaces/registry.model';
@@ -46,7 +46,9 @@ export class HomeComponent {
 
   vehiclesMap: { [id: string]: Vehicle } = {};
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.vehicles$.subscribe(vehicles => {
       this.vehiclesMap = vehicles.reduce((acc, vehicle) => {
         acc[vehicle.id] = vehicle;
@@ -63,5 +65,9 @@ export class HomeComponent {
 
   isEntry(exitTime: any): boolean {
     return !exitTime || exitTime === 'NaT' || exitTime === 'Invalid Date';
+  }
+
+  goDetail(id: string) {
+    this.router.navigate(['/vehicles', id]);
   }
 }

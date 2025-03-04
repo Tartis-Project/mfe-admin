@@ -122,3 +122,12 @@ tbody tr:first-child td {
 td {
   border-color: #b768232d;
 }
+
+tr {
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #ff77001b;
+    cursor: pointer;
+  }
+}
