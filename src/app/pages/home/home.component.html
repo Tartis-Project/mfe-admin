@@ -50,10 +50,10 @@
       <tbody>
         <ng-container *ngIf="latestMovements$ | async as movements">
           <ng-container *ngIf="movements.length > 0; else noMovements">
-            <tr *ngFor="let movement of movements">
-              <td>{{ getVehicleById(movement.idVehicle)?.licensePlate }}</td>
-              <td>{{ getVehicleById(movement.idVehicle)?.type }}</td>
-              <td>{{ getVehicleById(movement.idVehicle)?.color }}</td>
+            <tr *ngFor="let movement of movements" (click)="goDetail(movement.idVehicle)">
+              <td>{{ getVehicleById(movement.idVehicle).licensePlate }}</td>
+              <td>{{ getVehicleById(movement.idVehicle).type }}</td>
+              <td>{{ getVehicleById(movement.idVehicle).color }}</td>
               <td>
                 <span class="text-success" *ngIf="isEntry(movement.exitTime)">Entra</span>
                 <span class="text-danger" *ngIf="!isEntry(movement.exitTime)">Sale</span>
