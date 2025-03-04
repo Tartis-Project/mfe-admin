@@ -1,18 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, combineLatest, map } from 'rxjs';
 import { Registry } from '../interfaces/registry.model';
 import { environment } from '../../../../environments/environment';
+import { VehicleService } from '../../../pages/vehicles/services/vehicle.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RegistryService {
   private readonly apiUrl = environment.apiUrl + '/registries';
-  constructor(private http: HttpClient) { }
+
+  constructor(
+    private http: HttpClient,
+    private vehicleService: VehicleService
+  ) { }
 
   getRegistries(): Observable<Registry[]> {
-    return this.http.get<Registry[]>(this.apiUrl);
+    return combineLatest([
+      this.http.get<Registry[]>(this.apiUrl),
+      this.vehicleService.getVehicles()
+    ]).pipe(
+      map(([registries, vehicles]) => {
+        const vehicleIds = new Set(vehicles.map(v => v.id));
+        return registries.filter(registry => vehicleIds.has(registry.idVehicle));
+      })
+    );
   }
 
   getRegistryById(id: string): Observable<Registry> {
