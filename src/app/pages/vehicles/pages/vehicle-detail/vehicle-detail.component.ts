@@ -46,7 +46,7 @@ export class VehicleDetailComponent implements OnInit{
       this.vehicleService.getVehicleById(vehicleId).subscribe((data) => {
         if (data) {
           this.vehicle = data;
-          this.registryService.getRegistrys().subscribe(res => {
+          this.registryService.getRegistries().subscribe(res => {
             this.loadRegistries(res);
           })
 
@@ -68,7 +68,9 @@ export class VehicleDetailComponent implements OnInit{
       this.registries = registries.filter(r => r.idVehicle === this.vehicle.id);
 
       if (this.vehicle.isActive) {
-        const activeRegistry = this.registries.find(r => !r.exitTime);
+        const activeRegistry = this.registries.find(r => {
+          return !r.exitTime || isNaN(new Date(r.exitTime).getTime());
+        });
         if (activeRegistry) {
           this.registryActive = activeRegistry;
           this.getRate()
@@ -76,7 +78,10 @@ export class VehicleDetailComponent implements OnInit{
         } else {
           console.log('No se encontró un registro activo.');
         }
-        this.registries = this.registries.filter(r => r.exitTime);
+        this.registries = this.registries.filter(r => {
+          return !r.exitTime || !isNaN(new Date(r.exitTime).getTime());
+        });
+
       }
       this.registries.forEach(registry => {
         this.getRegistyDetails(registry);
