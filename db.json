@@ -1966,22 +1966,6 @@
       "isActive": false
     },
     {
-      "id": "3",
-      "licensePlate": "DEF456",
-      "model": "Ford Mustang",
-      "type": "Coche",
-      "color": "Black",
-      "isActive": true
-    },
-    {
-      "id": "4",
-      "licensePlate": "GHI789",
-      "model": "Chevrolet Silverado",
-      "type": "Coche",
-      "color": "White",
-      "isActive": true
-    },
-    {
       "id": "5",
       "licensePlate": "JKL012",
       "model": "Tesla Model S",
@@ -2108,7 +2092,7 @@
     },
     {
       "id": "034eb0b0-1c50-4c4a-95f0-072c655af328",
-      "idParkingSpot": "50",
+      "idParkingSpot": "ee60",
       "idVehicle": "1",
       "idRate": "35cd",
       "entryTime": "2025-03-02 17:36:27.612886",
@@ -2522,7 +2506,7 @@
     },
     {
       "id": "8c3b2b35-500b-4daa-af6e-3e6492ffa173",
-      "idParkingSpot": "228",
+      "idParkingSpot": "e822",
       "idVehicle": "1",
       "idRate": "35cd",
       "entryTime": "2025-02-26 11:44:27.614482",
