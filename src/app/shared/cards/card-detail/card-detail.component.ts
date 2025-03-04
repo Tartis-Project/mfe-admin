@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
@@ -9,8 +9,6 @@ import { VehicleService } from '../../../pages/vehicles/services/vehicle.service
 import { Registry } from '../../registry/interfaces/registry.model';
 import { Rate } from '../../../pages/rates/interfaces/rates.model';
 import { ParkingSpot } from '../../../pages/parking/interfaces/parkingSpot.model';
-import { ParkingSpotService } from '../../../pages/parking/services/parkingSpot.service';
-import { RateService } from '../../../pages/rates/services/rates.service';
 
 @Component({
   selector: 'app-card-detail',

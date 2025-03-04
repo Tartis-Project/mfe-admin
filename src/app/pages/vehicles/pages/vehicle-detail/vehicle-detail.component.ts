@@ -12,7 +12,6 @@ import { ParkingSpotService } from '../../../parking/services/parkingSpot.servic
 import { RateService } from '../../../rates/services/rates.service';
 import { Registry } from '../../../../shared/registry/interfaces/registry.model';
 import { RegistryService } from '../../../../shared/registry/services/registry.service';
-import { Timestamp } from 'rxjs';
 
 @Component({
   selector: 'app-vehicle-detail',
