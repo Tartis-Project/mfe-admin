@@ -7,11 +7,11 @@ import { environment } from '../../../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class RegsitryService {
+export class RegistryService {
   private readonly apiUrl = environment.apiUrl + '/registries';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getRegistrys(): Observable<Registry[]> {
+  getRegistries(): Observable<Registry[]> {
     return this.http.get<Registry[]>(this.apiUrl);
   }
 

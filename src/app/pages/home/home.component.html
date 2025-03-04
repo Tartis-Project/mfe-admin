@@ -44,16 +44,30 @@
 
 <div class="row d-flex justify-content-center mt-5 w-100">
   <div class="card-vehicles">
-    <h5 class="title">
-      Últimos movimientos
-    </h5>
+    <h5 class="title">Últimos movimientos</h5>
 
-    <div class="movements d-flex flex-column">
-      <div class="row movement-row">1</div>
-      <div class="row movement-row">2</div>
-      <div class="row movement-row">3</div>
-      <div class="row movement-row">4</div>
-    </div>
+    <table class="table text-center">
+      <tbody>
+        <ng-container *ngIf="latestMovements$ | async as movements">
+          <ng-container *ngIf="movements.length > 0; else noMovements">
+            <tr *ngFor="let movement of movements">
+              <td>{{ getVehicleById(movement.idVehicle)?.licensePlate }}</td>
+              <td>{{ getVehicleById(movement.idVehicle)?.type }}</td>
+              <td>{{ getVehicleById(movement.idVehicle)?.color }}</td>
+              <td>
+                <span class="text-success" *ngIf="isEntry(movement.exitTime)">Entra</span>
+                <span class="text-danger" *ngIf="!isEntry(movement.exitTime)">Sale</span>
+              </td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
 
+    <ng-template #noMovements>
+      <p class="text-muted text-center">No hay movimientos recientes</p>
+    </ng-template>
   </div>
+
 </div>
+
