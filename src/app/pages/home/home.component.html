@@ -1,3 +1,71 @@
-<section class="home-container">
-  <h2>Bienvenido a AutoParking</h2>
-</section>
+<div class="row d-flex justify-content-between w-100">
+  <div class="card-spot">
+    <h5 class="title">Plazas disponibles</h5>
+
+    <div class="floors d-flex flex-wrap">
+      <ng-container *ngIf="floorsWithOccupiedSpots$ | async as floors">
+        <ng-container *ngIf="floors.length > 0; else noFloors">
+          <div class="d-flex" *ngFor="let floor of floors">
+            <p>
+              <strong>Planta {{ floor.number }} - </strong>
+              <span class="mr-3"
+                    [ngClass]="{
+                      'text-primary': floor.isOperative && floor.occupiedSpots < floor.numberOfSpots,
+                      'text-secondary': floor.isOperative && floor.occupiedSpots === floor.numberOfSpots
+                    }">
+                {{ floor.isOperative ? (floor.occupiedSpots + '/' + floor.numberOfSpots) : 'No disponible' }}
+              </span>
+            </p>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <ng-template #noFloors>
+        <p class="no-plants text-muted">No hay plantas</p>
+      </ng-template>
+    </div>
+
+    <div class="buttons d-flex justify-content-end w-100">
+      <button class="button-primary mr-3 mb-3" routerLink="/parking">Gestionar</button>
+    </div>
+  </div>
+
+  <div class="card-name">
+    <h5 class="title">
+      Bienvenido <strong>Nombre!</strong>
+    </h5>
+    <div class="logout d-flex justify-content-start align-content-center w-100">
+      <p class="text-secondary">Cerrar sesión <mat-icon>logout</mat-icon></p>
+    </div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center mt-5 w-100">
+  <div class="card-vehicles">
+    <h5 class="title">Últimos movimientos</h5>
+
+    <table class="table text-center">
+      <tbody>
+        <ng-container *ngIf="latestMovements$ | async as movements">
+          <ng-container *ngIf="movements.length > 0; else noMovements">
+            <tr *ngFor="let movement of movements" (click)="goDetail(movement.idVehicle)">
+              <td>{{ getVehicleById(movement.idVehicle).licensePlate }}</td>
+              <td>{{ getVehicleById(movement.idVehicle).type }}</td>
+              <td>{{ getVehicleById(movement.idVehicle).color }}</td>
+              <td>
+                <span class="text-success" *ngIf="isEntry(movement.exitTime)">Entra</span>
+                <span class="text-danger" *ngIf="!isEntry(movement.exitTime)">Sale</span>
+              </td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
+
+    <ng-template #noMovements>
+      <p class="text-muted text-center">No hay movimientos recientes</p>
+    </ng-template>
+  </div>
+
+</div>
+

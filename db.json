@@ -1,5 +1,2517 @@
 {
-  "rates": [],
-  "floors": [],
-  "vehicles": []
+  "rates": [
+    {
+      "id": "35cd",
+      "name": "Estándar",
+      "pricePerMinute": 0.035
+    }
+  ],
+  "floors": [
+    {
+      "id": "8617",
+      "number": 1,
+      "numberOfSpots": 120,
+      "isOperative": true
+    },
+    {
+      "id": "0f67",
+      "number": 2,
+      "numberOfSpots": 100,
+      "isOperative": false
+    },
+    {
+      "id": "e16b",
+      "number": 3,
+      "numberOfSpots": 100,
+      "isOperative": true
+    }
+  ],
+  "spots": [
+    {
+      "id": "79b7",
+      "idFloor": "8617",
+      "spotNumber": 1,
+      "isOccupied": false
+    },
+    {
+      "id": "ea2f",
+      "idFloor": "8617",
+      "spotNumber": 2,
+      "isOccupied": false
+    },
+    {
+      "id": "6ec4",
+      "idFloor": "8617",
+      "spotNumber": 3,
+      "isOccupied": false
+    },
+    {
+      "id": "4763",
+      "idFloor": "8617",
+      "spotNumber": 4,
+      "isOccupied": false
+    },
+    {
+      "id": "b7a4",
+      "idFloor": "8617",
+      "spotNumber": 5,
+      "isOccupied": false
+    },
+    {
+      "id": "3c4b",
+      "idFloor": "8617",
+      "spotNumber": 6,
+      "isOccupied": false
+    },
+    {
+      "id": "2ab5",
+      "idFloor": "8617",
+      "spotNumber": 7,
+      "isOccupied": false
+    },
+    {
+      "id": "a554",
+      "idFloor": "8617",
+      "spotNumber": 8,
+      "isOccupied": false
+    },
+    {
+      "id": "9e98",
+      "idFloor": "8617",
+      "spotNumber": 9,
+      "isOccupied": false
+    },
+    {
+      "id": "453f",
+      "idFloor": "8617",
+      "spotNumber": 10,
+      "isOccupied": false
+    },
+    {
+      "id": "934c",
+      "idFloor": "8617",
+      "spotNumber": 11,
+      "isOccupied": false
+    },
+    {
+      "id": "d31f",
+      "idFloor": "8617",
+      "spotNumber": 12,
+      "isOccupied": false
+    },
+    {
+      "id": "772e",
+      "idFloor": "8617",
+      "spotNumber": 13,
+      "isOccupied": false
+    },
+    {
+      "id": "26b1",
+      "idFloor": "8617",
+      "spotNumber": 14,
+      "isOccupied": false
+    },
+    {
+      "id": "635b",
+      "idFloor": "8617",
+      "spotNumber": 15,
+      "isOccupied": false
+    },
+    {
+      "id": "eaf6",
+      "idFloor": "8617",
+      "spotNumber": 16,
+      "isOccupied": false
+    },
+    {
+      "id": "6bb9",
+      "idFloor": "8617",
+      "spotNumber": 17,
+      "isOccupied": false
+    },
+    {
+      "id": "16ac",
+      "idFloor": "8617",
+      "spotNumber": 18,
+      "isOccupied": false
+    },
+    {
+      "id": "fd34",
+      "idFloor": "8617",
+      "spotNumber": 19,
+      "isOccupied": false
+    },
+    {
+      "id": "a5ec",
+      "idFloor": "8617",
+      "spotNumber": 20,
+      "isOccupied": false
+    },
+    {
+      "id": "b9a9",
+      "idFloor": "8617",
+      "spotNumber": 21,
+      "isOccupied": false
+    },
+    {
+      "id": "1faf",
+      "idFloor": "8617",
+      "spotNumber": 22,
+      "isOccupied": true
+    },
+    {
+      "id": "1317",
+      "idFloor": "8617",
+      "spotNumber": 23,
+      "isOccupied": false
+    },
+    {
+      "id": "6bd5",
+      "idFloor": "8617",
+      "spotNumber": 24,
+      "isOccupied": false
+    },
+    {
+      "id": "01d0",
+      "idFloor": "8617",
+      "spotNumber": 25,
+      "isOccupied": false
+    },
+    {
+      "id": "5f56",
+      "idFloor": "8617",
+      "spotNumber": 26,
+      "isOccupied": true
+    },
+    {
+      "id": "ee3b",
+      "idFloor": "8617",
+      "spotNumber": 27,
+      "isOccupied": false
+    },
+    {
+      "id": "cf17",
+      "idFloor": "8617",
+      "spotNumber": 28,
+      "isOccupied": false
+    },
+    {
+      "id": "fc54",
+      "idFloor": "8617",
+      "spotNumber": 29,
+      "isOccupied": false
+    },
+    {
+      "id": "1372",
+      "idFloor": "8617",
+      "spotNumber": 30,
+      "isOccupied": false
+    },
+    {
+      "id": "ca48",
+      "idFloor": "8617",
+      "spotNumber": 31,
+      "isOccupied": false
+    },
+    {
+      "id": "a97e",
+      "idFloor": "8617",
+      "spotNumber": 32,
+      "isOccupied": false
+    },
+    {
+      "id": "0147",
+      "idFloor": "8617",
+      "spotNumber": 33,
+      "isOccupied": false
+    },
+    {
+      "id": "2ab1",
+      "idFloor": "8617",
+      "spotNumber": 34,
+      "isOccupied": false
+    },
+    {
+      "id": "f46d",
+      "idFloor": "8617",
+      "spotNumber": 35,
+      "isOccupied": false
+    },
+    {
+      "id": "a4fc",
+      "idFloor": "8617",
+      "spotNumber": 36,
+      "isOccupied": false
+    },
+    {
+      "id": "ec95",
+      "idFloor": "8617",
+      "spotNumber": 37,
+      "isOccupied": false
+    },
+    {
+      "id": "beab",
+      "idFloor": "8617",
+      "spotNumber": 38,
+      "isOccupied": false
+    },
+    {
+      "id": "4cb5",
+      "idFloor": "8617",
+      "spotNumber": 39,
+      "isOccupied": false
+    },
+    {
+      "id": "379c",
+      "idFloor": "8617",
+      "spotNumber": 40,
+      "isOccupied": false
+    },
+    {
+      "id": "c8d0",
+      "idFloor": "8617",
+      "spotNumber": 41,
+      "isOccupied": false
+    },
+    {
+      "id": "8315",
+      "idFloor": "8617",
+      "spotNumber": 42,
+      "isOccupied": false
+    },
+    {
+      "id": "9de5",
+      "idFloor": "8617",
+      "spotNumber": 43,
+      "isOccupied": false
+    },
+    {
+      "id": "6b64",
+      "idFloor": "8617",
+      "spotNumber": 44,
+      "isOccupied": false
+    },
+    {
+      "id": "a48d",
+      "idFloor": "8617",
+      "spotNumber": 45,
+      "isOccupied": false
+    },
+    {
+      "id": "a08f",
+      "idFloor": "8617",
+      "spotNumber": 46,
+      "isOccupied": false
+    },
+    {
+      "id": "7a88",
+      "idFloor": "8617",
+      "spotNumber": 47,
+      "isOccupied": false
+    },
+    {
+      "id": "83a2",
+      "idFloor": "8617",
+      "spotNumber": 48,
+      "isOccupied": false
+    },
+    {
+      "id": "8773",
+      "idFloor": "8617",
+      "spotNumber": 49,
+      "isOccupied": false
+    },
+    {
+      "id": "ee60",
+      "idFloor": "8617",
+      "spotNumber": 50,
+      "isOccupied": false
+    },
+    {
+      "id": "b141",
+      "idFloor": "8617",
+      "spotNumber": 51,
+      "isOccupied": false
+    },
+    {
+      "id": "5772",
+      "idFloor": "8617",
+      "spotNumber": 52,
+      "isOccupied": false
+    },
+    {
+      "id": "4b80",
+      "idFloor": "8617",
+      "spotNumber": 53,
+      "isOccupied": false
+    },
+    {
+      "id": "2e49",
+      "idFloor": "8617",
+      "spotNumber": 54,
+      "isOccupied": false
+    },
+    {
+      "id": "1260",
+      "idFloor": "8617",
+      "spotNumber": 55,
+      "isOccupied": false
+    },
+    {
+      "id": "2814",
+      "idFloor": "8617",
+      "spotNumber": 56,
+      "isOccupied": false
+    },
+    {
+      "id": "1331",
+      "idFloor": "8617",
+      "spotNumber": 57,
+      "isOccupied": false
+    },
+    {
+      "id": "33c0",
+      "idFloor": "8617",
+      "spotNumber": 58,
+      "isOccupied": false
+    },
+    {
+      "id": "e348",
+      "idFloor": "8617",
+      "spotNumber": 59,
+      "isOccupied": false
+    },
+    {
+      "id": "a7c8",
+      "idFloor": "8617",
+      "spotNumber": 60,
+      "isOccupied": false
+    },
+    {
+      "id": "10d7",
+      "idFloor": "8617",
+      "spotNumber": 61,
+      "isOccupied": false
+    },
+    {
+      "id": "9f0b",
+      "idFloor": "8617",
+      "spotNumber": 62,
+      "isOccupied": false
+    },
+    {
+      "id": "59a9",
+      "idFloor": "8617",
+      "spotNumber": 63,
+      "isOccupied": false
+    },
+    {
+      "id": "563a",
+      "idFloor": "8617",
+      "spotNumber": 64,
+      "isOccupied": false
+    },
+    {
+      "id": "3293",
+      "idFloor": "8617",
+      "spotNumber": 65,
+      "isOccupied": false
+    },
+    {
+      "id": "7f99",
+      "idFloor": "8617",
+      "spotNumber": 66,
+      "isOccupied": false
+    },
+    {
+      "id": "7cbf",
+      "idFloor": "8617",
+      "spotNumber": 67,
+      "isOccupied": false
+    },
+    {
+      "id": "22e4",
+      "idFloor": "8617",
+      "spotNumber": 68,
+      "isOccupied": false
+    },
+    {
+      "id": "a418",
+      "idFloor": "8617",
+      "spotNumber": 69,
+      "isOccupied": false
+    },
+    {
+      "id": "bf8a",
+      "idFloor": "8617",
+      "spotNumber": 70,
+      "isOccupied": false
+    },
+    {
+      "id": "41de",
+      "idFloor": "8617",
+      "spotNumber": 71,
+      "isOccupied": false
+    },
+    {
+      "id": "a099",
+      "idFloor": "8617",
+      "spotNumber": 72,
+      "isOccupied": false
+    },
+    {
+      "id": "fe4f",
+      "idFloor": "8617",
+      "spotNumber": 73,
+      "isOccupied": false
+    },
+    {
+      "id": "5d63",
+      "idFloor": "8617",
+      "spotNumber": 74,
+      "isOccupied": false
+    },
+    {
+      "id": "43a9",
+      "idFloor": "8617",
+      "spotNumber": 75,
+      "isOccupied": false
+    },
+    {
+      "id": "dc2a",
+      "idFloor": "8617",
+      "spotNumber": 76,
+      "isOccupied": false
+    },
+    {
+      "id": "602d",
+      "idFloor": "8617",
+      "spotNumber": 77,
+      "isOccupied": false
+    },
+    {
+      "id": "11f8",
+      "idFloor": "8617",
+      "spotNumber": 78,
+      "isOccupied": false
+    },
+    {
+      "id": "194f",
+      "idFloor": "8617",
+      "spotNumber": 79,
+      "isOccupied": false
+    },
+    {
+      "id": "5e96",
+      "idFloor": "8617",
+      "spotNumber": 80,
+      "isOccupied": false
+    },
+    {
+      "id": "3717",
+      "idFloor": "8617",
+      "spotNumber": 81,
+      "isOccupied": false
+    },
+    {
+      "id": "1d3b",
+      "idFloor": "8617",
+      "spotNumber": 82,
+      "isOccupied": false
+    },
+    {
+      "id": "f20a",
+      "idFloor": "8617",
+      "spotNumber": 83,
+      "isOccupied": false
+    },
+    {
+      "id": "1ccc",
+      "idFloor": "8617",
+      "spotNumber": 84,
+      "isOccupied": false
+    },
+    {
+      "id": "f38e",
+      "idFloor": "8617",
+      "spotNumber": 85,
+      "isOccupied": false
+    },
+    {
+      "id": "ac1a",
+      "idFloor": "8617",
+      "spotNumber": 86,
+      "isOccupied": false
+    },
+    {
+      "id": "8ab7",
+      "idFloor": "8617",
+      "spotNumber": 87,
+      "isOccupied": false
+    },
+    {
+      "id": "a26c",
+      "idFloor": "8617",
+      "spotNumber": 88,
+      "isOccupied": false
+    },
+    {
+      "id": "a9fc",
+      "idFloor": "8617",
+      "spotNumber": 89,
+      "isOccupied": false
+    },
+    {
+      "id": "e4c4",
+      "idFloor": "8617",
+      "spotNumber": 90,
+      "isOccupied": false
+    },
+    {
+      "id": "1961",
+      "idFloor": "8617",
+      "spotNumber": 91,
+      "isOccupied": false
+    },
+    {
+      "id": "a9f5",
+      "idFloor": "8617",
+      "spotNumber": 92,
+      "isOccupied": false
+    },
+    {
+      "id": "945a",
+      "idFloor": "8617",
+      "spotNumber": 93,
+      "isOccupied": false
+    },
+    {
+      "id": "4d6e",
+      "idFloor": "8617",
+      "spotNumber": 94,
+      "isOccupied": false
+    },
+    {
+      "id": "e43b",
+      "idFloor": "8617",
+      "spotNumber": 95,
+      "isOccupied": false
+    },
+    {
+      "id": "ef4e",
+      "idFloor": "8617",
+      "spotNumber": 96,
+      "isOccupied": false
+    },
+    {
+      "id": "9c3e",
+      "idFloor": "8617",
+      "spotNumber": 97,
+      "isOccupied": false
+    },
+    {
+      "id": "ba45",
+      "idFloor": "8617",
+      "spotNumber": 98,
+      "isOccupied": false
+    },
+    {
+      "id": "6f50",
+      "idFloor": "8617",
+      "spotNumber": 99,
+      "isOccupied": false
+    },
+    {
+      "id": "a2cf",
+      "idFloor": "8617",
+      "spotNumber": 100,
+      "isOccupied": false
+    },
+    {
+      "id": "e81b",
+      "idFloor": "8617",
+      "spotNumber": 101,
+      "isOccupied": false
+    },
+    {
+      "id": "6aab",
+      "idFloor": "8617",
+      "spotNumber": 102,
+      "isOccupied": false
+    },
+    {
+      "id": "945d",
+      "idFloor": "8617",
+      "spotNumber": 103,
+      "isOccupied": false
+    },
+    {
+      "id": "49d7",
+      "idFloor": "8617",
+      "spotNumber": 104,
+      "isOccupied": false
+    },
+    {
+      "id": "f194",
+      "idFloor": "8617",
+      "spotNumber": 105,
+      "isOccupied": false
+    },
+    {
+      "id": "6dbd",
+      "idFloor": "8617",
+      "spotNumber": 106,
+      "isOccupied": true
+    },
+    {
+      "id": "71a7",
+      "idFloor": "8617",
+      "spotNumber": 107,
+      "isOccupied": false
+    },
+    {
+      "id": "2e0b",
+      "idFloor": "8617",
+      "spotNumber": 108,
+      "isOccupied": false
+    },
+    {
+      "id": "15dc",
+      "idFloor": "8617",
+      "spotNumber": 109,
+      "isOccupied": false
+    },
+    {
+      "id": "503d",
+      "idFloor": "8617",
+      "spotNumber": 110,
+      "isOccupied": false
+    },
+    {
+      "id": "34c7",
+      "idFloor": "8617",
+      "spotNumber": 111,
+      "isOccupied": true
+    },
+    {
+      "id": "d29f",
+      "idFloor": "8617",
+      "spotNumber": 112,
+      "isOccupied": true
+    },
+    {
+      "id": "c5db",
+      "idFloor": "8617",
+      "spotNumber": 113,
+      "isOccupied": false
+    },
+    {
+      "id": "a969",
+      "idFloor": "8617",
+      "spotNumber": 114,
+      "isOccupied": false
+    },
+    {
+      "id": "c305",
+      "idFloor": "8617",
+      "spotNumber": 115,
+      "isOccupied": false
+    },
+    {
+      "id": "41df",
+      "idFloor": "8617",
+      "spotNumber": 116,
+      "isOccupied": false
+    },
+    {
+      "id": "51dc",
+      "idFloor": "8617",
+      "spotNumber": 117,
+      "isOccupied": false
+    },
+    {
+      "id": "89c3",
+      "idFloor": "8617",
+      "spotNumber": 118,
+      "isOccupied": false
+    },
+    {
+      "id": "1f29",
+      "idFloor": "8617",
+      "spotNumber": 119,
+      "isOccupied": false
+    },
+    {
+      "id": "a7a7",
+      "idFloor": "8617",
+      "spotNumber": 120,
+      "isOccupied": true
+    },
+    {
+      "id": "f342",
+      "idFloor": "0f67",
+      "spotNumber": 121,
+      "isOccupied": false
+    },
+    {
+      "id": "51ee",
+      "idFloor": "0f67",
+      "spotNumber": 122,
+      "isOccupied": false
+    },
+    {
+      "id": "ca9c",
+      "idFloor": "0f67",
+      "spotNumber": 123,
+      "isOccupied": false
+    },
+    {
+      "id": "dac7",
+      "idFloor": "0f67",
+      "spotNumber": 124,
+      "isOccupied": false
+    },
+    {
+      "id": "26fb",
+      "idFloor": "0f67",
+      "spotNumber": 125,
+      "isOccupied": false
+    },
+    {
+      "id": "0006",
+      "idFloor": "0f67",
+      "spotNumber": 126,
+      "isOccupied": false
+    },
+    {
+      "id": "8a95",
+      "idFloor": "0f67",
+      "spotNumber": 127,
+      "isOccupied": false
+    },
+    {
+      "id": "ad37",
+      "idFloor": "0f67",
+      "spotNumber": 128,
+      "isOccupied": false
+    },
+    {
+      "id": "e8a4",
+      "idFloor": "0f67",
+      "spotNumber": 129,
+      "isOccupied": false
+    },
+    {
+      "id": "d4d2",
+      "idFloor": "0f67",
+      "spotNumber": 130,
+      "isOccupied": false
+    },
+    {
+      "id": "1483",
+      "idFloor": "0f67",
+      "spotNumber": 131,
+      "isOccupied": false
+    },
+    {
+      "id": "a7e3",
+      "idFloor": "0f67",
+      "spotNumber": 132,
+      "isOccupied": false
+    },
+    {
+      "id": "b8a3",
+      "idFloor": "0f67",
+      "spotNumber": 133,
+      "isOccupied": false
+    },
+    {
+      "id": "a8f9",
+      "idFloor": "0f67",
+      "spotNumber": 134,
+      "isOccupied": false
+    },
+    {
+      "id": "a265",
+      "idFloor": "0f67",
+      "spotNumber": 135,
+      "isOccupied": false
+    },
+    {
+      "id": "3dbe",
+      "idFloor": "0f67",
+      "spotNumber": 136,
+      "isOccupied": false
+    },
+    {
+      "id": "9d77",
+      "idFloor": "0f67",
+      "spotNumber": 137,
+      "isOccupied": false
+    },
+    {
+      "id": "63e8",
+      "idFloor": "0f67",
+      "spotNumber": 138,
+      "isOccupied": false
+    },
+    {
+      "id": "8f89",
+      "idFloor": "0f67",
+      "spotNumber": 139,
+      "isOccupied": false
+    },
+    {
+      "id": "cc46",
+      "idFloor": "0f67",
+      "spotNumber": 140,
+      "isOccupied": false
+    },
+    {
+      "id": "ab66",
+      "idFloor": "0f67",
+      "spotNumber": 141,
+      "isOccupied": false
+    },
+    {
+      "id": "bf21",
+      "idFloor": "0f67",
+      "spotNumber": 142,
+      "isOccupied": false
+    },
+    {
+      "id": "d535",
+      "idFloor": "0f67",
+      "spotNumber": 143,
+      "isOccupied": false
+    },
+    {
+      "id": "15b2",
+      "idFloor": "0f67",
+      "spotNumber": 144,
+      "isOccupied": false
+    },
+    {
+      "id": "f324",
+      "idFloor": "0f67",
+      "spotNumber": 145,
+      "isOccupied": false
+    },
+    {
+      "id": "bc3f",
+      "idFloor": "0f67",
+      "spotNumber": 146,
+      "isOccupied": false
+    },
+    {
+      "id": "58b5",
+      "idFloor": "0f67",
+      "spotNumber": 147,
+      "isOccupied": false
+    },
+    {
+      "id": "3cf3",
+      "idFloor": "0f67",
+      "spotNumber": 148,
+      "isOccupied": false
+    },
+    {
+      "id": "8a77",
+      "idFloor": "0f67",
+      "spotNumber": 149,
+      "isOccupied": false
+    },
+    {
+      "id": "3863",
+      "idFloor": "0f67",
+      "spotNumber": 150,
+      "isOccupied": false
+    },
+    {
+      "id": "b8c5",
+      "idFloor": "0f67",
+      "spotNumber": 151,
+      "isOccupied": false
+    },
+    {
+      "id": "4cdd",
+      "idFloor": "0f67",
+      "spotNumber": 152,
+      "isOccupied": false
+    },
+    {
+      "id": "4f57",
+      "idFloor": "0f67",
+      "spotNumber": 153,
+      "isOccupied": false
+    },
+    {
+      "id": "93ad",
+      "idFloor": "0f67",
+      "spotNumber": 154,
+      "isOccupied": false
+    },
+    {
+      "id": "a4c9",
+      "idFloor": "0f67",
+      "spotNumber": 155,
+      "isOccupied": false
+    },
+    {
+      "id": "47ed",
+      "idFloor": "0f67",
+      "spotNumber": 156,
+      "isOccupied": false
+    },
+    {
+      "id": "baeb",
+      "idFloor": "0f67",
+      "spotNumber": 157,
+      "isOccupied": false
+    },
+    {
+      "id": "b4c1",
+      "idFloor": "0f67",
+      "spotNumber": 158,
+      "isOccupied": false
+    },
+    {
+      "id": "4d62",
+      "idFloor": "0f67",
+      "spotNumber": 159,
+      "isOccupied": false
+    },
+    {
+      "id": "ffe0",
+      "idFloor": "0f67",
+      "spotNumber": 160,
+      "isOccupied": false
+    },
+    {
+      "id": "0f61",
+      "idFloor": "0f67",
+      "spotNumber": 161,
+      "isOccupied": false
+    },
+    {
+      "id": "11f6",
+      "idFloor": "0f67",
+      "spotNumber": 162,
+      "isOccupied": false
+    },
+    {
+      "id": "aa88",
+      "idFloor": "0f67",
+      "spotNumber": 163,
+      "isOccupied": false
+    },
+    {
+      "id": "7d92",
+      "idFloor": "0f67",
+      "spotNumber": 164,
+      "isOccupied": false
+    },
+    {
+      "id": "034f",
+      "idFloor": "0f67",
+      "spotNumber": 165,
+      "isOccupied": false
+    },
+    {
+      "id": "6801",
+      "idFloor": "0f67",
+      "spotNumber": 166,
+      "isOccupied": false
+    },
+    {
+      "id": "cffd",
+      "idFloor": "0f67",
+      "spotNumber": 167,
+      "isOccupied": false
+    },
+    {
+      "id": "4e6d",
+      "idFloor": "0f67",
+      "spotNumber": 168,
+      "isOccupied": false
+    },
+    {
+      "id": "84b5",
+      "idFloor": "0f67",
+      "spotNumber": 169,
+      "isOccupied": false
+    },
+    {
+      "id": "2983",
+      "idFloor": "0f67",
+      "spotNumber": 170,
+      "isOccupied": false
+    },
+    {
+      "id": "1d06",
+      "idFloor": "0f67",
+      "spotNumber": 171,
+      "isOccupied": false
+    },
+    {
+      "id": "2848",
+      "idFloor": "0f67",
+      "spotNumber": 172,
+      "isOccupied": false
+    },
+    {
+      "id": "0bb2",
+      "idFloor": "0f67",
+      "spotNumber": 173,
+      "isOccupied": false
+    },
+    {
+      "id": "938d",
+      "idFloor": "0f67",
+      "spotNumber": 174,
+      "isOccupied": false
+    },
+    {
+      "id": "859d",
+      "idFloor": "0f67",
+      "spotNumber": 175,
+      "isOccupied": false
+    },
+    {
+      "id": "7340",
+      "idFloor": "0f67",
+      "spotNumber": 176,
+      "isOccupied": false
+    },
+    {
+      "id": "6a4b",
+      "idFloor": "0f67",
+      "spotNumber": 177,
+      "isOccupied": false
+    },
+    {
+      "id": "2d05",
+      "idFloor": "0f67",
+      "spotNumber": 178,
+      "isOccupied": false
+    },
+    {
+      "id": "d525",
+      "idFloor": "0f67",
+      "spotNumber": 179,
+      "isOccupied": false
+    },
+    {
+      "id": "fd48",
+      "idFloor": "0f67",
+      "spotNumber": 180,
+      "isOccupied": false
+    },
+    {
+      "id": "a047",
+      "idFloor": "0f67",
+      "spotNumber": 181,
+      "isOccupied": false
+    },
+    {
+      "id": "ef53",
+      "idFloor": "0f67",
+      "spotNumber": 182,
+      "isOccupied": false
+    },
+    {
+      "id": "6361",
+      "idFloor": "0f67",
+      "spotNumber": 183,
+      "isOccupied": false
+    },
+    {
+      "id": "7525",
+      "idFloor": "0f67",
+      "spotNumber": 184,
+      "isOccupied": false
+    },
+    {
+      "id": "9003",
+      "idFloor": "0f67",
+      "spotNumber": 185,
+      "isOccupied": false
+    },
+    {
+      "id": "410d",
+      "idFloor": "0f67",
+      "spotNumber": 186,
+      "isOccupied": false
+    },
+    {
+      "id": "bdf5",
+      "idFloor": "0f67",
+      "spotNumber": 187,
+      "isOccupied": false
+    },
+    {
+      "id": "9bd1",
+      "idFloor": "0f67",
+      "spotNumber": 188,
+      "isOccupied": false
+    },
+    {
+      "id": "6751",
+      "idFloor": "0f67",
+      "spotNumber": 189,
+      "isOccupied": false
+    },
+    {
+      "id": "3a16",
+      "idFloor": "0f67",
+      "spotNumber": 190,
+      "isOccupied": false
+    },
+    {
+      "id": "9372",
+      "idFloor": "0f67",
+      "spotNumber": 191,
+      "isOccupied": false
+    },
+    {
+      "id": "e953",
+      "idFloor": "0f67",
+      "spotNumber": 192,
+      "isOccupied": false
+    },
+    {
+      "id": "ffc7",
+      "idFloor": "0f67",
+      "spotNumber": 193,
+      "isOccupied": false
+    },
+    {
+      "id": "c0d9",
+      "idFloor": "0f67",
+      "spotNumber": 194,
+      "isOccupied": false
+    },
+    {
+      "id": "dfe3",
+      "idFloor": "0f67",
+      "spotNumber": 195,
+      "isOccupied": false
+    },
+    {
+      "id": "d7a8",
+      "idFloor": "0f67",
+      "spotNumber": 196,
+      "isOccupied": false
+    },
+    {
+      "id": "57a5",
+      "idFloor": "0f67",
+      "spotNumber": 197,
+      "isOccupied": false
+    },
+    {
+      "id": "5184",
+      "idFloor": "0f67",
+      "spotNumber": 198,
+      "isOccupied": false
+    },
+    {
+      "id": "a5a6",
+      "idFloor": "0f67",
+      "spotNumber": 199,
+      "isOccupied": false
+    },
+    {
+      "id": "0faa",
+      "idFloor": "0f67",
+      "spotNumber": 200,
+      "isOccupied": false
+    },
+    {
+      "id": "6eed",
+      "idFloor": "0f67",
+      "spotNumber": 201,
+      "isOccupied": false
+    },
+    {
+      "id": "fd69",
+      "idFloor": "0f67",
+      "spotNumber": 202,
+      "isOccupied": false
+    },
+    {
+      "id": "d302",
+      "idFloor": "0f67",
+      "spotNumber": 203,
+      "isOccupied": false
+    },
+    {
+      "id": "563d",
+      "idFloor": "0f67",
+      "spotNumber": 204,
+      "isOccupied": false
+    },
+    {
+      "id": "f8b0",
+      "idFloor": "0f67",
+      "spotNumber": 205,
+      "isOccupied": false
+    },
+    {
+      "id": "6ece",
+      "idFloor": "0f67",
+      "spotNumber": 206,
+      "isOccupied": false
+    },
+    {
+      "id": "c5fa",
+      "idFloor": "0f67",
+      "spotNumber": 207,
+      "isOccupied": false
+    },
+    {
+      "id": "5172",
+      "idFloor": "0f67",
+      "spotNumber": 208,
+      "isOccupied": false
+    },
+    {
+      "id": "7ca2",
+      "idFloor": "0f67",
+      "spotNumber": 209,
+      "isOccupied": false
+    },
+    {
+      "id": "f33d",
+      "idFloor": "0f67",
+      "spotNumber": 210,
+      "isOccupied": false
+    },
+    {
+      "id": "c8ba",
+      "idFloor": "0f67",
+      "spotNumber": 211,
+      "isOccupied": false
+    },
+    {
+      "id": "d9f0",
+      "idFloor": "0f67",
+      "spotNumber": 212,
+      "isOccupied": false
+    },
+    {
+      "id": "016a",
+      "idFloor": "0f67",
+      "spotNumber": 213,
+      "isOccupied": false
+    },
+    {
+      "id": "c596",
+      "idFloor": "0f67",
+      "spotNumber": 214,
+      "isOccupied": false
+    },
+    {
+      "id": "7f9a",
+      "idFloor": "0f67",
+      "spotNumber": 215,
+      "isOccupied": false
+    },
+    {
+      "id": "83ba",
+      "idFloor": "0f67",
+      "spotNumber": 216,
+      "isOccupied": false
+    },
+    {
+      "id": "8e4c",
+      "idFloor": "0f67",
+      "spotNumber": 217,
+      "isOccupied": false
+    },
+    {
+      "id": "5e02",
+      "idFloor": "0f67",
+      "spotNumber": 218,
+      "isOccupied": false
+    },
+    {
+      "id": "1532",
+      "idFloor": "0f67",
+      "spotNumber": 219,
+      "isOccupied": false
+    },
+    {
+      "id": "9eb7",
+      "idFloor": "0f67",
+      "spotNumber": 220,
+      "isOccupied": false
+    },
+    {
+      "id": "b317",
+      "idFloor": "e16b",
+      "spotNumber": 221,
+      "isOccupied": false
+    },
+    {
+      "id": "8b75",
+      "idFloor": "e16b",
+      "spotNumber": 222,
+      "isOccupied": true
+    },
+    {
+      "id": "0fcb",
+      "idFloor": "e16b",
+      "spotNumber": 223,
+      "isOccupied": false
+    },
+    {
+      "id": "ba4c",
+      "idFloor": "e16b",
+      "spotNumber": 224,
+      "isOccupied": false
+    },
+    {
+      "id": "21b4",
+      "idFloor": "e16b",
+      "spotNumber": 225,
+      "isOccupied": true
+    },
+    {
+      "id": "45a6",
+      "idFloor": "e16b",
+      "spotNumber": 226,
+      "isOccupied": false
+    },
+    {
+      "id": "f167",
+      "idFloor": "e16b",
+      "spotNumber": 227,
+      "isOccupied": false
+    },
+    {
+      "id": "e822",
+      "idFloor": "e16b",
+      "spotNumber": 228,
+      "isOccupied": true
+    },
+    {
+      "id": "ad83",
+      "idFloor": "e16b",
+      "spotNumber": 229,
+      "isOccupied": false
+    },
+    {
+      "id": "731a",
+      "idFloor": "e16b",
+      "spotNumber": 230,
+      "isOccupied": false
+    },
+    {
+      "id": "7f55",
+      "idFloor": "e16b",
+      "spotNumber": 231,
+      "isOccupied": false
+    },
+    {
+      "id": "f5a1",
+      "idFloor": "e16b",
+      "spotNumber": 232,
+      "isOccupied": false
+    },
+    {
+      "id": "05d5",
+      "idFloor": "e16b",
+      "spotNumber": 233,
+      "isOccupied": false
+    },
+    {
+      "id": "56ee",
+      "idFloor": "e16b",
+      "spotNumber": 234,
+      "isOccupied": false
+    },
+    {
+      "id": "c4cf",
+      "idFloor": "e16b",
+      "spotNumber": 235,
+      "isOccupied": true
+    },
+    {
+      "id": "db91",
+      "idFloor": "e16b",
+      "spotNumber": 236,
+      "isOccupied": false
+    },
+    {
+      "id": "87b7",
+      "idFloor": "e16b",
+      "spotNumber": 237,
+      "isOccupied": false
+    },
+    {
+      "id": "46ce",
+      "idFloor": "e16b",
+      "spotNumber": 238,
+      "isOccupied": true
+    },
+    {
+      "id": "5e0d",
+      "idFloor": "e16b",
+      "spotNumber": 239,
+      "isOccupied": false
+    },
+    {
+      "id": "da10",
+      "idFloor": "e16b",
+      "spotNumber": 240,
+      "isOccupied": false
+    },
+    {
+      "id": "e960",
+      "idFloor": "e16b",
+      "spotNumber": 241,
+      "isOccupied": false
+    },
+    {
+      "id": "4247",
+      "idFloor": "e16b",
+      "spotNumber": 242,
+      "isOccupied": false
+    },
+    {
+      "id": "2c7e",
+      "idFloor": "e16b",
+      "spotNumber": 243,
+      "isOccupied": false
+    },
+    {
+      "id": "a044",
+      "idFloor": "e16b",
+      "spotNumber": 244,
+      "isOccupied": false
+    },
+    {
+      "id": "80e6",
+      "idFloor": "e16b",
+      "spotNumber": 245,
+      "isOccupied": false
+    },
+    {
+      "id": "afb0",
+      "idFloor": "e16b",
+      "spotNumber": 246,
+      "isOccupied": false
+    },
+    {
+      "id": "d6e6",
+      "idFloor": "e16b",
+      "spotNumber": 247,
+      "isOccupied": false
+    },
+    {
+      "id": "04c2",
+      "idFloor": "e16b",
+      "spotNumber": 248,
+      "isOccupied": false
+    },
+    {
+      "id": "0db1",
+      "idFloor": "e16b",
+      "spotNumber": 249,
+      "isOccupied": false
+    },
+    {
+      "id": "d128",
+      "idFloor": "e16b",
+      "spotNumber": 250,
+      "isOccupied": false
+    },
+    {
+      "id": "6832",
+      "idFloor": "e16b",
+      "spotNumber": 251,
+      "isOccupied": false
+    },
+    {
+      "id": "de82",
+      "idFloor": "e16b",
+      "spotNumber": 252,
+      "isOccupied": false
+    },
+    {
+      "id": "153a",
+      "idFloor": "e16b",
+      "spotNumber": 253,
+      "isOccupied": false
+    },
+    {
+      "id": "f28b",
+      "idFloor": "e16b",
+      "spotNumber": 254,
+      "isOccupied": false
+    },
+    {
+      "id": "b3d2",
+      "idFloor": "e16b",
+      "spotNumber": 255,
+      "isOccupied": false
+    },
+    {
+      "id": "198b",
+      "idFloor": "e16b",
+      "spotNumber": 256,
+      "isOccupied": false
+    },
+    {
+      "id": "9257",
+      "idFloor": "e16b",
+      "spotNumber": 257,
+      "isOccupied": false
+    },
+    {
+      "id": "93a2",
+      "idFloor": "e16b",
+      "spotNumber": 258,
+      "isOccupied": false
+    },
+    {
+      "id": "3956",
+      "idFloor": "e16b",
+      "spotNumber": 259,
+      "isOccupied": false
+    },
+    {
+      "id": "071c",
+      "idFloor": "e16b",
+      "spotNumber": 260,
+      "isOccupied": false
+    },
+    {
+      "id": "af6a",
+      "idFloor": "e16b",
+      "spotNumber": 261,
+      "isOccupied": false
+    },
+    {
+      "id": "29bb",
+      "idFloor": "e16b",
+      "spotNumber": 262,
+      "isOccupied": false
+    },
+    {
+      "id": "549f",
+      "idFloor": "e16b",
+      "spotNumber": 263,
+      "isOccupied": false
+    },
+    {
+      "id": "8939",
+      "idFloor": "e16b",
+      "spotNumber": 264,
+      "isOccupied": false
+    },
+    {
+      "id": "7826",
+      "idFloor": "e16b",
+      "spotNumber": 265,
+      "isOccupied": false
+    },
+    {
+      "id": "4884",
+      "idFloor": "e16b",
+      "spotNumber": 266,
+      "isOccupied": false
+    },
+    {
+      "id": "2095",
+      "idFloor": "e16b",
+      "spotNumber": 267,
+      "isOccupied": false
+    },
+    {
+      "id": "f015",
+      "idFloor": "e16b",
+      "spotNumber": 268,
+      "isOccupied": false
+    },
+    {
+      "id": "e01b",
+      "idFloor": "e16b",
+      "spotNumber": 269,
+      "isOccupied": false
+    },
+    {
+      "id": "a527",
+      "idFloor": "e16b",
+      "spotNumber": 270,
+      "isOccupied": false
+    },
+    {
+      "id": "fae4",
+      "idFloor": "e16b",
+      "spotNumber": 271,
+      "isOccupied": false
+    },
+    {
+      "id": "5b48",
+      "idFloor": "e16b",
+      "spotNumber": 272,
+      "isOccupied": false
+    },
+    {
+      "id": "9880",
+      "idFloor": "e16b",
+      "spotNumber": 273,
+      "isOccupied": false
+    },
+    {
+      "id": "fc45",
+      "idFloor": "e16b",
+      "spotNumber": 274,
+      "isOccupied": false
+    },
+    {
+      "id": "33a1",
+      "idFloor": "e16b",
+      "spotNumber": 275,
+      "isOccupied": true
+    },
+    {
+      "id": "7ee4",
+      "idFloor": "e16b",
+      "spotNumber": 276,
+      "isOccupied": false
+    },
+    {
+      "id": "6281",
+      "idFloor": "e16b",
+      "spotNumber": 277,
+      "isOccupied": false
+    },
+    {
+      "id": "8968",
+      "idFloor": "e16b",
+      "spotNumber": 278,
+      "isOccupied": false
+    },
+    {
+      "id": "c0a3",
+      "idFloor": "e16b",
+      "spotNumber": 279,
+      "isOccupied": false
+    },
+    {
+      "id": "a058",
+      "idFloor": "e16b",
+      "spotNumber": 280,
+      "isOccupied": false
+    },
+    {
+      "id": "2171",
+      "idFloor": "e16b",
+      "spotNumber": 281,
+      "isOccupied": false
+    },
+    {
+      "id": "4730",
+      "idFloor": "e16b",
+      "spotNumber": 282,
+      "isOccupied": false
+    },
+    {
+      "id": "76ed",
+      "idFloor": "e16b",
+      "spotNumber": 283,
+      "isOccupied": false
+    },
+    {
+      "id": "b44b",
+      "idFloor": "e16b",
+      "spotNumber": 284,
+      "isOccupied": false
+    },
+    {
+      "id": "7a38",
+      "idFloor": "e16b",
+      "spotNumber": 285,
+      "isOccupied": false
+    },
+    {
+      "id": "425d",
+      "idFloor": "e16b",
+      "spotNumber": 286,
+      "isOccupied": false
+    },
+    {
+      "id": "cd5f",
+      "idFloor": "e16b",
+      "spotNumber": 287,
+      "isOccupied": false
+    },
+    {
+      "id": "eae5",
+      "idFloor": "e16b",
+      "spotNumber": 288,
+      "isOccupied": false
+    },
+    {
+      "id": "78cf",
+      "idFloor": "e16b",
+      "spotNumber": 289,
+      "isOccupied": false
+    },
+    {
+      "id": "20bc",
+      "idFloor": "e16b",
+      "spotNumber": 290,
+      "isOccupied": false
+    },
+    {
+      "id": "8109",
+      "idFloor": "e16b",
+      "spotNumber": 291,
+      "isOccupied": false
+    },
+    {
+      "id": "5427",
+      "idFloor": "e16b",
+      "spotNumber": 292,
+      "isOccupied": false
+    },
+    {
+      "id": "f0a5",
+      "idFloor": "e16b",
+      "spotNumber": 293,
+      "isOccupied": false
+    },
+    {
+      "id": "5a2e",
+      "idFloor": "e16b",
+      "spotNumber": 294,
+      "isOccupied": false
+    },
+    {
+      "id": "197d",
+      "idFloor": "e16b",
+      "spotNumber": 295,
+      "isOccupied": false
+    },
+    {
+      "id": "7a0b",
+      "idFloor": "e16b",
+      "spotNumber": 296,
+      "isOccupied": false
+    },
+    {
+      "id": "87e2",
+      "idFloor": "e16b",
+      "spotNumber": 297,
+      "isOccupied": false
+    },
+    {
+      "id": "aa92",
+      "idFloor": "e16b",
+      "spotNumber": 298,
+      "isOccupied": false
+    },
+    {
+      "id": "697f",
+      "idFloor": "e16b",
+      "spotNumber": 299,
+      "isOccupied": false
+    },
+    {
+      "id": "64f8",
+      "idFloor": "e16b",
+      "spotNumber": 300,
+      "isOccupied": false
+    },
+    {
+      "id": "8a98",
+      "idFloor": "e16b",
+      "spotNumber": 301,
+      "isOccupied": false
+    },
+    {
+      "id": "b1f6",
+      "idFloor": "e16b",
+      "spotNumber": 302,
+      "isOccupied": false
+    },
+    {
+      "id": "fc25",
+      "idFloor": "e16b",
+      "spotNumber": 303,
+      "isOccupied": false
+    },
+    {
+      "id": "189d",
+      "idFloor": "e16b",
+      "spotNumber": 304,
+      "isOccupied": false
+    },
+    {
+      "id": "101d",
+      "idFloor": "e16b",
+      "spotNumber": 305,
+      "isOccupied": false
+    },
+    {
+      "id": "ae7f",
+      "idFloor": "e16b",
+      "spotNumber": 306,
+      "isOccupied": false
+    },
+    {
+      "id": "e6c1",
+      "idFloor": "e16b",
+      "spotNumber": 307,
+      "isOccupied": false
+    },
+    {
+      "id": "8e75",
+      "idFloor": "e16b",
+      "spotNumber": 308,
+      "isOccupied": false
+    },
+    {
+      "id": "d707",
+      "idFloor": "e16b",
+      "spotNumber": 309,
+      "isOccupied": false
+    },
+    {
+      "id": "7504",
+      "idFloor": "e16b",
+      "spotNumber": 310,
+      "isOccupied": false
+    },
+    {
+      "id": "5fd1",
+      "idFloor": "e16b",
+      "spotNumber": 311,
+      "isOccupied": false
+    },
+    {
+      "id": "10c8",
+      "idFloor": "e16b",
+      "spotNumber": 312,
+      "isOccupied": false
+    },
+    {
+      "id": "d47f",
+      "idFloor": "e16b",
+      "spotNumber": 313,
+      "isOccupied": false
+    },
+    {
+      "id": "5113",
+      "idFloor": "e16b",
+      "spotNumber": 314,
+      "isOccupied": false
+    },
+    {
+      "id": "e162",
+      "idFloor": "e16b",
+      "spotNumber": 315,
+      "isOccupied": false
+    },
+    {
+      "id": "e775",
+      "idFloor": "e16b",
+      "spotNumber": 316,
+      "isOccupied": false
+    },
+    {
+      "id": "c0e0",
+      "idFloor": "e16b",
+      "spotNumber": 317,
+      "isOccupied": false
+    },
+    {
+      "id": "5710",
+      "idFloor": "e16b",
+      "spotNumber": 318,
+      "isOccupied": false
+    },
+    {
+      "id": "009c",
+      "idFloor": "e16b",
+      "spotNumber": 319,
+      "isOccupied": false
+    },
+    {
+      "id": "6042",
+      "idFloor": "e16b",
+      "spotNumber": 320,
+      "isOccupied": false
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "1",
+      "licensePlate": "ABC123",
+      "model": "Toyota Corolla",
+      "type": "Coche",
+      "color": "Red",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "licensePlate": "XYZ789",
+      "model": "Honda Civic",
+      "type": "Coche",
+      "color": "Blue",
+      "isActive": false
+    },
+    {
+      "id": "5",
+      "licensePlate": "JKL012",
+      "model": "Tesla Model S",
+      "type": "Coche",
+      "color": "Gray",
+      "isActive": true
+    },
+    {
+      "id": "6",
+      "licensePlate": "MNO345",
+      "model": "BMW X5",
+      "type": "Coche",
+      "color": "Black",
+      "isActive": false
+    },
+    {
+      "id": "7",
+      "licensePlate": "PQR678",
+      "model": "Audi A4",
+      "type": "Coche",
+      "color": "Blue",
+      "isActive": true
+    },
+    {
+      "id": "8",
+      "licensePlate": "STU901",
+      "model": "Nissan Altima",
+      "type": "Coche",
+      "color": "Silver",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "licensePlate": "VWX234",
+      "model": "Hyundai Tucson",
+      "type": "Coche",
+      "color": "Red",
+      "isActive": false
+    },
+    {
+      "id": "10",
+      "licensePlate": "YZA567",
+      "model": "Kia Sportage",
+      "type": "Coche",
+      "color": "White",
+      "isActive": true
+    },
+    {
+      "id": "11",
+      "licensePlate": "BCD890",
+      "model": "Volkswagen Golf",
+      "type": "Coche",
+      "color": "Black",
+      "isActive": true
+    },
+    {
+      "id": "12",
+      "licensePlate": "EFG123",
+      "model": "Subaru Outback",
+      "type": "Coche",
+      "color": "Green",
+      "isActive": true
+    },
+    {
+      "id": "13",
+      "licensePlate": "HIJ456",
+      "model": "Mazda CX-5",
+      "type": "Coche",
+      "color": "Blue",
+      "isActive": false
+    },
+    {
+      "id": "14",
+      "licensePlate": "KLM789",
+      "model": "Jeep Wrangler",
+      "type": "Coche",
+      "color": "Yellow",
+      "isActive": true
+    },
+    {
+      "id": "15",
+      "licensePlate": "NOP012",
+      "model": "Porsche 911",
+      "type": "Coche",
+      "color": "Red",
+      "isActive": true
+    },
+    {
+      "id": "16",
+      "licensePlate": "QRS345",
+      "model": "Lexus RX",
+      "type": "Coche",
+      "color": "Black",
+      "isActive": true
+    }
+  ],
+  "registries": [
+    {
+      "id": "3716e4e5-1f0a-41df-8f83-48ed8cc51c8e",
+      "idParkingSpot": "59",
+      "idVehicle": "3",
+      "idRate": "35cd",
+      "entryTime": "2025-03-02 08:39:27.612709",
+      "exitTime": "NaT",
+      "amount": 0
+    },
+    {
+      "id": "5e9a8939-cad9-4b4c-bf3b-c17ea71fb869",
+      "idParkingSpot": "263",
+      "idVehicle": "2",
+      "idRate": "35cd",
+      "entryTime": "2025-02-24 15:39:27.612800",
+      "exitTime": "NaT",
+      "amount": 0
+    },
+    {
+      "id": "5101a7b1-ddfb-4887-af73-ad0360ea24b8",
+      "idParkingSpot": "294",
+      "idVehicle": "12",
+      "idRate": "35cd",
+      "entryTime": "2025-02-26 10:29:27.612835",
+      "exitTime": "2025-02-26 11:12:27.612835",
+      "amount": 1.51
+    },
+    {
+      "id": "034eb0b0-1c50-4c4a-95f0-072c655af328",
+      "idParkingSpot": "ee60",
+      "idVehicle": "1",
+      "idRate": "35cd",
+      "entryTime": "2025-03-02 17:36:27.612886",
+      "exitTime": "NaT",
+      "amount": 0
+    },
+    {
+      "id": "4c3d2522-d393-4d96-9131-70f45ae7ad74",
+      "idParkingSpot": "120",
+      "idVehicle": "9",
+      "idRate": "35cd",
+      "entryTime": "2025-02-27 10:24:27.612926",
+      "exitTime": "2025-02-27 11:40:27.612926",
+      "amount": 2.66
+    },
+    {
+      "id": "5f3e1c0a-80ff-41ef-9dac-0a48701768f3",
+      "idParkingSpot": "86",
+      "idVehicle": "4",
+      "idRate": "35cd",
+      "entryTime": "2025-02-24 16:52:27.612986",
+      "exitTime": "2025-02-24 19:18:27.612986",
+      "amount": 5.11
+    },
+    {
+      "id": "4af9e867-f11e-4d01-9a07-22062bfbb282",
+      "idParkingSpot": "103",
+      "idVehicle": "4",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 19:36:27.613040",
+      "exitTime": "2025-03-01 23:03:27.613040",
+      "amount": 7.25
+    },
+    {
+      "id": "bb9ca685-8c62-46fe-ae09-0272ad4ee65b",
+      "idParkingSpot": "8",
+      "idVehicle": "6",
+      "idRate": "35cd",
+      "entryTime": "2025-02-24 09:16:27.613071",
+      "exitTime": "NaT",
+      "amount": 0
+    },
+    {
+      "id": "22635fef-1fe7-462f-ba9d-76a0ec9eddf4",
+      "idParkingSpot": "112",
+      "idVehicle": "12",
+      "idRate": "35cd",
+      "entryTime": "2025-02-23 13:00:27.613086",
+      "exitTime": "NaT",
+      "amount": 0
+    },
+    {
+      "id": "7348c031-595b-47fd-a68f-94e9760cea6b",
+      "idParkingSpot": "43",
+      "idVehicle": "12",
+      "idRate": "35cd",
+      "entryTime": "2025-03-03 05:13:27.613099",
+      "exitTime": "2025-03-03 06:18:27.613099",
+      "amount": 2.28
+    },
+    {
+      "id": "7b182e1f-01f6-4257-818b-619f60314d96",
+      "idParkingSpot": "63",
+      "idVehicle": "7",
+      "idRate": "35cd",
+      "entryTime": "2025-02-24 22:57:27.613115",
+      "exitTime": "2025-02-25 00:32:27.613115",
+      "amount": 3.33
+    },
+    {
+      "id": "5cb018ad-0c56-4189-a254-825faedb6079",
+      "idParkingSpot": "91",
+      "idVehicle": "3",
+      "idRate": "35cd",
+      "entryTime": "2025-02-23 14:55:27.613134",
+      "exitTime": "2025-02-23 16:54:27.613134",
+      "amount": 4.17
+    },
+    {
+      "id": "3f752ad5-4297-4a56-a024-5aa5bd3e27bd",
+      "idParkingSpot": "247",
+      "idVehicle": "6",
+      "idRate": "35cd",
+      "entryTime": "2025-02-23 21:42:27.613162",
+      "exitTime": "2025-02-24 00:04:27.613162",
+      "amount": 4.97
+    },
+    {
+      "id": "808c1780-6967-4309-986a-5c09c0e37725",
+      "idParkingSpot": "230",
+      "idVehicle": "9",
+      "idRate": "35cd",
+      "entryTime": "2025-03-03 08:26:27.613325",
+      "exitTime": "2025-03-03 13:18:27.613325",
+      "amount": 10.22
+    },
+    {
+      "id": "bc5a510c-8838-4928-9d75-081f8c8650c3",
+      "idParkingSpot": "13",
+      "idVehicle": "16",
+      "idRate": "35cd",
+      "entryTime": "2025-02-26 16:34:27.613388",
+      "exitTime": "2025-02-26 18:00:27.613388",
+      "amount": 3.01
+    },
+    {
+      "id": "38fa335e-3281-4985-9519-2987d993de8e",
+      "idParkingSpot": "54",
+      "idVehicle": "9",
+      "idRate": "35cd",
+      "entryTime": "2025-02-24 09:39:27.613407",
+      "exitTime": "2025-02-24 13:47:27.613407",
+      "amount": 8.68
+    },
+    {
+      "id": "d00f97ff-a505-49d3-921d-6300c7b363e2",
+      "idParkingSpot": "276",
+      "idVehicle": "8",
+      "idRate": "35cd",
+      "entryTime": "2025-02-28 02:01:27.613424",
+      "exitTime": "NaT",
+      "amount": 0
+    },
+    {
+      "id": "2002ddbf-a463-4b90-b9e7-df79ca3fba51",
+      "idParkingSpot": "268",
+      "idVehicle": "8",
+      "idRate": "35cd",
+      "entryTime": "2025-02-28 03:06:27.613442",
+      "exitTime": "2025-02-28 06:40:27.613442",
+      "amount": 7.49
+    },
+    {
+      "id": "9757d3de-0655-4f45-98eb-62862e56fe8f",
+      "idParkingSpot": "221",
+      "idVehicle": "10",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 12:04:27.613487",
+      "exitTime": "2025-03-01 13:38:27.613487",
+      "amount": 3.29
+    },
+    {
+      "id": "eda2fcf9-7d7d-4d08-ba6b-a1a34de9becc",
+      "idParkingSpot": "6",
+      "idVehicle": "5",
+      "idRate": "35cd",
+      "entryTime": "2025-02-25 12:00:27.613505",
+      "exitTime": "2025-02-25 14:09:27.613505",
+      "amount": 4.52
+    },
+    {
+      "id": "63b959ef-13f8-4207-a016-b8218396e24e",
+      "idParkingSpot": "6",
+      "idVehicle": "15",
+      "idRate": "35cd",
+      "entryTime": "2025-02-27 10:37:27.613521",
+      "exitTime": "2025-02-27 14:27:27.613521",
+      "amount": 8.05
+    },
+    {
+      "id": "c65468ec-978d-4de7-95fe-2ec842509b4a",
+      "idParkingSpot": "294",
+      "idVehicle": "4",
+      "idRate": "35cd",
+      "entryTime": "2025-03-03 05:38:27.613534",
+      "exitTime": "2025-03-03 08:14:27.613534",
+      "amount": 5.46
+    },
+    {
+      "id": "313c5e9c-f8af-4791-a183-da8d7e101605",
+      "idParkingSpot": "70",
+      "idVehicle": "14",
+      "idRate": "35cd",
+      "entryTime": "2025-02-23 13:25:27.613549",
+      "exitTime": "2025-02-23 17:03:27.613549",
+      "amount": 7.63
+    },
+    {
+      "id": "ca9834bc-7ead-4d5b-8823-e720bb02ea86",
+      "idParkingSpot": "75",
+      "idVehicle": "14",
+      "idRate": "35cd",
+      "entryTime": "2025-02-26 11:42:27.613562",
+      "exitTime": "2025-02-26 14:25:27.613562",
+      "amount": 5.71
+    },
+    {
+      "id": "c1646f4d-ee1b-40cf-a90a-27d85921fa3a",
+      "idParkingSpot": "106",
+      "idVehicle": "10",
+      "idRate": "35cd",
+      "entryTime": "2025-02-27 13:35:27.613576",
+      "exitTime": "2025-02-27 16:58:27.613576",
+      "amount": 7.11
+    },
+    {
+      "id": "6f64ad0d-9040-44da-9a0b-9cdbcc55d3ea",
+      "idParkingSpot": "87",
+      "idVehicle": "9",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 23:54:27.613590",
+      "exitTime": "2025-03-02 02:44:27.613590",
+      "amount": 5.95
+    },
+    {
+      "id": "6d4b9de7-f9b7-432f-827a-b7b2a81a9b66",
+      "idParkingSpot": "66",
+      "idVehicle": "11",
+      "idRate": "35cd",
+      "entryTime": "2025-03-03 07:33:27.613620",
+      "exitTime": "2025-03-03 10:03:27.613620",
+      "amount": 5.25
+    },
+    {
+      "id": "fb930c1d-1e50-4c22-a2fd-25ea748fe432",
+      "idParkingSpot": "241",
+      "idVehicle": "6",
+      "idRate": "35cd",
+      "entryTime": "2025-02-24 15:51:27.613762",
+      "exitTime": "2025-02-24 19:52:27.613762",
+      "amount": 8.44
+    },
+    {
+      "id": "a263e700-567e-4596-9f9d-8212e54f6d21",
+      "idParkingSpot": "103",
+      "idVehicle": "9",
+      "idRate": "35cd",
+      "entryTime": "2025-02-27 05:43:27.613849",
+      "exitTime": "2025-02-27 07:33:27.613849",
+      "amount": 3.85
+    },
+    {
+      "id": "8540ddf5-b05d-41b2-824b-329b6ca81d67",
+      "idParkingSpot": "242",
+      "idVehicle": "5",
+      "idRate": "35cd",
+      "entryTime": "2025-03-02 12:06:27.613891",
+      "exitTime": "2025-03-02 13:51:27.613891",
+      "amount": 3.68
+    },
+    {
+      "id": "95aaa642-9d09-4d3a-ba74-5e8bcd1c2865",
+      "idParkingSpot": "235",
+      "idVehicle": "6",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 03:57:27.613929",
+      "exitTime": "2025-03-01 07:41:27.613929",
+      "amount": 7.84
+    },
+    {
+      "id": "425361c6-1fd3-4ac8-9702-b2a5b53126e0",
+      "idParkingSpot": "229",
+      "idVehicle": "13",
+      "idRate": "35cd",
+      "entryTime": "2025-02-28 15:28:27.613977",
+      "exitTime": "2025-02-28 20:28:27.613977",
+      "amount": 10.5
+    },
+    {
+      "id": "89e01973-dcad-46f7-86b7-eae6f7a9cdc2",
+      "idParkingSpot": "289",
+      "idVehicle": "5",
+      "idRate": "35cd",
+      "entryTime": "2025-02-23 14:00:27.614016",
+      "exitTime": "2025-02-23 17:35:27.614016",
+      "amount": 7.53
+    },
+    {
+      "id": "6a7de47d-c05d-4605-bba3-a28832372cd8",
+      "idParkingSpot": "238",
+      "idVehicle": "16",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 03:45:27.614054",
+      "exitTime": "2025-03-01 05:08:27.614054",
+      "amount": 2.91
+    },
+    {
+      "id": "38e5c091-ebdb-4cd5-8bea-2d4eec87f14e",
+      "idParkingSpot": "242",
+      "idVehicle": "8",
+      "idRate": "35cd",
+      "entryTime": "2025-02-28 18:35:27.614083",
+      "exitTime": "2025-02-28 21:43:27.614083",
+      "amount": 6.58
+    },
+    {
+      "id": "5d38c71d-dcc4-4c8b-9624-390cb18e7783",
+      "idParkingSpot": "235",
+      "idVehicle": "8",
+      "idRate": "35cd",
+      "entryTime": "2025-02-25 06:30:27.614131",
+      "exitTime": "NaT",
+      "amount": 0
+    },
+    {
+      "id": "8dee15fa-b89e-45cf-84ea-697594b4b6e8",
+      "idParkingSpot": "102",
+      "idVehicle": "3",
+      "idRate": "35cd",
+      "entryTime": "2025-02-27 01:35:27.614151",
+      "exitTime": "2025-02-27 04:50:27.614151",
+      "amount": 6.83
+    },
+    {
+      "id": "88fa0290-105a-450f-8c0c-64bddf2f64ae",
+      "idParkingSpot": "111",
+      "idVehicle": "12",
+      "idRate": "35cd",
+      "entryTime": "2025-03-02 11:21:27.614168",
+      "exitTime": "2025-03-02 12:54:27.614168",
+      "amount": 3.26
+    },
+    {
+      "id": "c6518eee-165c-4788-8323-26428dca4854",
+      "idParkingSpot": "252",
+      "idVehicle": "7",
+      "idRate": "35cd",
+      "entryTime": "2025-02-26 13:11:27.614193",
+      "exitTime": "2025-02-26 16:17:27.614193",
+      "amount": 6.51
+    },
+    {
+      "id": "2c6dbced-6c07-4f79-9241-d7421a28dde6",
+      "idParkingSpot": "22",
+      "idVehicle": "11",
+      "idRate": "35cd",
+      "entryTime": "2025-02-24 16:56:27.614243",
+      "exitTime": "2025-02-24 20:35:27.614243",
+      "amount": 7.67
+    },
+    {
+      "id": "87db1ffe-d5c3-40be-a1e3-035bf07c4bd7",
+      "idParkingSpot": "112",
+      "idVehicle": "5",
+      "idRate": "35cd",
+      "entryTime": "2025-03-02 01:40:27.614280",
+      "exitTime": "NaT",
+      "amount": 0
+    },
+    {
+      "id": "e122ab02-6695-46c7-9b70-e7953d733ef0",
+      "idParkingSpot": "26",
+      "idVehicle": "4",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 18:05:27.614315",
+      "exitTime": "2025-03-01 21:48:27.614315",
+      "amount": 7.81
+    },
+    {
+      "id": "a6d9967c-d7c2-4c3f-b30b-4e2cdc7d6400",
+      "idParkingSpot": "275",
+      "idVehicle": "15",
+      "idRate": "35cd",
+      "entryTime": "2025-02-26 10:16:27.614331",
+      "exitTime": "2025-02-26 13:21:27.614331",
+      "amount": 6.48
+    },
+    {
+      "id": "97655639-def8-4e9a-86d3-0a58f1e6f20c",
+      "idParkingSpot": "225",
+      "idVehicle": "3",
+      "idRate": "35cd",
+      "entryTime": "2025-03-03 11:30:27.614347",
+      "exitTime": "NaT",
+      "amount": 0
+    },
+    {
+      "id": "1772fa42-3047-4388-8954-717728d1cc58",
+      "idParkingSpot": "278",
+      "idVehicle": "13",
+      "idRate": "35cd",
+      "entryTime": "2025-02-26 10:32:27.614358",
+      "exitTime": "2025-02-26 13:21:27.614358",
+      "amount": 5.92
+    },
+    {
+      "id": "a6de7b99-d3ee-48e8-b911-d5581cec93c8",
+      "idParkingSpot": "319",
+      "idVehicle": "6",
+      "idRate": "35cd",
+      "entryTime": "2025-02-23 19:23:27.614372",
+      "exitTime": "2025-02-23 23:53:27.614372",
+      "amount": 9.45
+    },
+    {
+      "id": "dd0b7ca3-e685-4543-be1e-93a83a2cc8f9",
+      "idParkingSpot": "120",
+      "idVehicle": "14",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 10:36:27.614396",
+      "exitTime": "2025-03-01 11:58:27.614396",
+      "amount": 2.87
+    },
+    {
+      "id": "f90b5f35-99aa-408b-8d56-30933fa4b687",
+      "idParkingSpot": "1",
+      "idVehicle": "9",
+      "idRate": "35cd",
+      "entryTime": "2025-02-27 07:54:27.614433",
+      "exitTime": "2025-02-27 08:31:27.614433",
+      "amount": 1.3
+    },
+    {
+      "id": "2bfd9184-0ba8-43df-9252-e3e3c2954b96",
+      "idParkingSpot": "222",
+      "idVehicle": "7",
+      "idRate": "35cd",
+      "entryTime": "2025-03-01 15:31:27.614451",
+      "exitTime": "2025-03-01 16:11:27.614451",
+      "amount": 1.4
+    },
+    {
+      "id": "8c3b2b35-500b-4daa-af6e-3e6492ffa173",
+      "idParkingSpot": "e822",
+      "idVehicle": "1",
+      "idRate": "35cd",
+      "entryTime": "2025-02-26 11:44:27.614482",
+      "exitTime": "2025-02-26 12:53:27.614482",
+      "amount": 2.42
+    }
+  ]
 }

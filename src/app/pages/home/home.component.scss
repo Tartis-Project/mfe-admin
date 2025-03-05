@@ -1,0 +1,133 @@
+.card-name {
+  border: 1px solid #d3dad1;
+  border-radius: 1px;
+  padding: 16px;
+  width: 25rem;
+  filter: drop-shadow(1px 1px 2px #90c578);
+  font-family: Arial, sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 150px;
+
+  .title {
+    color: #000000ba;
+    width: fit-content;
+  }
+
+  .logout {
+
+    p {
+      font-size: 14px;
+      text-decoration: underline;
+      transition: 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: #ba0000 !important;
+        cursor: pointer;
+
+        mat-icon {
+          transform: translateX(15px);
+        }
+
+      }
+    }
+
+    mat-icon {
+      transition: 0.5s ease-in-out;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+  }
+
+}
+
+.card-spot {
+  border: 1px solid #d3dad1;
+  border-radius: 1px;
+  padding: 16px;
+  width: 25rem;
+  filter: drop-shadow(1px 1px 2px #90c578);
+  font-family: Arial, sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 225px;
+
+  .title {
+    color: #000000ba;
+    border-bottom: 1px solid #000000ba;
+    padding-bottom: 8px;
+    margin-bottom: 1rem;
+    width: fit-content;
+  }
+
+  p {
+    span {
+      font-size: 14px;
+    }
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 110px;
+    font-size: 14px;
+  }
+
+}
+
+.card-vehicles {
+  border: 1px solid #d3dad1;
+  border-radius: 1px;
+  padding: 16px;
+  filter: drop-shadow(1px 1px 2px var(--secondary-color));
+  font-family: Arial, sans-serif;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 225px;
+  min-width: 100%;
+  margin: auto;
+
+  .title {
+    color: #000000ba;
+    border-bottom: 1px solid #000000ba;
+    width: fit-content;
+    margin-bottom: 1rem;
+  }
+
+  .movements {
+    padding: 16px;
+
+    .movement-row {
+      height: 25px;
+    }
+  }
+}
+
+
+tbody tr:first-child td {
+  border-top: none !important;
+}
+
+td {
+  border-color: #b768232d;
+}
+
+tr {
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #ff77001b;
+    cursor: pointer;
+  }
+}

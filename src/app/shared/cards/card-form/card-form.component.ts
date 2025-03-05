@@ -1,8 +1,14 @@
-import { Component, computed, Inject } from '@angular/core';
-import { MaterialModule } from '../../../material/material.module';
+import {
+  Component,
+  computed,
+  EventEmitter,
+  Inject,
+  Output,
+} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
+import { MaterialModule } from '../../../material/material.module';
 import { ParkingFormComponent } from '../../../pages/parking/shared/parking-form/parking-form.component';
 import { RatesFormComponent } from '../../../pages/rates/shared/rates-form/rates-form.component';
 import { VehiclesFormComponent } from '../../../pages/vehicles/shared/vehicles-form/vehicles-form.component';
@@ -45,5 +51,11 @@ export class CardFormComponent {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  onVehicleUpdated(updatedVehicle: Vehicle) {
+    if (updatedVehicle) {
+      this.dialogRef.close(updatedVehicle);
+    }
   }
 }

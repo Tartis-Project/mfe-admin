@@ -31,10 +31,10 @@
   </ng-template>
 
   <ng-template #vehicleTitle>
-    <h4 class="title">Seat León</h4>
+    <h4 class="title">{{ vehicle.model }}</h4>
     <div *ngIf="isVehicles()">
-      <p><strong>Matrícula -</strong> B34H XYZ</p>
-      <p><strong>Color -</strong> Negro</p>
+      <p><strong>Matrícula - </strong>{{ vehicle.licensePlate }}</p>
+      <p><strong>Color - </strong>{{ vehicle.color }}</p>
     </div>
   </ng-template>
 
@@ -46,7 +46,7 @@
       *ngIf="isVehicles()"
       mat-icon-button
       class="edit-btn"
-      (click)="viewVehicleDetail()"
+      (click)="viewVehicleDetail( vehicle.id )"
     >
       <mat-icon class="button-primary">visibility</mat-icon>
     </button>

@@ -12,13 +12,35 @@ a {
     vertical-align: middle;
   }
 }
+.mt-10 {
+  margin-top: 6rem !important;
+}
 
-.container-detalle {
-  margin-top: 6rem;
+.card {
+  border: 1px solid #d3dad1;
+  border-radius: 1px;
+  padding: 16px;
+  filter: drop-shadow(1px 1px 2px var(--secondary-color));
+  font-family: Arial, sans-serif;
+  background: #fff;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 225px;
 
-  app-card-detail {
-    width: 100%;
+  p {
+    margin: 0px;
   }
+
+  .title {
+    color: #000000ba;
+    border-bottom: 1px solid #000000ba;
+    padding-bottom: 8px;
+    margin-bottom: 1rem;
+    width: fit-content;
+  }
+}
+
+.registry {
+  border-bottom: 1px solid #b7682333;
 }

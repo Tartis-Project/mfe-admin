@@ -3,6 +3,37 @@
   Volver
 </a>
 
-<div class="container-detalle">
-  <app-card-detail />
+<div class="mt-10 mx-5">
+  <app-card-detail
+    [vehicle]="vehicle"
+    [registry]="registryActive"
+    [rate]="rateActive"
+    [parkingSpot]="parkingSpotActive"
+    (vehicleUpdated)="onVehicleUpdated($event)"
+  />
+
+  <div class="card mt-5">
+    <h4 class="title">Registros Antiguos</h4>
+    <div class="mx-2 mb-3 row text-center registry">
+      <p class="col-3"><strong>Plaza</strong></p>
+      <p class="col-3"><strong>Tarifa</strong></p>
+      <p class="col-3"><strong>Entrada</strong></p>
+      <p class="col-3"><strong>Salida </strong></p>
+    </div>
+    <div
+      class="mx-2 mb-3 row text-center registry"
+      *ngFor="let registry of registries"
+    >
+      <p class="col-3">
+        {{ parkingSpots[registry.idParkingSpot]?.spotNumber || "" }}
+      </p>
+      <p class="col-3">{{ rates[registry.idRate]?.name || "Desconocido" }}</p>
+      <p class="col-3">
+        {{ registry.entryTime | date: "dd/MM/yyyy HH:mm:ss" }}
+      </p>
+      <p class="col-3">
+        {{ (registry.exitTime | date: "dd/MM/yyyy HH:mm:ss") || "NaT" }}
+      </p>
+    </div>
+  </div>
 </div>
