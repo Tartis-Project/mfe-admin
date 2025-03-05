@@ -1,20 +1,35 @@
 <form
   [formGroup]="filterForm"
-  class="row justify-content-between align-items-center mb-5"
+  class="row w-100 pr-0 align-items-center mb-5"
 >
+<div class="col-md-6  ml-0 mb-1 ">
   <input
     formControlName="search"
-    class="col-md-8 form-control filter-bar px-3 py-2"
+    class=" form-control filter-bar  px-3 py-3"
     type="text"
     placeholder="Busca por matrícula, tipo de vehículo o color"
   />
 
-  <div class="col-4 row align-items-center justify-content-end">
-    <div class="col-6 pl-0 select-container" [class.open]="isOpen">
+</div>
+
+  <div class="col-md-6 pr-0 row ">
+    <div class="col-md-4 mb-1 pr-0  select-container" [class.open]="isOpen">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+      <select
+        formControlName="order"
+        (click)="toggleSelect()"
+        class="filter-bar custom-selectt"
+      >
+        <option value="new">Más reciente</option>
+        <option value="old">Más antiguo</option>
+      </select>
+    </div>
+
+    <div class="col-md-4 mb-1 pr-0 select-container" [class.open]="isOpenState">
       <mat-icon>keyboard_arrow_down</mat-icon>
       <select
         formControlName="state"
-        (click)="toggleSelect()"
+        (click)="toggleSelectState()"
         class="filter-bar custom-selectt"
       >
         <option value="active">Activo</option>
@@ -23,7 +38,7 @@
       </select>
     </div>
 
-    <div class="col-6 pl-0">
+    <div class="col-md-4 pr-0 mb-1">
       <button (click)="cleanFilter()" class="clean-filter">
         Limpiar filtros
       </button>
@@ -43,11 +58,11 @@
   class="mb-5"
 >
   <h4 class="title mb-5">Coches activos</h4>
-  <div class="row ml-1 w-100">
+  <div class="row w-100">
     <app-card-view
       *ngFor="
         let vehicle of (
-          vehiclesActive | searchVehicle: filterForm.value.search
+          vehiclesActive | searchVehicle: filterForm.value.search | orderVehicle: registries : filterForm.value.order
         ).slice(
           currentPageActive * pageSizeActive,
           (currentPageActive + 1) * pageSizeActive
@@ -90,11 +105,11 @@
   class="mb-5"
 >
   <h4 class="title mb-5">Coches inactivos</h4>
-  <div class="row ml-4 w-100">
+  <div class="row w-100">
     <app-card-view
       *ngFor="
         let vehicle of (
-          vehiclesInactive | searchVehicle: filterForm.value.search
+          vehiclesInactive | searchVehicle: filterForm.value.search | orderVehicle: registries : filterForm.value.order
         ).slice(
           currentPageInactive * pageSizeInactive,
           (currentPageInactive + 1) * pageSizeInactive
