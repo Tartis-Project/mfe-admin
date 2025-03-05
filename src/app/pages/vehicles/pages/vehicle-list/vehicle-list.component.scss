@@ -51,7 +51,7 @@
 
 .select-container mat-icon {
   position: absolute;
-  right: 25%;
+  right: 20%;
   font-size: 22px;
   color: #000000cc;
   pointer-events: none;
@@ -68,6 +68,9 @@
   outline: none;
   box-shadow: none;
 }
+
+
+
 
 mat-paginator {
   background-color: white !important;

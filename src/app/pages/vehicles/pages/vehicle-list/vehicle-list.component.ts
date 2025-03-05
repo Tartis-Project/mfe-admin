@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 
@@ -7,6 +7,9 @@ import { VehicleService } from '../../services/vehicle.service';
 import { Vehicle } from '../../interfaces/vehicle.model';
 import { MaterialModule } from '../../../../material/material.module';
 import { SearchVehiclePipe } from '../../../../core/pipes/search-vehicle.pipe';
+import { RegistryService } from '../../../../shared/registry/services/registry.service';
+import { Registry } from '../../../../shared/registry/interfaces/registry.model';
+import { OrderVehiclePipe } from '../../../../core/pipes/order-vehicle.pipe';
 
 
 @Component({
@@ -17,6 +20,7 @@ import { SearchVehiclePipe } from '../../../../core/pipes/search-vehicle.pipe';
     MaterialModule,
     ReactiveFormsModule,
     SearchVehiclePipe,
+    OrderVehiclePipe
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntl }],
 
@@ -30,6 +34,7 @@ export class VehicleListComponent implements OnInit {
   public filterForm: FormGroup;
   vehiclesActive: Vehicle[] = [];
   vehiclesInactive: Vehicle[] = [];
+  registries: Registry[] = [];
   currentPageActive: number = 0;
   currentPageInactive: number = 0;
   pageSizeActive: number = 8;
@@ -37,19 +42,23 @@ export class VehicleListComponent implements OnInit {
   isActive: boolean = true;
   isInactive: boolean = true;
   isOpen = false;
+  isOpenState = false;
 
   constructor(
     private vehicleService: VehicleService,
     private fb: FormBuilder,
+    private registryService: RegistryService,
   ) {
     this.filterForm = this.fb.group({
       search: [''],
       state: ['active'],
+      order: ['new']
     });
   }
 
   ngOnInit(): void {
     this.loadVehicles();
+    this.loadRegistries()
     this.filterForm.valueChanges.subscribe((changes) => {
       this.filterVehicles(changes);
     });
@@ -59,12 +68,22 @@ export class VehicleListComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
+  toggleSelectState(){
+    this.isOpenState = !this.isOpenState;
+  }
+
   loadVehicles() {
     this.vehicleService.getVehicles().subscribe((res) => {
       this.vehiclesInactive = res.filter((v) => !v.isActive);
       this.vehiclesActive = res.filter((v) => v.isActive);
       this.filterVehicles(this.filterForm.value);
     });
+  }
+
+  loadRegistries(){
+    this.registryService.getRegistries().subscribe(res => {
+      this.registries = res;
+    })
   }
 
   filterVehicles(filters: any) {
@@ -98,7 +117,7 @@ export class VehicleListComponent implements OnInit {
   }
 
   cleanFilter() {
-    this.filterForm.reset({ search: '', state: 'active' });
+    this.filterForm.reset({ search: '', state: 'active', order: 'new' });
     this.currentPageActive = this.currentPageInactive = 0;
     this.pageSizeActive = this.pageSizeInactive = 8;
 
