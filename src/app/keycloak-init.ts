@@ -14,5 +14,4 @@ export function initializeKeycloak(keycloak: KeycloakService) {
       },
       enableBearerInterceptor: true,
     });
-    //prueba
 }
