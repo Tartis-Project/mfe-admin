@@ -4,9 +4,9 @@ export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://localhost:8080', 
-        realm: 'mi-realm', 
-        clientId: 'mi-angular-app', 
+        url: 'http://keycloak-container:8080', 
+        realm: 'realm-front-keycloak', 
+        clientId: 'angular18', 
       },
       initOptions: {
         onLoad: 'login-required', // Opciones: 'login-required' | 'check-sso'
