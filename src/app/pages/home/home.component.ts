@@ -29,7 +29,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   latestMovements$: Observable<Registry[]>;
   vehiclesMap: { [id: string]: Vehicle } = {};
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private keycloakService: KeycloakService) {
     this.vehicleService.getVehicles().subscribe(vehicles => {
       this.vehiclesMap = vehicles.reduce((acc, vehicle) => {
         acc[vehicle.id] = vehicle;
