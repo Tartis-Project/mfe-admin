@@ -14,6 +14,8 @@ RUN npm install
 COPY . .
  
 # Compilar la aplicación Angular
+RUN npm install sweetalert2
+RUN npm i
 RUN npm run build --prod
  
 RUN ls -alt
