@@ -2,9 +2,9 @@ name: Build and Push Angular Docker Image
 
 on:
   push:
-    branches: [ "tsk-keycloak-v2" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "tsk-keycloak-v2" ]
+    branches: [ "main" ]
 
 jobs:
   build-and-push:
