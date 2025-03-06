@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://springboot-microorquestadorcore-container:8080/orchestrator',
+  apiUrl: 'http://localhost:8081/orchestrator',
 };
