@@ -8,17 +8,17 @@
       <strong>¿Operativa?:</strong>
       <mat-checkbox
         disabled="disabled"
-        [checked]="floor.isOperative"
+        [checked]="floor.operative"
       ></mat-checkbox>
     </div>
-    <div class="availability" [class.show]="floor.isOperative">
+    <div class="availability" [class.show]="floor.operative">
       <strong>Plazas disponibles -</strong> {{ floor.numberOfSpots }}
     </div>
   </div>
 
   <ng-template #otherTitles>
     <h4 class="title" *ngIf="isTarifas(); else vehicleTitle">
-      Tarifa {{ rate.name }}
+      Tarifa {{ rate.description }}
     </h4>
 
     <div *ngIf="isTarifas()">

@@ -39,9 +39,9 @@ export class VehiclesFormComponent {
     this.vehicleForm = this.fb.group({
       licensePlate: [this.vehicle.licensePlate, Validators.required],
       model: [this.vehicle.model, Validators.required],
-      type: [this.vehicle.type, Validators.required],
+      type: [this.vehicle.vehicleType, Validators.required],
       color: [this.vehicle.color, Validators.required],
-      isActive: [this.vehicle.isActive],
+      active: [this.vehicle.active],
     });
   }
 
@@ -50,7 +50,7 @@ export class VehiclesFormComponent {
     this.vehicleService
       .updateVehicle(this.vehicle.id, updatedVehicle)
       .subscribe((res) => {
-        this.vehicleUpdated.emit(updatedVehicle); 
+        this.vehicleUpdated.emit(updatedVehicle);
         this.onNoClick();
       });
   }
