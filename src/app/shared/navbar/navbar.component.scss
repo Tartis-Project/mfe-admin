@@ -46,14 +46,13 @@ nav {
 
 .user-box {
   top: 1.5rem;
-  right: 1.5rem;
+  right: 10rem;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  transform: scale(1.2);
+  transform: scale(1.5);
 
   &:hover{
     color: var(--primary-color);
-    transform: scale(1.5);
   }
 }
 
