@@ -1,10 +1,10 @@
-// import { KeycloakService } from 'keycloak-angular';
+import { KeycloakService } from "keycloak-angular";
 
 export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        url: 'http://keycloak-container:8080', 
+        url: 'http://localhost:8090', 
         realm: 'realm-front-keycloak', 
         clientId: 'angular18', 
       },
