@@ -9,7 +9,6 @@ import { Administrator } from '../interfaces/administrator.model';
   providedIn: 'root',
 })
 export class AdminService {
-
   userAdmin = {} as Administrator;
 
   constructor(
@@ -23,52 +22,58 @@ export class AdminService {
     return new Observable((observer) => {
       this.keycloakService.getToken().then((token) => {
         const headers = new HttpHeaders({
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         });
-  
+
         this.http
-          .get<any[]>('http://localhost:8090/admin/realms/realm-front-keycloak/users', { headers })
+          .get<
+            any[]
+          >('http://localhost:8090/admin/realms/realm-front-keycloak/users', { headers })
           .subscribe(
             (users) => {
-              const adminUsers: Administrator[] = users.map(user => ({
+              const adminUsers: Administrator[] = users.map((user) => ({
                 id: user.id,
                 username: user.username,
                 email: user.email || '',
                 firstName: user.firstName || '',
-                lastName: user.lastName || ''
+                lastName: user.lastName || '',
               }));
-              
+
               observer.next(adminUsers);
               observer.complete();
             },
             (error) => {
               observer.error(error);
-            }
+            },
           );
       });
     });
   }
 
   getUserName(): string | null {
-    const userProfile = this.keycloakService.getKeycloakInstance().idTokenParsed;
+    const userProfile =
+      this.keycloakService.getKeycloakInstance().idTokenParsed;
     this.userAdmin.username = userProfile?.['username'] || null;
     return userProfile?.['username'] || null;
   }
 
   getUserEmail(): string | null {
-    const userProfile = this.keycloakService.getKeycloakInstance().idTokenParsed;
+    const userProfile =
+      this.keycloakService.getKeycloakInstance().idTokenParsed;
     this.userAdmin.email = userProfile?.['email'] || null;
     return userProfile?.['email'] || null;
   }
 
-  getDataUser(){
-    console.log('Datos de usuario conectado:');
+  getDataUser() {
+    console.log('getDataUser() Datos de usuario conectado:');
     const userProfile = this.keycloakService.getKeycloakInstance().idTokenParsed;
+    console.log('Token ID:', userProfile);
+
     this.userAdmin.id = userProfile?.['id'] || null;
-    this.userAdmin.username = userProfile?.['username'] || null;
+    this.userAdmin.username = userProfile?.['preferred_username'] || null;
     this.userAdmin.email = userProfile?.['email'] || null;
-    this.userAdmin.firstName = userProfile?.['firstName'] || null;
-    this.userAdmin.lastName = userProfile?.['lastName'] || null;
+    this.userAdmin.firstName = userProfile?.['given_name'] || null;
+    this.userAdmin.lastName = userProfile?.['family_name'] || null;
     console.log(this.userAdmin);
   }
 
