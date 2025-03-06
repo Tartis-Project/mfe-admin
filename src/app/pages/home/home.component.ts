@@ -10,6 +10,7 @@ import { RegistryService } from '../../shared/registry/services/registry.service
 import { Vehicle } from '../vehicles/interfaces/vehicle.model';
 import { VehicleService } from '../vehicles/services/vehicle.service';
 import { KeycloakService } from 'keycloak-angular';
+import { AdminService } from '../admin/services/administrator.service';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +32,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private keycloakService: KeycloakService) {
+    private administratorService: AdminService) {
+
     this.vehicleService.getVehicles().subscribe(vehicles => {
       this.vehiclesMap = vehicles.reduce((acc, vehicle) => {
         acc[vehicle.id] = vehicle;
@@ -85,7 +87,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.keycloakService.logout();
+    this.administratorService.logout();
   }
 
+  getUserName(){
+    this.administratorService.getUserName();
+  }
 }
