@@ -1,27 +1,33 @@
 <nav>
-  <div class="navbar-container">
-    <ul class="left-items">
-      <li class="inicio">
-        <a routerLink="/home" routerLinkActive="active">Inicio</a>
-      </li>
-      <li class="plazas">
-        <a routerLink="/parking" routerLinkActive="active">Plazas</a>
-      </li>
-    </ul>
-    <li class="logo">
-      <img
-        src="../../../assets/imagenparking.png"
-        alt="Logo"
-        class="navbar-logo"
-      />
-    </li>
-    <ul class="right-items">
-      <li class="tarifas">
-        <a routerLink="/rates" routerLinkActive="active">Tarifas</a>
-      </li>
-      <li class="vehiculos">
-        <a routerLink="/vehicles" routerLinkActive="active">Vehículos</a>
-      </li>
-    </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-responsive p-0 position-style">
+        <div class="row justify-content-around">
+          <a routerLink="/home" routerLinkActive="active">Inicio</a>
+          <a routerLink="/parking" routerLinkActive="active">Plazas</a>
+        </div>
+      </div>
+      <div class="col-3 p-0 d-none d-md-block">
+        <div class="row justify-content-center">
+          <img
+            src="../../../assets/imagenparking.png"
+            alt="Logo"
+            class="navbar-logo"
+          />
+        </div>
+      </div>
+      <div class="col-responsive position-style p-0">
+        <div class="row justify-content-around">
+          <a routerLink="/rates" routerLinkActive="active">Tarifas</a>
+          <a routerLink="/vehicles" routerLinkActive="active">Vehículos</a>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
+
+<div class="user-box position-absolute">
+  <a routerLink="/admin" routerLinkActive="active">
+    <img src="../../../assets/iconProfile.png">
+  </a>
+</div>
