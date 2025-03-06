@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8081/orchestrator',
+  apiUrl: 'apigateway-container:8000/core',
 };
