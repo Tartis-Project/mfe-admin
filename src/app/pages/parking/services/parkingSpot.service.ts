@@ -9,7 +9,7 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root',
 })
 export class ParkingSpotService {
-  private readonly apiUrl = environment.apiUrl + '/spots';
+  private readonly apiUrl = environment.apiUrl + '/parkingspots';
   constructor(private http: HttpClient) {}
 
   getParkingSpots(): Observable<ParkingSpot[]> {
