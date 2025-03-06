@@ -9,15 +9,19 @@ import { Administrator } from '../interfaces/administrator.model';
   providedIn: 'root',
 })
 export class AdminService {
+    
   userAdmin = {} as Administrator;
 
-  private keycloakUrl = 'http://localhost:8090/admin/realms/realm-front-keycloak/users';
+  //private keycloakUrl = 'http://localhost:8090/admin/realms/realm-front-keycloak/users';
 
   constructor(
     private http: HttpClient,
     private keycloakService: KeycloakService,
-  ) {}
+  ) {
+    this.getDataUser();
+  }
 
+  /*
   getAdmins(token: string): Observable<any> {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
@@ -25,6 +29,7 @@ export class AdminService {
 
     return this.http.get<any>(this.keycloakUrl, { headers });
   }
+    */
 
   getUserName(): string | null {
     const userProfile = this.keycloakService.getKeycloakInstance().idTokenParsed;
