@@ -64,18 +64,23 @@ export class AdminService {
     return userProfile?.['email'] || null;
   }
 
-  getDataUser() {
-    console.log('getDataUser() Datos de usuario conectado:');
-    const userProfile = this.keycloakService.getKeycloakInstance().idTokenParsed;
-    console.log('Token ID:', userProfile);
-
-    this.userAdmin.id = userProfile?.['sub'] || "";
-    this.userAdmin.username = userProfile?.['preferred_username'] || null; 
-    this.userAdmin.email = userProfile?.['email'] || null;
-    this.userAdmin.firstName = userProfile?.['given_name'] || null; 
-    this.userAdmin.lastName = userProfile?.['family_name'] || null; 
-
-    console.log(this.userAdmin);
+  async getDataUser() {
+    const isLoggedIn = await this.keycloakService.isLoggedIn();
+    if (isLoggedIn) {
+      const userProfile =
+        this.keycloakService.getKeycloakInstance().idTokenParsed;
+      console.log('Token completo:', userProfile);
+      if (userProfile) {
+        this.userAdmin.id = userProfile['sub'] || '';
+        this.userAdmin.username = userProfile['preferred_username'] || null;
+        this.userAdmin.email = userProfile['email'] || null;
+        this.userAdmin.firstName = userProfile['given_name'] || null;
+        this.userAdmin.lastName = userProfile['family_name'] || null;
+      }
+    } else {
+      console.warn('Usuario no autenticado');
+    }
+    console.log('Datos de usuario:', this.userAdmin);
   }
 
   logout() {
