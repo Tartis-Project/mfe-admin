@@ -9,7 +9,7 @@ import { Registry } from '../../shared/registry/interfaces/registry.model';
 export class OrderVehiclePipe implements PipeTransform {
 
   transform(vehicles: Vehicle[], registries: Registry[], order: string): Vehicle[] {
-    if (!registries) return vehicles;
+    if (registries.length <= 0) return vehicles;
   
     const validRegistries = registries.filter(registry => {
       const entryValid = !isNaN(new Date(registry.entryTime).getTime());

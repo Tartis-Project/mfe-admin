@@ -87,7 +87,7 @@ export class ParkingFormComponent implements OnInit {
   }
 
   updateFloor() {
-    const updatedFloor = this.parkingForm.value;
+    const updatedFloor = { ...this.parkingForm.value, id: this.floor.id }; 
     this.parkingService
       .updateFloor(this.floor.id, updatedFloor)
       .subscribe((res) => {
@@ -95,6 +95,7 @@ export class ParkingFormComponent implements OnInit {
         this.onNoClick();
       });
   }
+  
 
   onNoClick(): void {
     this.dialogRef.close();
