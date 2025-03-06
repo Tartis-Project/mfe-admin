@@ -66,7 +66,7 @@ export class ParkingFormComponent implements OnInit {
               const auxSpot = {
                 idFloor: res.id,
                 spotNumber: lastSpotNumber + index + 1,
-                isOccupied: false,
+                occupied: false,
               } as ParkingSpot;
               parkingSpots.push(auxSpot);
             }
