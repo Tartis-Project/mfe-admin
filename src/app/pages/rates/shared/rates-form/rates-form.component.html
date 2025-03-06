@@ -4,11 +4,11 @@
   <form [formGroup]="ratesForm">
     <mat-form-field class="w-100">
       <mat-label>Nombre</mat-label>
-      <input matInput type="text" formControlName="name" />
-      <mat-error *ngIf="ratesForm.get('name')?.hasError('required')">
+      <input matInput type="text" formControlName="description" />
+      <mat-error *ngIf="ratesForm.get('description')?.hasError('required')">
         Este campo es obligatorio.
       </mat-error>
-      <mat-error *ngIf="ratesForm.get('name')?.hasError('pattern')">
+      <mat-error *ngIf="ratesForm.get('description')?.hasError('pattern')">
         El nombre no puede estar vacío o contener solo espacios.
       </mat-error>
     </mat-form-field>
