@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       map(([floors, spots]) => {
         return floors.map(floor => ({
           ...floor,
-          occupiedSpots: spots.filter(spot => spot.idFloor === floor.id && spot.isOccupied).length
+          occupiedSpots: spots.filter(spot => spot.idFloor === floor.id && spot.occupied).length
         }));
       })
     );

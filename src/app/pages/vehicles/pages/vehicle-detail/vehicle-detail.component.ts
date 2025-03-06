@@ -67,7 +67,7 @@ export class VehicleDetailComponent implements OnInit{
     }
       this.registries = registries.filter(r => r.idVehicle === this.vehicle.id);
 
-      if (this.vehicle.isActive) {
+      if (this.vehicle.active) {
         const activeRegistry = this.registries.find(r => {
           return !r.exitTime || isNaN(new Date(r.exitTime).getTime());
         });
