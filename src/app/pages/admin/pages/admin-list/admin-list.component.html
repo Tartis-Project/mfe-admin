@@ -1,18 +1,32 @@
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Correo</th>
-      <th>Usuario</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let admin of administrators">
-      <td>{{ admin.firstName }}</td>
-      <td>{{ admin.lastName }}</td>
-      <td>{{ admin.email }}</td>
-      <td>{{ admin.username }}</td>
-    </tr>
-  </tbody>
-</table>
+<mat-card>
+  <mat-table [dataSource]="administrators" class="mat-elevation-z8">
+    
+    <!-- Nombre -->
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let admin"> {{ admin.firstName }} </mat-cell>
+    </ng-container>
+
+    <!-- Apellido -->
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+      <mat-cell *matCellDef="let admin"> {{ admin.lastName }} </mat-cell>
+    </ng-container>
+
+    <!-- Correo -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+      <mat-cell *matCellDef="let admin"> {{ admin.email }} </mat-cell>
+    </ng-container>
+
+    <!-- Usuario -->
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> Usuario </mat-header-cell>
+      <mat-cell *matCellDef="let admin"> {{ admin.username }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+</mat-card>

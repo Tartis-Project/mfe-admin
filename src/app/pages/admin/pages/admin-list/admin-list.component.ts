@@ -15,6 +15,7 @@ import { Administrator } from '../../interfaces/administrator.model';
 export class AdminListComponent {
 
   administrators: Administrator[] = [];
+  displayedColumns: string[] = ['firstName', 'lastName', 'email', 'username'];
 
   constructor(
     private adminService: AdminService,
