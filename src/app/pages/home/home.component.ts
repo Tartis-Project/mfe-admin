@@ -90,7 +90,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.administratorService.logout();
   }
 
-  getUserName(): string | null {
-    return this.administratorService.getUserName()
+  getUserFirstName(): string | null {
+    return this.administratorService.getUserFirstName()
   }
 }

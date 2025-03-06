@@ -57,6 +57,13 @@ export class AdminService {
     return userProfile?.['preferred_username'] || null;
   }
 
+  getUserFirstName(): string | null {
+    const userProfile =
+      this.keycloakService.getKeycloakInstance().idTokenParsed;
+    this.userAdmin.firstName = userProfile?.['given_name'] || null;
+    return userProfile?.['given_name'] || null;
+  }
+
   getUserEmail(): string | null {
     const userProfile =
       this.keycloakService.getKeycloakInstance().idTokenParsed;
