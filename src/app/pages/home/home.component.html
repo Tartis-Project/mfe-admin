@@ -10,10 +10,10 @@
               <strong>Planta {{ floor.number }} - </strong>
               <span class="mr-3"
                     [ngClass]="{
-                      'text-primary': floor.isOperative && floor.occupiedSpots < floor.numberOfSpots,
-                      'text-secondary': floor.isOperative && floor.occupiedSpots === floor.numberOfSpots
+                      'text-primary': floor.operative && floor.occupiedSpots < floor.numberOfSpots,
+                      'text-secondary': floor.operative && floor.occupiedSpots === floor.numberOfSpots
                     }">
-                {{ floor.isOperative ? (floor.occupiedSpots + '/' + floor.numberOfSpots) : 'No disponible' }}
+                {{ floor.operative ? (floor.occupiedSpots + '/' + floor.numberOfSpots) : 'No disponible' }}
               </span>
             </p>
           </div>
@@ -50,7 +50,7 @@
           <ng-container *ngIf="movements.length > 0; else noMovements">
             <tr *ngFor="let movement of movements" (click)="goDetail(movement.idVehicle)">
               <td>{{ getVehicleById(movement.idVehicle).licensePlate }}</td>
-              <td>{{ getVehicleById(movement.idVehicle).type }}</td>
+              <td>{{ getVehicleById(movement.idVehicle).vehicleType }}</td>
               <td>{{ getVehicleById(movement.idVehicle).color }}</td>
               <td>
                 <span class="text-success" *ngIf="isEntry(movement.exitTime)">Entra</span>
