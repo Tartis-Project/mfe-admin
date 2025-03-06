@@ -88,9 +88,4 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.keycloakService.logout();
   }
 
-  getUserName(): string | null {
-    const userProfile = this.keycloakService.getKeycloakInstance().idTokenParsed;
-    return userProfile?.['name'] || null;
-  }
-
 }
