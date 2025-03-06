@@ -4,17 +4,11 @@
   --border-color: #ddd;
 }
 
-.custom-card {
+.custom-table {
   padding: 20px;
-  border-radius: 8px;
+  overflow: hidden;
   filter: drop-shadow(1px 1px 2px #90c578);
   background-color: var(--white-color);
-}
-
-.custom-table {
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 .custom-header {
