@@ -69,11 +69,12 @@ export class AdminService {
     const userProfile = this.keycloakService.getKeycloakInstance().idTokenParsed;
     console.log('Token ID:', userProfile);
 
-    this.userAdmin.id = userProfile?.['id'] || null;
-    this.userAdmin.username = userProfile?.['preferred_username'] || null;
+    this.userAdmin.id = userProfile?.['sub'] || "";
+    this.userAdmin.username = userProfile?.['preferred_username'] || null; 
     this.userAdmin.email = userProfile?.['email'] || null;
-    this.userAdmin.firstName = userProfile?.['given_name'] || null;
-    this.userAdmin.lastName = userProfile?.['family_name'] || null;
+    this.userAdmin.firstName = userProfile?.['given_name'] || null; 
+    this.userAdmin.lastName = userProfile?.['family_name'] || null; 
+
     console.log(this.userAdmin);
   }
 
