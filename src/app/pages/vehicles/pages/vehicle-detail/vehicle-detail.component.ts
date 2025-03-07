@@ -93,13 +93,15 @@ export class VehicleDetailComponent implements OnInit{
   getRegistyDetails(registryId: Registry): void {
     this.parkingSpotService.getParkingSpotById(registryId.idParkingSpot).subscribe(res => {
         this.parkingSpots[registryId.idParkingSpot] = res;
+        console.log('1:', this.parkingSpots);
+        console.log('2:', this.parkingSpots[registryId.idParkingSpot]);
       }
     );
 
     this.rateService.getRateById(registryId.idRate).subscribe(res => {
       this.rates[registryId.idRate] = res
-      console.log('1:',this.rates)
-      console.log('2:', this.rates[registryId.idRate])
+      console.log('1:',this.rates);
+      console.log('2:', this.rates[registryId.idRate]);
     })
   }
 
