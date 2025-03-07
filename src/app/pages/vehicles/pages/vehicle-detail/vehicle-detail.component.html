@@ -24,9 +24,9 @@
       class="mx-2 mb-3 row text-center registry"
       *ngFor="let registry of registries"
     >
-      <p class="col-3">
+      <!-- <p class="col-3">
         {{ parkingSpots[registry.idParkingSpot]?.spotNumber || "" }}
-      </p>
+      </p> -->
       <p class="col-3">{{ rates[registry.idRate]?.description || "Estándar" }}</p>
       <p class="col-3">
         {{ registry.entryTime | date: "dd/MM/yyyy HH:mm:ss" }}

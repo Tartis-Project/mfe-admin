@@ -6,9 +6,9 @@
     <p><strong>Tipo vehículo - </strong>{{ vehicle.vehicleType }}</p>
     <p><strong>Estado - </strong>{{ vehicle.active ? 'Activo' : 'Inactivo' }}</p>
     <div *ngIf="registry">
-      <p>
+      <!-- <p>
         <strong>Plaza - </strong>{{ parkingSpot?.spotNumber }}
-      </p>
+      </p> -->
       <p>
         <strong>Tarifa - </strong>{{ rate?.description || "Estándar" }}
       </p>
