@@ -39,7 +39,7 @@ export class VehiclesFormComponent {
     this.vehicleForm = this.fb.group({
       licensePlate: [this.vehicle.licensePlate, Validators.required],
       model: [this.vehicle.model, Validators.required],
-      type: [this.vehicle.vehicleType, Validators.required],
+      vehicleType: [this.vehicle.vehicleType, Validators.required],
       color: [this.vehicle.color, Validators.required],
       active: [this.vehicle.active],
     });
