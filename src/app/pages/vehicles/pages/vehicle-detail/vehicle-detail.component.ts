@@ -98,6 +98,8 @@ export class VehicleDetailComponent implements OnInit{
 
     this.rateService.getRateById(registryId.idRate).subscribe(res => {
       this.rates[registryId.idRate] = res
+      console.log('1:',this.rates)
+      console.log('2:', this.rates[registryId.idRate])
     })
   }
 
