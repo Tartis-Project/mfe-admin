@@ -1,13 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CardDetailComponent } from './card-detail.component';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { of } from 'rxjs';
-import { MockProvider } from 'ng-mocks';
-import { VehicleService } from '../../../pages/vehicles/services/vehicle.service';
-import { CardFormComponent } from '../card-form/card-form.component';
-import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
-import { MaterialModule } from '../../../material/material.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { VehicleService } from '../../../pages/vehicles/services/vehicle.service';
+import { of } from 'rxjs';
+import { MatDialog, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { CardFormComponent } from '../card-form/card-form.component';
 import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatDialogHarness } from '@angular/material/dialog/testing';
@@ -15,40 +13,71 @@ import { MatDialogHarness } from '@angular/material/dialog/testing';
 describe('CardDetailComponent', () => {
   let component: CardDetailComponent;
   let fixture: ComponentFixture<CardDetailComponent>;
+  let vehicleServiceMock: jasmine.SpyObj<VehicleService>;
   let loader: HarnessLoader;
-  let dialog: jasmine.SpyObj<MatDialog>;
-  let vehicleService: jasmine.SpyObj<VehicleService>;
+  let dialog: MatDialog;
+  let router: Router;
+
+  const mockVehicle = {
+    id: '1',
+    licensePlate: 'ABC123',
+    model: 'Toyota Corolla',
+    type: 'Coche',
+    color: 'Red',
+    isActive: true,
+  };
+
+  const mockRouter = {
+    url: '/vehicle-detail',
+  };
 
   beforeEach(async () => {
-    // Mock MatDialog and VehicleService
-    const dialogSpy = jasmine.createSpyObj('MatDialog', ['open']);
-    const vehicleServiceSpy = jasmine.createSpyObj('VehicleService', ['getVehicleById']);
+    // Crear el espía para VehicleService
+    vehicleServiceMock = jasmine.createSpyObj('VehicleService', ['getVehicleById']);
 
+    // Configuración del TestBed
     await TestBed.configureTestingModule({
-      declarations: [],
-      imports: [CardDetailComponent, CardFormComponent, ConfirmDialogComponent, MaterialModule, HttpClientTestingModule],
+      imports: [CardDetailComponent, CardFormComponent, MatDialogModule, HttpClientTestingModule], // Importa los módulos necesarios
+      declarations: [], // Declara los componentes
       providers: [
-        { provide: MatDialog, useValue: dialogSpy },
-        { provide: VehicleService, useValue: vehicleServiceSpy },
-        MockProvider(MAT_DIALOG_DATA, {}),
-      ]
-    })
-      .compileComponents();
-  });
+        { provide: VehicleService, useValue: vehicleServiceMock },
+        { provide: Router, useValue: mockRouter },
+        {
+          provide: MAT_DIALOG_DATA, 
+          useValue: { dialogData: mockVehicle },  // Proveer los datos directamente
+        },
+      ],
+    }).compileComponents();
 
-  beforeEach(() => {
+    // Simular la respuesta del servicio
+    vehicleServiceMock.getVehicleById.and.returnValue(of(mockVehicle));
+
+    // Crear la instancia del componente
     fixture = TestBed.createComponent(CardDetailComponent);
     component = fixture.componentInstance;
-    dialog = TestBed.inject(MatDialog) as jasmine.SpyObj<MatDialog>;
-    vehicleService = TestBed.inject(VehicleService) as jasmine.SpyObj<VehicleService>;
 
-    // Initialize the loader after fixture is fully initialized
-    loader = TestbedHarnessEnvironment.documentRootLoader(fixture);
+    // Inyectar dependencias
+        loader = TestbedHarnessEnvironment.documentRootLoader(fixture);
+    
+    dialog = TestBed.inject(MatDialog);
+    router = TestBed.inject(Router);
 
-    fixture.detectChanges(); // Trigger change detection
+    // Detectar cambios para inicializar correctamente el componente
+    fixture.detectChanges();
   });
 
-  it('should open dialog and call getVehicleById on afterClosed', async () => {
-    
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should open dialog with the correct data when openDialog() is called', async () => {
+    component.vehicle = mockVehicle;
+
+    component.openDialog();
+
+    const dialogHarness = await loader.getHarness(MatDialogHarness);
+
+    expect(dialogHarness).toBeTruthy();
+
   });
 });

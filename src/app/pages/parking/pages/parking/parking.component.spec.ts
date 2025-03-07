@@ -74,12 +74,12 @@ describe('ParkingComponent', () => {
     fixture.detectChanges();
   });
 
-  beforeEach(() => {
+  // beforeEach(() => {
 
-    dialog = TestBed.get(MatDialog);
+  //   dialog = TestBed.get(MatDialog);
 
-    fixture.detectChanges();
-  });
+  //   fixture.detectChanges();
+  // });
 
   it('should create', () => {
     expect(component).toBeTruthy();

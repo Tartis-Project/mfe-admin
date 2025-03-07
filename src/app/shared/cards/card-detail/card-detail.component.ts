@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
@@ -17,7 +17,7 @@ import { ParkingSpot } from '../../../pages/parking/interfaces/parkingSpot.model
   templateUrl: './card-detail.component.html',
   styleUrl: './card-detail.component.scss',
 })
-export class CardDetailComponent {
+export class CardDetailComponent{
   @Input() vehicle!: Vehicle;
   @Input() registry?: Registry;
   @Output() vehicleUpdated = new EventEmitter<Vehicle>();
@@ -29,7 +29,6 @@ export class CardDetailComponent {
     private vehicleService: VehicleService,
     readonly dialog: MatDialog,
   ) {
-    console.log(this.registry, this.vehicle);
   }
 
   openDialog(): void {

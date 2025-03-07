@@ -74,38 +74,7 @@ describe('CardFormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should set floor data when route is /parking', () => {
-  //   // Emitimos un evento NavigationEnd con la URL de /parking
-  //   mockRouter.events.next(new NavigationEnd(1, '/parking', '/parking'));
-  //   fixture.detectChanges(); // Detectar cambios después de que se emite el evento
 
-  //   component.data = { dialogData: mockFloor };
-  //   fixture.detectChanges(); // Aseguramos que se detecten los cambios
-
-  //   expect(component.floor).toEqual(mockFloor); // Verificamos que los datos del piso se asignen correctamente
-  // });
-
-  // it('should set rate data when route is /rates', () => {
-  //   // Emitimos un evento NavigationEnd con la URL de /rates
-  //   mockRouter.events.next(new NavigationEnd(1, '/rates', '/rates'));
-  //   fixture.detectChanges(); // Detectar cambios después de que se emite el evento
-
-  //   component.data = { dialogData: mockRate };
-  //   fixture.detectChanges(); // Aseguramos que se detecten los cambios
-
-  //   expect(component.rate).toEqual(mockRate); // Verificamos que los datos de tarifas se asignen correctamente
-  // });
-
-  // it('should set vehicle data when route is /vehicles', () => {
-  //   // Emitimos un evento NavigationEnd con la URL de /vehicles
-  //   mockRouter.events.next(new NavigationEnd(1, '/vehicles', '/vehicles'));
-  //   fixture.detectChanges(); // Detectar cambios después de que se emite el evento
-
-  //   component.data = { dialogData: mockVehicle };
-  //   fixture.detectChanges(); // Aseguramos que se detecten los cambios
-
-  //   expect(component.vehicle).toEqual(mockVehicle); // Verificamos que los datos del vehículo se asignen correctamente
-  // });
 
   it('should close the dialog on onNoClick()', () => {
     component.onNoClick();
