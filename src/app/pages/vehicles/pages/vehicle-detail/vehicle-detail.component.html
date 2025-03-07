@@ -27,7 +27,7 @@
       <p class="col-3">
         {{ parkingSpots[registry.idParkingSpot]?.spotNumber || "" }}
       </p>
-      <p class="col-3">{{ rates[registry.idRate]!.description || "Estándar" }}</p>
+      <p class="col-3">{{ rates[registry.idRate]?.description || "Estándar" }}</p>
       <p class="col-3">
         {{ registry.entryTime | date: "dd/MM/yyyy HH:mm:ss" }}
       </p>
