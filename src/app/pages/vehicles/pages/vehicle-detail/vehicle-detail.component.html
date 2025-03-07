@@ -12,10 +12,9 @@
     (vehicleUpdated)="onVehicleUpdated($event)"
   />
 
-  <div class="card mt-5">
+  <!-- <div class="card mt-5"> -->
     <h4 class="title">Registros Antiguos</h4>
     <div class="mx-2 mb-3 row text-center registry">
-      <p class="col-3"><strong>Plaza</strong></p>
       <p class="col-3"><strong>Tarifa</strong></p>
       <p class="col-3"><strong>Entrada</strong></p>
       <p class="col-3"><strong>Salida </strong></p>
@@ -35,5 +34,5 @@
         {{ (registry.exitTime | date: "dd/MM/yyyy HH:mm:ss") || "NaT" }}
       </p>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
