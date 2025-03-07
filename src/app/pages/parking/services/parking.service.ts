@@ -31,20 +31,20 @@ export class ParkingService {
   }
 
 
-  deleteFloor(id: string): Observable<void> {
-    return this.parkingSpotService.getParkingSpots().pipe(
-      switchMap((spots: ParkingSpot[]) => {
-        const spotsToDelete = spots.filter(spot => spot.idFloor === id);
+  // deleteFloor(id: string): Observable<void> {
+  //   return this.parkingSpotService.getParkingSpots().pipe(
+  //     switchMap((spots: ParkingSpot[]) => {
+  //       const spotsToDelete = spots.filter(spot => spot.idFloor === id);
 
-        if (spotsToDelete.length > 0) {
-          const deleteRequests = spotsToDelete.map(spot => this.parkingSpotService.deleteParkingSpot(spot.id));
-          return forkJoin(deleteRequests).pipe(
-            switchMap(() => this.http.delete<void>(`${this.apiUrl}/${id}`))
-          );
-        } else {
-          return this.http.delete<void>(`${this.apiUrl}/${id}`);
-        }
-      })
-    );
-  }
+  //       if (spotsToDelete.length > 0) {
+  //         const deleteRequests = spotsToDelete.map(spot => this.parkingSpotService.deleteParkingSpot(spot.id));
+  //         return forkJoin(deleteRequests).pipe(
+  //           switchMap(() => this.http.delete<void>(`${this.apiUrl}/${id}`))
+  //         );
+  //       } else {
+  //         return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  //       }
+  //     })
+  //   );
+  // }
 }
