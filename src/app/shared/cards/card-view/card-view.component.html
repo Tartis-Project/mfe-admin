@@ -51,7 +51,7 @@
       <mat-icon class="button-primary">visibility</mat-icon>
     </button>
 
-    <button (click)="deleteAction()" mat-icon-button class="delete-btn">
+    <button *ngIf="isTarifas() && isVehicles()" (click)="deleteAction()" mat-icon-button class="delete-btn">
       <mat-icon class="button-secondary">delete</mat-icon>
     </button>
   </div>

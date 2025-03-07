@@ -25,12 +25,13 @@
         type="number"
         formControlName="numberOfSpots"
         class="input-type-number"
+        readonly
       />
-      <mat-error
+      <!-- <mat-error
         *ngIf="parkingForm.get('numberOfSpots')?.hasError('greaterThanZero')"
       >
         El número de plazas debe ser un número mayor que 0.
-      </mat-error>
+      </mat-error> -->
     </mat-form-field>
 
     <mat-checkbox class="custom-checkbox" formControlName="operative"
