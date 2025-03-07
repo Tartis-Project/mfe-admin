@@ -40,7 +40,7 @@ export class ParkingFormComponent implements OnInit {
     this.parkingForm = this.fb.group({
       floorNumber: ['', [Validators.required, greaterThanZeroValidator()]],
       numberOfSpots: ['', [Validators.required, greaterThanZeroValidator()]],
-      isOperative: [false],
+      operative: [false],
     });
   }
 
