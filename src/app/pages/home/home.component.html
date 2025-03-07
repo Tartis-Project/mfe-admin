@@ -7,7 +7,7 @@
         <ng-container *ngIf="floors.length > 0; else noFloors">
           <div class="d-flex" *ngFor="let floor of floors">
             <p>
-              <strong>Planta {{ floor.number }} - </strong>
+              <strong>Planta {{ floor.floorNumber }} - </strong>
               <span class="mr-3"
                     [ngClass]="{
                       'text-primary': floor.operative && floor.occupiedSpots < floor.numberOfSpots,
