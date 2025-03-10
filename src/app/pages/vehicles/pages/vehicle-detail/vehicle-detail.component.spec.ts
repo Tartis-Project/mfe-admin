@@ -21,9 +21,9 @@ class MockVehicleService {
       id, 
       licensePlate: 'ABC123', 
       model: 'Model X', 
-      type: 'SUV', 
+      vehicleType: 'SUV', 
       color: 'Red', 
-      isActive: true 
+      active: true 
     });
   }
 }
@@ -193,9 +193,9 @@ describe('VehicleDetailComponent', () => {
       id: '1', 
       licensePlate: 'XYZ789', 
       model: 'Model Y', 
-      type: 'Sedan', 
+      vehicleType: 'Sedan', 
       color: 'Blue', 
-      isActive: false 
+      active: false 
     };
     component.onVehicleUpdated(updatedVehicle);
     expect(component.vehicle).toEqual(updatedVehicle);

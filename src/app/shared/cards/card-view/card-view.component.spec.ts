@@ -27,9 +27,9 @@ describe('CardViewComponent', () => {
     id: '1',
     licensePlate: 'ABC123',
     model: 'Toyota Corolla',
-    type: 'Car',
+    vehicleType: 'Car',
     color: 'Red',
-    isActive: true,
+    active: true,
   };
 
   const mockRate: Rate = {
@@ -40,9 +40,9 @@ describe('CardViewComponent', () => {
 
   const mockFloor: Floor = {
     id: 'floor-1',
-    number: 0,
+    floorNumber: 0,
     numberOfSpots: 0,
-    isOperative: false
+    operative: false
   };
 
   beforeEach(async () => {

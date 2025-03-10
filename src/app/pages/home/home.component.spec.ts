@@ -47,22 +47,22 @@ describe('HomeComponent', () => {
 
     // Mock de los servicios
     vehicleServiceMock.getVehicles.and.returnValue(of([
-      { id: '1', licensePlate: 'ABC123', model: 'Toyota Corolla', type: 'Coche', color: 'Red', isActive: true },
-      { id: '2', licensePlate: 'XYZ456', model: 'Honda Civic', type: 'Coche', color: 'Blue', isActive: false },
+      { id: '1', licensePlate: 'ABC123', model: 'Toyota Corolla', vehicleType: 'Coche', color: 'Red', active: true },
+      { id: '2', licensePlate: 'XYZ456', model: 'Honda Civic', vehicleType: 'Coche', color: 'Blue', active: false },
     ]));
 
     parkingServiceMock.getFloors.and.returnValue(of([
       {
         id: "8617",
-        number: 1,
+        floorNumber: 1,
         numberOfSpots: 120,
-        isOperative: true
+        operative: true
       },
       {
         id: "0f67",
-        number: 2,
+        floorNumber: 2,
         numberOfSpots: 100,
-        isOperative: false
+        operative: false
       },
     ]));
 
@@ -71,13 +71,13 @@ describe('HomeComponent', () => {
         id: "79b7",
         idFloor: "8617",
         spotNumber: 1,
-        isOccupied: true
+        occupied: true
       },
       {
         id: "ea2f",
         idFloor: "0f67",
         spotNumber: 2,
-        isOccupied: false
+        occupied: false
       },
     ]));
 
@@ -115,8 +115,8 @@ describe('HomeComponent', () => {
   it('should map vehicles correctly', () => {
     fixture.detectChanges();
     expect(component.vehiclesMap).toEqual({
-      '1': { id: '1', licensePlate: 'ABC123', model: 'Toyota Corolla', type: 'Coche', color: 'Red', isActive: true },
-      '2': { id: '2', licensePlate: 'XYZ456', model: 'Honda Civic', type: 'Coche', color: 'Blue', isActive: false },
+      '1': { id: '1', licensePlate: 'ABC123', model: 'Toyota Corolla', vehicleType: 'Coche', color: 'Red', active: true },
+      '2': { id: '2', licensePlate: 'XYZ456', model: 'Honda Civic', vehicleType: 'Coche', color: 'Blue', active: false },
     });
   });
 

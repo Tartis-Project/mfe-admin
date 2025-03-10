@@ -32,15 +32,15 @@ describe('ParkingComponent', () => {
   const mockFloors = [
     {
       id: '8617',
-      number: 1,
+      floorNumber: 1,
       numberOfSpots: 120,
-      isOperative: true,
+      operative: true,
     },
     {
       id: '0f67',
-      number: 2,
+      floorNumber: 2,
       numberOfSpots: 100,
-      isOperative: false,
+      operative: false,
     },
   ];
 

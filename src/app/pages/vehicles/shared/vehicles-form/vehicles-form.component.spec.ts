@@ -19,9 +19,9 @@ describe('VehiclesFormComponent', () => {
     id: '1',
     licensePlate: 'ABC123',
     model: 'Sedan',
-    type: 'Car',
+    vehicleType: 'Car',
     color: 'Red',
-    isActive: true,
+    active: true,
   };
 
   beforeEach(async () => {

@@ -14,8 +14,8 @@ describe('ParkingService', () => {
   const apiUrl = environment.apiUrl + '/floors';
 
   const mockFloors: Floor[] = [
-    { id: '1', number: 1, numberOfSpots: 10, isOperative: true },
-    { id: '2', number: 2, numberOfSpots: 20, isOperative: false },
+    { id: '1', floorNumber: 1, numberOfSpots: 10, operative: true },
+    { id: '2', floorNumber: 2, numberOfSpots: 20, operative: false },
   ];
 
   const mockSpots: ParkingSpot[] = [
@@ -23,13 +23,13 @@ describe('ParkingService', () => {
       id: "79b7",
       idFloor: "1",
       spotNumber: 1,
-      isOccupied: false
+      occupied: false
     },
     {
       id: "ea2f",
       idFloor: "2",
       spotNumber: 2,
-      isOccupied: false
+      occupied: false
     },
   ];
 
@@ -78,7 +78,7 @@ describe('ParkingService', () => {
   });
 
   it('should add a new floor', () => {
-    const newFloor: Floor = { id: '3', number: 3, numberOfSpots: 15, isOperative: true };
+    const newFloor: Floor = { id: '3', floorNumber: 3, numberOfSpots: 15, operative: true };
 
     service.addFloor(newFloor).subscribe(floor => {
       expect(floor).toEqual(newFloor);
@@ -117,8 +117,8 @@ describe('ParkingService', () => {
 
   it('should delete a floor with parking spots', () => {
     parkingSpotServiceMock.getParkingSpots.and.returnValue(of([
-      { id: '79b7', idFloor: '1', spotNumber: 1, isOccupied: false },
-      { id: 'ea2f', idFloor: '1', spotNumber: 2, isOccupied: false }
+      { id: '79b7', idFloor: '1', spotNumber: 1, occupied: false },
+      { id: 'ea2f', idFloor: '1', spotNumber: 2, occupied: false }
     ]));
   
     parkingSpotServiceMock.deleteParkingSpot.and.returnValue(of());

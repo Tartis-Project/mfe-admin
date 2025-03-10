@@ -26,9 +26,9 @@ describe('CardFormComponent', () => {
 
   const mockFloor: Floor = {
     id: '1',
-    number: 34,
+    floorNumber: 34,
     numberOfSpots: 5,
-    isOperative: true,
+    operative: true,
   };
 
   const mockRate: Rate = {
@@ -41,9 +41,9 @@ describe('CardFormComponent', () => {
     id: '1',
     licensePlate: 'ABC123',
     model: 'CarModel',
-    type: 'SUV',
+    vehicleType: 'SUV',
     color: 'Blue',
-    isActive: true,
+    active: true,
   };
 
   beforeEach(() => {
@@ -85,9 +85,9 @@ describe('CardFormComponent', () => {
     const updatedVehicle = {  id: '1',
       licensePlate: 'ABC123',
       model: 'CarModel',
-      type: 'SUV',
+      vehicleType: 'SUV',
       color: 'Blue',
-      isActive: true,};
+      active: true,};
     component.onVehicleUpdated(updatedVehicle);
     expect(dialogRefSpy.close).toHaveBeenCalledWith(updatedVehicle);
   });

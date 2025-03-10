@@ -22,9 +22,9 @@ describe('CardDetailComponent', () => {
     id: '1',
     licensePlate: 'ABC123',
     model: 'Toyota Corolla',
-    type: 'Coche',
+    vehicleType: 'Coche',
     color: 'Red',
-    isActive: true,
+    active: true,
   };
 
   const mockRouter = {

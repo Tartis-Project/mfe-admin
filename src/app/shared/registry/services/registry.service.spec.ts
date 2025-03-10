@@ -59,8 +59,8 @@ describe('RegistryService', () => {
     ];
 
     const mockVehicles = [
-      { id: '3', licensePlate: 'ABC123', model: 'Toyota Corolla', type: 'Coche', color: 'Red', isActive: true },
-      { id: '2', licensePlate: 'XYZ789', model: 'Honda Civic', type: 'Coche', color: 'Blue', isActive: false },
+      { id: '3', licensePlate: 'ABC123', model: 'Toyota Corolla', vehicleType: 'Coche', color: 'Red', active: true },
+      { id: '2', licensePlate: 'XYZ789', model: 'Honda Civic', vehicleType: 'Coche', color: 'Blue', active: false },
     ];
 
     vehicleService.getVehicles.and.returnValue(of(mockVehicles));

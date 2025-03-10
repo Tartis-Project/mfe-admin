@@ -17,15 +17,15 @@ describe('OrderVehiclePipe', () => {
     const vehicles: Vehicle[] = [
       {
         id: '1', licensePlate: 'ABC123', model: 'Toyota',
-        type: '',
+        vehicleType: '',
         color: '',
-        isActive: false
+        active: false
       },
       {
         id: '2', licensePlate: 'XYZ456', model: 'Honda',
-        type: '',
+        vehicleType: '',
         color: '',
-        isActive: false
+        active: false
       }
     ];
     
@@ -55,15 +55,15 @@ describe('OrderVehiclePipe', () => {
     const vehicles: Vehicle[] = [
       {
         id: '1', licensePlate: 'ABC123', model: 'Toyota',
-        type: '',
+        vehicleType: '',
         color: '',
-        isActive: false
+        active: false
       },
       {
         id: '2', licensePlate: 'XYZ456', model: 'Honda',
-        type: '',
+        vehicleType: '',
         color: '',
-        isActive: false
+        active: false
       }
     ];
     
@@ -94,15 +94,15 @@ describe('OrderVehiclePipe', () => {
     const vehicles: Vehicle[] = [
       {
         id: '1', licensePlate: 'ABC123', model: 'Toyota',
-        type: '',
+        vehicleType: '',
         color: '',
-        isActive: false
+        active: false
       },
       {
         id: '2', licensePlate: 'XYZ456', model: 'Honda',
-        type: '',
+        vehicleType: '',
         color: '',
-        isActive: false
+        active: false
       }
     ];
 
@@ -118,9 +118,9 @@ describe('OrderVehiclePipe', () => {
     const vehicles: Vehicle[] = [
       {
         id: '1', licensePlate: 'ABC123', model: 'Toyota',
-        type: '',
+        vehicleType: '',
         color: '',
-        isActive: false
+        active: false
       }
     ];
     

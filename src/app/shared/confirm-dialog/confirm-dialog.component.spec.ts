@@ -17,17 +17,17 @@ describe('ConfirmDialogComponent', () => {
     id: '1',
     licensePlate: 'ABC123',
     model: 'Toyota Corolla',
-    type: 'Coche',
+    vehicleType: 'Coche',
     color: 'Red',
-    isActive: true,
+    active: true,
   };
 
   const mockFloors = 
     {
       id: '8617',
-      number: 1,
+      floorNumber: 1,
       numberOfSpots: 120,
-      isOperative: true,
+      operative: true,
     }
 
     const mockRates = 

@@ -20,14 +20,14 @@ describe('ParkingFormComponent', () => {
 
   const mockFloor: Floor = {
     id: '1',
-    number: 1,
+    floorNumber: 1,
     numberOfSpots: 10,
-    isOperative: true,
+    operative: true,
   };
 
   const mockParkingSpots: ParkingSpot[] = [
-    { id: '1', idFloor: '1', spotNumber: 1, isOccupied: false },
-    { id: '2', idFloor: '1', spotNumber: 2, isOccupied: true },
+    { id: '1', idFloor: '1', spotNumber: 1, occupied: false },
+    { id: '2', idFloor: '1', spotNumber: 2, occupied: true },
   ];
 
   beforeEach(() => {
@@ -61,9 +61,9 @@ describe('ParkingFormComponent', () => {
   });
 
   it('should initialize the form with floor data', () => {
-    expect(component.parkingForm.value.number).toBe(mockFloor.number);
+    expect(component.parkingForm.value.number).toBe(mockFloor.floorNumber);
     expect(component.parkingForm.value.numberOfSpots).toBe(mockFloor.numberOfSpots);
-    expect(component.parkingForm.value.isOperative).toBe(mockFloor.isOperative);
+    expect(component.parkingForm.value.isOperative).toBe(mockFloor.operative);
   });
 
   it('should call addFloor and add parking spots when form is valid', () => {
@@ -76,12 +76,12 @@ describe('ParkingFormComponent', () => {
       id: '',            
       idFloor: '1',      
       spotNumber: 1,       
-      isOccupied: false      
+      occupied: false      
     }));
   
     // Asegúrate de que el número de plantas esté correctamente configurado en el formulario
     component.parkingForm.setValue({
-      number: mockFloor.number,  // Usa el mismo número de planta que el mockFloor
+      number: mockFloor.floorNumber,  // Usa el mismo número de planta que el mockFloor
       numberOfSpots: 5,
       isOperative: true,
     });

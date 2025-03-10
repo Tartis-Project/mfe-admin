@@ -12,9 +12,9 @@ describe('ParkingSpotService', () => {
   const apiUrl = environment.apiUrl + '/spots';
 
   const mockSpots: ParkingSpot[] = [
-    { id: '1', idFloor: '1', spotNumber: 1, isOccupied: false },
-    { id: '2', idFloor: '1', spotNumber: 2, isOccupied: true },
-    { id: '3', idFloor: '2', spotNumber: 1, isOccupied: false },
+    { id: '1', idFloor: '1', spotNumber: 1, occupied: false },
+    { id: '2', idFloor: '1', spotNumber: 2, occupied: true },
+    { id: '3', idFloor: '2', spotNumber: 1, occupied: false },
   ];
 
   beforeEach(() => {
@@ -58,7 +58,7 @@ describe('ParkingSpotService', () => {
   });
 
   it('should add a new parking spot', () => {
-    const newSpot: ParkingSpot = { id: '4', idFloor: '1', spotNumber: 3, isOccupied: false };
+    const newSpot: ParkingSpot = { id: '4', idFloor: '1', spotNumber: 3, occupied: false };
 
     service.addParkingSpot(newSpot).subscribe((spot) => {
       expect(spot).toEqual(newSpot);
@@ -70,10 +70,10 @@ describe('ParkingSpotService', () => {
   });
 
   it('should update a parking spot', () => {
-    const updatedSpot: Partial<ParkingSpot> = { isOccupied: true };
+    const updatedSpot: Partial<ParkingSpot> = { occupied: true };
 
     service.updateParkingSpot('1', updatedSpot).subscribe((spot) => {
-      expect(spot.isOccupied).toBeTrue();
+      expect(spot.occupied).toBeTrue();
     });
 
     const req = httpMock.expectOne(`${apiUrl}/1`);

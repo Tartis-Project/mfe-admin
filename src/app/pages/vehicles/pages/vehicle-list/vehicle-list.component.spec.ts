@@ -48,17 +48,17 @@ describe('VehicleListComponent', () => {
         id: "1",
         licensePlate: "ABC123",
         model: "Toyota Corolla",
-        type: "Coche",
+        vehicleType: "Coche",
         color: "Red",
-        isActive: true
+        active: true
       },
       {
         id: "2",
         licensePlate: "XYZ789",
         model: "Honda Civic",
-        type: "Coche",
+        vehicleType: "Coche",
         color: "Blue",
-        isActive: false
+        active: false
       },
     ];
     vehicleService.getVehicles.and.returnValue(of(mockVehicles));
