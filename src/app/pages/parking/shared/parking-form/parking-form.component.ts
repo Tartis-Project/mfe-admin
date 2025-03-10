@@ -38,6 +38,7 @@ export class ParkingFormComponent implements OnInit {
     private parkingSpotService: ParkingSpotService,
   ) {
     this.parkingForm = this.fb.group({
+      id: [''],
       floorNumber: ['', [Validators.required, greaterThanZeroValidator()]],
       numberOfSpots: ['', [Validators.required, greaterThanZeroValidator()]],
       operative: [false],

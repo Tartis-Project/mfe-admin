@@ -118,7 +118,7 @@ describe('VehicleListComponent', () => {
   it('should apply filters correctly', () => {
     component.filterForm.setValue({ search: '', state: 'inactive', order: 'new' });
     component.filterVehicles(component.filterForm.value);
-    expect(component.isActive).toBeFalse();
+    expect(component.active).toBeFalse();
     expect(component.isInactive).toBeTrue();
   });
 

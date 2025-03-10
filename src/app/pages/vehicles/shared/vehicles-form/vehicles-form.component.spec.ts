@@ -58,7 +58,7 @@ describe('VehiclesFormComponent', () => {
     expect(component.vehicleForm.get('licensePlate')?.value).toBe('ABC123');
     expect(component.vehicleForm.get('model')?.value).toBe('Sedan');
     expect(component.vehicleForm.get('color')?.value).toBe('Red');
-    expect(component.vehicleForm.get('isActive')?.value).toBe(true);
+    expect(component.vehicleForm.get('active')?.value).toBe(true);
   });
 
   it('should call updateVehicle when updating the vehicle', () => {

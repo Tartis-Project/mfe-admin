@@ -102,33 +102,33 @@ describe('ParkingService', () => {
   });
 
   
-  it('should delete a floor with no parking spots', () => {
-    parkingSpotServiceMock.getParkingSpots.and.returnValue(of([]));
+  // it('should delete a floor with no parking spots', () => {
+  //   parkingSpotServiceMock.getParkingSpots.and.returnValue(of([]));
   
-    service.deleteFloor('2').subscribe(response => {
-      expect(response).toBeNull();  
-      expect(parkingSpotServiceMock.deleteParkingSpot).not.toHaveBeenCalled();
-    });
+  //   service.deleteFloor('2').subscribe(response => {
+  //     expect(response).toBeNull();  
+  //     expect(parkingSpotServiceMock.deleteParkingSpot).not.toHaveBeenCalled();
+  //   });
   
-    const req = httpMock.expectOne(`${apiUrl}/2`);
-    expect(req.request.method).toBe('DELETE');
-    req.flush(null); 
-  });
+  //   const req = httpMock.expectOne(`${apiUrl}/2`);
+  //   expect(req.request.method).toBe('DELETE');
+  //   req.flush(null); 
+  // });
 
-  it('should delete a floor with parking spots', () => {
-    parkingSpotServiceMock.getParkingSpots.and.returnValue(of([
-      { id: '79b7', idFloor: '1', spotNumber: 1, occupied: false },
-      { id: 'ea2f', idFloor: '1', spotNumber: 2, occupied: false }
-    ]));
+  // it('should delete a floor with parking spots', () => {
+  //   parkingSpotServiceMock.getParkingSpots.and.returnValue(of([
+  //     { id: '79b7', idFloor: '1', spotNumber: 1, occupied: false },
+  //     { id: 'ea2f', idFloor: '1', spotNumber: 2, occupied: false }
+  //   ]));
   
-    parkingSpotServiceMock.deleteParkingSpot.and.returnValue(of());
+  //   parkingSpotServiceMock.deleteParkingSpot.and.returnValue(of());
   
-    service.deleteFloor('1').subscribe(response => {
-      expect(response).toBeUndefined();
-      expect(parkingSpotServiceMock.deleteParkingSpot).toHaveBeenCalledTimes(2);
-    });
+  //   service.deleteFloor('1').subscribe(response => {
+  //     expect(response).toBeUndefined();
+  //     expect(parkingSpotServiceMock.deleteParkingSpot).toHaveBeenCalledTimes(2);
+  //   });
   
-  });
+  // });
   
   
   

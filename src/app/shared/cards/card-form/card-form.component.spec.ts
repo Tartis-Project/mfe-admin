@@ -34,7 +34,7 @@ describe('CardFormComponent', () => {
   const mockRate: Rate = {
     pricePerMinute: 1,
     id: 'rate1',
-    name: 'Hourly rate',
+    description: 'Hourly rate',
   };
 
   const mockVehicle: Vehicle = {
