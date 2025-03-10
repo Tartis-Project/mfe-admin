@@ -31,7 +31,7 @@
   </ng-template>
 
   <ng-template #vehicleTitle>
-    <h4 class="title">{{ vehicle.model }}</h4>
+    <h4 *ngIf="isVehicles()" class="title">{{ vehicle.model }}</h4>
     <div *ngIf="isVehicles()">
       <p><strong>Matrícula - </strong>{{ vehicle.licensePlate }}</p>
       <p><strong>Color - </strong>{{ vehicle.color }}</p>

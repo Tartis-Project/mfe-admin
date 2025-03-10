@@ -13,13 +13,10 @@ import { Router } from '@angular/router';
 import { MaterialModule } from '../../../material/material.module';
 import { CardFormComponent } from '../card-form/card-form.component';
 import { Floor } from '../../../pages/parking/interfaces/floor.model';
-import { ParkingService } from '../../../pages/parking/services/parking.service';
 import { Rate } from '../../../pages/rates/interfaces/rates.model';
-import { RateService } from '../../../pages/rates/services/rates.service';
 
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
-import { VehicleService } from '../../../pages/vehicles/services/vehicle.service';
 import { EuroCurrencyPipe } from "../../../core/pipes/euro-currency.pipe";
 
 @Component({
@@ -33,9 +30,6 @@ export class CardViewComponent implements OnInit {
   constructor(
     private router: Router,
     readonly dialog: MatDialog,
-    private parkingService: ParkingService,
-    private ratesService: RateService,
-    private vehicleService: VehicleService
   ) {}
 
 

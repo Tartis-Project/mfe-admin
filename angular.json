@@ -86,6 +86,7 @@
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
+            "codeCoverage": true,
             "assets": [
               {
                 "glob": "**/*",
