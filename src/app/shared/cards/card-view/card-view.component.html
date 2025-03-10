@@ -1,6 +1,6 @@
 <div class="card">
   <h4 class="title" *ngIf="isPlazas(); else otherTitles">
-    Planta {{ floor.number }}
+    Planta {{ floor.floorNumber }}
   </h4>
 
   <div *ngIf="isPlazas()">
@@ -8,17 +8,17 @@
       <strong>¿Operativa?:</strong>
       <mat-checkbox
         disabled="disabled"
-        [checked]="floor.isOperative"
+        [checked]="floor.operative"
       ></mat-checkbox>
     </div>
-    <div class="availability" [class.show]="floor.isOperative">
+    <div class="availability" [class.show]="floor.operative">
       <strong>Plazas disponibles -</strong> {{ floor.numberOfSpots }}
     </div>
   </div>
 
   <ng-template #otherTitles>
     <h4 class="title" *ngIf="isTarifas(); else vehicleTitle">
-      Tarifa {{ rate.name }}
+      Tarifa {{ rate.description }}
     </h4>
 
     <div *ngIf="isTarifas()">
@@ -51,7 +51,7 @@
       <mat-icon class="button-primary">visibility</mat-icon>
     </button>
 
-    <button (click)="deleteAction()" mat-icon-button class="delete-btn">
+    <button *ngIf="isTarifas() || isVehicles()" (click)="deleteAction()" mat-icon-button class="delete-btn">
       <mat-icon class="button-secondary">delete</mat-icon>
     </button>
   </div>

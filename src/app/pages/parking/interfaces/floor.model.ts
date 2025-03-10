@@ -1,6 +1,6 @@
 export interface Floor {
   id: string;
-  number: number;
+  floorNumber: number;
   numberOfSpots: number;
-  isOperative: boolean;
+  operative: boolean;
 }

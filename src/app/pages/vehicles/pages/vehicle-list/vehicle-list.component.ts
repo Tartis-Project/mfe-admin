@@ -39,7 +39,7 @@ export class VehicleListComponent implements OnInit {
   currentPageInactive: number = 0;
   pageSizeActive: number = 8;
   pageSizeInactive: number = 8;
-  isActive: boolean = true;
+  active: boolean = true;
   isInactive: boolean = true;
   isOpen = false;
   isOpenState = false;
@@ -74,8 +74,8 @@ export class VehicleListComponent implements OnInit {
 
   loadVehicles() {
     this.vehicleService.getVehicles().subscribe((res) => {
-      this.vehiclesInactive = res.filter((v) => !v.isActive);
-      this.vehiclesActive = res.filter((v) => v.isActive);
+      this.vehiclesInactive = res.filter((v) => !v.active);
+      this.vehiclesActive = res.filter((v) => v.active);
       this.filterVehicles(this.filterForm.value);
     });
   }
@@ -91,15 +91,15 @@ export class VehicleListComponent implements OnInit {
 
     switch (state) {
       case 'active':
-        this.isActive = true;
+        this.active = true;
         this.isInactive = false;
         break;
       case 'inactive':
-        this.isActive = false;
+        this.active = false;
         this.isInactive = true;
         break;
       default:
-        this.isActive = true;
+        this.active = true;
         this.isInactive = true;
 
         break;

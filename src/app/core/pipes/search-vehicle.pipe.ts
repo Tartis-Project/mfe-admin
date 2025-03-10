@@ -15,7 +15,7 @@ export class SearchVehiclePipe implements PipeTransform {
     return vehicles.filter(
       (vehicle) =>
         vehicle.licensePlate.toLowerCase().includes(searchTerm) ||
-        vehicle.type.toLowerCase().includes(searchTerm) ||
+        vehicle.vehicleType.toLowerCase().includes(searchTerm) ||
         vehicle.model.toLowerCase().includes(searchTerm) ||
         vehicle.color.toLowerCase().includes(searchTerm),
     );

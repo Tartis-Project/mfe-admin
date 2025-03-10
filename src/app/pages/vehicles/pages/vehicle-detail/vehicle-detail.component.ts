@@ -67,7 +67,7 @@ export class VehicleDetailComponent implements OnInit{
     }
       this.registries = registries.filter(r => r.idVehicle === this.vehicle.id);
 
-      if (this.vehicle.isActive) {
+      if (this.vehicle.active) {
         const activeRegistry = this.registries.find(r => {
           return !r.exitTime || isNaN(new Date(r.exitTime).getTime());
         });
@@ -93,11 +93,15 @@ export class VehicleDetailComponent implements OnInit{
   getRegistyDetails(registryId: Registry): void {
     this.parkingSpotService.getParkingSpotById(registryId.idParkingSpot).subscribe(res => {
         this.parkingSpots[registryId.idParkingSpot] = res;
+        console.log('1:', this.parkingSpots);
+        console.log('2:', this.parkingSpots[registryId.idParkingSpot]);
       }
     );
 
     this.rateService.getRateById(registryId.idRate).subscribe(res => {
       this.rates[registryId.idRate] = res
+      console.log('1:',this.rates);
+      console.log('2:', this.rates[registryId.idRate]);
     })
   }
 

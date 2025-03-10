@@ -9,7 +9,8 @@ import { Registry } from '../../shared/registry/interfaces/registry.model';
 import { RegistryService } from '../../shared/registry/services/registry.service';
 import { Vehicle } from '../vehicles/interfaces/vehicle.model';
 import { VehicleService } from '../vehicles/services/vehicle.service';
-// import { KeycloakService } from 'keycloak-angular';
+import { KeycloakService } from 'keycloak-angular';
+import { AdminService } from '../admin/services/administrator.service';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +30,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   latestMovements$: Observable<Registry[]>;
   vehiclesMap: { [id: string]: Vehicle } = {};
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private administratorService: AdminService) {
+
     this.vehicleService.getVehicles().subscribe(vehicles => {
       this.vehiclesMap = vehicles.reduce((acc, vehicle) => {
         acc[vehicle.id] = vehicle;
@@ -46,7 +50,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       map(([floors, spots]) => {
         return floors.map(floor => ({
           ...floor,
-          occupiedSpots: spots.filter(spot => spot.idFloor === floor.id && spot.isOccupied).length
+          occupiedSpots: spots.filter(spot => spot.idFloor === floor.id && spot.occupied).length
         }));
       })
     );
@@ -82,8 +86,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.router.navigate(['/vehicles', id]);
   }
 
-  // logout() {
-  //   this.keycloakService.logout();
-  // }
+  logout() {
+    this.administratorService.logout();
+  }
 
+  getUserFirstName(): string | null {
+    return this.administratorService.getUserFirstName()
+  }
 }

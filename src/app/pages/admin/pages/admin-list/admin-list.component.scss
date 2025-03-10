@@ -1,0 +1,39 @@
+:root {
+  --header-bg: #2d572c;
+  --hover-row: rgba(64, 130, 33, 0.1);
+  --border-color: #ddd;
+}
+
+.custom-table {
+  padding: 20px;
+  overflow: hidden;
+  filter: drop-shadow(1px 1px 2px #90c578);
+  background-color: var(--white-color);
+}
+
+.custom-header {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  text-transform: uppercase;
+  padding: 15px;
+  text-align: left;
+}
+
+.custom-cell {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.custom.row {
+  transition: 0.3s ease-in-out;
+}
+
+.custom-row:hover {
+  background-color: var(--hover-row);
+}
+
+@media (max-width: 768px) {
+  .custom-header, .custom-cell {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

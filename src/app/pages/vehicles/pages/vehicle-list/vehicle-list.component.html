@@ -32,9 +32,9 @@
         (click)="toggleSelectState()"
         class="filter-bar custom-selectt"
       >
-        <option value="active">Activo</option>
-        <option value="inactive">Inactivo</option>
-        <option value="all">Todos</option>
+      <option value="all">Todos</option>
+      <option value="active">Activo</option>
+      <option value="inactive">Inactivo</option>
       </select>
     </div>
 
@@ -49,7 +49,7 @@
 <!-- Vehículos activos -->
 <div
   *ngIf="
-    isActive &&
+    active &&
     vehiclesActive.slice(
       currentPageActive * pageSizeActive,
       (currentPageActive + 1) * pageSizeActive
@@ -78,7 +78,7 @@
 <mat-paginator
   class="mb-5"
   *ngIf="
-    isActive &&
+    active &&
     vehiclesActive.slice(
       currentPageActive * pageSizeActive,
       (currentPageActive + 1) * pageSizeActive

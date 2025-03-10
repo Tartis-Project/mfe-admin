@@ -55,14 +55,5 @@ export const notificationInterceptor: HttpInterceptorFn = (
 
       return event;
     }),
-    catchError((error) => {
-      Swal.fire({
-        title: 'Error',
-        text: 'Algo salió mal. Inténtalo de nuevo.',
-        icon: 'error',
-        confirmButtonColor: '#d33',
-      });
-      throw error;
-    })
   );
 };

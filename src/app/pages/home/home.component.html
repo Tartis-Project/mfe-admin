@@ -7,13 +7,13 @@
         <ng-container *ngIf="floors.length > 0; else noFloors">
           <div class="d-flex" *ngFor="let floor of floors">
             <p>
-              <strong>Planta {{ floor.number }} - </strong>
+              <strong>Planta {{ floor.floorNumber }} - </strong>
               <span class="mr-3"
                     [ngClass]="{
-                      'text-primary': floor.isOperative && floor.occupiedSpots < floor.numberOfSpots,
-                      'text-secondary': floor.isOperative && floor.occupiedSpots === floor.numberOfSpots
+                      'text-primary': floor.operative && floor.occupiedSpots < floor.numberOfSpots,
+                      'text-secondary': floor.operative && floor.occupiedSpots === floor.numberOfSpots
                     }">
-                {{ floor.isOperative ? (floor.occupiedSpots + '/' + floor.numberOfSpots) : 'No disponible' }}
+                {{ floor.operative ? (floor.occupiedSpots + '/' + floor.numberOfSpots) : 'No disponible' }}
               </span>
             </p>
           </div>
@@ -32,10 +32,10 @@
 
   <div class="card-name">
     <h5 class="title">
-      Bienvenido <strong>Nombre!</strong>
+      Bienvenido <strong> {{ getUserFirstName() }} </strong>
     </h5>
     <div class="logout d-flex justify-content-start align-content-center w-100">
-      <p class="text-secondary">Cerrar sesión <mat-icon>logout</mat-icon></p>
+      <p (click)="logout()" class="text-secondary">Cerrar sesión <mat-icon>logout</mat-icon></p>
     </div>
   </div>
 </div>
@@ -50,7 +50,7 @@
           <ng-container *ngIf="movements.length > 0; else noMovements">
             <tr *ngFor="let movement of movements" (click)="goDetail(movement.idVehicle)">
               <td>{{ getVehicleById(movement.idVehicle).licensePlate }}</td>
-              <td>{{ getVehicleById(movement.idVehicle).type }}</td>
+              <td>{{ getVehicleById(movement.idVehicle).vehicleType }}</td>
               <td>{{ getVehicleById(movement.idVehicle).color }}</td>
               <td>
                 <span class="text-success" *ngIf="isEntry(movement.exitTime)">Entra</span>
