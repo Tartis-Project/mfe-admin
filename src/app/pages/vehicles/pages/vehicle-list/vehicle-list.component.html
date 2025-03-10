@@ -1,19 +1,15 @@
-<form
-  [formGroup]="filterForm"
-  class="row w-100 pr-0 align-items-center mb-5"
->
-<div class="col-md-6  ml-0 mb-1 ">
-  <input
-    formControlName="search"
-    class=" form-control filter-bar  px-3 py-3"
-    type="text"
-    placeholder="Busca por matrícula, tipo de vehículo o color"
-  />
+<form [formGroup]="filterForm" class="row w-100 pr-0 align-items-center mb-5">
+  <div class="col-md-6 ml-0 mb-1">
+    <input
+      formControlName="search"
+      class="form-control filter-bar px-3 py-3"
+      type="text"
+      placeholder="Busca por matrícula, tipo de vehículo o color"
+    />
+  </div>
 
-</div>
-
-  <div class="col-md-6 pr-0 row ">
-    <div class="col-md-4 mb-1 pr-0  select-container" [class.open]="isOpen">
+  <div class="col-md-6 pr-0 row">
+    <div class="col-md-4 mb-1 pr-0 select-container" [class.open]="isOpen">
       <mat-icon>keyboard_arrow_down</mat-icon>
       <select
         formControlName="order"
@@ -32,9 +28,9 @@
         (click)="toggleSelectState()"
         class="filter-bar custom-selectt"
       >
-      <option value="all">Todos</option>
-      <option value="active">Activo</option>
-      <option value="inactive">Inactivo</option>
+        <option value="all">Todos</option>
+        <option value="active">Activo</option>
+        <option value="inactive">Inactivo</option>
       </select>
     </div>
 
@@ -62,7 +58,9 @@
     <app-card-view
       *ngFor="
         let vehicle of (
-          vehiclesActive | searchVehicle: filterForm.value.search | orderVehicle: registries : filterForm.value.order
+          vehiclesActive
+          | searchVehicle: filterForm.value.search
+          | orderVehicle: registries : filterForm.value.order
         ).slice(
           currentPageActive * pageSizeActive,
           (currentPageActive + 1) * pageSizeActive
@@ -84,7 +82,6 @@
       (currentPageActive + 1) * pageSizeActive
     ).length != 0
   "
-
   [length]="(vehiclesActive | searchVehicle: filterForm.value.search).length"
   [pageSize]="pageSizeActive"
   [pageSizeOptions]="[8, 16, 64, 128]"
@@ -109,7 +106,9 @@
     <app-card-view
       *ngFor="
         let vehicle of (
-          vehiclesInactive | searchVehicle: filterForm.value.search | orderVehicle: registries : filterForm.value.order
+          vehiclesInactive
+          | searchVehicle: filterForm.value.search
+          | orderVehicle: registries : filterForm.value.order
         ).slice(
           currentPageInactive * pageSizeInactive,
           (currentPageInactive + 1) * pageSizeInactive

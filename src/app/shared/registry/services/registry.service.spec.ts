@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { RegistryService } from './registry.service';
 import { VehicleService } from '../../../pages/vehicles/services/vehicle.service';
 import { environment } from '../../../../environments/environment';
@@ -13,7 +16,9 @@ describe('RegistryService', () => {
   const apiUrl = environment.apiUrl + '/registries';
 
   beforeEach(() => {
-    const vehicleServiceSpy = jasmine.createSpyObj('VehicleService', ['getVehicles']);
+    const vehicleServiceSpy = jasmine.createSpyObj('VehicleService', [
+      'getVehicles',
+    ]);
 
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -25,7 +30,9 @@ describe('RegistryService', () => {
 
     service = TestBed.inject(RegistryService);
     httpMock = TestBed.inject(HttpTestingController);
-    vehicleService = TestBed.inject(VehicleService) as jasmine.SpyObj<VehicleService>;
+    vehicleService = TestBed.inject(
+      VehicleService,
+    ) as jasmine.SpyObj<VehicleService>;
   });
 
   afterEach(() => {
@@ -59,8 +66,22 @@ describe('RegistryService', () => {
     ];
 
     const mockVehicles = [
-      { id: '3', licensePlate: 'ABC123', model: 'Toyota Corolla', vehicleType: 'Coche', color: 'Red', active: true },
-      { id: '2', licensePlate: 'XYZ789', model: 'Honda Civic', vehicleType: 'Coche', color: 'Blue', active: false },
+      {
+        id: '3',
+        licensePlate: 'ABC123',
+        model: 'Toyota Corolla',
+        vehicleType: 'Coche',
+        color: 'Red',
+        active: true,
+      },
+      {
+        id: '2',
+        licensePlate: 'XYZ789',
+        model: 'Honda Civic',
+        vehicleType: 'Coche',
+        color: 'Blue',
+        active: false,
+      },
     ];
 
     vehicleService.getVehicles.and.returnValue(of(mockVehicles));
@@ -119,13 +140,20 @@ describe('RegistryService', () => {
   it('should update a registry', () => {
     const updatedRegistry: Partial<Registry> = { amount: 500 };
 
-    service.updateRegistry('3716e4e5-1f0a-41df-8f83-48ed8cc51c8e', updatedRegistry).subscribe((registry) => {
-      expect(registry.amount).toBe(500);
-    });
+    service
+      .updateRegistry('3716e4e5-1f0a-41df-8f83-48ed8cc51c8e', updatedRegistry)
+      .subscribe((registry) => {
+        expect(registry.amount).toBe(500);
+      });
 
-    const req = httpMock.expectOne(`${apiUrl}/3716e4e5-1f0a-41df-8f83-48ed8cc51c8e`);
+    const req = httpMock.expectOne(
+      `${apiUrl}/3716e4e5-1f0a-41df-8f83-48ed8cc51c8e`,
+    );
     expect(req.request.method).toBe('PUT');
-    req.flush({ ...updatedRegistry, id: '3716e4e5-1f0a-41df-8f83-48ed8cc51c8e' });
+    req.flush({
+      ...updatedRegistry,
+      id: '3716e4e5-1f0a-41df-8f83-48ed8cc51c8e',
+    });
   });
 
   it('should delete a registry', () => {

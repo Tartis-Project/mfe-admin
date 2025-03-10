@@ -18,10 +18,10 @@ describe('RatesComponent', () => {
 
   const mockRates = [
     {
-      id: "35cd",
-      description: "Estándar",
-      pricePerMinute: 0.035
-    }
+      id: '35cd',
+      description: 'Estándar',
+      pricePerMinute: 0.035,
+    },
   ];
 
   beforeEach(() => {
@@ -31,9 +31,7 @@ describe('RatesComponent', () => {
     TestBed.configureTestingModule({
       imports: [RatesComponent, MaterialModule, CardViewComponent],
       declarations: [], // Declare the RatesComponent here
-      providers: [
-        { provide: RateService, useValue: ratesServiceMock },
-      ],
+      providers: [{ provide: RateService, useValue: ratesServiceMock }],
     }).compileComponents();
 
     // Create the component fixture after configuring the module
@@ -42,7 +40,7 @@ describe('RatesComponent', () => {
 
     // Initialize the loader after the fixture is created
     loader = TestbedHarnessEnvironment.documentRootLoader(fixture);
-    
+
     // Mock the service
     ratesServiceMock.getRates.and.returnValue(of(mockRates));
 
@@ -69,25 +67,29 @@ describe('RatesComponent', () => {
 
   it('should handle error when loading rates', () => {
     const errorMessage = 'Error loading rates';
-    ratesServiceMock.getRates.and.returnValue(throwError(() => new Error(errorMessage)));
+    ratesServiceMock.getRates.and.returnValue(
+      throwError(() => new Error(errorMessage)),
+    );
     spyOn(console, 'error');
     component.ngOnInit();
-    expect(console.error).toHaveBeenCalledWith('Error al cargar las tarifas:', jasmine.any(Error));
+    expect(console.error).toHaveBeenCalledWith(
+      'Error al cargar las tarifas:',
+      jasmine.any(Error),
+    );
   });
 
   it('should open dialog when openDialog is called', async () => {
     spyOn(component, 'loadRates');
-  
-    component.openDialog(); 
-  
+
+    component.openDialog();
+
     const dialogHarness = await loader.getHarness(MatDialogHarness);
     expect(dialogHarness).toBeTruthy(); // Ensure dialog is present
-  
+
     const dialogText = await dialogHarness.getText();
     expect(dialogText).toBe(''); // Expect non-empty dialog content
-  
+
     await dialogHarness.close();
     expect(component.loadRates).toHaveBeenCalled();
   });
-  
 });

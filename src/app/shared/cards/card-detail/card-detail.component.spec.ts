@@ -3,7 +3,11 @@ import { CardDetailComponent } from './card-detail.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { VehicleService } from '../../../pages/vehicles/services/vehicle.service';
 import { of } from 'rxjs';
-import { MatDialog, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogModule,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CardFormComponent } from '../card-form/card-form.component';
 import { HarnessLoader } from '@angular/cdk/testing';
@@ -33,18 +37,25 @@ describe('CardDetailComponent', () => {
 
   beforeEach(async () => {
     // Crear el espía para VehicleService
-    vehicleServiceMock = jasmine.createSpyObj('VehicleService', ['getVehicleById']);
+    vehicleServiceMock = jasmine.createSpyObj('VehicleService', [
+      'getVehicleById',
+    ]);
 
     // Configuración del TestBed
     await TestBed.configureTestingModule({
-      imports: [CardDetailComponent, CardFormComponent, MatDialogModule, HttpClientTestingModule], // Importa los módulos necesarios
+      imports: [
+        CardDetailComponent,
+        CardFormComponent,
+        MatDialogModule,
+        HttpClientTestingModule,
+      ], // Importa los módulos necesarios
       declarations: [], // Declara los componentes
       providers: [
         { provide: VehicleService, useValue: vehicleServiceMock },
         { provide: Router, useValue: mockRouter },
         {
-          provide: MAT_DIALOG_DATA, 
-          useValue: { dialogData: mockVehicle },  // Proveer los datos directamente
+          provide: MAT_DIALOG_DATA,
+          useValue: { dialogData: mockVehicle }, // Proveer los datos directamente
         },
       ],
     }).compileComponents();
@@ -57,8 +68,8 @@ describe('CardDetailComponent', () => {
     component = fixture.componentInstance;
 
     // Inyectar dependencias
-        loader = TestbedHarnessEnvironment.documentRootLoader(fixture);
-    
+    loader = TestbedHarnessEnvironment.documentRootLoader(fixture);
+
     dialog = TestBed.inject(MatDialog);
     router = TestBed.inject(Router);
 
@@ -78,6 +89,5 @@ describe('CardDetailComponent', () => {
     const dialogHarness = await loader.getHarness(MatDialogHarness);
 
     expect(dialogHarness).toBeTruthy();
-
   });
 });

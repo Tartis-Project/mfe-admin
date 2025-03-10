@@ -24,7 +24,7 @@
     <div *ngIf="isTarifas()">
       <p>
         <strong>Precio plaza (por minuto) -</strong>
-        {{ rate.pricePerMinute | euroCurrency:3 }}
+        {{ rate.pricePerMinute | euroCurrency: 3 }}
       </p>
       <p><strong>Total por hora -</strong> {{ totalPorHora | euroCurrency }}</p>
     </div>
@@ -46,12 +46,17 @@
       *ngIf="isVehicles()"
       mat-icon-button
       class="edit-btn"
-      (click)="viewVehicleDetail( vehicle.id )"
+      (click)="viewVehicleDetail(vehicle.id)"
     >
       <mat-icon class="button-primary">visibility</mat-icon>
     </button>
 
-    <button *ngIf="isTarifas() || isVehicles()" (click)="deleteAction()" mat-icon-button class="delete-btn">
+    <button
+      *ngIf="isTarifas() || isVehicles()"
+      (click)="deleteAction()"
+      mat-icon-button
+      class="delete-btn"
+    >
       <mat-icon class="button-secondary">delete</mat-icon>
     </button>
   </div>

@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ParkingSpotService } from './parkingSpot.service';
 import { environment } from '../../../../environments/environment';
 import { ParkingSpot } from '../interfaces/parkingSpot.model';
@@ -58,7 +61,12 @@ describe('ParkingSpotService', () => {
   });
 
   it('should add a new parking spot', () => {
-    const newSpot: ParkingSpot = { id: '4', idFloor: '1', spotNumber: 3, occupied: false };
+    const newSpot: ParkingSpot = {
+      id: '4',
+      idFloor: '1',
+      spotNumber: 3,
+      occupied: false,
+    };
 
     service.addParkingSpot(newSpot).subscribe((spot) => {
       expect(spot).toEqual(newSpot);
@@ -82,18 +90,18 @@ describe('ParkingSpotService', () => {
   });
 
   it('should delete a parking spot', () => {
-    service.deleteParkingSpot('2').subscribe(response => {
-      expect(response).toBeNull();  
+    service.deleteParkingSpot('2').subscribe((response) => {
+      expect(response).toBeNull();
     });
-  
+
     const req = httpMock.expectOne(`${apiUrl}/2`);
     expect(req.request.method).toBe('DELETE');
-    req.flush(null); 
+    req.flush(null);
   });
 
   // it('should retrieve the last spot number', () => {
   //   service.getLastSpotNumber().subscribe((lastSpotNumber) => {
-  //     expect(lastSpotNumber).toBe(2); 
+  //     expect(lastSpotNumber).toBe(2);
   //   });
 
   //   const req = httpMock.expectOne(apiUrl);

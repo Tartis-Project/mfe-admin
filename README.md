@@ -2,7 +2,7 @@
   <img src="src/assets/imagenparking.png" alt="AutoParking" width="200">
 </p>
 
-#  AutoParking - Frontend del Sistema de Gestión de Estacionamiento
+# AutoParking - Frontend del Sistema de Gestión de Estacionamiento
 
 **Versión:** 1.0  
 📅 _Última actualización: Marzo 2025_  
@@ -11,6 +11,7 @@
 ---
 
 ## 📌 Índice
+
 1. [Descripción del Proyecto](#-descripción-del-proyecto)
 2. [Características](#-características)
 3. [Tecnologías Utilizadas](#-tecnologías-utilizadas)
@@ -23,6 +24,7 @@
 ---
 
 ## 🏢 Descripción del Proyecto
+
 Es una aplicación web para la **gestión de un parking** que permite administrar plazas de parking, monitorear vehículos y gestionar accesos en tiempo real.
 
 🔹 **Objetivo**: Automatizar la gestión de estacionamientos con sensores, control de accesos y autenticación con **Keycloak**.
@@ -30,34 +32,41 @@ Es una aplicación web para la **gestión de un parking** que permite administra
 ---
 
 ## ✨ Características
+
 ✔️ Gestión de plazas de estacionamiento  
-✔️ Administración de vehículos 
+✔️ Administración de vehículos
 ✔️ Monitoreo en tiempo real de entradas y salidas  
 ✔️ Integración con **Keycloak** para autenticación y control de roles  
-✔️ Alertas de confirmación y errores 
+✔️ Alertas de confirmación y errores
 
 ---
 
 ## 🛠 Tecnologías Utilizadas
+
 ### **Frontend**:
+
 - ✅ Angular 18 (Standalone Components)
 - ✅ Angular Material + Bootstrap
 - ✅ RxJS (Manejo de estados y observables)
 - ✅ Keycloak Angular (Autenticación)
 
 ### **Backend (simulado)**:
+
 - ✅ json-server (Simulación de API en desarrollo)
 
 ---
 
 ## 🛠 Instalación
+
 ### 🔹 **Requisitos Previos**
+
 🔹 **Node.js 20.17.0+**  
 🔹 **npm 11.0.0+**  
 🔹 **Angular CLI 18**  
 🔹 **Docker**
 
 ### 📦 **Instalar dependencias**
+
 ```bash
 cd frontend
 npm install
@@ -67,20 +76,23 @@ npm install sweetalert2
 ---
 
 ## 🚀 Uso
+
 ### 🔹 **Ejecutar Frontend**
+
 ```bash
 ng serve
 ```
 
 ### 🔹 **Ejecutar Backend**
+
 ```bash
 npm run json-server server
 ```
 
 ---
 
-
 ## 📁 Estructura del Proyecto
+
 ```bash
 frontend/
 ├── src/
@@ -219,31 +231,37 @@ frontend/
 ---
 
 ## 📡 Endpoints API
-### 🔹 **Tarifas
+
+### 🔹 \*\*Tarifas
+
 - **GET** `/apiUrl/rates`: Listar tarifas
 - **POST** `/apiUrl/rates`: Crear tarifa
 - **PUT** `/apiUrl/rates/:id`: Actualizar tarifa
 - **DELETE** `/apiUrl/rates/:id`: Eliminar tarifa
 
-### 🔹 **Plantas del parking
+### 🔹 \*\*Plantas del parking
+
 - **GET** `/apiUrl/spots`: Listar plantas
 - **POST** `/apiUrl/spots`: Crear planta
 - **PUT** `/apiUrl/spots/:id`: Actualizar planta
 - **DELETE** `/apiUrl/spots/:id`: Eliminar planta
 
-### 🔹 **Plazas de las plantas
+### 🔹 \*\*Plazas de las plantas
+
 - **GET** `/apiUrl/spots`: Listar plazas
 - **POST** `/apiUrl/spots`: Crear plaza
 - **PUT** `/apiUrl/spots/:id`: Actualizar plaza
 - **DELETE** `/apiUrl/spots/:id`: Eliminar plaza
 
-### 🔹 **Vehículos
+### 🔹 \*\*Vehículos
+
 - **GET** `/apiUrl/vehicles`: Listar vehículos
 - **POST** `/apiUrl/vehicles`: Crear vehículo
 - **PUT** `/apiUrl/vehicles/:id`: Actualizar vehículo
 - **DELETE** `/apiUrl/vehicles/:id`: Eliminar vehículo
 
-### 🔹 **Registros
+### 🔹 \*\*Registros
+
 - **GET** `/apiUrl/registries`: Listar registros
 - **POST** `/apiUrl/registries`: Crear registro
 - **PUT** `/apiUrl/registries/:id`: Actualizar registro
@@ -252,6 +270,7 @@ frontend/
 ---
 
 ## 🎯 Próximas Mejoras
+
 - Tener acceso a la descarga de un fichero con los registros de vehículos en el mismo día.
 - Generación de QR que accede al frontend con información de entrada/salida para usuarios.
 - Implementación de un sistema de pago mediante la pantalla con información de salida que genera el QR.

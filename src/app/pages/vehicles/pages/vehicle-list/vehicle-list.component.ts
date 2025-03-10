@@ -11,7 +11,6 @@ import { RegistryService } from '../../../../shared/registry/services/registry.s
 import { Registry } from '../../../../shared/registry/interfaces/registry.model';
 import { OrderVehiclePipe } from '../../../../core/pipes/order-vehicle.pipe';
 
-
 @Component({
   selector: 'app-vehicle-list',
   standalone: true,
@@ -20,17 +19,15 @@ import { OrderVehiclePipe } from '../../../../core/pipes/order-vehicle.pipe';
     MaterialModule,
     ReactiveFormsModule,
     SearchVehiclePipe,
-    OrderVehiclePipe
+    OrderVehiclePipe,
   ],
   providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntl }],
 
   templateUrl: './vehicle-list.component.html',
   styleUrl: './vehicle-list.component.scss',
-  encapsulation: ViewEncapsulation.None
-
+  encapsulation: ViewEncapsulation.None,
 })
 export class VehicleListComponent implements OnInit {
-
   public filterForm: FormGroup;
   vehiclesActive: Vehicle[] = [];
   vehiclesInactive: Vehicle[] = [];
@@ -52,13 +49,13 @@ export class VehicleListComponent implements OnInit {
     this.filterForm = this.fb.group({
       search: [''],
       state: ['active'],
-      order: ['new']
+      order: ['new'],
     });
   }
 
   ngOnInit(): void {
     this.loadVehicles();
-    this.loadRegistries()
+    this.loadRegistries();
     this.filterForm.valueChanges.subscribe((changes) => {
       this.filterVehicles(changes);
     });
@@ -68,7 +65,7 @@ export class VehicleListComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
-  toggleSelectState(){
+  toggleSelectState() {
     this.isOpenState = !this.isOpenState;
   }
 
@@ -80,10 +77,10 @@ export class VehicleListComponent implements OnInit {
     });
   }
 
-  loadRegistries(){
-    this.registryService.getRegistries().subscribe(res => {
+  loadRegistries() {
+    this.registryService.getRegistries().subscribe((res) => {
       this.registries = res;
-    })
+    });
   }
 
   filterVehicles(filters: any) {
@@ -129,6 +126,5 @@ export class VehicleListComponent implements OnInit {
 
     this.onPageInactiveChange(pageEvent);
     this.onPageActiveChange(pageEvent);
-
   }
 }

@@ -5,10 +5,17 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ParkingService } from '../../services/parking.service';
 import { Observable, of } from 'rxjs';
 import { CardViewComponent } from '../../../../shared/cards/card-view/card-view.component';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import {MatDialogHarness, MatTestDialogOpenerModule} from '@angular/material/dialog/testing';
+import {
+  MatDialogHarness,
+  MatTestDialogOpenerModule,
+} from '@angular/material/dialog/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { HarnessLoader } from '@angular/cdk/testing';
 
@@ -45,22 +52,27 @@ describe('ParkingComponent', () => {
   ];
 
   const mockRouter = {
-    url: '/parking', 
+    url: '/parking',
   };
 
   beforeEach(async () => {
     parkingServiceMock = jasmine.createSpyObj('ParkingService', ['getFloors']);
 
     await TestBed.configureTestingModule({
-      imports: [ParkingComponent, CardViewComponent, MatDialogModule, HttpClientTestingModule], 
-      declarations: [], 
+      imports: [
+        ParkingComponent,
+        CardViewComponent,
+        MatDialogModule,
+        HttpClientTestingModule,
+      ],
+      declarations: [],
       providers: [
         { provide: ParkingService, useValue: parkingServiceMock },
         // {
         //   provide: MatDialog, useClass: MdDialogMock,
         // },
-        { provide: Router, useValue: mockRouter } 
-      ]
+        { provide: Router, useValue: mockRouter },
+      ],
     }).compileComponents();
 
     parkingServiceMock.getFloors.and.returnValue(of(mockFloors));
@@ -94,13 +106,17 @@ describe('ParkingComponent', () => {
 
   it('should pass floor data to CardViewComponent', () => {
     const cardViewComponents = fixture.debugElement.queryAll(
-      By.directive(CardViewComponent)
+      By.directive(CardViewComponent),
     );
 
     expect(cardViewComponents.length).toBe(2);
 
-    expect(cardViewComponents[0].componentInstance.floor).toEqual(mockFloors[0]);
-    expect(cardViewComponents[1].componentInstance.floor).toEqual(mockFloors[1]);
+    expect(cardViewComponents[0].componentInstance.floor).toEqual(
+      mockFloors[0],
+    );
+    expect(cardViewComponents[1].componentInstance.floor).toEqual(
+      mockFloors[1],
+    );
   });
 
   it('should open dialog with the correct data when openDialog() is called', async () => {
@@ -122,6 +138,4 @@ describe('ParkingComponent', () => {
     // Verifica que `loadFloor()` se llamó después de cerrar el diálogo
     expect(component.loadFloor).toHaveBeenCalled();
   });
-  
-  
 });

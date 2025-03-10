@@ -12,7 +12,10 @@ import { ParkingSpotService } from './parkingSpot.service';
 })
 export class ParkingService {
   private readonly apiUrl = environment.apiUrl + '/floors';
-  constructor(private http: HttpClient, private parkingSpotService: ParkingSpotService) { }
+  constructor(
+    private http: HttpClient,
+    private parkingSpotService: ParkingSpotService,
+  ) {}
 
   getFloors(): Observable<Floor[]> {
     return this.http.get<Floor[]>(this.apiUrl);
@@ -29,7 +32,6 @@ export class ParkingService {
   updateFloor(id: string, floor: Partial<Floor>): Observable<Floor> {
     return this.http.put<Floor>(`${this.apiUrl}/${id}`, floor);
   }
-
 
   // deleteFloor(id: string): Observable<void> {
   //   return this.parkingSpotService.getParkingSpots().pipe(

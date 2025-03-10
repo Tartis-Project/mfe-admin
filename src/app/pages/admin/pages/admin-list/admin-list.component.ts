@@ -10,17 +10,16 @@ import { Administrator } from '../../interfaces/administrator.model';
   standalone: true,
   imports: [MaterialModule],
   templateUrl: './admin-list.component.html',
-  styleUrl: './admin-list.component.scss'
+  styleUrl: './admin-list.component.scss',
 })
 export class AdminListComponent {
-
   administrators: Administrator[] = [];
   displayedColumns: string[] = ['firstName', 'lastName', 'email', 'username'];
 
   constructor(
     private adminService: AdminService,
-    private keycloakService: KeycloakService
-  ) { }
+    private keycloakService: KeycloakService,
+  ) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -34,7 +33,7 @@ export class AdminListComponent {
       },
       (error) => {
         console.error('Error obteniendo usuarios:', error);
-      }
+      },
     );
   }
 }

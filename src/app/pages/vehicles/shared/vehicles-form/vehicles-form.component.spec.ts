@@ -25,7 +25,9 @@ describe('VehiclesFormComponent', () => {
   };
 
   beforeEach(async () => {
-    const vehicleServiceSpy = jasmine.createSpyObj('VehicleService', ['updateVehicle']);
+    const vehicleServiceSpy = jasmine.createSpyObj('VehicleService', [
+      'updateVehicle',
+    ]);
     mockDialogRef = jasmine.createSpyObj('MatDialogRef', ['close']);
 
     await TestBed.configureTestingModule({
@@ -45,7 +47,9 @@ describe('VehiclesFormComponent', () => {
 
     fixture = TestBed.createComponent(VehiclesFormComponent);
     component = fixture.componentInstance;
-    vehicleService = TestBed.inject(VehicleService) as jasmine.SpyObj<VehicleService>;
+    vehicleService = TestBed.inject(
+      VehicleService,
+    ) as jasmine.SpyObj<VehicleService>;
 
     fixture.detectChanges();
   });
@@ -68,7 +72,10 @@ describe('VehiclesFormComponent', () => {
     component.vehicleForm.patchValue({ color: 'Blue' });
     component.updateVehicle();
 
-    expect(vehicleService.updateVehicle).toHaveBeenCalledWith('1', jasmine.objectContaining({ color: 'Blue' }));
+    expect(vehicleService.updateVehicle).toHaveBeenCalledWith(
+      '1',
+      jasmine.objectContaining({ color: 'Blue' }),
+    );
   });
 
   it('should emit the updated vehicle after successful update', () => {
@@ -79,7 +86,9 @@ describe('VehiclesFormComponent', () => {
     component.vehicleForm.patchValue({ color: 'Blue' });
     component.updateVehicle();
 
-    expect(component.vehicleUpdated.emit).toHaveBeenCalledWith(jasmine.objectContaining({ color: 'Blue' }));
+    expect(component.vehicleUpdated.emit).toHaveBeenCalledWith(
+      jasmine.objectContaining({ color: 'Blue' }),
+    );
   });
 
   it('should close the dialog when onNoClick() is called', () => {

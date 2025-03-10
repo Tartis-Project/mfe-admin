@@ -1,9 +1,19 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { KeycloakService } from 'keycloak-angular';
 import { Administrator } from '../interfaces/administrator.model';
 import { AdminService } from './administrator.service';
-import { KeycloakInitOptions, KeycloakLoginOptions, KeycloakLogoutOptions, KeycloakRegisterOptions, KeycloakAccountOptions, KeycloakProfile } from 'keycloak-js';
+import {
+  KeycloakInitOptions,
+  KeycloakLoginOptions,
+  KeycloakLogoutOptions,
+  KeycloakRegisterOptions,
+  KeycloakAccountOptions,
+  KeycloakProfile,
+} from 'keycloak-js';
 
 describe('AdminService', () => {
   let service: AdminService;
@@ -39,7 +49,9 @@ describe('AdminService', () => {
   });
 
   it('should return null if user is not authenticated', async () => {
-    keycloakServiceMock.isLoggedIn.and.returnValue(await Promise.resolve(false));
+    keycloakServiceMock.isLoggedIn.and.returnValue(
+      await Promise.resolve(false),
+    );
 
     await service.getDataUser();
     expect(service.userAdmin.username).toBeUndefined();
@@ -72,13 +84,17 @@ describe('AdminService', () => {
       accountManagement: function (): Promise<void> {
         throw new Error('Function not implemented.');
       },
-      createLoginUrl: function (options?: KeycloakLoginOptions): Promise<string> {
+      createLoginUrl: function (
+        options?: KeycloakLoginOptions,
+      ): Promise<string> {
         throw new Error('Function not implemented.');
       },
       createLogoutUrl: function (options?: KeycloakLogoutOptions): string {
         throw new Error('Function not implemented.');
       },
-      createRegisterUrl: function (options?: KeycloakRegisterOptions): Promise<string> {
+      createRegisterUrl: function (
+        options?: KeycloakRegisterOptions,
+      ): Promise<string> {
         throw new Error('Function not implemented.');
       },
       createAccountUrl: function (options?: KeycloakAccountOptions): string {
@@ -104,7 +120,7 @@ describe('AdminService', () => {
       },
       loadUserInfo: function (): Promise<{}> {
         throw new Error('Function not implemented.');
-      }
+      },
     });
 
     await service.getDataUser();
@@ -143,13 +159,17 @@ describe('AdminService', () => {
       accountManagement: function (): Promise<void> {
         throw new Error('Function not implemented.');
       },
-      createLoginUrl: function (options?: KeycloakLoginOptions): Promise<string> {
+      createLoginUrl: function (
+        options?: KeycloakLoginOptions,
+      ): Promise<string> {
         throw new Error('Function not implemented.');
       },
       createLogoutUrl: function (options?: KeycloakLogoutOptions): string {
         throw new Error('Function not implemented.');
       },
-      createRegisterUrl: function (options?: KeycloakRegisterOptions): Promise<string> {
+      createRegisterUrl: function (
+        options?: KeycloakRegisterOptions,
+      ): Promise<string> {
         throw new Error('Function not implemented.');
       },
       createAccountUrl: function (options?: KeycloakAccountOptions): string {
@@ -175,7 +195,7 @@ describe('AdminService', () => {
       },
       loadUserInfo: function (): Promise<{}> {
         throw new Error('Function not implemented.');
-      }
+      },
     });
 
     const result = service.getUserName();
@@ -205,13 +225,17 @@ describe('AdminService', () => {
       accountManagement: function (): Promise<void> {
         throw new Error('Function not implemented.');
       },
-      createLoginUrl: function (options?: KeycloakLoginOptions): Promise<string> {
+      createLoginUrl: function (
+        options?: KeycloakLoginOptions,
+      ): Promise<string> {
         throw new Error('Function not implemented.');
       },
       createLogoutUrl: function (options?: KeycloakLogoutOptions): string {
         throw new Error('Function not implemented.');
       },
-      createRegisterUrl: function (options?: KeycloakRegisterOptions): Promise<string> {
+      createRegisterUrl: function (
+        options?: KeycloakRegisterOptions,
+      ): Promise<string> {
         throw new Error('Function not implemented.');
       },
       createAccountUrl: function (options?: KeycloakAccountOptions): string {
@@ -237,7 +261,7 @@ describe('AdminService', () => {
       },
       loadUserInfo: function (): Promise<{}> {
         throw new Error('Function not implemented.');
-      }
+      },
     });
 
     const result = service.getUserFirstName();
@@ -267,13 +291,17 @@ describe('AdminService', () => {
       accountManagement: function (): Promise<void> {
         throw new Error('Function not implemented.');
       },
-      createLoginUrl: function (options?: KeycloakLoginOptions): Promise<string> {
+      createLoginUrl: function (
+        options?: KeycloakLoginOptions,
+      ): Promise<string> {
         throw new Error('Function not implemented.');
       },
       createLogoutUrl: function (options?: KeycloakLogoutOptions): string {
         throw new Error('Function not implemented.');
       },
-      createRegisterUrl: function (options?: KeycloakRegisterOptions): Promise<string> {
+      createRegisterUrl: function (
+        options?: KeycloakRegisterOptions,
+      ): Promise<string> {
         throw new Error('Function not implemented.');
       },
       createAccountUrl: function (options?: KeycloakAccountOptions): string {
@@ -299,7 +327,7 @@ describe('AdminService', () => {
       },
       loadUserInfo: function (): Promise<{}> {
         throw new Error('Function not implemented.');
-      }
+      },
     });
 
     const result = service.getUserEmail();

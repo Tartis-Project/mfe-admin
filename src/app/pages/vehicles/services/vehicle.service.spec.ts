@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { VehicleService } from './vehicle.service';
 import { Vehicle } from '../interfaces/vehicle.model';
 import { environment } from '../../../../environments/environment';
@@ -10,8 +13,22 @@ describe('VehicleService', () => {
   const apiUrl = environment.apiUrl + '/vehicles';
 
   const mockVehicles: Vehicle[] = [
-    { id: '15', licensePlate: 'NOP012', model: 'Porsche 911', vehicleType: 'Coche', color: 'Red', active: true },
-    { id: '16', licensePlate: 'QRS345', model: 'Lexus RX', vehicleType: 'Coche', color: 'Black', active: true },
+    {
+      id: '15',
+      licensePlate: 'NOP012',
+      model: 'Porsche 911',
+      vehicleType: 'Coche',
+      color: 'Red',
+      active: true,
+    },
+    {
+      id: '16',
+      licensePlate: 'QRS345',
+      model: 'Lexus RX',
+      vehicleType: 'Coche',
+      color: 'Black',
+      active: true,
+    },
   ];
 
   beforeEach(() => {
@@ -55,7 +72,14 @@ describe('VehicleService', () => {
   });
 
   it('should add a new vehicle', () => {
-    const newVehicle: Vehicle = { id: '17', licensePlate: 'TUV678', model: 'Tesla Model S', vehicleType: 'Coche', color: 'White', active: true };
+    const newVehicle: Vehicle = {
+      id: '17',
+      licensePlate: 'TUV678',
+      model: 'Tesla Model S',
+      vehicleType: 'Coche',
+      color: 'White',
+      active: true,
+    };
 
     service.addVehicle(newVehicle).subscribe((vehicle) => {
       expect(vehicle).toEqual(newVehicle);

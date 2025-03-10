@@ -17,9 +17,9 @@ describe('NavbarComponent', () => {
           useValue: {
             snapshot: { paramMap: { get: () => null } }, // Mock para `ActivatedRoute.snapshot`
             paramMap: of({ get: () => null }), // Mock para `ActivatedRoute.paramMap`
-          }
-        }
-      ]
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NavbarComponent);

@@ -26,7 +26,7 @@ import { MatTableModule } from '@angular/material/table';
     MatPaginatorModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
   ],
 })
-export class MaterialModule { }
+export class MaterialModule {}

@@ -2,10 +2,9 @@ name: Build and Push Angular Docker Image
 
 on:
   push:
-
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-and-push:

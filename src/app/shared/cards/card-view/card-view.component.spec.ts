@@ -35,30 +35,37 @@ describe('CardViewComponent', () => {
   const mockRate: Rate = {
     id: 'rate-1',
     description: 'Standard Rate',
-    pricePerMinute: 0
+    pricePerMinute: 0,
   };
 
   const mockFloor: Floor = {
     id: 'floor-1',
     floorNumber: 0,
     numberOfSpots: 0,
-    operative: false
+    operative: false,
   };
 
   beforeEach(async () => {
     const dialogSpy = jasmine.createSpyObj('MatDialog', ['open']);
     const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
-    routerSpy.url = '/vehicles'; 
+    routerSpy.url = '/vehicles';
 
     await TestBed.configureTestingModule({
       declarations: [],
-      imports: [MaterialModule, CardViewComponent, CardFormComponent, ConfirmDialogComponent, EuroCurrencyPipe, HttpClientTestingModule],
+      imports: [
+        MaterialModule,
+        CardViewComponent,
+        CardFormComponent,
+        ConfirmDialogComponent,
+        EuroCurrencyPipe,
+        HttpClientTestingModule,
+      ],
       providers: [
         { provide: Router, useValue: routerSpy },
         {
-                  provide: MAT_DIALOG_DATA, 
-                  useValue: { dialogData: mockVehicle },  // Proveer los datos directamente
-                },
+          provide: MAT_DIALOG_DATA,
+          useValue: { dialogData: mockVehicle }, // Proveer los datos directamente
+        },
       ],
     }).compileComponents();
   });
@@ -69,8 +76,8 @@ describe('CardViewComponent', () => {
 
     // Provide a mock vehicle to the component
     loader = TestbedHarnessEnvironment.documentRootLoader(fixture);
-        
-        dialog = TestBed.inject(MatDialog);
+
+    dialog = TestBed.inject(MatDialog);
     component.vehicle = mockVehicle;
     component.rate = mockRate;
     component.floor = mockFloor;
@@ -84,58 +91,57 @@ describe('CardViewComponent', () => {
 
   it('should open the dialog when openDialog() is called vehicles', async () => {
     component.openDialog();
-    
+
     const dialogHarness = await loader.getHarness(MatDialogHarness);
-    
+
     expect(dialogHarness).toBeTruthy();
   });
 
   it('should open the dialog when openDialog() is called plazas', async () => {
-    component.isPlazas = computed(() => true)
+    component.isPlazas = computed(() => true);
     component.openDialog();
-    
+
     const dialogHarness = await loader.getHarness(MatDialogHarness);
-    
+
     expect(dialogHarness).toBeTruthy();
   });
 
   it('should open the dialog when openDialog() is called tarifas', async () => {
-    component.isTarifas = computed(() => true)
+    component.isTarifas = computed(() => true);
     component.openDialog();
-    
+
     const dialogHarness = await loader.getHarness(MatDialogHarness);
-    
+
     expect(dialogHarness).toBeTruthy();
   });
 
   it('should open the dialog when openDialogDelete() is called vehicle', async () => {
     component.deleteAction();
-    
+
     const dialogHarness = await loader.getHarness(MatDialogHarness);
-    
+
     expect(dialogHarness).toBeTruthy();
   });
 
   it('should open the dialog when openDialogDelete() is called plazas', async () => {
-    component.isPlazas = computed(() => true)
+    component.isPlazas = computed(() => true);
     component.deleteAction();
-    
+
     const dialogHarness = await loader.getHarness(MatDialogHarness);
-    
+
     expect(dialogHarness).toBeTruthy();
   });
 
   it('should open the dialog when openDialogDelete() is called tarifas', async () => {
-    component.isTarifas = computed(() => true)
+    component.isTarifas = computed(() => true);
     component.deleteAction();
-    
+
     const dialogHarness = await loader.getHarness(MatDialogHarness);
-    
+
     expect(dialogHarness).toBeTruthy();
   });
 
   it('should navigate to vehicle list when navigateToList() is called', () => {
     component.viewVehicleDetail('1');
   });
-
 });

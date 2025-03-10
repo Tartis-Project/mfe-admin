@@ -6,8 +6,7 @@ import { RateService } from '../../services/rates.service';
 import { Rate } from '../../interfaces/rates.model';
 import { of, throwError } from 'rxjs';
 import { MaterialModule } from '../../../../material/material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('RatesFormComponent', () => {
   let component: RatesFormComponent;
@@ -29,7 +28,12 @@ describe('RatesFormComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [],
-      imports: [RatesFormComponent, ReactiveFormsModule, MaterialModule, BrowserAnimationsModule],
+      imports: [
+        RatesFormComponent,
+        ReactiveFormsModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+      ],
       providers: [
         FormBuilder,
         {
@@ -53,48 +57,48 @@ describe('RatesFormComponent', () => {
 
   it('should initialize the form with rate data', () => {
     component.ngOnInit(); // Asegúrate de llamar a ngOnInit antes de la verificación.
-  
+
     expect(component.ratesForm.value.description).toBe(mockRate.description);
-    expect(component.ratesForm.value.pricePerMinute).toBe(mockRate.pricePerMinute);
+    expect(component.ratesForm.value.pricePerMinute).toBe(
+      mockRate.pricePerMinute,
+    );
   });
-  
-  
-  
 
   it('should fill the form with rate data when the rate is provided', () => {
     const mockRate: any = {
       description: 'Estándar',
       pricePerMinute: 0.035,
     };
-  
+
     component.rate = mockRate; // Se pasa un rate sin 'id' aquí
     component.ngOnInit();
     expect(component.ratesForm.value).toEqual(mockRate);
   });
-  
 
   it('should create a new rate', () => {
     const rateData: any = {
       description: 'Nuevo',
       pricePerMinute: 0.045,
     };
-  
+
     rateService.createRate.and.returnValue(of({ ...rateData, id: '1' })); // Simulamos la respuesta del servidor con un 'id'
-  
+
     component.ratesForm.setValue(rateData);
     component.addRate();
-  
+
     expect(rateService.createRate).toHaveBeenCalledWith(rateData);
     expect(dialogRef.close).toHaveBeenCalledWith(true);
   });
-  
 
   it('should handle error when creating a new rate', () => {
     const rateData: any = {
-      description: 'Nuevo', pricePerMinute: 0.045,
+      description: 'Nuevo',
+      pricePerMinute: 0.045,
     };
 
-    rateService.createRate.and.returnValue(throwError(() => new Error('Error al crear la tarifa')));
+    rateService.createRate.and.returnValue(
+      throwError(() => new Error('Error al crear la tarifa')),
+    );
 
     component.ratesForm.setValue(rateData);
     component.addRate();
@@ -105,18 +109,21 @@ describe('RatesFormComponent', () => {
 
   it('should update an existing rate', () => {
     const updatedRate: any = {
-      description: 'Actualizado', pricePerMinute: 0.04,
+      description: 'Actualizado',
+      pricePerMinute: 0.04,
     };
-  
+
     rateService.updateRate.and.returnValue(of(updatedRate));
-  
+
     component.ratesForm.setValue(updatedRate);
     component.updateRate();
-  
-    expect(rateService.updateRate).toHaveBeenCalledWith(mockRate.id, updatedRate);
+
+    expect(rateService.updateRate).toHaveBeenCalledWith(
+      mockRate.id,
+      updatedRate,
+    );
     expect(dialogRef.close).toHaveBeenCalled();
   });
-  
 
   it('should close the dialog on onNoClick()', () => {
     component.onNoClick();

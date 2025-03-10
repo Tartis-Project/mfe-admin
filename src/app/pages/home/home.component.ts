@@ -1,6 +1,14 @@
 import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { MaterialModule } from '../../material/material.module';
-import { Observable, combineLatest, map, interval, switchMap, Subscription, startWith } from 'rxjs';
+import {
+  Observable,
+  combineLatest,
+  map,
+  interval,
+  switchMap,
+  Subscription,
+  startWith,
+} from 'rxjs';
 import { Floor } from '../parking/interfaces/floor.model';
 import { ParkingService } from '../parking/services/parking.service';
 import { Router, RouterModule } from '@angular/router';
@@ -32,41 +40,51 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private administratorService: AdminService) {
-
-    this.vehicleService.getVehicles().subscribe(vehicles => {
-      this.vehiclesMap = vehicles.reduce((acc, vehicle) => {
-        acc[vehicle.id] = vehicle;
-        return acc;
-      }, {} as { [id: string]: Vehicle });
+    private administratorService: AdminService,
+  ) {
+    this.vehicleService.getVehicles().subscribe((vehicles) => {
+      this.vehiclesMap = vehicles.reduce(
+        (acc, vehicle) => {
+          acc[vehicle.id] = vehicle;
+          return acc;
+        },
+        {} as { [id: string]: Vehicle },
+      );
     });
 
     this.floorsWithOccupiedSpots$ = interval(5000).pipe(
       startWith(0),
-      switchMap(() => combineLatest([
-        this.parkingService.getFloors(),
-        this.parkingSpotService.getParkingSpots()
-      ])),
+      switchMap(() =>
+        combineLatest([
+          this.parkingService.getFloors(),
+          this.parkingSpotService.getParkingSpots(),
+        ]),
+      ),
       map(([floors, spots]) => {
-        return floors.map(floor => ({
+        return floors.map((floor) => ({
           ...floor,
-          occupiedSpots: spots.filter(spot => spot.idFloor === floor.id && spot.occupied).length
+          occupiedSpots: spots.filter(
+            (spot) => spot.idFloor === floor.id && spot.occupied,
+          ).length,
         }));
-      })
+      }),
     );
 
     this.latestMovements$ = interval(5000).pipe(
       startWith(0),
       switchMap(() => this.registryService.getRegistries()),
-      map(registries =>
+      map((registries) =>
         registries
-          .sort((a, b) => new Date(b.entryTime).getTime() - new Date(a.entryTime).getTime())
-          .slice(0, 4)
-      )
+          .sort(
+            (a, b) =>
+              new Date(b.entryTime).getTime() - new Date(a.entryTime).getTime(),
+          )
+          .slice(0, 4),
+      ),
     );
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     if (this.pollingSubscription) {
@@ -91,6 +109,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getUserFirstName(): string | null {
-    return this.administratorService.getUserFirstName()
+    return this.administratorService.getUserFirstName();
   }
 }
