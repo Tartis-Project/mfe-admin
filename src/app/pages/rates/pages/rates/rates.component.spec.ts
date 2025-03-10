@@ -19,7 +19,7 @@ describe('RatesComponent', () => {
   const mockRates = [
     {
       id: "35cd",
-      name: "Estándar",
+      description: "Estándar",
       pricePerMinute: 0.035
     }
   ];

@@ -17,7 +17,7 @@ describe('RatesFormComponent', () => {
 
   const mockRate: Rate = {
     id: '1',
-    name: 'Estándar',
+    description: 'Estándar',
     pricePerMinute: 0.035,
   };
 
@@ -54,7 +54,7 @@ describe('RatesFormComponent', () => {
   it('should initialize the form with rate data', () => {
     component.ngOnInit(); // Asegúrate de llamar a ngOnInit antes de la verificación.
   
-    expect(component.ratesForm.value.name).toBe(mockRate.name);
+    expect(component.ratesForm.value.description).toBe(mockRate.description);
     expect(component.ratesForm.value.pricePerMinute).toBe(mockRate.pricePerMinute);
   });
   
@@ -63,7 +63,7 @@ describe('RatesFormComponent', () => {
 
   it('should fill the form with rate data when the rate is provided', () => {
     const mockRate: any = {
-      name: 'Estándar',
+      description: 'Estándar',
       pricePerMinute: 0.035,
     };
   
@@ -75,7 +75,7 @@ describe('RatesFormComponent', () => {
 
   it('should create a new rate', () => {
     const rateData: any = {
-      name: 'Nuevo',
+      description: 'Nuevo',
       pricePerMinute: 0.045,
     };
   
@@ -91,7 +91,7 @@ describe('RatesFormComponent', () => {
 
   it('should handle error when creating a new rate', () => {
     const rateData: any = {
-      name: 'Nuevo', pricePerMinute: 0.045,
+      description: 'Nuevo', pricePerMinute: 0.045,
     };
 
     rateService.createRate.and.returnValue(throwError(() => new Error('Error al crear la tarifa')));
@@ -105,7 +105,7 @@ describe('RatesFormComponent', () => {
 
   it('should update an existing rate', () => {
     const updatedRate: any = {
-      name: 'Actualizado', pricePerMinute: 0.04,
+      description: 'Actualizado', pricePerMinute: 0.04,
     };
   
     rateService.updateRate.and.returnValue(of(updatedRate));

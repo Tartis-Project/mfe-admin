@@ -34,7 +34,7 @@ describe('CardViewComponent', () => {
 
   const mockRate: Rate = {
     id: 'rate-1',
-    name: 'Standard Rate',
+    description: 'Standard Rate',
     pricePerMinute: 0
   };
 

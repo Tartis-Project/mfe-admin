@@ -9,6 +9,8 @@ import { RegistryService } from '../../shared/registry/services/registry.service
 import { VehicleService } from '../vehicles/services/vehicle.service';
 import { of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { AdminService } from '../admin/services/administrator.service';
+import { KeycloakService } from 'keycloak-angular';
 
 // Mocks para los servicios
 describe('HomeComponent', () => {
@@ -19,6 +21,15 @@ describe('HomeComponent', () => {
   let parkingSpotServiceMock: jasmine.SpyObj<ParkingSpotService>;
   let registryServiceMock: jasmine.SpyObj<RegistryService>;
   let vehicleServiceMock: jasmine.SpyObj<VehicleService>;
+  let adminServiceMock: jasmine.SpyObj<AdminService>;
+
+  const mockKeycloakService = {
+    isLoggedIn: jasmine.createSpy('isLoggedIn').and.returnValue(Promise.resolve(true)),
+    loadUserProfile: jasmine.createSpy('loadUserProfile').and.returnValue(Promise.resolve({ name: 'Test User' })),
+    login: jasmine.createSpy('login'),
+    logout: jasmine.createSpy('logout'),
+  };
+  
 
   beforeEach(async () => {
     routerMock = jasmine.createSpyObj('Router', ['navigate']);
@@ -26,6 +37,8 @@ describe('HomeComponent', () => {
     parkingSpotServiceMock = jasmine.createSpyObj('ParkingSpotService', ['getParkingSpots']);
     registryServiceMock = jasmine.createSpyObj('RegistryService', ['getRegistries']);
     vehicleServiceMock = jasmine.createSpyObj('VehicleService', ['getVehicles']);
+    adminServiceMock = jasmine.createSpyObj('AdminService', ['getAdminData', 'getUserFirstName']);
+
 
     await TestBed.configureTestingModule({
       imports: [MaterialModule, RouterModule, HttpClientTestingModule], // Incluir HttpClientTestingModule para evitar llamadas HTTP reales
@@ -35,6 +48,8 @@ describe('HomeComponent', () => {
         { provide: ParkingSpotService, useValue: parkingSpotServiceMock },
         { provide: RegistryService, useValue: registryServiceMock },
         { provide: VehicleService, useValue: vehicleServiceMock },
+        { provide: KeycloakService, useValue: mockKeycloakService },
+        { provide: AdminService, useValue: adminServiceMock },
         {
           provide: ActivatedRoute,
           useValue: {
