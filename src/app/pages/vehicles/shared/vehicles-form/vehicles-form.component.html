@@ -44,6 +44,12 @@
 </mat-dialog-content>
 
 <mat-dialog-actions class="actions">
-  <button class="button-primary" [disabled]="vehicleForm.invalid" (click)="updateVehicle()">Editar</button>
+  <button
+    class="button-primary"
+    [disabled]="vehicleForm.invalid"
+    (click)="updateVehicle()"
+  >
+    Editar
+  </button>
   <button class="button-secondary" (click)="onNoClick()">Cancelar</button>
 </mat-dialog-actions>

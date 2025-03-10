@@ -7,7 +7,7 @@ import { Vehicle } from '../../pages/vehicles/interfaces/vehicle.model';
 })
 export class SearchVehiclePipe implements PipeTransform {
   transform(vehicles: Vehicle[], searchTerm: string): Vehicle[] {
-    if (!vehicles || searchTerm.length <=1 ) {
+    if (!vehicles || searchTerm.length <= 1) {
       return vehicles;
     }
     searchTerm = searchTerm.toLowerCase();

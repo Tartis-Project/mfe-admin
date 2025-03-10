@@ -1,26 +1,43 @@
-  <mat-table [dataSource]="administrators" class="mat-elevation-z1 custom-table">
+<mat-table [dataSource]="administrators" class="mat-elevation-z1 custom-table">
+  <ng-container matColumnDef="firstName">
+    <mat-header-cell *matHeaderCellDef class="custom-header">
+      Nombre
+    </mat-header-cell>
+    <mat-cell *matCellDef="let admin" class="custom-cell">
+      {{ admin.firstName }}
+    </mat-cell>
+  </ng-container>
 
-    <ng-container matColumnDef="firstName">
-      <mat-header-cell *matHeaderCellDef class="custom-header"> Nombre </mat-header-cell>
-      <mat-cell *matCellDef="let admin" class="custom-cell"> {{ admin.firstName }} </mat-cell>
-    </ng-container>
+  <ng-container matColumnDef="lastName">
+    <mat-header-cell *matHeaderCellDef class="custom-header">
+      Apellido
+    </mat-header-cell>
+    <mat-cell *matCellDef="let admin" class="custom-cell">
+      {{ admin.lastName }}
+    </mat-cell>
+  </ng-container>
 
-    <ng-container matColumnDef="lastName">
-      <mat-header-cell *matHeaderCellDef class="custom-header"> Apellido </mat-header-cell>
-      <mat-cell *matCellDef="let admin" class="custom-cell"> {{ admin.lastName }} </mat-cell>
-    </ng-container>
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef class="custom-header">
+      Correo
+    </mat-header-cell>
+    <mat-cell *matCellDef="let admin" class="custom-cell">
+      {{ admin.email }}
+    </mat-cell>
+  </ng-container>
 
-    <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef class="custom-header"> Correo </mat-header-cell>
-      <mat-cell *matCellDef="let admin" class="custom-cell"> {{ admin.email }} </mat-cell>
-    </ng-container>
+  <ng-container matColumnDef="username">
+    <mat-header-cell *matHeaderCellDef class="custom-header">
+      Usuario
+    </mat-header-cell>
+    <mat-cell *matCellDef="let admin" class="custom-cell">
+      {{ admin.username }}
+    </mat-cell>
+  </ng-container>
 
-    <ng-container matColumnDef="username">
-      <mat-header-cell *matHeaderCellDef class="custom-header"> Usuario </mat-header-cell>
-      <mat-cell *matCellDef="let admin" class="custom-cell"> {{ admin.username }} </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" class="custom-row"></mat-row>
-
-  </mat-table>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    class="custom-row"
+  ></mat-row>
+</mat-table>

@@ -49,21 +49,21 @@ describe('CardFormComponent', () => {
   beforeEach(() => {
     dialogRefSpy = jasmine.createSpyObj('MatDialogRef', ['close']);
     mockRouter = new MockRouter(); // Creamos la instancia del MockRouter
-    
+
     TestBed.configureTestingModule({
       imports: [
         MaterialModule,
         CardFormComponent, // Importamos el componente standalone aquí
         ParkingFormComponent,
         RatesFormComponent,
-        VehiclesFormComponent
+        VehiclesFormComponent,
       ],
       providers: [
         { provide: Router, useValue: mockRouter },
         { provide: MAT_DIALOG_DATA, useValue: { dialogData: mockFloor } }, // Inyectando mockFloor en dialogData
         { provide: MatDialogRef, useValue: dialogRefSpy },
-        Location
-      ]
+        Location,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CardFormComponent);
@@ -74,22 +74,21 @@ describe('CardFormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
-
   it('should close the dialog on onNoClick()', () => {
     component.onNoClick();
     expect(dialogRefSpy.close).toHaveBeenCalled();
   });
 
   it('should close dialog with updated vehicle data on onVehicleUpdated()', () => {
-    const updatedVehicle = {  id: '1',
+    const updatedVehicle = {
+      id: '1',
       licensePlate: 'ABC123',
       model: 'CarModel',
       vehicleType: 'SUV',
       color: 'Blue',
-      active: true,};
+      active: true,
+    };
     component.onVehicleUpdated(updatedVehicle);
     expect(dialogRefSpy.close).toHaveBeenCalledWith(updatedVehicle);
   });
-
 });

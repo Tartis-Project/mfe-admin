@@ -17,7 +17,7 @@ import { Rate } from '../../../pages/rates/interfaces/rates.model';
 
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 import { Vehicle } from '../../../pages/vehicles/interfaces/vehicle.model';
-import { EuroCurrencyPipe } from "../../../core/pipes/euro-currency.pipe";
+import { EuroCurrencyPipe } from '../../../core/pipes/euro-currency.pipe';
 
 @Component({
   selector: 'app-card-view',
@@ -31,8 +31,6 @@ export class CardViewComponent implements OnInit {
     private router: Router,
     readonly dialog: MatDialog,
   ) {}
-
-
 
   @Input() floor!: Floor;
   @Input() rate!: Rate;

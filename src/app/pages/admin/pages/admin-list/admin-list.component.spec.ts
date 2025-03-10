@@ -7,8 +7,7 @@ import { KeycloakService } from 'keycloak-angular';
 describe('AdminListComponent', () => {
   let component: AdminListComponent;
   let fixture: ComponentFixture<AdminListComponent>;
-    let keycloakServiceMock: jasmine.SpyObj<KeycloakService>;
-  
+  let keycloakServiceMock: jasmine.SpyObj<KeycloakService>;
 
   beforeEach(async () => {
     keycloakServiceMock = jasmine.createSpyObj('KeycloakService', [
@@ -19,12 +18,8 @@ describe('AdminListComponent', () => {
     ]);
     await TestBed.configureTestingModule({
       imports: [AdminListComponent, HttpClientTestingModule],
-      providers: [
-        { provide: KeycloakService, useValue: keycloakServiceMock },
-
-      ]
-    })
-    .compileComponents();
+      providers: [{ provide: KeycloakService, useValue: keycloakServiceMock }],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AdminListComponent);
     component = fixture.componentInstance;

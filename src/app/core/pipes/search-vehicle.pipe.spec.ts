@@ -14,8 +14,22 @@ describe('SearchVehiclePipe', () => {
 
   it('should return the original array when no searchTerm is provided', () => {
     const vehicles: Vehicle[] = [
-      { id: '1', licensePlate: 'ABC123', model: 'Toyota', vehicleType: 'Sedan', color: 'Red', active: true },
-      { id: '2', licensePlate: 'XYZ456', model: 'Honda', vehicleType: 'SUV', color: 'Blue', active: true },
+      {
+        id: '1',
+        licensePlate: 'ABC123',
+        model: 'Toyota',
+        vehicleType: 'Sedan',
+        color: 'Red',
+        active: true,
+      },
+      {
+        id: '2',
+        licensePlate: 'XYZ456',
+        model: 'Honda',
+        vehicleType: 'SUV',
+        color: 'Blue',
+        active: true,
+      },
     ];
 
     const result = pipe.transform(vehicles, '');
@@ -24,8 +38,22 @@ describe('SearchVehiclePipe', () => {
 
   it('should return the original array when searchTerm length is 1 or less', () => {
     const vehicles: Vehicle[] = [
-      { id: '1', licensePlate: 'ABC123', model: 'Toyota', vehicleType: 'Sedan', color: 'Red', active: true },
-      { id: '2', licensePlate: 'XYZ456', model: 'Honda', vehicleType: 'SUV', color: 'Blue', active: true },
+      {
+        id: '1',
+        licensePlate: 'ABC123',
+        model: 'Toyota',
+        vehicleType: 'Sedan',
+        color: 'Red',
+        active: true,
+      },
+      {
+        id: '2',
+        licensePlate: 'XYZ456',
+        model: 'Honda',
+        vehicleType: 'SUV',
+        color: 'Blue',
+        active: true,
+      },
     ];
 
     let result = pipe.transform(vehicles, 'A'); // Search term with length 1
@@ -37,8 +65,22 @@ describe('SearchVehiclePipe', () => {
 
   it('should filter vehicles based on license plate', () => {
     const vehicles: Vehicle[] = [
-      { id: '1', licensePlate: 'ABC123', model: 'Toyota', vehicleType: 'Sedan', color: 'Red', active: true },
-      { id: '2', licensePlate: 'XYZ456', model: 'Honda', vehicleType: 'SUV', color: 'Blue', active: true },
+      {
+        id: '1',
+        licensePlate: 'ABC123',
+        model: 'Toyota',
+        vehicleType: 'Sedan',
+        color: 'Red',
+        active: true,
+      },
+      {
+        id: '2',
+        licensePlate: 'XYZ456',
+        model: 'Honda',
+        vehicleType: 'SUV',
+        color: 'Blue',
+        active: true,
+      },
     ];
 
     const result = pipe.transform(vehicles, 'abc');
@@ -48,8 +90,22 @@ describe('SearchVehiclePipe', () => {
 
   it('should filter vehicles based on type', () => {
     const vehicles: Vehicle[] = [
-      { id: '1', licensePlate: 'ABC123', model: 'Toyota', vehicleType: 'Sedan', color: 'Red', active: true },
-      { id: '2', licensePlate: 'XYZ456', model: 'Honda', vehicleType: 'SUV', color: 'Blue', active: true },
+      {
+        id: '1',
+        licensePlate: 'ABC123',
+        model: 'Toyota',
+        vehicleType: 'Sedan',
+        color: 'Red',
+        active: true,
+      },
+      {
+        id: '2',
+        licensePlate: 'XYZ456',
+        model: 'Honda',
+        vehicleType: 'SUV',
+        color: 'Blue',
+        active: true,
+      },
     ];
 
     const result = pipe.transform(vehicles, 'SUV');
@@ -59,8 +115,22 @@ describe('SearchVehiclePipe', () => {
 
   it('should filter vehicles based on model', () => {
     const vehicles: Vehicle[] = [
-      { id: '1', licensePlate: 'ABC123', model: 'Toyota', vehicleType: 'Sedan', color: 'Red', active: true },
-      { id: '2', licensePlate: 'XYZ456', model: 'Honda', vehicleType: 'SUV', color: 'Blue', active: true },
+      {
+        id: '1',
+        licensePlate: 'ABC123',
+        model: 'Toyota',
+        vehicleType: 'Sedan',
+        color: 'Red',
+        active: true,
+      },
+      {
+        id: '2',
+        licensePlate: 'XYZ456',
+        model: 'Honda',
+        vehicleType: 'SUV',
+        color: 'Blue',
+        active: true,
+      },
     ];
 
     const result = pipe.transform(vehicles, 'Honda');
@@ -70,8 +140,22 @@ describe('SearchVehiclePipe', () => {
 
   it('should filter vehicles based on color', () => {
     const vehicles: Vehicle[] = [
-      { id: '1', licensePlate: 'ABC123', model: 'Toyota', vehicleType: 'Sedan', color: 'Red', active: true },
-      { id: '2', licensePlate: 'XYZ456', model: 'Honda', vehicleType: 'SUV', color: 'Blue', active: true },
+      {
+        id: '1',
+        licensePlate: 'ABC123',
+        model: 'Toyota',
+        vehicleType: 'Sedan',
+        color: 'Red',
+        active: true,
+      },
+      {
+        id: '2',
+        licensePlate: 'XYZ456',
+        model: 'Honda',
+        vehicleType: 'SUV',
+        color: 'Blue',
+        active: true,
+      },
     ];
 
     const result = pipe.transform(vehicles, 'blue');
@@ -81,9 +165,30 @@ describe('SearchVehiclePipe', () => {
 
   it('should filter vehicles based on multiple search terms (license plate, type, model, and color)', () => {
     const vehicles: Vehicle[] = [
-      { id: '1', licensePlate: 'ABC123', model: 'Toyota', vehicleType: 'Sedan', color: 'Red', active: true },
-      { id: '2', licensePlate: 'XYZ456', model: 'Honda', vehicleType: 'SUV', color: 'Blue', active: true },
-      { id: '3', licensePlate: 'DEF789', model: 'Ford', vehicleType: 'Truck', color: 'Green', active: true },
+      {
+        id: '1',
+        licensePlate: 'ABC123',
+        model: 'Toyota',
+        vehicleType: 'Sedan',
+        color: 'Red',
+        active: true,
+      },
+      {
+        id: '2',
+        licensePlate: 'XYZ456',
+        model: 'Honda',
+        vehicleType: 'SUV',
+        color: 'Blue',
+        active: true,
+      },
+      {
+        id: '3',
+        licensePlate: 'DEF789',
+        model: 'Ford',
+        vehicleType: 'Truck',
+        color: 'Green',
+        active: true,
+      },
     ];
 
     // Searching by model 'Toyota' should return only the first vehicle
@@ -104,8 +209,22 @@ describe('SearchVehiclePipe', () => {
 
   it('should return an empty array when no vehicles match the search term', () => {
     const vehicles: Vehicle[] = [
-      { id: '1', licensePlate: 'ABC123', model: 'Toyota', vehicleType: 'Sedan', color: 'Red', active: true },
-      { id: '2', licensePlate: 'XYZ456', model: 'Honda', vehicleType: 'SUV', color: 'Blue', active: true },
+      {
+        id: '1',
+        licensePlate: 'ABC123',
+        model: 'Toyota',
+        vehicleType: 'Sedan',
+        color: 'Red',
+        active: true,
+      },
+      {
+        id: '2',
+        licensePlate: 'XYZ456',
+        model: 'Honda',
+        vehicleType: 'SUV',
+        color: 'Blue',
+        active: true,
+      },
     ];
 
     const result = pipe.transform(vehicles, 'NonExistent');

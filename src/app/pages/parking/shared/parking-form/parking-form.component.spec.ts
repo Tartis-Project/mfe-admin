@@ -31,13 +31,24 @@ describe('ParkingFormComponent', () => {
   ];
 
   beforeEach(() => {
-    parkingServiceMock = jasmine.createSpyObj('ParkingService', ['addFloor', 'updateFloor']);
-    parkingSpotServiceMock = jasmine.createSpyObj('ParkingSpotService', ['getLastSpotNumber', 'addParkingSpot']);
+    parkingServiceMock = jasmine.createSpyObj('ParkingService', [
+      'addFloor',
+      'updateFloor',
+    ]);
+    parkingSpotServiceMock = jasmine.createSpyObj('ParkingSpotService', [
+      'getLastSpotNumber',
+      'addParkingSpot',
+    ]);
     dialogRefMock = jasmine.createSpyObj('MatDialogRef', ['close']);
     fb = new FormBuilder();
 
     TestBed.configureTestingModule({
-      imports: [ParkingFormComponent, ReactiveFormsModule, MaterialModule, BrowserAnimationsModule],
+      imports: [
+        ParkingFormComponent,
+        ReactiveFormsModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+      ],
       declarations: [],
       providers: [
         { provide: ParkingService, useValue: parkingServiceMock },
@@ -62,59 +73,60 @@ describe('ParkingFormComponent', () => {
 
   it('should initialize the form with floor data', () => {
     expect(component.parkingForm.value.floorNumber).toBe(mockFloor.floorNumber);
-    expect(component.parkingForm.value.numberOfSpots).toBe(mockFloor.numberOfSpots);
+    expect(component.parkingForm.value.numberOfSpots).toBe(
+      mockFloor.numberOfSpots,
+    );
     expect(component.parkingForm.value.operative).toBe(mockFloor.operative);
   });
 
   // it('should call addFloor and add parking spots when form is valid', () => {
   //   const newFloor = { ...mockFloor, numberOfSpots: 5 };
   //   const lastSpotNumber = 3; // Simula el último número de plaza
-  
+
   //   parkingSpotServiceMock.getLastSpotNumber.and.returnValue(of(lastSpotNumber));
   //   parkingServiceMock.addFloor.and.returnValue(of({ ...newFloor, id: '2' })); // Simulamos el id generado por el servidor
   //   parkingSpotServiceMock.addParkingSpot.and.returnValue(of({
-  //     id: '',            
-  //     idFloor: '1',      
-  //     spotNumber: 1,       
-  //     occupied: false      
+  //     id: '',
+  //     idFloor: '1',
+  //     spotNumber: 1,
+  //     occupied: false
   //   }));
-  
+
   //   // Asegúrate de que el número de plantas esté correctamente configurado en el formulario
   //   component.parkingForm.setValue({
   //     number: mockFloor.floorNumber,  // Usa el mismo número de planta que el mockFloor
   //     numberOfSpots: 5,
   //     isOperative: true,
   //   });
-  
+
   //   component.addFloor();
-  
-  
+
   //   // Verifica que se haya llamado a addParkingSpot el número adecuado de veces
   //   expect(parkingSpotServiceMock.addParkingSpot).toHaveBeenCalledTimes(5); // Debe agregar 5 spots
   //   expect(dialogRefMock.close).toHaveBeenCalled();
   // });
-  
-  
 
   it('should update floor when form is valid', () => {
     const updatedFloor = { ...mockFloor, id: '1' };
-  
+
     component.parkingForm.setValue({
       id: '1',
       floorNumber: 1,
-      numberOfSpots: mockFloor.numberOfSpots,  
+      numberOfSpots: mockFloor.numberOfSpots,
       operative: true,
     });
-  
+
     parkingServiceMock.updateFloor.and.returnValue(of(updatedFloor));
-  
+
     component.updateFloor();
-  
+
     // Verificamos que el servicio updateFloor haya sido llamado con los valores correctos
-    expect(parkingServiceMock.updateFloor).toHaveBeenCalledWith('1', updatedFloor);
+    expect(parkingServiceMock.updateFloor).toHaveBeenCalledWith(
+      '1',
+      updatedFloor,
+    );
     expect(dialogRefMock.close).toHaveBeenCalled();
   });
-  
 
   it('should call onNoClick and close the dialog', () => {
     component.onNoClick();
@@ -132,6 +144,4 @@ describe('ParkingFormComponent', () => {
 
   //   expect(parkingServiceMock.addFloor).not.toHaveBeenCalled();
   // });
-
-
 });

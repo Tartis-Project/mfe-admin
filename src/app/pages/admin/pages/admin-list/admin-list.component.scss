@@ -32,7 +32,8 @@
 }
 
 @media (max-width: 768px) {
-  .custom-header, .custom-cell {
+  .custom-header,
+  .custom-cell {
     font-size: 14px;
     padding: 10px;
   }

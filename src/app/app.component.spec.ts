@@ -8,14 +8,14 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
       providers: [
-              {
-                provide: ActivatedRoute,
-                useValue: {
-                  snapshot: { paramMap: { get: () => null } }, // Mock para `ActivatedRoute.snapshot`
-                  paramMap: of({ get: () => null }), // Mock para `ActivatedRoute.paramMap`
-                },
-              },
-            ],
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: { paramMap: { get: () => null } }, // Mock para `ActivatedRoute.snapshot`
+            paramMap: of({ get: () => null }), // Mock para `ActivatedRoute.paramMap`
+          },
+        },
+      ],
     }).compileComponents();
   });
 

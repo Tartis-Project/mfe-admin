@@ -13,7 +13,9 @@
       <mat-error *ngIf="parkingForm.get('floorNumber')?.hasError('required')">
         Este campo es obligatorio.
       </mat-error>
-      <mat-error *ngIf="parkingForm.get('floorNumber')?.hasError('greaterThanZero')">
+      <mat-error
+        *ngIf="parkingForm.get('floorNumber')?.hasError('greaterThanZero')"
+      >
         El precio debe ser mayor que 0.
       </mat-error>
     </mat-form-field>

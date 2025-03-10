@@ -31,7 +31,10 @@ export class RatesFormComponent implements OnInit {
     private ratesService: RateService,
   ) {
     this.ratesForm = this.fb.group({
-      description: ['', [Validators.required, Validators.pattern(/^(?!\s*$).+/)]],
+      description: [
+        '',
+        [Validators.required, Validators.pattern(/^(?!\s*$).+/)],
+      ],
       pricePerMinute: [
         '',
         [Validators.required, greaterThanZeroValidatorFixed3()],

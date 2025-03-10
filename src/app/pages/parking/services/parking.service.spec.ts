@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ParkingService } from './parking.service';
 import { ParkingSpotService } from './parkingSpot.service';
 import { Floor } from '../interfaces/floor.model';
@@ -20,21 +23,24 @@ describe('ParkingService', () => {
 
   const mockSpots: ParkingSpot[] = [
     {
-      id: "79b7",
-      idFloor: "1",
+      id: '79b7',
+      idFloor: '1',
       spotNumber: 1,
-      occupied: false
+      occupied: false,
     },
     {
-      id: "ea2f",
-      idFloor: "2",
+      id: 'ea2f',
+      idFloor: '2',
       spotNumber: 2,
-      occupied: false
+      occupied: false,
     },
   ];
 
   beforeEach(() => {
-    parkingSpotServiceMock = jasmine.createSpyObj('ParkingSpotService', ['getParkingSpots', 'deleteParkingSpot']);
+    parkingSpotServiceMock = jasmine.createSpyObj('ParkingSpotService', [
+      'getParkingSpots',
+      'deleteParkingSpot',
+    ]);
 
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -57,7 +63,7 @@ describe('ParkingService', () => {
   });
 
   it('should retrieve all floors', () => {
-    service.getFloors().subscribe(floors => {
+    service.getFloors().subscribe((floors) => {
       expect(floors.length).toBe(2);
       expect(floors).toEqual(mockFloors);
     });
@@ -68,7 +74,7 @@ describe('ParkingService', () => {
   });
 
   it('should retrieve a floor by ID', () => {
-    service.getFloorById('1').subscribe(floor => {
+    service.getFloorById('1').subscribe((floor) => {
       expect(floor).toEqual(mockFloors[0]);
     });
 
@@ -78,9 +84,14 @@ describe('ParkingService', () => {
   });
 
   it('should add a new floor', () => {
-    const newFloor: Floor = { id: '3', floorNumber: 3, numberOfSpots: 15, operative: true };
+    const newFloor: Floor = {
+      id: '3',
+      floorNumber: 3,
+      numberOfSpots: 15,
+      operative: true,
+    };
 
-    service.addFloor(newFloor).subscribe(floor => {
+    service.addFloor(newFloor).subscribe((floor) => {
       expect(floor).toEqual(newFloor);
     });
 
@@ -92,7 +103,7 @@ describe('ParkingService', () => {
   it('should update a floor', () => {
     const updatedFloor: Partial<Floor> = { numberOfSpots: 25 };
 
-    service.updateFloor('1', updatedFloor).subscribe(floor => {
+    service.updateFloor('1', updatedFloor).subscribe((floor) => {
       expect(floor.numberOfSpots).toBe(25);
     });
 
@@ -101,18 +112,17 @@ describe('ParkingService', () => {
     req.flush({ ...mockFloors[0], ...updatedFloor });
   });
 
-  
   // it('should delete a floor with no parking spots', () => {
   //   parkingSpotServiceMock.getParkingSpots.and.returnValue(of([]));
-  
+
   //   service.deleteFloor('2').subscribe(response => {
-  //     expect(response).toBeNull();  
+  //     expect(response).toBeNull();
   //     expect(parkingSpotServiceMock.deleteParkingSpot).not.toHaveBeenCalled();
   //   });
-  
+
   //   const req = httpMock.expectOne(`${apiUrl}/2`);
   //   expect(req.request.method).toBe('DELETE');
-  //   req.flush(null); 
+  //   req.flush(null);
   // });
 
   // it('should delete a floor with parking spots', () => {
@@ -120,21 +130,13 @@ describe('ParkingService', () => {
   //     { id: '79b7', idFloor: '1', spotNumber: 1, occupied: false },
   //     { id: 'ea2f', idFloor: '1', spotNumber: 2, occupied: false }
   //   ]));
-  
+
   //   parkingSpotServiceMock.deleteParkingSpot.and.returnValue(of());
-  
+
   //   service.deleteFloor('1').subscribe(response => {
   //     expect(response).toBeUndefined();
   //     expect(parkingSpotServiceMock.deleteParkingSpot).toHaveBeenCalledTimes(2);
   //   });
-  
-  // });
-  
-  
-  
-  
-  
-  
 
-  
+  // });
 });
