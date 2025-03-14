@@ -56,3 +56,19 @@ Este microfrontend depende de las siguientes librerías y paquetes:
 - **RxJS**: Librería para manejo de programación reactiva
 - **Angular Material**: Para componentes UI
 - **SweetAlert2**: Para mostrar alertas y diálogos modales interactivos
+
+# Changelog
+
+## [1.0.0] - 14/03/2025
+
+### 🚀 Nuevas características añadidas
+- N/A
+
+### 🛠 Correcciones de errores (Bug Fixes)
+- N/A
+
+### 📈 Mejoras de rendimiento o cambios internos
+- N/A
+
+### ⚠️ Deprecaciones o eliminaciones de funciones
+- N/A
