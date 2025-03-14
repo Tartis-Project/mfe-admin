@@ -59,10 +59,14 @@ Este microfrontend depende de las siguientes librerías y paquetes:
 
 # Changelog
 
-## [0.0.0] - 14/03/2025
+## [1.0.0] - 14/03/2025
 
 ### 🚀 Nuevas características añadidas
-- N/A
+- Gestión de plantas
+- Gestión de tarifas
+- Vista y modificación de vehiculos
+- Vista principal con datos de registros y plantas en tiempo real
+- Lista de todos los administradores
 
 ### 🛠 Correcciones de errores (Bug Fixes)
 - N/A
