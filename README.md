@@ -59,7 +59,7 @@ Este microfrontend depende de las siguientes librerías y paquetes:
 
 # Changelog
 
-## [1.0.0] - 14/03/2025
+## [0.0.0] - 14/03/2025
 
 ### 🚀 Nuevas características añadidas
 - N/A
