@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Floor } from '../interfaces/floor.model';
-import { ParkingSpot } from '../interfaces/parkingSpot.model';
 import { environment } from '../../../../environments/environment';
-import { switchMap } from 'rxjs/operators';
-import { ParkingSpotService } from './parkingSpot.service';
+
 
 @Injectable({
   providedIn: 'root',
@@ -14,8 +12,7 @@ export class ParkingService {
   private readonly apiUrl = environment.apiUrl + '/floors';
   constructor(
     private http: HttpClient,
-    private parkingSpotService: ParkingSpotService,
-  ) {}
+  ) { }
 
   getFloors(): Observable<Floor[]> {
     return this.http.get<Floor[]>(this.apiUrl);

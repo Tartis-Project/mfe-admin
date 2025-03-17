@@ -171,7 +171,7 @@ describe('VehicleDetailComponent', () => {
       of({
         id: 'A1',
         spotNumber: 1,
-        isOccupied: true,
+        occupied: true,
         idFloor: '1',
       } as unknown as ParkingSpot),
     );

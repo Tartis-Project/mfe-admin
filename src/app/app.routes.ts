@@ -31,12 +31,12 @@ export const routes: Routes = [
       import('./pages/vehicles/vehicles.routes').then((m) => m.vehiclesRoutes),
     // canActivate: [AuthGuard]
   },
-  {
-    path: 'admin',
-    loadComponent: () =>
-      import('./pages/admin/pages/admin-list/admin-list.component').then(
-        (m) => m.AdminListComponent,
-      ),
-  },
+  // {
+  //   path: 'admin',
+  //   loadComponent: () =>
+  //     import('./pages/admin/pages/admin-list/admin-list.component').then(
+  //       (m) => m.AdminListComponent,
+  //     ),
+  // },
   { path: '**', redirectTo: 'home' },
 ];
