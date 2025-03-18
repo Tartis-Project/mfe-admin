@@ -7,10 +7,15 @@ module.exports = withNativeFederation({
   exposes: {
     './Component': './src/app/app.component.ts',
     './Home': './src/app/pages/home/home.component.ts',
+    './Parking': './src/app/pages/parking/pages/parking/parking.component.ts',
+    './Rates': './src/app/pages/rates/pages/rates/rates.component.ts',
+    './Vehicles': './src/app/pages/vehicles/pages/vehicle-list/vehicle-list.component.ts',
+    './VehiclesDetail': './src/app/pages/vehicles/pages/vehicle-detail/vehicle-detail.component.ts',
   },
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    '@angular/material': { singleton: true, strictVersion: true, requiredVersion: 'auto' },
   },
 
   skip: [

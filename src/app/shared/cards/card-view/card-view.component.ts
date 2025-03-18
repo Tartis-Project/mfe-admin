@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 import { MaterialModule } from '../../../material/material.module';
 import { CardFormComponent } from '../card-form/card-form.component';
@@ -22,11 +22,12 @@ import { EuroCurrencyPipe } from '../../../core/pipes/euro-currency.pipe';
 @Component({
   selector: 'app-card-view',
   standalone: true,
-  imports: [MaterialModule, EuroCurrencyPipe],
+  imports: [MaterialModule, EuroCurrencyPipe, RouterModule],
   templateUrl: './card-view.component.html',
   styleUrl: './card-view.component.scss',
 })
 export class CardViewComponent implements OnInit {
+[x: string]: any;
   constructor(
     private router: Router,
     readonly dialog: MatDialog,
@@ -93,7 +94,7 @@ export class CardViewComponent implements OnInit {
   }
 
   viewVehicleDetail(idVehicle: string): void {
-    this.router.navigate(['/vehicles', idVehicle]);
+    // this.router.navigate(['/admin/vehicles', idVehicle]);
   }
 
   deleteAction() {

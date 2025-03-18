@@ -101,7 +101,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   goDetail(id: string) {
-    this.router.navigate(['/vehicles', id]);
+    // this.router.navigate(['/vehicles', id]);
   }
 
   // logout() {

@@ -36,7 +36,7 @@
     </div>
 
     <div class="buttons d-flex justify-content-end w-100">
-      <button class="button-primary mr-3 mb-3" routerLink="/parking">
+      <button class="button-primary mr-3 mb-3" routerLink="/admin/parking">
         Gestionar
       </button>
     </div>
@@ -64,6 +64,8 @@
           <ng-container *ngIf="movements.length > 0; else noMovements">
             <tr
               *ngFor="let movement of movements"
+              [routerLink]="['/admin/vehicles/', movement.idVehicle]"
+              routerLinkActive="router-link-active"
               (click)="goDetail(movement.idVehicle)"
             >
               <td>{{ getVehicleById(movement.idVehicle).licensePlate }}</td>
