@@ -1,11 +1,16 @@
-import { HttpEvent, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from '@angular/common/http';
+import {
+  HttpEvent,
+  HttpHandlerFn,
+  HttpInterceptorFn,
+  HttpRequest,
+} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { catchError, map } from 'rxjs/operators';
 
 export const notificationInterceptor: HttpInterceptorFn = (
   req: HttpRequest<unknown>,
-  next: HttpHandlerFn
+  next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> => {
   return next(req).pipe(
     map((event: HttpEvent<unknown>) => {
@@ -55,14 +60,5 @@ export const notificationInterceptor: HttpInterceptorFn = (
 
       return event;
     }),
-    catchError((error) => {
-      Swal.fire({
-        title: 'Error',
-        text: 'Algo salió mal. Inténtalo de nuevo.',
-        icon: 'error',
-        confirmButtonColor: '#d33',
-      });
-      throw error;
-    })
   );
 };

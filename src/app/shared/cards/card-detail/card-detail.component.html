@@ -3,15 +3,15 @@
   <div class="mx-5 mt-3">
     <p><strong>Matrícula - </strong>{{ vehicle.licensePlate }}</p>
     <p><strong>Color - </strong>{{ vehicle.color }}</p>
-    <p><strong>Tipo vehículo - </strong>{{ vehicle.type }}</p>
-    <p><strong>Estado - </strong>{{ vehicle.isActive ? 'Activo' : 'Inactivo' }}</p>
+    <p><strong>Tipo vehículo - </strong>{{ vehicle.vehicleType }}</p>
+    <p>
+      <strong>Estado - </strong>{{ vehicle.active ? "Activo" : "Inactivo" }}
+    </p>
     <div *ngIf="registry">
-      <p>
+      <!-- <p>
         <strong>Plaza - </strong>{{ parkingSpot?.spotNumber }}
-      </p>
-      <p>
-        <strong>Tarifa - </strong>{{ rate?.name || "" }}
-      </p>
+      </p> -->
+      <p><strong>Tarifa - </strong>Estándar</p>
       <p>
         <strong>Entrada - </strong
         >{{ registry.entryTime | date: "dd/MM/yyyy HH:mm:ss" }}

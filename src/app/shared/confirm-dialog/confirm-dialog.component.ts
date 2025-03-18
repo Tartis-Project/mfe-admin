@@ -25,7 +25,7 @@ export class ConfirmDialogComponent implements OnInit {
     readonly dialogRef: MatDialogRef<ConfirmDialogComponent>,
     private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: { dialogData: any },
-  ) { }
+  ) {}
 
   floor!: Floor;
   rate!: Rate;
@@ -56,9 +56,9 @@ export class ConfirmDialogComponent implements OnInit {
   confirm() {
     switch (true) {
       case this.isPlazas():
-        this.parkingService.deleteFloor(this.floor.id).subscribe(() => {
-          this.onNoClick();
-        });
+        // this.parkingService.deleteFloor(this.floor.id).subscribe(() => {
+        //   this.onNoClick();
+        // });
         break;
       case this.isTarifas():
         this.rateService.deleteRate(this.rate.id).subscribe(() => {

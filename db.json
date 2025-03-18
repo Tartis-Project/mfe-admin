@@ -2,1950 +2,1950 @@
   "rates": [
     {
       "id": "35cd",
-      "name": "Estándar",
+      "description": "Estándar",
       "pricePerMinute": 0.035
     }
   ],
   "floors": [
     {
       "id": "8617",
-      "number": 1,
+      "floorNumber": 1,
       "numberOfSpots": 120,
-      "isOperative": true
+      "operative": true
     },
     {
       "id": "0f67",
-      "number": 2,
+      "floorNumber": 2,
       "numberOfSpots": 100,
-      "isOperative": false
+      "operative": false
     },
     {
       "id": "e16b",
-      "number": 3,
+      "floorNumber": 3,
       "numberOfSpots": 100,
-      "isOperative": true
+      "operative": true
     }
   ],
-  "spots": [
+  "parkingspots": [
     {
       "id": "79b7",
       "idFloor": "8617",
       "spotNumber": 1,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ea2f",
       "idFloor": "8617",
       "spotNumber": 2,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6ec4",
       "idFloor": "8617",
       "spotNumber": 3,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4763",
       "idFloor": "8617",
       "spotNumber": 4,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "b7a4",
       "idFloor": "8617",
       "spotNumber": 5,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "3c4b",
       "idFloor": "8617",
       "spotNumber": 6,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2ab5",
       "idFloor": "8617",
       "spotNumber": 7,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a554",
       "idFloor": "8617",
       "spotNumber": 8,
-      "isOccupied": true
+      "occupied": true
     },
     {
       "id": "9e98",
       "idFloor": "8617",
       "spotNumber": 9,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "453f",
       "idFloor": "8617",
       "spotNumber": 10,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "934c",
       "idFloor": "8617",
       "spotNumber": 11,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d31f",
       "idFloor": "8617",
       "spotNumber": 12,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "772e",
       "idFloor": "8617",
       "spotNumber": 13,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "26b1",
       "idFloor": "8617",
       "spotNumber": 14,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "635b",
       "idFloor": "8617",
       "spotNumber": 15,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "eaf6",
       "idFloor": "8617",
       "spotNumber": 16,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6bb9",
       "idFloor": "8617",
       "spotNumber": 17,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "16ac",
       "idFloor": "8617",
       "spotNumber": 18,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "fd34",
       "idFloor": "8617",
       "spotNumber": 19,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a5ec",
       "idFloor": "8617",
       "spotNumber": 20,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "b9a9",
       "idFloor": "8617",
       "spotNumber": 21,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1faf",
       "idFloor": "8617",
       "spotNumber": 22,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1317",
       "idFloor": "8617",
       "spotNumber": 23,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6bd5",
       "idFloor": "8617",
       "spotNumber": 24,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "01d0",
       "idFloor": "8617",
       "spotNumber": 25,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5f56",
       "idFloor": "8617",
       "spotNumber": 26,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ee3b",
       "idFloor": "8617",
       "spotNumber": 27,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "cf17",
       "idFloor": "8617",
       "spotNumber": 28,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "fc54",
       "idFloor": "8617",
       "spotNumber": 29,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1372",
       "idFloor": "8617",
       "spotNumber": 30,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ca48",
       "idFloor": "8617",
       "spotNumber": 31,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a97e",
       "idFloor": "8617",
       "spotNumber": 32,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "0147",
       "idFloor": "8617",
       "spotNumber": 33,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2ab1",
       "idFloor": "8617",
       "spotNumber": 34,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f46d",
       "idFloor": "8617",
       "spotNumber": 35,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a4fc",
       "idFloor": "8617",
       "spotNumber": 36,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ec95",
       "idFloor": "8617",
       "spotNumber": 37,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "beab",
       "idFloor": "8617",
       "spotNumber": 38,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4cb5",
       "idFloor": "8617",
       "spotNumber": 39,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "379c",
       "idFloor": "8617",
       "spotNumber": 40,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "c8d0",
       "idFloor": "8617",
       "spotNumber": 41,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8315",
       "idFloor": "8617",
       "spotNumber": 42,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9de5",
       "idFloor": "8617",
       "spotNumber": 43,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6b64",
       "idFloor": "8617",
       "spotNumber": 44,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a48d",
       "idFloor": "8617",
       "spotNumber": 45,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a08f",
       "idFloor": "8617",
       "spotNumber": 46,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7a88",
       "idFloor": "8617",
       "spotNumber": 47,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "83a2",
       "idFloor": "8617",
       "spotNumber": 48,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8773",
       "idFloor": "8617",
       "spotNumber": 49,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ee60",
       "idFloor": "8617",
       "spotNumber": 50,
-      "isOccupied": true
+      "occupied": true
     },
     {
       "id": "b141",
       "idFloor": "8617",
       "spotNumber": 51,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5772",
       "idFloor": "8617",
       "spotNumber": 52,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4b80",
       "idFloor": "8617",
       "spotNumber": 53,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2e49",
       "idFloor": "8617",
       "spotNumber": 54,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1260",
       "idFloor": "8617",
       "spotNumber": 55,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2814",
       "idFloor": "8617",
       "spotNumber": 56,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1331",
       "idFloor": "8617",
       "spotNumber": 57,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "33c0",
       "idFloor": "8617",
       "spotNumber": 58,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e348",
       "idFloor": "8617",
       "spotNumber": 59,
-      "isOccupied": true
+      "occupied": true
     },
     {
       "id": "a7c8",
       "idFloor": "8617",
       "spotNumber": 60,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "10d7",
       "idFloor": "8617",
       "spotNumber": 61,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9f0b",
       "idFloor": "8617",
       "spotNumber": 62,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "59a9",
       "idFloor": "8617",
       "spotNumber": 63,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "563a",
       "idFloor": "8617",
       "spotNumber": 64,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "3293",
       "idFloor": "8617",
       "spotNumber": 65,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7f99",
       "idFloor": "8617",
       "spotNumber": 66,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7cbf",
       "idFloor": "8617",
       "spotNumber": 67,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "22e4",
       "idFloor": "8617",
       "spotNumber": 68,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a418",
       "idFloor": "8617",
       "spotNumber": 69,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "bf8a",
       "idFloor": "8617",
       "spotNumber": 70,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "41de",
       "idFloor": "8617",
       "spotNumber": 71,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a099",
       "idFloor": "8617",
       "spotNumber": 72,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "fe4f",
       "idFloor": "8617",
       "spotNumber": 73,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5d63",
       "idFloor": "8617",
       "spotNumber": 74,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "43a9",
       "idFloor": "8617",
       "spotNumber": 75,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "dc2a",
       "idFloor": "8617",
       "spotNumber": 76,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "602d",
       "idFloor": "8617",
       "spotNumber": 77,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "11f8",
       "idFloor": "8617",
       "spotNumber": 78,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "194f",
       "idFloor": "8617",
       "spotNumber": 79,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5e96",
       "idFloor": "8617",
       "spotNumber": 80,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "3717",
       "idFloor": "8617",
       "spotNumber": 81,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1d3b",
       "idFloor": "8617",
       "spotNumber": 82,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f20a",
       "idFloor": "8617",
       "spotNumber": 83,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1ccc",
       "idFloor": "8617",
       "spotNumber": 84,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f38e",
       "idFloor": "8617",
       "spotNumber": 85,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ac1a",
       "idFloor": "8617",
       "spotNumber": 86,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8ab7",
       "idFloor": "8617",
       "spotNumber": 87,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a26c",
       "idFloor": "8617",
       "spotNumber": 88,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a9fc",
       "idFloor": "8617",
       "spotNumber": 89,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e4c4",
       "idFloor": "8617",
       "spotNumber": 90,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1961",
       "idFloor": "8617",
       "spotNumber": 91,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a9f5",
       "idFloor": "8617",
       "spotNumber": 92,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "945a",
       "idFloor": "8617",
       "spotNumber": 93,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4d6e",
       "idFloor": "8617",
       "spotNumber": 94,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e43b",
       "idFloor": "8617",
       "spotNumber": 95,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ef4e",
       "idFloor": "8617",
       "spotNumber": 96,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9c3e",
       "idFloor": "8617",
       "spotNumber": 97,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ba45",
       "idFloor": "8617",
       "spotNumber": 98,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6f50",
       "idFloor": "8617",
       "spotNumber": 99,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a2cf",
       "idFloor": "8617",
       "spotNumber": 100,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e81b",
       "idFloor": "8617",
       "spotNumber": 101,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6aab",
       "idFloor": "8617",
       "spotNumber": 102,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "945d",
       "idFloor": "8617",
       "spotNumber": 103,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "49d7",
       "idFloor": "8617",
       "spotNumber": 104,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f194",
       "idFloor": "8617",
       "spotNumber": 105,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6dbd",
       "idFloor": "8617",
       "spotNumber": 106,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "71a7",
       "idFloor": "8617",
       "spotNumber": 107,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2e0b",
       "idFloor": "8617",
       "spotNumber": 108,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "15dc",
       "idFloor": "8617",
       "spotNumber": 109,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "503d",
       "idFloor": "8617",
       "spotNumber": 110,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "34c7",
       "idFloor": "8617",
       "spotNumber": 111,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d29f",
       "idFloor": "8617",
       "spotNumber": 112,
-      "isOccupied": true
+      "occupied": true
     },
     {
       "id": "c5db",
       "idFloor": "8617",
       "spotNumber": 113,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a969",
       "idFloor": "8617",
       "spotNumber": 114,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "c305",
       "idFloor": "8617",
       "spotNumber": 115,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "41df",
       "idFloor": "8617",
       "spotNumber": 116,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "51dc",
       "idFloor": "8617",
       "spotNumber": 117,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "89c3",
       "idFloor": "8617",
       "spotNumber": 118,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1f29",
       "idFloor": "8617",
       "spotNumber": 119,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a7a7",
       "idFloor": "8617",
       "spotNumber": 120,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f342",
       "idFloor": "0f67",
       "spotNumber": 121,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "51ee",
       "idFloor": "0f67",
       "spotNumber": 122,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ca9c",
       "idFloor": "0f67",
       "spotNumber": 123,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "dac7",
       "idFloor": "0f67",
       "spotNumber": 124,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "26fb",
       "idFloor": "0f67",
       "spotNumber": 125,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "0006",
       "idFloor": "0f67",
       "spotNumber": 126,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8a95",
       "idFloor": "0f67",
       "spotNumber": 127,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ad37",
       "idFloor": "0f67",
       "spotNumber": 128,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e8a4",
       "idFloor": "0f67",
       "spotNumber": 129,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d4d2",
       "idFloor": "0f67",
       "spotNumber": 130,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1483",
       "idFloor": "0f67",
       "spotNumber": 131,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a7e3",
       "idFloor": "0f67",
       "spotNumber": 132,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "b8a3",
       "idFloor": "0f67",
       "spotNumber": 133,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a8f9",
       "idFloor": "0f67",
       "spotNumber": 134,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a265",
       "idFloor": "0f67",
       "spotNumber": 135,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "3dbe",
       "idFloor": "0f67",
       "spotNumber": 136,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9d77",
       "idFloor": "0f67",
       "spotNumber": 137,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "63e8",
       "idFloor": "0f67",
       "spotNumber": 138,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8f89",
       "idFloor": "0f67",
       "spotNumber": 139,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "cc46",
       "idFloor": "0f67",
       "spotNumber": 140,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ab66",
       "idFloor": "0f67",
       "spotNumber": 141,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "bf21",
       "idFloor": "0f67",
       "spotNumber": 142,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d535",
       "idFloor": "0f67",
       "spotNumber": 143,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "15b2",
       "idFloor": "0f67",
       "spotNumber": 144,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f324",
       "idFloor": "0f67",
       "spotNumber": 145,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "bc3f",
       "idFloor": "0f67",
       "spotNumber": 146,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "58b5",
       "idFloor": "0f67",
       "spotNumber": 147,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "3cf3",
       "idFloor": "0f67",
       "spotNumber": 148,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8a77",
       "idFloor": "0f67",
       "spotNumber": 149,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "3863",
       "idFloor": "0f67",
       "spotNumber": 150,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "b8c5",
       "idFloor": "0f67",
       "spotNumber": 151,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4cdd",
       "idFloor": "0f67",
       "spotNumber": 152,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4f57",
       "idFloor": "0f67",
       "spotNumber": 153,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "93ad",
       "idFloor": "0f67",
       "spotNumber": 154,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a4c9",
       "idFloor": "0f67",
       "spotNumber": 155,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "47ed",
       "idFloor": "0f67",
       "spotNumber": 156,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "baeb",
       "idFloor": "0f67",
       "spotNumber": 157,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "b4c1",
       "idFloor": "0f67",
       "spotNumber": 158,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4d62",
       "idFloor": "0f67",
       "spotNumber": 159,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ffe0",
       "idFloor": "0f67",
       "spotNumber": 160,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "0f61",
       "idFloor": "0f67",
       "spotNumber": 161,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "11f6",
       "idFloor": "0f67",
       "spotNumber": 162,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "aa88",
       "idFloor": "0f67",
       "spotNumber": 163,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7d92",
       "idFloor": "0f67",
       "spotNumber": 164,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "034f",
       "idFloor": "0f67",
       "spotNumber": 165,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6801",
       "idFloor": "0f67",
       "spotNumber": 166,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "cffd",
       "idFloor": "0f67",
       "spotNumber": 167,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4e6d",
       "idFloor": "0f67",
       "spotNumber": 168,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "84b5",
       "idFloor": "0f67",
       "spotNumber": 169,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2983",
       "idFloor": "0f67",
       "spotNumber": 170,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1d06",
       "idFloor": "0f67",
       "spotNumber": 171,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2848",
       "idFloor": "0f67",
       "spotNumber": 172,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "0bb2",
       "idFloor": "0f67",
       "spotNumber": 173,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "938d",
       "idFloor": "0f67",
       "spotNumber": 174,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "859d",
       "idFloor": "0f67",
       "spotNumber": 175,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7340",
       "idFloor": "0f67",
       "spotNumber": 176,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6a4b",
       "idFloor": "0f67",
       "spotNumber": 177,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2d05",
       "idFloor": "0f67",
       "spotNumber": 178,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d525",
       "idFloor": "0f67",
       "spotNumber": 179,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "fd48",
       "idFloor": "0f67",
       "spotNumber": 180,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a047",
       "idFloor": "0f67",
       "spotNumber": 181,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ef53",
       "idFloor": "0f67",
       "spotNumber": 182,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6361",
       "idFloor": "0f67",
       "spotNumber": 183,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7525",
       "idFloor": "0f67",
       "spotNumber": 184,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9003",
       "idFloor": "0f67",
       "spotNumber": 185,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "410d",
       "idFloor": "0f67",
       "spotNumber": 186,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "bdf5",
       "idFloor": "0f67",
       "spotNumber": 187,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9bd1",
       "idFloor": "0f67",
       "spotNumber": 188,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6751",
       "idFloor": "0f67",
       "spotNumber": 189,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "3a16",
       "idFloor": "0f67",
       "spotNumber": 190,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9372",
       "idFloor": "0f67",
       "spotNumber": 191,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e953",
       "idFloor": "0f67",
       "spotNumber": 192,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ffc7",
       "idFloor": "0f67",
       "spotNumber": 193,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "c0d9",
       "idFloor": "0f67",
       "spotNumber": 194,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "dfe3",
       "idFloor": "0f67",
       "spotNumber": 195,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d7a8",
       "idFloor": "0f67",
       "spotNumber": 196,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "57a5",
       "idFloor": "0f67",
       "spotNumber": 197,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5184",
       "idFloor": "0f67",
       "spotNumber": 198,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a5a6",
       "idFloor": "0f67",
       "spotNumber": 199,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "0faa",
       "idFloor": "0f67",
       "spotNumber": 200,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6eed",
       "idFloor": "0f67",
       "spotNumber": 201,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "fd69",
       "idFloor": "0f67",
       "spotNumber": 202,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d302",
       "idFloor": "0f67",
       "spotNumber": 203,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "563d",
       "idFloor": "0f67",
       "spotNumber": 204,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f8b0",
       "idFloor": "0f67",
       "spotNumber": 205,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6ece",
       "idFloor": "0f67",
       "spotNumber": 206,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "c5fa",
       "idFloor": "0f67",
       "spotNumber": 207,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5172",
       "idFloor": "0f67",
       "spotNumber": 208,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7ca2",
       "idFloor": "0f67",
       "spotNumber": 209,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f33d",
       "idFloor": "0f67",
       "spotNumber": 210,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "c8ba",
       "idFloor": "0f67",
       "spotNumber": 211,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d9f0",
       "idFloor": "0f67",
       "spotNumber": 212,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "016a",
       "idFloor": "0f67",
       "spotNumber": 213,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "c596",
       "idFloor": "0f67",
       "spotNumber": 214,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7f9a",
       "idFloor": "0f67",
       "spotNumber": 215,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "83ba",
       "idFloor": "0f67",
       "spotNumber": 216,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8e4c",
       "idFloor": "0f67",
       "spotNumber": 217,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5e02",
       "idFloor": "0f67",
       "spotNumber": 218,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "1532",
       "idFloor": "0f67",
       "spotNumber": 219,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9eb7",
       "idFloor": "0f67",
       "spotNumber": 220,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "b317",
       "idFloor": "e16b",
       "spotNumber": 221,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8b75",
       "idFloor": "e16b",
       "spotNumber": 222,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "0fcb",
       "idFloor": "e16b",
       "spotNumber": 223,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ba4c",
       "idFloor": "e16b",
       "spotNumber": 224,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "21b4",
       "idFloor": "e16b",
       "spotNumber": 225,
-      "isOccupied": true
+      "occupied": true
     },
     {
       "id": "45a6",
       "idFloor": "e16b",
       "spotNumber": 226,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f167",
       "idFloor": "e16b",
       "spotNumber": 227,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e822",
       "idFloor": "e16b",
       "spotNumber": 228,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ad83",
       "idFloor": "e16b",
       "spotNumber": 229,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "731a",
       "idFloor": "e16b",
       "spotNumber": 230,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7f55",
       "idFloor": "e16b",
       "spotNumber": 231,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f5a1",
       "idFloor": "e16b",
       "spotNumber": 232,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "05d5",
       "idFloor": "e16b",
       "spotNumber": 233,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "56ee",
       "idFloor": "e16b",
       "spotNumber": 234,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "c4cf",
       "idFloor": "e16b",
       "spotNumber": 235,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "db91",
       "idFloor": "e16b",
       "spotNumber": 236,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "87b7",
       "idFloor": "e16b",
       "spotNumber": 237,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "46ce",
       "idFloor": "e16b",
       "spotNumber": 238,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5e0d",
       "idFloor": "e16b",
       "spotNumber": 239,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "da10",
       "idFloor": "e16b",
       "spotNumber": 240,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e960",
       "idFloor": "e16b",
       "spotNumber": 241,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4247",
       "idFloor": "e16b",
       "spotNumber": 242,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2c7e",
       "idFloor": "e16b",
       "spotNumber": 243,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a044",
       "idFloor": "e16b",
       "spotNumber": 244,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "80e6",
       "idFloor": "e16b",
       "spotNumber": 245,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "afb0",
       "idFloor": "e16b",
       "spotNumber": 246,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d6e6",
       "idFloor": "e16b",
       "spotNumber": 247,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "04c2",
       "idFloor": "e16b",
       "spotNumber": 248,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "0db1",
       "idFloor": "e16b",
       "spotNumber": 249,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d128",
       "idFloor": "e16b",
       "spotNumber": 250,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6832",
       "idFloor": "e16b",
       "spotNumber": 251,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "de82",
       "idFloor": "e16b",
       "spotNumber": 252,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "153a",
       "idFloor": "e16b",
       "spotNumber": 253,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f28b",
       "idFloor": "e16b",
       "spotNumber": 254,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "b3d2",
       "idFloor": "e16b",
       "spotNumber": 255,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "198b",
       "idFloor": "e16b",
       "spotNumber": 256,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9257",
       "idFloor": "e16b",
       "spotNumber": 257,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "93a2",
       "idFloor": "e16b",
       "spotNumber": 258,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "3956",
       "idFloor": "e16b",
       "spotNumber": 259,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "071c",
       "idFloor": "e16b",
       "spotNumber": 260,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "af6a",
       "idFloor": "e16b",
       "spotNumber": 261,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "29bb",
       "idFloor": "e16b",
       "spotNumber": 262,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "549f",
       "idFloor": "e16b",
       "spotNumber": 263,
-      "isOccupied": true
+      "occupied": true
     },
     {
       "id": "8939",
       "idFloor": "e16b",
       "spotNumber": 264,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7826",
       "idFloor": "e16b",
       "spotNumber": 265,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4884",
       "idFloor": "e16b",
       "spotNumber": 266,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2095",
       "idFloor": "e16b",
       "spotNumber": 267,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f015",
       "idFloor": "e16b",
       "spotNumber": 268,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e01b",
       "idFloor": "e16b",
       "spotNumber": 269,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a527",
       "idFloor": "e16b",
       "spotNumber": 270,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "fae4",
       "idFloor": "e16b",
       "spotNumber": 271,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5b48",
       "idFloor": "e16b",
       "spotNumber": 272,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "9880",
       "idFloor": "e16b",
       "spotNumber": 273,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "fc45",
       "idFloor": "e16b",
       "spotNumber": 274,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "33a1",
       "idFloor": "e16b",
       "spotNumber": 275,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7ee4",
       "idFloor": "e16b",
       "spotNumber": 276,
-      "isOccupied": true
+      "occupied": true
     },
     {
       "id": "6281",
       "idFloor": "e16b",
       "spotNumber": 277,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8968",
       "idFloor": "e16b",
       "spotNumber": 278,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "c0a3",
       "idFloor": "e16b",
       "spotNumber": 279,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "a058",
       "idFloor": "e16b",
       "spotNumber": 280,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "2171",
       "idFloor": "e16b",
       "spotNumber": 281,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "4730",
       "idFloor": "e16b",
       "spotNumber": 282,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "76ed",
       "idFloor": "e16b",
       "spotNumber": 283,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "b44b",
       "idFloor": "e16b",
       "spotNumber": 284,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7a38",
       "idFloor": "e16b",
       "spotNumber": 285,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "425d",
       "idFloor": "e16b",
       "spotNumber": 286,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "cd5f",
       "idFloor": "e16b",
       "spotNumber": 287,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "eae5",
       "idFloor": "e16b",
       "spotNumber": 288,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "78cf",
       "idFloor": "e16b",
       "spotNumber": 289,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "20bc",
       "idFloor": "e16b",
       "spotNumber": 290,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8109",
       "idFloor": "e16b",
       "spotNumber": 291,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5427",
       "idFloor": "e16b",
       "spotNumber": 292,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "f0a5",
       "idFloor": "e16b",
       "spotNumber": 293,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5a2e",
       "idFloor": "e16b",
       "spotNumber": 294,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "197d",
       "idFloor": "e16b",
       "spotNumber": 295,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7a0b",
       "idFloor": "e16b",
       "spotNumber": 296,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "87e2",
       "idFloor": "e16b",
       "spotNumber": 297,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "aa92",
       "idFloor": "e16b",
       "spotNumber": 298,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "697f",
       "idFloor": "e16b",
       "spotNumber": 299,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "64f8",
       "idFloor": "e16b",
       "spotNumber": 300,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8a98",
       "idFloor": "e16b",
       "spotNumber": 301,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "b1f6",
       "idFloor": "e16b",
       "spotNumber": 302,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "fc25",
       "idFloor": "e16b",
       "spotNumber": 303,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "189d",
       "idFloor": "e16b",
       "spotNumber": 304,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "101d",
       "idFloor": "e16b",
       "spotNumber": 305,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "ae7f",
       "idFloor": "e16b",
       "spotNumber": 306,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e6c1",
       "idFloor": "e16b",
       "spotNumber": 307,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "8e75",
       "idFloor": "e16b",
       "spotNumber": 308,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d707",
       "idFloor": "e16b",
       "spotNumber": 309,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "7504",
       "idFloor": "e16b",
       "spotNumber": 310,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5fd1",
       "idFloor": "e16b",
       "spotNumber": 311,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "10c8",
       "idFloor": "e16b",
       "spotNumber": 312,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "d47f",
       "idFloor": "e16b",
       "spotNumber": 313,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5113",
       "idFloor": "e16b",
       "spotNumber": 314,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e162",
       "idFloor": "e16b",
       "spotNumber": 315,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "e775",
       "idFloor": "e16b",
       "spotNumber": 316,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "c0e0",
       "idFloor": "e16b",
       "spotNumber": 317,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "5710",
       "idFloor": "e16b",
       "spotNumber": 318,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "009c",
       "idFloor": "e16b",
       "spotNumber": 319,
-      "isOccupied": false
+      "occupied": false
     },
     {
       "id": "6042",
       "idFloor": "e16b",
       "spotNumber": 320,
-      "isOccupied": false
+      "occupied": false
     }
   ],
   "vehicles": [
@@ -1953,113 +1953,113 @@
       "id": "1",
       "licensePlate": "ABC123",
       "model": "Toyota Corolla",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Red",
-      "isActive": true
+      "active": true
     },
     {
       "id": "2",
       "licensePlate": "XYZ789",
       "model": "Honda Civic",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Blue",
-      "isActive": false
+      "active": false
     },
     {
       "id": "5",
       "licensePlate": "JKL012",
       "model": "Tesla Model S",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Gray",
-      "isActive": true
+      "active": true
     },
     {
       "id": "6",
       "licensePlate": "MNO345",
       "model": "BMW X5",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Black",
-      "isActive": false
+      "active": false
     },
     {
       "id": "7",
       "licensePlate": "PQR678",
       "model": "Audi A4",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Blue",
-      "isActive": false
+      "active": false
     },
     {
       "id": "8",
       "licensePlate": "STU901",
       "model": "Nissan Altima",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Silver",
-      "isActive": true
+      "active": true
     },
     {
       "id": "9",
       "licensePlate": "VWX234",
       "model": "Hyundai Tucson",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Red",
-      "isActive": false
+      "active": false
     },
     {
       "id": "10",
       "licensePlate": "YZA567",
       "model": "Kia Sportage",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "White",
-      "isActive": false
+      "active": false
     },
     {
       "id": "11",
       "licensePlate": "BCD890",
       "model": "Volkswagen Golf",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Black",
-      "isActive": false
+      "active": false
     },
     {
       "id": "12",
       "licensePlate": "EFG123",
       "model": "Subaru Outback",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Green",
-      "isActive": true
+      "active": true
     },
     {
       "id": "13",
       "licensePlate": "HIJ456",
       "model": "Mazda CX-5",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Blue",
-      "isActive": false
+      "active": false
     },
     {
       "id": "14",
       "licensePlate": "KLM789",
       "model": "Jeep Wrangler",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Yellow",
-      "isActive": false
+      "active": false
     },
     {
       "id": "15",
       "licensePlate": "NOP012",
       "model": "Porsche 911",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Red",
-      "isActive": false
+      "active": false
     },
     {
       "id": "16",
       "licensePlate": "QRS345",
       "model": "Lexus RX",
-      "type": "Coche",
+      "vehicleType": "Coche",
       "color": "Black",
-      "isActive": false
+      "active": false
     }
   ],
   "registries": [

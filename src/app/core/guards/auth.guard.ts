@@ -6,13 +6,16 @@
 //   providedIn: 'root',
 // })
 // export class AuthGuard implements CanActivate {
-//   constructor(private keycloakService: KeycloakService, private router: Router) { }
+//   constructor(
+//     private keycloakService: KeycloakService,
+//     private router: Router,
+//   ) {}
 
 //   async canActivate(): Promise<boolean> {
 //     const isLoggedIn = await this.keycloakService.isLoggedIn();
 //     if (!isLoggedIn) {
 //       this.keycloakService.login();
-//        return false;
+//       return false;
 //     }
 //     return true;
 //   }

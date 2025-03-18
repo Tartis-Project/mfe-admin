@@ -22,11 +22,11 @@
 
     <mat-form-field class="w-100">
       <mat-label>Tipo</mat-label>
-      <mat-select formControlName="type" required>
+      <mat-select formControlName="vehicleType" required>
         <mat-option value="Coche">Coche</mat-option>
         <mat-option value="Moto">Moto</mat-option>
       </mat-select>
-      <mat-error *ngIf="vehicleForm.get('type')">
+      <mat-error *ngIf="vehicleForm.get('vehicleType')">
         El tipo es requerido.
       </mat-error>
     </mat-form-field>
@@ -39,11 +39,17 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-checkbox formControlName="isActive">Activo</mat-checkbox>
+    <mat-checkbox formControlName="active">Activo</mat-checkbox>
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions class="actions">
-  <button class="button-primary" [disabled]="vehicleForm.invalid" (click)="updateVehicle()">Editar</button>
+  <button
+    class="button-primary"
+    [disabled]="vehicleForm.invalid"
+    (click)="updateVehicle()"
+  >
+    Editar
+  </button>
   <button class="button-secondary" (click)="onNoClick()">Cancelar</button>
 </mat-dialog-actions>

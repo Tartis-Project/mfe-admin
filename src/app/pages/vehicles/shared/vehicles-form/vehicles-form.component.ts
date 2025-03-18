@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Inject, inject, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  inject,
+  Input,
+  Output,
+} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {
   FormBuilder,
@@ -39,9 +46,9 @@ export class VehiclesFormComponent {
     this.vehicleForm = this.fb.group({
       licensePlate: [this.vehicle.licensePlate, Validators.required],
       model: [this.vehicle.model, Validators.required],
-      type: [this.vehicle.type, Validators.required],
+      vehicleType: [this.vehicle.vehicleType, Validators.required],
       color: [this.vehicle.color, Validators.required],
-      isActive: [this.vehicle.isActive],
+      active: [this.vehicle.active],
     });
   }
 
@@ -50,7 +57,7 @@ export class VehiclesFormComponent {
     this.vehicleService
       .updateVehicle(this.vehicle.id, updatedVehicle)
       .subscribe((res) => {
-        this.vehicleUpdated.emit(updatedVehicle); 
+        this.vehicleUpdated.emit(updatedVehicle);
         this.onNoClick();
       });
   }

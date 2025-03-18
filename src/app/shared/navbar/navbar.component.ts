@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from '../../material/material.module';
 
 import { MaterialModule } from '../../material/material.module';
 

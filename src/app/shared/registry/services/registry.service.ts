@@ -13,18 +13,20 @@ export class RegistryService {
 
   constructor(
     private http: HttpClient,
-    private vehicleService: VehicleService
-  ) { }
+    private vehicleService: VehicleService,
+  ) {}
 
   getRegistries(): Observable<Registry[]> {
     return combineLatest([
       this.http.get<Registry[]>(this.apiUrl),
-      this.vehicleService.getVehicles()
+      this.vehicleService.getVehicles(),
     ]).pipe(
       map(([registries, vehicles]) => {
-        const vehicleIds = new Set(vehicles.map(v => v.id));
-        return registries.filter(registry => vehicleIds.has(registry.idVehicle));
-      })
+        const vehicleIds = new Set(vehicles.map((v) => v.id));
+        return registries.filter((registry) =>
+          vehicleIds.has(registry.idVehicle),
+        );
+      }),
     );
   }
 
@@ -36,7 +38,10 @@ export class RegistryService {
     return this.http.post<Registry>(this.apiUrl, registry);
   }
 
-  updateRegistry(id: string, registry: Partial<Registry>): Observable<Registry> {
+  updateRegistry(
+    id: string,
+    registry: Partial<Registry>,
+  ): Observable<Registry> {
     return this.http.put<Registry>(`${this.apiUrl}/${id}`, registry);
   }
 

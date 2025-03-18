@@ -1,6 +1,6 @@
 <div class="card">
   <h4 class="title" *ngIf="isPlazas(); else otherTitles">
-    Planta {{ floor.number }}
+    Planta {{ floor.floorNumber }}
   </h4>
 
   <div *ngIf="isPlazas()">
@@ -8,30 +8,30 @@
       <strong>¿Operativa?:</strong>
       <mat-checkbox
         disabled="disabled"
-        [checked]="floor.isOperative"
+        [checked]="floor.operative"
       ></mat-checkbox>
     </div>
-    <div class="availability" [class.show]="floor.isOperative">
+    <div class="availability" [class.show]="floor.operative">
       <strong>Plazas disponibles -</strong> {{ floor.numberOfSpots }}
     </div>
   </div>
 
   <ng-template #otherTitles>
     <h4 class="title" *ngIf="isTarifas(); else vehicleTitle">
-      Tarifa {{ rate.name }}
+      Tarifa {{ rate.description }}
     </h4>
 
     <div *ngIf="isTarifas()">
       <p>
         <strong>Precio plaza (por minuto) -</strong>
-        {{ rate.pricePerMinute | euroCurrency:3 }}
+        {{ rate.pricePerMinute | euroCurrency: 3 }}
       </p>
       <p><strong>Total por hora -</strong> {{ totalPorHora | euroCurrency }}</p>
     </div>
   </ng-template>
 
   <ng-template #vehicleTitle>
-    <h4 class="title">{{ vehicle.model }}</h4>
+    <h4 *ngIf="isVehicles()" class="title">{{ vehicle.model }}</h4>
     <div *ngIf="isVehicles()">
       <p><strong>Matrícula - </strong>{{ vehicle.licensePlate }}</p>
       <p><strong>Color - </strong>{{ vehicle.color }}</p>
@@ -46,12 +46,19 @@
       *ngIf="isVehicles()"
       mat-icon-button
       class="edit-btn"
-      (click)="viewVehicleDetail( vehicle.id )"
+      [routerLink]="['/admin/vehicles', vehicle.id]"
+      routerLinkActive="router-link-active"
+      (click)="viewVehicleDetail(vehicle.id)"
     >
       <mat-icon class="button-primary">visibility</mat-icon>
     </button>
 
-    <button (click)="deleteAction()" mat-icon-button class="delete-btn">
+    <button
+      *ngIf="isTarifas() || isVehicles()"
+      (click)="deleteAction()"
+      mat-icon-button
+      class="delete-btn"
+    >
       <mat-icon class="button-secondary">delete</mat-icon>
     </button>
   </div>

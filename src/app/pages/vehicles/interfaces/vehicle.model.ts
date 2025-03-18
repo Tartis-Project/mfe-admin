@@ -2,7 +2,7 @@ export interface Vehicle {
   id: string;
   licensePlate: string;
   model: string;
-  type: string;
+  vehicleType: string;
   color: string;
-  isActive: boolean;
+  active: boolean;
 }

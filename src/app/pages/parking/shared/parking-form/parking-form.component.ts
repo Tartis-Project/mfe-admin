@@ -38,9 +38,10 @@ export class ParkingFormComponent implements OnInit {
     private parkingSpotService: ParkingSpotService,
   ) {
     this.parkingForm = this.fb.group({
-      number: ['', [Validators.required, greaterThanZeroValidator()]],
+      id: [''],
+      floorNumber: ['', [Validators.required, greaterThanZeroValidator()]],
       numberOfSpots: ['', [Validators.required, greaterThanZeroValidator()]],
-      isOperative: [false],
+      operative: [false],
     });
   }
 
@@ -51,40 +52,40 @@ export class ParkingFormComponent implements OnInit {
     }
   }
 
-  addFloor() {
-    if (this.parkingForm.valid) {
-      const newFloor = this.parkingForm.value;
-      this.parkingSpotService
-        .getLastSpotNumber()
-        .subscribe((lastSpotNumber) => {
-          console.log('Último número de plaza:', lastSpotNumber);
-          this.parkingService.addFloor(newFloor).subscribe((res) => {
-            this.onNoClick();
-            console.log('idPlanta ' + res.id);
-            const parkingSpots: ParkingSpot[] = [];
-            for (let index = 0; index < newFloor.numberOfSpots; index++) {
-              const auxSpot = {
-                idFloor: res.id,
-                spotNumber: lastSpotNumber + index + 1,
-                isOccupied: false,
-              } as ParkingSpot;
-              parkingSpots.push(auxSpot);
-            }
-            const addSpotRequests = parkingSpots.map((spot) =>
-              this.parkingSpotService.addParkingSpot(spot),
-            );
-            forkJoin(addSpotRequests).subscribe({
-              next: (responses) => {
-                console.log('Todas las plazas añadidas:', responses);
-              },
-              error: (err) => {
-                console.error('Error al añadir una o más plazas:', err);
-              },
-            });
-          });
-        });
-    }
-  }
+  // addFloor() {
+  //   if (this.parkingForm.valid) {
+  //     const newFloor = this.parkingForm.value;
+  //     this.parkingSpotService
+  //       .getLastSpotNumber()
+  //       .subscribe((lastSpotNumber) => {
+  //         console.log('Último número de plaza:', lastSpotNumber);
+  //         this.parkingService.addFloor(newFloor).subscribe((res) => {
+  //           this.onNoClick();
+  //           console.log('idPlanta ' + res.id);
+  //           const parkingSpots: ParkingSpot[] = [];
+  //           for (let index = 0; index < newFloor.numberOfSpots; index++) {
+  //             const auxSpot = {
+  //               idFloor: res.id,
+  //               spotNumber: lastSpotNumber + index + 1,
+  //               occupied: false,
+  //             } as ParkingSpot;
+  //             parkingSpots.push(auxSpot);
+  //           }
+  //           const addSpotRequests = parkingSpots.map((spot) =>
+  //             this.parkingSpotService.addParkingSpot(spot),
+  //           );
+  //           forkJoin(addSpotRequests).subscribe({
+  //             next: (responses) => {
+  //               console.log('Todas las plazas añadidas:', responses);
+  //             },
+  //             error: (err) => {
+  //               console.error('Error al añadir una o más plazas:', err);
+  //             },
+  //           });
+  //         });
+  //       });
+  //   }
+  // }
 
   updateFloor() {
     const updatedFloor = this.parkingForm.value;

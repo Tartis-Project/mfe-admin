@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
-
 import { CardDetailComponent } from '../../../../shared/cards/card-detail/card-detail.component';
 import { MaterialModule } from '../../../../material/material.module';
 import { Vehicle } from '../../interfaces/vehicle.model';
@@ -20,25 +19,23 @@ import { RegistryService } from '../../../../shared/registry/services/registry.s
   templateUrl: './vehicle-detail.component.html',
   styleUrl: './vehicle-detail.component.scss',
 })
-export class VehicleDetailComponent implements OnInit{
-
+export class VehicleDetailComponent implements OnInit {
   @Input() vehicle!: Vehicle;
   parkingSpots: { [key: string]: ParkingSpot } = {};
   rates: { [key: string]: Rate } = {};
-  registries: Registry[] = []
-  registryActive?: Registry
-  rateActive?: Rate
-  parkingSpotActive?: ParkingSpot
+  registries: Registry[] = [];
+  registryActive?: Registry;
+  rateActive?: Rate;
+  parkingSpotActive?: ParkingSpot;
   isDataLoaded = false;
-
 
   constructor(
     private route: ActivatedRoute,
     private vehicleService: VehicleService,
     private parkingSpotService: ParkingSpotService,
     private rateService: RateService,
-    private registryService: RegistryService
-  ){}
+    private registryService: RegistryService,
+  ) {}
 
   ngOnInit(): void {
     const vehicleId = this.route.snapshot.paramMap.get('id');
@@ -46,11 +43,9 @@ export class VehicleDetailComponent implements OnInit{
       this.vehicleService.getVehicleById(vehicleId).subscribe((data) => {
         if (data) {
           this.vehicle = data;
-          this.registryService.getRegistries().subscribe(res => {
+          this.registryService.getRegistries().subscribe((res) => {
             this.loadRegistries(res);
-          })
-
-
+          });
         } else {
           console.error('Vehículo no encontrado');
         }
@@ -63,55 +58,60 @@ export class VehicleDetailComponent implements OnInit{
   loadRegistries(registries: Registry[]) {
     if (!this.vehicle) {
       return;
-
     }
-      this.registries = registries.filter(r => r.idVehicle === this.vehicle.id);
+    this.registries = registries.filter((r) => r.idVehicle === this.vehicle.id);
 
-      if (this.vehicle.isActive) {
-        const activeRegistry = this.registries.find(r => {
-          return !r.exitTime || isNaN(new Date(r.exitTime).getTime());
-        });
-        if (activeRegistry) {
-          this.registryActive = activeRegistry;
-          this.getRate()
-          this.getSpotNumber()
-        } else {
-          console.log('No se encontró un registro activo.');
-        }
-        this.registries = this.registries.filter(r => {
-          return !r.exitTime || !isNaN(new Date(r.exitTime).getTime());
-        });
-
-      }
-      this.registries.forEach(registry => {
-        this.getRegistyDetails(registry);
+    if (this.vehicle.active) {
+      const activeRegistry = this.registries.find((r) => {
+        return !r.exitTime || isNaN(new Date(r.exitTime).getTime());
       });
-
+      if (activeRegistry) {
+        this.registryActive = activeRegistry;
+        this.getRate();
+        this.getSpotNumber();
+      } else {
+        console.log('No se encontró un registro activo.');
+      }
+      this.registries = this.registries.filter((r) => {
+        return !r.exitTime || !isNaN(new Date(r.exitTime).getTime());
+      });
+    }
+    this.registries.forEach((registry) => {
+      this.getRegistyDetails(registry);
+    });
   }
 
-
   getRegistyDetails(registryId: Registry): void {
-    this.parkingSpotService.getParkingSpotById(registryId.idParkingSpot).subscribe(res => {
+    this.parkingSpotService
+      .getParkingSpotById(registryId.idParkingSpot)
+      .subscribe((res) => {
         this.parkingSpots[registryId.idParkingSpot] = res;
-      }
-    );
+        console.log('1:', this.parkingSpots);
+        console.log('2:', this.parkingSpots[registryId.idParkingSpot]);
+      });
 
-    this.rateService.getRateById(registryId.idRate).subscribe(res => {
-      this.rates[registryId.idRate] = res
-    })
+    this.rateService.getRateById(registryId.idRate).subscribe((res) => {
+      this.rates[registryId.idRate] = res;
+      console.log('1:', this.rates);
+      console.log('2:', this.rates[registryId.idRate]);
+    });
   }
 
   getSpotNumber(): void {
-    this.parkingSpotService.getParkingSpotById(this.registryActive!.idParkingSpot).subscribe(res => {
-      this.parkingSpotActive = res;
-  })
-}
+    this.parkingSpotService
+      .getParkingSpotById(this.registryActive!.idParkingSpot)
+      .subscribe((res) => {
+        this.parkingSpotActive = res;
+      });
+  }
 
-getRate(): void{
-  this.rateService.getRateById(this.registryActive!.idRate).subscribe(res => {
-    this.rateActive = res
-  })
-}
+  getRate(): void {
+    this.rateService
+      .getRateById(this.registryActive!.idRate)
+      .subscribe((res) => {
+        this.rateActive = res;
+      });
+  }
 
   onVehicleUpdated(updatedVehicle: Vehicle) {
     this.vehicle = updatedVehicle;

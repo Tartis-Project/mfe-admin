@@ -9,7 +9,7 @@ import { environment } from '../../../../environments/environment';
   providedIn: 'root',
 })
 export class ParkingSpotService {
-  private readonly apiUrl = environment.apiUrl + '/spots';
+  private readonly apiUrl = environment.apiUrl + '/parkingspots';
   constructor(private http: HttpClient) {}
 
   getParkingSpots(): Observable<ParkingSpot[]> {
@@ -35,18 +35,18 @@ export class ParkingSpotService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  getLastSpotNumber() {
-    return this.http.get<ParkingSpot[]>(this.apiUrl).pipe(
-      map((spots: ParkingSpot[]) => {
-        if (spots.length > 0) {
-          const lastSpotNumber = Math.max(
-            ...spots.map((spot) => spot.spotNumber),
-          );
-          return lastSpotNumber;
-        } else {
-          return 0;
-        }
-      }),
-    );
-  }
+  // getLastSpotNumber() {
+  //   return this.http.get<ParkingSpot[]>(this.apiUrl).pipe(
+  //     map((spots: ParkingSpot[]) => {
+  //       if (spots.length > 0) {
+  //         const lastSpotNumber = Math.max(
+  //           ...spots.map((spot) => spot.spotNumber),
+  //         );
+  //         return lastSpotNumber;
+  //       } else {
+  //         return 0;
+  //       }
+  //     }),
+  //   );
+  // }
 }
