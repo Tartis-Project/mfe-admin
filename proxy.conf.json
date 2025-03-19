@@ -1,0 +1,8 @@
+{
+  "/remoteEntry.json": {
+    "target": "http://localhost:4202",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
+
