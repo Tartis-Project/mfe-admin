@@ -46,6 +46,8 @@
       *ngIf="isVehicles()"
       mat-icon-button
       class="edit-btn"
+      [routerLink]="['/admin/vehicles', vehicle.id]"
+      routerLinkActive="router-link-active"
       (click)="viewVehicleDetail(vehicle.id)"
     >
       <mat-icon class="button-primary">visibility</mat-icon>

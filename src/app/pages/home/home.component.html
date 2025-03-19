@@ -36,7 +36,7 @@
     </div>
 
     <div class="buttons d-flex justify-content-end w-100">
-      <button class="button-primary mr-3 mb-3" routerLink="/parking">
+      <button class="button-primary mr-3 mb-3" routerLink="/admin/parking">
         Gestionar
       </button>
     </div>
@@ -44,10 +44,10 @@
 
   <div class="card-name">
     <h5 class="title">
-      Bienvenido <strong> {{ getUserFirstName() }} </strong>
+      Bienvenido <strong> Nombre! </strong>
     </h5>
     <div class="logout d-flex justify-content-start align-content-center w-100">
-      <p (click)="logout()" class="text-secondary">
+      <p class="text-secondary">
         Cerrar sesión <mat-icon>logout</mat-icon>
       </p>
     </div>
@@ -64,6 +64,8 @@
           <ng-container *ngIf="movements.length > 0; else noMovements">
             <tr
               *ngFor="let movement of movements"
+              [routerLink]="['/admin/vehicles/', movement.idVehicle]"
+              routerLinkActive="router-link-active"
               (click)="goDetail(movement.idVehicle)"
             >
               <td>{{ getVehicleById(movement.idVehicle).licensePlate }}</td>
