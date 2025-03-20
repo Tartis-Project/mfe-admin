@@ -9,4 +9,4 @@ import { MaterialModule } from '../../material/material.module';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {}
+export class NavbarComponent { }

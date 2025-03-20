@@ -31,19 +31,19 @@
       "id": "79b7",
       "idFloor": "8617",
       "spotNumber": 1,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "ea2f",
       "idFloor": "8617",
       "spotNumber": 2,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "6ec4",
       "idFloor": "8617",
       "spotNumber": 3,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "4763",
@@ -73,7 +73,7 @@
       "id": "a554",
       "idFloor": "8617",
       "spotNumber": 8,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "9e98",
@@ -325,7 +325,7 @@
       "id": "ee60",
       "idFloor": "8617",
       "spotNumber": 50,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "b141",
@@ -379,7 +379,7 @@
       "id": "e348",
       "idFloor": "8617",
       "spotNumber": 59,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "a7c8",
@@ -697,7 +697,7 @@
       "id": "d29f",
       "idFloor": "8617",
       "spotNumber": 112,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "c5db",
@@ -1375,7 +1375,7 @@
       "id": "21b4",
       "idFloor": "e16b",
       "spotNumber": 225,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "45a6",
@@ -1603,7 +1603,7 @@
       "id": "549f",
       "idFloor": "e16b",
       "spotNumber": 263,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "8939",
@@ -1681,7 +1681,7 @@
       "id": "7ee4",
       "idFloor": "e16b",
       "spotNumber": 276,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "6281",
@@ -1955,7 +1955,7 @@
       "model": "Toyota Corolla",
       "vehicleType": "Coche",
       "color": "Red",
-      "active": true
+      "active": false
     },
     {
       "id": "2",
@@ -1971,7 +1971,7 @@
       "model": "Tesla Model S",
       "vehicleType": "Coche",
       "color": "Gray",
-      "active": true
+      "active": false
     },
     {
       "id": "6",
@@ -1995,7 +1995,7 @@
       "model": "Nissan Altima",
       "vehicleType": "Coche",
       "color": "Silver",
-      "active": true
+      "active": false
     },
     {
       "id": "9",
@@ -2027,7 +2027,7 @@
       "model": "Subaru Outback",
       "vehicleType": "Coche",
       "color": "Green",
-      "active": true
+      "active": false
     },
     {
       "id": "13",
@@ -2060,6 +2060,54 @@
       "vehicleType": "Coche",
       "color": "Black",
       "active": false
+    },
+    {
+      "id": "8f0e",
+      "licensePlate": "1234ABC",
+      "model": "Cupra Leon",
+      "vehicleType": "Coche",
+      "color": "Negro",
+      "active": false
+    },
+    {
+      "id": "e352",
+      "licensePlate": "1234ABD",
+      "model": "assasa",
+      "vehicleType": "Coche",
+      "color": "ssdsdasda",
+      "active": false
+    },
+    {
+      "id": "91fa",
+      "licensePlate": "1234HUB",
+      "model": "Golf",
+      "vehicleType": "Coche",
+      "color": "gris",
+      "active": false
+    },
+    {
+      "id": "ab55",
+      "licensePlate": "1234AHV",
+      "model": "Cupra Leon",
+      "vehicleType": "Coche",
+      "color": "Negro",
+      "active": true
+    },
+    {
+      "id": "cde7",
+      "licensePlate": "9084OKM",
+      "model": "Seat Panda",
+      "vehicleType": "Coche",
+      "color": "Blanco",
+      "active": true
+    },
+    {
+      "id": "8eee",
+      "licensePlate": "1234HYA",
+      "model": "Ford Mustang",
+      "vehicleType": "Coche",
+      "color": "Gris",
+      "active": true
     }
   ],
   "registries": [
@@ -2512,6 +2560,150 @@
       "entryTime": "2025-02-26 11:44:27.614482",
       "exitTime": "2025-02-26 12:53:27.614482",
       "amount": 2.42
+    },
+    {
+      "id": "9fa1",
+      "idParkingSpot": "79b7",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:26:18.969Z",
+      "exitTime": "2025-03-19T15:26:25.416Z",
+      "amount": -1
+    },
+    {
+      "id": "967d",
+      "idParkingSpot": "79b7",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:26:38.297Z",
+      "exitTime": "2025-03-19T15:32:25.193Z",
+      "amount": -1
+    },
+    {
+      "id": "6f85",
+      "idParkingSpot": "26b1",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:33:02.311Z",
+      "exitTime": "2025-03-19T15:33:10.640Z",
+      "amount": -1
+    },
+    {
+      "id": "56c3",
+      "idParkingSpot": "6bb9",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:35:11.676Z",
+      "exitTime": "2025-03-19T15:35:17.082Z",
+      "amount": -1
+    },
+    {
+      "id": "12a3",
+      "idParkingSpot": "16ac",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:36:20.925Z",
+      "exitTime": "2025-03-19T15:36:25.925Z",
+      "amount": -1
+    },
+    {
+      "id": "85bb",
+      "idParkingSpot": "fd34",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:42:00.550Z",
+      "exitTime": "2025-03-19T15:42:05.701Z",
+      "amount": -1
+    },
+    {
+      "id": "5cef",
+      "idParkingSpot": "fd34",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:55:26.124Z",
+      "exitTime": "2025-03-19T15:55:29.166Z",
+      "amount": -1
+    },
+    {
+      "id": "a097",
+      "idParkingSpot": "fd34",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T16:11:51.310Z",
+      "exitTime": "2025-03-19T16:11:54.244Z",
+      "amount": -1
+    },
+    {
+      "id": "b822",
+      "idParkingSpot": "fd34",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T16:12:35.815Z",
+      "exitTime": "2025-03-19T16:12:39.239Z",
+      "amount": -1
+    },
+    {
+      "id": "cbf3",
+      "idParkingSpot": "fd34",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T16:20:43.092Z",
+      "exitTime": "2025-03-20T07:17:06.848Z",
+      "amount": -1
+    },
+    {
+      "id": "a3f5",
+      "idParkingSpot": "3c4b",
+      "idVehicle": "91fa",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T16:30:04.419Z",
+      "exitTime": "2025-03-19T16:30:18.307Z",
+      "amount": -1
+    },
+    {
+      "id": "f8f5",
+      "idParkingSpot": "2ab5",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:16:58.342Z",
+      "exitTime": "2025-03-20T07:17:24.827Z",
+      "amount": -1
+    },
+    {
+      "id": "a5e4",
+      "idParkingSpot": "79b7",
+      "idVehicle": "ab55",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:52:20.724Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "3f2f",
+      "idParkingSpot": "ea2f",
+      "idVehicle": "cde7",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:52:51.721Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "35b5",
+      "idParkingSpot": "6ec4",
+      "idVehicle": "8eee",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:53:07.634Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "5130",
+      "idParkingSpot": "4763",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:53:18.820Z",
+      "exitTime": "2025-03-20T07:53:22.843Z",
+      "amount": -1
     }
   ]
 }
