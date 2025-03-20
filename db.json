@@ -49,13 +49,13 @@
       "id": "4763",
       "idFloor": "8617",
       "spotNumber": 4,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "b7a4",
       "idFloor": "8617",
       "spotNumber": 5,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "3c4b",
@@ -325,7 +325,7 @@
       "id": "ee60",
       "idFloor": "8617",
       "spotNumber": 50,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "b141",
@@ -379,7 +379,7 @@
       "id": "e348",
       "idFloor": "8617",
       "spotNumber": 59,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "a7c8",
@@ -697,7 +697,7 @@
       "id": "d29f",
       "idFloor": "8617",
       "spotNumber": 112,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "c5db",
@@ -1375,7 +1375,7 @@
       "id": "21b4",
       "idFloor": "e16b",
       "spotNumber": 225,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "45a6",
@@ -1603,7 +1603,7 @@
       "id": "549f",
       "idFloor": "e16b",
       "spotNumber": 263,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "8939",
@@ -1681,7 +1681,7 @@
       "id": "7ee4",
       "idFloor": "e16b",
       "spotNumber": 276,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "6281",
@@ -1955,7 +1955,7 @@
       "model": "Toyota Corolla",
       "vehicleType": "Coche",
       "color": "Red",
-      "active": true
+      "active": false
     },
     {
       "id": "2",
@@ -1971,7 +1971,7 @@
       "model": "Tesla Model S",
       "vehicleType": "Coche",
       "color": "Gray",
-      "active": true
+      "active": false
     },
     {
       "id": "6",
@@ -1995,7 +1995,7 @@
       "model": "Nissan Altima",
       "vehicleType": "Coche",
       "color": "Silver",
-      "active": true
+      "active": false
     },
     {
       "id": "9",
@@ -2027,7 +2027,7 @@
       "model": "Subaru Outback",
       "vehicleType": "Coche",
       "color": "Green",
-      "active": true
+      "active": false
     },
     {
       "id": "13",
@@ -2067,7 +2067,7 @@
       "model": "Cupra Leon",
       "vehicleType": "Coche",
       "color": "Negro",
-      "active": true
+      "active": false
     },
     {
       "id": "e352",
@@ -2084,6 +2084,30 @@
       "vehicleType": "Coche",
       "color": "gris",
       "active": false
+    },
+    {
+      "id": "ab55",
+      "licensePlate": "1234AHV",
+      "model": "Cupra Leon",
+      "vehicleType": "Coche",
+      "color": "Negro",
+      "active": true
+    },
+    {
+      "id": "cde7",
+      "licensePlate": "9084OKM",
+      "model": "Seat Panda",
+      "vehicleType": "Coche",
+      "color": "Blanco",
+      "active": true
+    },
+    {
+      "id": "8eee",
+      "licensePlate": "1234HYA",
+      "model": "Ford Mustang",
+      "vehicleType": "Coche",
+      "color": "Gris",
+      "active": true
     }
   ],
   "registries": [
@@ -2624,7 +2648,7 @@
       "idVehicle": "8f0e",
       "idRate": "35cd",
       "entryTime": "2025-03-19T16:20:43.092Z",
-      "exitTime": "",
+      "exitTime": "2025-03-20T07:17:06.848Z",
       "amount": -1
     },
     {
@@ -2634,6 +2658,51 @@
       "idRate": "35cd",
       "entryTime": "2025-03-19T16:30:04.419Z",
       "exitTime": "2025-03-19T16:30:18.307Z",
+      "amount": -1
+    },
+    {
+      "id": "f8f5",
+      "idParkingSpot": "2ab5",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:16:58.342Z",
+      "exitTime": "2025-03-20T07:17:24.827Z",
+      "amount": -1
+    },
+    {
+      "id": "a5e4",
+      "idParkingSpot": "79b7",
+      "idVehicle": "ab55",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:52:20.724Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "3f2f",
+      "idParkingSpot": "ea2f",
+      "idVehicle": "cde7",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:52:51.721Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "35b5",
+      "idParkingSpot": "6ec4",
+      "idVehicle": "8eee",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:53:07.634Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "5130",
+      "idParkingSpot": "4763",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T07:53:18.820Z",
+      "exitTime": "2025-03-20T07:53:22.843Z",
       "amount": -1
     }
   ]
