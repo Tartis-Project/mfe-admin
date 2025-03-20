@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../../material/material.module';
 
-import { MaterialModule } from '../../material/material.module';
-
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -11,4 +9,4 @@ import { MaterialModule } from '../../material/material.module';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {}
+export class NavbarComponent { }

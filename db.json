@@ -31,31 +31,31 @@
       "id": "79b7",
       "idFloor": "8617",
       "spotNumber": 1,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "ea2f",
       "idFloor": "8617",
       "spotNumber": 2,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "6ec4",
       "idFloor": "8617",
       "spotNumber": 3,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "4763",
       "idFloor": "8617",
       "spotNumber": 4,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "b7a4",
       "idFloor": "8617",
       "spotNumber": 5,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "3c4b",
@@ -73,7 +73,7 @@
       "id": "a554",
       "idFloor": "8617",
       "spotNumber": 8,
-      "occupied": true
+      "occupied": false
     },
     {
       "id": "9e98",
@@ -2060,6 +2060,30 @@
       "vehicleType": "Coche",
       "color": "Black",
       "active": false
+    },
+    {
+      "id": "8f0e",
+      "licensePlate": "1234ABC",
+      "model": "Cupra Leon",
+      "vehicleType": "Coche",
+      "color": "Negro",
+      "active": true
+    },
+    {
+      "id": "e352",
+      "licensePlate": "1234ABD",
+      "model": "assasa",
+      "vehicleType": "Coche",
+      "color": "ssdsdasda",
+      "active": false
+    },
+    {
+      "id": "91fa",
+      "licensePlate": "1234HUB",
+      "model": "Golf",
+      "vehicleType": "Coche",
+      "color": "gris",
+      "active": false
     }
   ],
   "registries": [
@@ -2512,6 +2536,105 @@
       "entryTime": "2025-02-26 11:44:27.614482",
       "exitTime": "2025-02-26 12:53:27.614482",
       "amount": 2.42
+    },
+    {
+      "id": "9fa1",
+      "idParkingSpot": "79b7",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:26:18.969Z",
+      "exitTime": "2025-03-19T15:26:25.416Z",
+      "amount": -1
+    },
+    {
+      "id": "967d",
+      "idParkingSpot": "79b7",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:26:38.297Z",
+      "exitTime": "2025-03-19T15:32:25.193Z",
+      "amount": -1
+    },
+    {
+      "id": "6f85",
+      "idParkingSpot": "26b1",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:33:02.311Z",
+      "exitTime": "2025-03-19T15:33:10.640Z",
+      "amount": -1
+    },
+    {
+      "id": "56c3",
+      "idParkingSpot": "6bb9",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:35:11.676Z",
+      "exitTime": "2025-03-19T15:35:17.082Z",
+      "amount": -1
+    },
+    {
+      "id": "12a3",
+      "idParkingSpot": "16ac",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:36:20.925Z",
+      "exitTime": "2025-03-19T15:36:25.925Z",
+      "amount": -1
+    },
+    {
+      "id": "85bb",
+      "idParkingSpot": "fd34",
+      "idVehicle": "e352",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:42:00.550Z",
+      "exitTime": "2025-03-19T15:42:05.701Z",
+      "amount": -1
+    },
+    {
+      "id": "5cef",
+      "idParkingSpot": "fd34",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T15:55:26.124Z",
+      "exitTime": "2025-03-19T15:55:29.166Z",
+      "amount": -1
+    },
+    {
+      "id": "a097",
+      "idParkingSpot": "fd34",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T16:11:51.310Z",
+      "exitTime": "2025-03-19T16:11:54.244Z",
+      "amount": -1
+    },
+    {
+      "id": "b822",
+      "idParkingSpot": "fd34",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T16:12:35.815Z",
+      "exitTime": "2025-03-19T16:12:39.239Z",
+      "amount": -1
+    },
+    {
+      "id": "cbf3",
+      "idParkingSpot": "fd34",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T16:20:43.092Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "a3f5",
+      "idParkingSpot": "3c4b",
+      "idVehicle": "91fa",
+      "idRate": "35cd",
+      "entryTime": "2025-03-19T16:30:04.419Z",
+      "exitTime": "2025-03-19T16:30:18.307Z",
+      "amount": -1
     }
   ]
 }
