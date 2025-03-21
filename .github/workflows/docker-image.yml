@@ -23,8 +23,8 @@ jobs:
 
       - name: Build and Push Angular Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/mfe-entryExit:latest -f ./mfe-entryExit/Dockerfile ./mfe-entryExit
-          docker push ${{ secrets.DOCKER_USERNAME }}/mfe-entryExit:latest
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/mfe-admin:latest -f ./Dockerfile .
+          docker push ${{ secrets.DOCKER_USERNAME }}/mfe-admin:latest
 
   deploy:
     name: Deploy to Server
@@ -39,22 +39,22 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            echo "🚀 Iniciando despliegue de mfe-entryExit..."
+            echo "🚀 Iniciando despliegue de mfe-admin..."
 
             # Cambiar al directorio de despliegue en el servidor
             cd /servidor/front
 
-            # Descargar la última imagen de mfe-entryExit
-            docker pull ${{ secrets.DOCKER_USERNAME }}/mfe-entryExit:latest
+            # Descargar la última imagen de mfe-admin
+            docker pull ${{ secrets.DOCKER_USERNAME }}/mfe-admin:latest
 
             # Detener y eliminar el contenedor anterior (si existe)
-            docker stop mfe-entryExit-container || true
-            docker rm mfe-entryExit-container || true
+            docker stop mfe-admin-container || true
+            docker rm mfe-admin-container || true
 
             # Levantar el nuevo contenedor asignando el puerto 4201 para exponerlo
-            docker run -d --name mfe-entryExit-container \
+            docker run -d --name mfe-admin-container \
               --network my-network \
               -p 4201:80 \
-              ${{ secrets.DOCKER_USERNAME }}/mfe-entryExit:latest
+              ${{ secrets.DOCKER_USERNAME }}/mfe-admin:latest
 
-            echo "✅ Despliegue de mfe-entryExit completado con éxito!"
+            echo "✅ Despliegue de mfe-admin completado con éxito!"
