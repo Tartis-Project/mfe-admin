@@ -54,7 +54,7 @@ jobs:
             # Levantar el nuevo contenedor asignando el puerto 4201 para exponerlo
             docker run -d --name mfe-admin-container \
               --network my-network \
-              -p 4201:80 \
+              -p 4203:80 \
               ${{ secrets.DOCKER_USERNAME }}/mfe-admin:latest
 
             echo "✅ Despliegue de mfe-admin completado con éxito!"
