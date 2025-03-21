@@ -48,11 +48,11 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/mfe-admin:latest
 
             # Detener y eliminar el contenedor anterior (si existe)
-            docker stop mfe-admin-container || true
-            docker rm mfe-admin-container || true
+            docker stop mfe-admin || true
+            docker rm mfe-admin || true
 
             # Levantar el nuevo contenedor asignando el puerto 4201 para exponerlo
-            docker run -d --name mfe-admin-container \
+            docker run -d --name mfe-admin \
               --network my-network \
               -p 4203:80 \
               ${{ secrets.DOCKER_USERNAME }}/mfe-admin:latest
