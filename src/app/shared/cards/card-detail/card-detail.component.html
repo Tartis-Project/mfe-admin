@@ -1,6 +1,6 @@
 <div class="card" *ngIf="vehicle">
   <h4 class="title">{{ vehicle.model }}</h4>
-  <div class="mx-5 mt-3">
+  <div class="mt-3 mx-5">
     <p><strong>Matrícula - </strong>{{ vehicle.licensePlate }}</p>
     <p><strong>Color - </strong>{{ vehicle.color }}</p>
     <p><strong>Tipo vehículo - </strong>{{ vehicle.vehicleType }}</p>
@@ -11,7 +11,7 @@
       <!-- <p>
         <strong>Plaza - </strong>{{ parkingSpot?.spotNumber }}
       </p> -->
-      <p><strong>Tarifa - </strong>Estándar</p>
+      <p><strong>Tarifa - </strong>{{ rate?.description }}</p>
       <p>
         <strong>Entrada - </strong
         >{{ registry.entryTime | date: "dd/MM/yyyy HH:mm:ss" }}
