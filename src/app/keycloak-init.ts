@@ -1,3 +1,4 @@
+/*
 import { KeycloakService } from 'keycloak-angular';
 
 export function initializeKeycloak(keycloak: KeycloakService) {
@@ -15,3 +16,4 @@ export function initializeKeycloak(keycloak: KeycloakService) {
       enableBearerInterceptor: true,
     });
 }
+*/
