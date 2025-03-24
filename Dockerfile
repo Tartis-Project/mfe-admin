@@ -9,7 +9,7 @@ COPY package.json package-lock.json ./
 
 # Instalar las dependencias del proyecto
 RUN npm install
-RUN npm install keycloak-angular --force
+RUN npm install keycloak-angular keycloak-js --force
 
 # Copiar el resto de los archivos del proyecto
 COPY . .
