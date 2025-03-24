@@ -13,7 +13,7 @@ import { notificationInterceptor } from './core/interceptors/notification.interc
 
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { APP_INITIALIZER } from '@angular/core';
-// import { initializeKeycloak } from './keycloak-init';
+import { initializeKeycloak } from './keycloak-init';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,12 +22,12 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(withInterceptors([notificationInterceptor])),
 
-    // importProvidersFrom(KeycloakAngularModule),
-    // {
-    //   provide: APP_INITIALIZER,
-    //   useFactory: initializeKeycloak,
-    //   multi: true,
-    //   deps: [KeycloakService],
-    // },
+    importProvidersFrom(KeycloakAngularModule),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService],
+    },
   ],
 };

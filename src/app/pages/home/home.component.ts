@@ -17,8 +17,7 @@ import { Registry } from '../../shared/registry/interfaces/registry.model';
 import { RegistryService } from '../../shared/registry/services/registry.service';
 import { Vehicle } from '../vehicles/interfaces/vehicle.model';
 import { VehicleService } from '../vehicles/services/vehicle.service';
-// import { KeycloakService } from 'keycloak-angular';
-// import { AdminService } from '../admin/services/administrator.service';
+import { AdminService } from '../admin/services/administrator.service';
 
 @Component({
   selector: 'app-home',
@@ -40,7 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    // private administratorService: AdminService,
+    private administratorService: AdminService,
   ) {
     this.vehicleService.getVehicles().subscribe((vehicles) => {
       this.vehiclesMap = vehicles.reduce(
@@ -84,7 +83,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     );
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    this.getFirstName();
+  }
 
   ngOnDestroy(): void {
     if (this.pollingSubscription) {
@@ -104,11 +105,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     // this.router.navigate(['/vehicles', id]);
   }
 
-  // logout() {
-  //   this.administratorService.logout();
-  // }
+  logout() {
+    this.administratorService.logout();
+  }
 
-  // getUserFirstName(): string | null {
-  //   return this.administratorService.getUserFirstName();
-  // }
+  getFirstName(): string | null {
+    if(this.administratorService.getUserFirstName()==null){
+      return 'Usuario';
+    }else{
+      return this.administratorService.getUserFirstName();
+    }
+  }
 }
