@@ -36,25 +36,25 @@
       "id": "79b7",
       "idFloor": "8617",
       "spotNumber": 1,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "ea2f",
       "idFloor": "8617",
       "spotNumber": 2,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "6ec4",
       "idFloor": "8617",
       "spotNumber": 3,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "4763",
       "idFloor": "8617",
       "spotNumber": 4,
-      "occupied": false
+      "occupied": true
     },
     {
       "id": "b7a4",
@@ -2104,7 +2104,7 @@
       "model": "Seat Panda",
       "vehicleType": "Coche",
       "color": "Blanco",
-      "active": false
+      "active": true
     },
     {
       "id": "8eee",
@@ -2153,6 +2153,30 @@
       "vehicleType": "Moto",
       "color": "Amarillo",
       "active": false
+    },
+    {
+      "id": "3dcc",
+      "licensePlate": "6271OPA",
+      "model": "Corsa",
+      "vehicleType": "Coche",
+      "color": "Negro",
+      "active": true
+    },
+    {
+      "id": "a2c0",
+      "licensePlate": "2349ASH",
+      "model": "Mercedes a180d",
+      "vehicleType": "Coche",
+      "color": "Rojo",
+      "active": true
+    },
+    {
+      "id": "a282",
+      "licensePlate": "5678JUK",
+      "model": "Golf",
+      "vehicleType": "Coche",
+      "color": "Gris",
+      "active": true
     }
   ],
   "registries": [
@@ -2850,15 +2874,6 @@
       "amount": -1
     },
     {
-      "id": "0439",
-      "idParkingSpot": "",
-      "idVehicle": "8f0e",
-      "idRate": "35cd",
-      "entryTime": "2025-03-20T14:08:35.247Z",
-      "exitTime": "2025-03-20T14:08:38.168Z",
-      "amount": -1
-    },
-    {
       "id": "565b",
       "idParkingSpot": "16ac",
       "idVehicle": "8f0e",
@@ -2982,6 +2997,60 @@
       "idRate": "35cd",
       "entryTime": "2025-03-20T14:44:41.985Z",
       "exitTime": "2025-03-20T14:44:51.510Z",
+      "amount": -1
+    },
+    {
+      "id": "ae2e",
+      "idParkingSpot": "79b7",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T15:16:52.545Z",
+      "exitTime": "2025-03-20T15:17:02.225Z",
+      "amount": -1
+    },
+    {
+      "id": "317d",
+      "idParkingSpot": "ea2f",
+      "idVehicle": "8f0e",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T15:20:04.025Z",
+      "exitTime": "2025-03-20T15:20:07.945Z",
+      "amount": -1
+    },
+    {
+      "id": "78dd",
+      "idParkingSpot": "ea2f",
+      "idVehicle": "cde7",
+      "idRate": "35cd",
+      "entryTime": "2025-03-20T15:21:33.382Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "911f",
+      "idParkingSpot": "6ec4",
+      "idVehicle": "a2c0",
+      "idRate": "665d",
+      "entryTime": "2025-03-21T07:28:01.457Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "afb4",
+      "idParkingSpot": "4763",
+      "idVehicle": "a282",
+      "idRate": "35cd",
+      "entryTime": "2025-03-21T09:59:22.247Z",
+      "exitTime": "",
+      "amount": -1
+    },
+    {
+      "id": "76ec",
+      "idParkingSpot": "b7a4",
+      "idVehicle": "8f0e",
+      "idRate": null,
+      "entryTime": "2025-03-21T09:59:49.441Z",
+      "exitTime": "2025-03-21T10:00:04.230Z",
       "amount": -1
     }
   ]
