@@ -12,8 +12,8 @@ import { routes } from './app.routes';
 import { notificationInterceptor } from './core/interceptors/notification.interceptor';
 
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
-import { APP_INITIALIZER } from '@angular/core';
-import { initializeKeycloak } from './keycloak-init';
+// import { APP_INITIALIZER } from '@angular/core';
+// import { initializeKeycloak } from './keycloak-init';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,6 +22,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(withInterceptors([notificationInterceptor])),
 
+    /*
     importProvidersFrom(KeycloakAngularModule),
     {
       provide: APP_INITIALIZER,
@@ -29,5 +30,6 @@ export const appConfig: ApplicationConfig = {
       multi: true,
       deps: [KeycloakService],
     },
+    */
   ],
 };
