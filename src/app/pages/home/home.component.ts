@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private eventSourceService: EventSourceService
+    private eventSourceService: EventSourceService,
     // private administratorService: AdminService,
   ) {
     this.vehicleService.getVehicles().subscribe((vehicles) => {
@@ -58,6 +58,35 @@ export class HomeComponent implements OnInit, OnDestroy {
       );
     });
 
+    this.floorsWithOccupiedSpots$ = combineLatest([
+      this.parkingService.getFloors(),
+      this.parkingSpotService.getParkingSpots(),
+    ]).pipe(
+      map(([floors, spots]) => {
+        return floors.map((floor) => ({
+          ...floor,
+          occupiedSpots: spots.filter(
+            (spot) => spot.idFloor === floor.id && spot.occupied,
+          ).length,
+        }));
+      }),
+    );
+
+    this.latestMovements$ = this.registryService
+      .getRegistries()
+      .pipe(
+        map((registries) =>
+          registries
+            .sort(
+              (a, b) =>
+                new Date(b.entryTime).getTime() -
+                new Date(a.entryTime).getTime(),
+            )
+            .slice(0, 4),
+        ),
+      );
+
+    /*
     this.floorsWithOccupiedSpots$ = interval(5000).pipe(
       startWith(0),
       switchMap(() =>
@@ -88,6 +117,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           .slice(0, 4),
       ),
     );
+    */
   }
 
   ngOnInit(): void {
@@ -96,31 +126,32 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.eventSourceService.entriesUpdates$.subscribe((entry) => {
       if (!entry) return;
 
-      const index = this.entries.findIndex((e) => e.licensePlate === entry.licensePlate);
+      const index = this.entries.findIndex(
+        (e) => e.licensePlate === entry.licensePlate,
+      );
       if (index !== -1) {
         this.entries[index] = entry;
       } else {
         this.entries.push(entry);
       }
       console.log('ngOnInit entries');
-      console.log(this.entries)
-
+      console.log(this.entries);
     });
 
     this.eventSourceService.exitUpdates$.subscribe((exit) => {
       if (!exit) return;
 
-      const index = this.exits.findIndex((e) => e.licensePlate === exit.licensePlate);
+      const index = this.exits.findIndex(
+        (e) => e.licensePlate === exit.licensePlate,
+      );
       if (index !== -1) {
         this.exits[index] = exit;
       } else {
         this.exits.push(exit);
       }
       console.log('ngOnInit exits');
-      console.log(this.exits)
-
+      console.log(this.exits);
     });
-
   }
 
   ngOnDestroy(): void {
