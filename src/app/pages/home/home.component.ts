@@ -17,6 +17,9 @@ import { Registry } from '../../shared/registry/interfaces/registry.model';
 import { RegistryService } from '../../shared/registry/services/registry.service';
 import { Vehicle } from '../vehicles/interfaces/vehicle.model';
 import { VehicleService } from '../vehicles/services/vehicle.service';
+import { EventSourceService } from './services/sse/eventsource.service';
+import { Entry } from '../../shared/interfaces/entry.model';
+// import { KeycloakService } from 'keycloak-angular';
 // import { AdminService } from '../admin/services/administrator.service';
 
 @Component({
@@ -37,8 +40,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   latestMovements$: Observable<Registry[]>;
   vehiclesMap: { [id: string]: Vehicle } = {};
 
+  entries: Entry[] = [];
+  exits: Entry[] = [];
+
   constructor(
     private router: Router,
+    private eventSourceService: EventSourceService
     // private administratorService: AdminService,
   ) {
     this.vehicleService.getVehicles().subscribe((vehicles) => {
@@ -83,8 +90,37 @@ export class HomeComponent implements OnInit, OnDestroy {
     );
   }
 
-  ngOnInit(): void { 
-    // this.getFirstName();
+  ngOnInit(): void {
+    this.eventSourceService.connect();
+
+    this.eventSourceService.entriesUpdates$.subscribe((entry) => {
+      if (!entry) return;
+
+      const index = this.entries.findIndex((e) => e.licensePlate === entry.licensePlate);
+      if (index !== -1) {
+        this.entries[index] = entry;
+      } else {
+        this.entries.push(entry);
+      }
+      console.log('ngOnInit entries');
+      console.log(this.entries)
+
+    });
+
+    this.eventSourceService.exitUpdates$.subscribe((exit) => {
+      if (!exit) return;
+
+      const index = this.exits.findIndex((e) => e.licensePlate === exit.licensePlate);
+      if (index !== -1) {
+        this.exits[index] = exit;
+      } else {
+        this.exits.push(exit);
+      }
+      console.log('ngOnInit exits');
+      console.log(this.exits)
+
+    });
+
   }
 
   ngOnDestroy(): void {
@@ -105,17 +141,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     // this.router.navigate(['/vehicles', id]);
   }
 
-  /*
-  logout() {
-    this.administratorService.logout();
-  }
+  // logout() {
+  //   this.administratorService.logout();
+  // }
 
-  getFirstName(): string | null {
-    if(this.administratorService.getUserFirstName()==null){
-      return 'Usuario';
-    }else{
-      return this.administratorService.getUserFirstName();
-    }
-  }
-  */
+  // getUserFirstName(): string | null {
+  //   return this.administratorService.getUserFirstName();
+  // }
 }
