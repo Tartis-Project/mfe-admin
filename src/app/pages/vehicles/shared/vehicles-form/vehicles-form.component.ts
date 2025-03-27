@@ -46,11 +46,13 @@ export class VehiclesFormComponent {
     this.vehicleForm = this.fb.group({
       licensePlate: [this.vehicle.licensePlate, Validators.required],
       model: [this.vehicle.model, Validators.required],
-      vehicleType: [this.vehicle.vehicleType, Validators.required],
+      vehicleType: [this.vehicle.vehicleType.toUpperCase(), Validators.required],
       color: [this.vehicle.color, Validators.required],
       active: [this.vehicle.active],
     });
+    console.log('Vehicle:', this.vehicle.vehicleType);
   }
+
 
   updateVehicle() {
     const updatedVehicle = this.vehicleForm.value;
