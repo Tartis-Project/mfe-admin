@@ -1,5 +1,5 @@
 <div class="d-flex">
-  <div class="row ml-4 w-100">
+  <div class="row w-100">
     <app-card-view
       [rate]="rate"
       (eventLoad)="loadRates()"
@@ -7,10 +7,5 @@
       *ngFor="let rate of rates"
     >
     </app-card-view>
-  </div>
-  <div class="ml-4">
-    <button mat-icon-button (click)="openDialog()" class="add-btn">
-      <mat-icon class="button-primary">add</mat-icon>
-    </button>
   </div>
 </div>
