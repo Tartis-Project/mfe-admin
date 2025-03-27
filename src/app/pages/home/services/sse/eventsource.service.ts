@@ -32,7 +32,7 @@ export class EventSourceService {
     // Crear el EventSource para el endpoint de entradas
     this.eventSourceEntry = new EventSource('http://34.175.249.11:8000/entries/events');
     this.eventSourceEntry.addEventListener(
-      'Modificación de entradas',
+      'Entrada de vehículo',
       (event: MessageEvent) => {
         this.zone.run(() => {
           try {
@@ -49,7 +49,7 @@ export class EventSourceService {
     // Crear el EventSource para el endpoint de salidas (otro puerto)
     this.eventSourceExit = new EventSource('http://34.175.249.11:8000/exits/events');
     this.eventSourceExit.addEventListener(
-      'Modificación de salidas', 
+      'Liberación de Plaza', 
       (event: MessageEvent) => {
         this.zone.run(() => {
           try {
