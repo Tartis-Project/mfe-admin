@@ -72,19 +72,18 @@ export class HomeComponent implements OnInit, OnDestroy {
       }),
     );
 
-    this.latestMovements$ = this.registryService
-      .getRegistries()
-      .pipe(
-        map((registries) =>
-          registries
-            .sort(
-              (a, b) =>
-                new Date(b.entryTime).getTime() -
-                new Date(a.entryTime).getTime(),
-            )
-            .slice(0, 4),
-        ),
-      );
+    this.latestMovements$ = this.registryService.getRegistries().pipe(
+      map((registries) =>
+        registries
+          .sort((a, b) => {
+            const dateA = new Date(b.exitTime || b.entryTime).getTime();
+            const dateB = new Date(a.exitTime || a.entryTime).getTime();
+            return dateA - dateB;
+          })
+          .slice(0, 4)
+      )
+    );
+
 
     /*
     this.floorsWithOccupiedSpots$ = interval(5000).pipe(
