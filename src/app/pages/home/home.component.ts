@@ -19,8 +19,10 @@ import { Vehicle } from '../vehicles/interfaces/vehicle.model';
 import { VehicleService } from '../vehicles/services/vehicle.service';
 import { EventSourceService } from './services/sse/eventsource.service';
 import { Entry } from '../../shared/interfaces/entry.model';
-// import { KeycloakService } from 'keycloak-angular';
-// import { AdminService } from '../admin/services/administrator.service';
+import { KeycloakService } from 'keycloak-angular';
+import { AdminService } from '../admin/services/administrator.service';
+
+
 
 @Component({
   selector: 'app-home',
@@ -46,7 +48,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private eventSourceService: EventSourceService,
-    // private administratorService: AdminService,
+    private administratorService: AdminService,
   ) {
     this.eventSourceService.connect();
 
@@ -54,9 +56,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (!data) return;
       this.loadVehicles()
 
-    this.loadFloors()
+      this.loadFloors()
 
-    this.loadRegistries()
+      this.loadRegistries()
     });
 
 
@@ -66,42 +68,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.loadRegistries()
 
-
-    /*
-    this.floorsWithOccupiedSpots$ = interval(5000).pipe(
-      startWith(0),
-      switchMap(() =>
-        combineLatest([
-          this.parkingService.getFloors(),
-          this.parkingSpotService.getParkingSpots(),
-        ]),
-      ),
-      map(([floors, spots]) => {
-        return floors.map((floor) => ({
-          ...floor,
-          occupiedSpots: spots.filter(
-            (spot) => spot.idFloor === floor.id && spot.occupied,
-          ).length,
-        }));
-      }),
-    );
-
-    this.latestMovements$ = interval(5000).pipe(
-      startWith(0),
-      switchMap(() => this.registryService.getRegistries()),
-      map((registries) =>
-        registries
-          .sort(
-            (a, b) =>
-              new Date(b.entryTime).getTime() - new Date(a.entryTime).getTime(),
-          )
-          .slice(0, 4),
-      ),
-    );
-    */
   }
 
-  loadVehicles(){
+  loadVehicles() {
     this.vehicleService.getVehicles().subscribe((vehicles) => {
       this.vehiclesMap = vehicles.reduce(
         (acc, vehicle) => {
@@ -113,7 +82,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  loadFloors(){
+  loadFloors() {
     this.floorsWithOccupiedSpots$ = combineLatest([
       this.parkingService.getFloors(),
       this.parkingSpotService.getParkingSpots(),
@@ -129,7 +98,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     );
   }
 
-  loadRegistries(){
+  loadRegistries() {
     this.latestMovements$ = this.registryService.getRegistries().pipe(
       map((registries) =>
         registries
@@ -167,11 +136,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     // this.router.navigate(['/vehicles', id]);
   }
 
-  // logout() {
-  //   this.administratorService.logout();
-  // }
+  logout() {
+    this.administratorService.logout();
+  }
 
-  // getUserFirstName(): string | null {
-  //   return this.administratorService.getUserFirstName();
-  // }
+  getUserFirstName(): string | null {
+    return this.administratorService.getUserFirstName();
+  }
 }

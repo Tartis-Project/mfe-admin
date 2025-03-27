@@ -1,4 +1,3 @@
-/*
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -29,7 +28,7 @@ export class AdminService {
         this.http
           .get<
             any[]
-          >('http://localhost:8090/admin/realms/realm-front-keycloak/users', { headers })
+          >('http://34.175.249.11:8000/auth/admin/realms/realm-front-keycloak/users', { headers })
           .subscribe(
             (users) => {
               const adminUsers: Administrator[] = users.map((user) => ({
@@ -95,4 +94,4 @@ export class AdminService {
     this.keycloakService.logout();
   }
 }
-*/
+

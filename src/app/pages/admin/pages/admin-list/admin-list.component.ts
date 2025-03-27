@@ -1,4 +1,3 @@
-/*
 import { Component } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 
@@ -20,7 +19,7 @@ export class AdminListComponent {
   constructor(
     private adminService: AdminService,
     private keycloakService: KeycloakService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadUsers();
@@ -38,4 +37,3 @@ export class AdminListComponent {
     );
   }
 }
-*/
