@@ -59,6 +59,25 @@ Este microfrontend depende de las siguientes librerías y paquetes:
 
 # Changelog
 
+## [2.0.0] - 27/03/2025
+
+### 🚀 Nuevas características añadidas
+- Gestión de plantas
+- Gestión de tarifas
+- Vista y modificación de vehiculos
+- Vista principal con datos de registros y plantas en tiempo real
+- Lista de todos los administradores
+
+### 🛠 Correcciones de errores (Bug Fixes)
+- N/A
+
+### 📈 Mejoras de rendimiento o cambios internos
+- Se ha añadido en la home la carga de datos con SSE
+
+### ⚠️ Deprecaciones o eliminaciones de funciones
+- Se ha eliminado la opción de crear tarifas
+- Se ha eliminado la opción de eliminar tarifas
+
 ## [1.0.0] - 14/03/2025
 
 ### 🚀 Nuevas características añadidas
@@ -72,7 +91,7 @@ Este microfrontend depende de las siguientes librerías y paquetes:
 - N/A
 
 ### 📈 Mejoras de rendimiento o cambios internos
-- N/A
+- N/ASe ha añadido en la home la carga de datos con SSE
 
 ### ⚠️ Deprecaciones o eliminaciones de funciones
 - N/A
