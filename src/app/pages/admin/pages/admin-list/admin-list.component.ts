@@ -1,10 +1,9 @@
-/*
 import { Component } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 
-import { AdminService } from '../../services/administrator.service';
 import { MaterialModule } from '../../../../material/material.module';
 import { Administrator } from '../../interfaces/administrator.model';
+import { AdminService } from '../../services/administrator.service';
 
 @Component({
   selector: 'app-admin-list',
@@ -38,4 +37,3 @@ export class AdminListComponent {
     );
   }
 }
-*/
