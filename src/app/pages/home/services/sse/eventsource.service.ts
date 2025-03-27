@@ -26,8 +26,8 @@ export class EventSourceService {
       this.eventSourceExit.close();
     }
 
-    this.eventSourceEntry = new EventSource('http://34.175.249.11:8000/entries/events');
-    this.eventSourceExit = new EventSource('http://34.175.249.11:8000/exits/events');
+    this.eventSourceEntry = new EventSource('https://34.175.249.11:443/entries/events');
+    this.eventSourceExit = new EventSource('https://34.175.249.11:443/exits/events');
 
     this.eventSourceEntry.addEventListener('Registro creado', (event: MessageEvent) => {
       this.zone.run(() => {
