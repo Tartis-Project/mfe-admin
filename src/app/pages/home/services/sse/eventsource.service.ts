@@ -1,91 +1,88 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Subject, timer } from 'rxjs';
-import { Entry } from '../../../../shared/interfaces/entry.model';
+import { ParkingSpotService } from '../../../parking/services/parkingSpot.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EventSourceService {
-
   private eventSourceEntry: EventSource | null = null;
-  private eventSourceExit: EventSource | null = null; 
-
-  public entriesUpdates$ = new Subject<Entry>();
-  public exitUpdates$ = new Subject<Entry>(); 
-
+  private eventSourceExit: EventSource | null = null;
   private reconnectDelay = 5000;
   private isReconnecting = false;
 
-  constructor(private zone: NgZone) {}
+  public spotUpdates$ = new Subject<String>();
+
+  constructor(private zone: NgZone, private parkingSpotService: ParkingSpotService) { }
 
   connect(): void {
     console.log('[SSE] Conectando...');
 
-    // Cerrar las conexiones previas si existen
     if (this.eventSourceEntry) {
       this.eventSourceEntry.close();
     }
+
     if (this.eventSourceExit) {
       this.eventSourceExit.close();
     }
 
-    // Crear el EventSource para el endpoint de entradas
     this.eventSourceEntry = new EventSource('http://34.175.249.11:8000/entries/events');
-    this.eventSourceEntry.addEventListener(
-      'Entrada de vehículo',
-      (event: MessageEvent) => {
-        this.zone.run(() => {
-          try {
-            const entry: Entry = JSON.parse(event.data);
-            console.log('Evento recibido desde entradas:', entry);
-            this.entriesUpdates$.next(entry);
-          } catch (error) {
-            console.error('[SSE] Error al parsear evento de entradas:', error);
-          }
-        });
-      }
-    );
-
-    // Crear el EventSource para el endpoint de salidas (otro puerto)
     this.eventSourceExit = new EventSource('http://34.175.249.11:8000/exits/events');
-    this.eventSourceExit.addEventListener(
-      'Liberación de Plaza', 
-      (event: MessageEvent) => {
-        this.zone.run(() => {
-          try {
-            const exitEntry: Entry = JSON.parse(event.data);
-            console.log('Evento recibido desde salidas:', exitEntry);
-            this.exitUpdates$.next(exitEntry);
-          } catch (error) {
-            console.error('[SSE] Error al parsear evento de salidas:', error);
-          }
-        });
-      }
-    );
 
-    // Manejo de errores para entradas
+    this.eventSourceEntry.addEventListener('Registro creado', (event: MessageEvent) => {
+      this.zone.run(() => {
+        try {
+          console.log(event.data)
+          const data = JSON.parse(event.data);
+          this.spotUpdates$.next(data.status);
+
+        } catch (error) {
+          console.error('[SSE] Error al parsear evento Entrada de vehículo:', error);
+        }
+      });
+    });
+
+
+    this.eventSourceExit.addEventListener('Liberación de Plaza', (event: MessageEvent) => {
+      this.zone.run(() => {
+        try {
+          console.log(event.data)
+          const data = JSON.parse(event.data);
+          this.spotUpdates$.next(data);
+
+        } catch (error) {
+          console.error('[SSE] Error al parsear evento Salida de vehículo:', error);
+        }
+      });
+    });
+
+
+
     this.eventSourceEntry.onerror = (error) => {
-      console.error('Error detectado en la conexión de entradas:', error);
+      console.error('[SSE] Error en EventSourceEntry:', error);
       this.handleReconnection();
     };
 
-    // Manejo de errores para salidas
     this.eventSourceExit.onerror = (error) => {
-      console.error('Error detectado en la conexión de salidas:', error);
+      console.error('[SSE] Error en EventSourceExit:', error);
       this.handleReconnection();
     };
+
+
   }
 
   disconnect(): void {
-    console.warn('Desconectando y preparando reconexión...');
+    console.warn('[SSE] Desconectando EventSource...');
     if (this.eventSourceEntry) {
       this.eventSourceEntry.close();
       this.eventSourceEntry = null;
     }
+
     if (this.eventSourceExit) {
       this.eventSourceExit.close();
       this.eventSourceExit = null;
     }
+
 
     this.handleReconnection();
   }
@@ -94,11 +91,10 @@ export class EventSourceService {
     if (this.isReconnecting) return;
 
     this.isReconnecting = true;
-    console.warn(`Reintentando conexión en ${this.reconnectDelay / 1000} segundos...`);
+    console.warn(`[SSE] Reintentando conexión en ${this.reconnectDelay / 1000} segundos...`);
     timer(this.reconnectDelay).subscribe(() => {
       this.isReconnecting = false;
       this.connect();
     });
   }
 }
- 
