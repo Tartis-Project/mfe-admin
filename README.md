@@ -91,7 +91,7 @@ Este microfrontend depende de las siguientes librerías y paquetes:
 - N/A
 
 ### 📈 Mejoras de rendimiento o cambios internos
-- N/ASe ha añadido en la home la carga de datos con SSE
+- N/A
 
 ### ⚠️ Deprecaciones o eliminaciones de funciones
 - N/A
