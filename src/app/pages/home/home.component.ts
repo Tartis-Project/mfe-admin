@@ -36,8 +36,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   private vehicleService = inject(VehicleService);
   private pollingSubscription!: Subscription;
 
-  floorsWithOccupiedSpots$: Observable<(Floor & { occupiedSpots: number })[]>;
-  latestMovements$: Observable<Registry[]>;
+  floorsWithOccupiedSpots$!: Observable<(Floor & { occupiedSpots: number })[]>;
+  latestMovements$!: Observable<Registry[]>;
   vehiclesMap: { [id: string]: Vehicle } = {};
 
   entries: Entry[] = [];
@@ -48,41 +48,23 @@ export class HomeComponent implements OnInit, OnDestroy {
     private eventSourceService: EventSourceService,
     // private administratorService: AdminService,
   ) {
-    this.vehicleService.getVehicles().subscribe((vehicles) => {
-      this.vehiclesMap = vehicles.reduce(
-        (acc, vehicle) => {
-          acc[vehicle.id] = vehicle;
-          return acc;
-        },
-        {} as { [id: string]: Vehicle },
-      );
+    this.eventSourceService.connect();
+
+    this.eventSourceService.spotUpdates$.subscribe((data) => {
+      if (!data) return;
+      this.loadVehicles()
+
+    this.loadFloors()
+
+    this.loadRegistries()
     });
 
-    this.floorsWithOccupiedSpots$ = combineLatest([
-      this.parkingService.getFloors(),
-      this.parkingSpotService.getParkingSpots(),
-    ]).pipe(
-      map(([floors, spots]) => {
-        return floors.map((floor) => ({
-          ...floor,
-          occupiedSpots: spots.filter(
-            (spot) => spot.idFloor === floor.id && spot.occupied,
-          ).length,
-        }));
-      }),
-    );
 
-    this.latestMovements$ = this.registryService.getRegistries().pipe(
-      map((registries) =>
-        registries
-          .sort((a, b) => {
-            const dateA = new Date(b.exitTime || b.entryTime).getTime();
-            const dateB = new Date(a.exitTime || a.entryTime).getTime();
-            return dateA - dateB;
-          })
-          .slice(0, 4)
-      )
-    );
+    this.loadVehicles()
+
+    this.loadFloors()
+
+    this.loadRegistries()
 
 
     /*
@@ -119,38 +101,52 @@ export class HomeComponent implements OnInit, OnDestroy {
     */
   }
 
+  loadVehicles(){
+    this.vehicleService.getVehicles().subscribe((vehicles) => {
+      this.vehiclesMap = vehicles.reduce(
+        (acc, vehicle) => {
+          acc[vehicle.id] = vehicle;
+          return acc;
+        },
+        {} as { [id: string]: Vehicle },
+      );
+    });
+  }
+
+  loadFloors(){
+    this.floorsWithOccupiedSpots$ = combineLatest([
+      this.parkingService.getFloors(),
+      this.parkingSpotService.getParkingSpots(),
+    ]).pipe(
+      map(([floors, spots]) => {
+        return floors.map((floor) => ({
+          ...floor,
+          occupiedSpots: spots.filter(
+            (spot) => spot.idFloor === floor.id && spot.occupied,
+          ).length,
+        }));
+      }),
+    );
+  }
+
+  loadRegistries(){
+    this.latestMovements$ = this.registryService.getRegistries().pipe(
+      map((registries) =>
+        registries
+          .sort((a, b) => {
+            const dateA = new Date(b.exitTime || b.entryTime).getTime();
+            const dateB = new Date(a.exitTime || a.entryTime).getTime();
+            return dateA - dateB;
+          })
+          .slice(0, 4)
+      )
+    );
+  }
+
   ngOnInit(): void {
-    this.eventSourceService.connect();
 
-    this.eventSourceService.entriesUpdates$.subscribe((entry) => {
-      if (!entry) return;
 
-      const index = this.entries.findIndex(
-        (e) => e.licensePlate === entry.licensePlate,
-      );
-      if (index !== -1) {
-        this.entries[index] = entry;
-      } else {
-        this.entries.push(entry);
-      }
-      console.log('ngOnInit entries');
-      console.log(this.entries);
-    });
 
-    this.eventSourceService.exitUpdates$.subscribe((exit) => {
-      if (!exit) return;
-
-      const index = this.exits.findIndex(
-        (e) => e.licensePlate === exit.licensePlate,
-      );
-      if (index !== -1) {
-        this.exits[index] = exit;
-      } else {
-        this.exits.push(exit);
-      }
-      console.log('ngOnInit exits');
-      console.log(this.exits);
-    });
   }
 
   ngOnDestroy(): void {
