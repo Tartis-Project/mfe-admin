@@ -31,7 +31,6 @@ export const routes: Routes = [
       import('./pages/vehicles/vehicles.routes').then((m) => m.vehiclesRoutes),
     // canActivate: [AuthGuard],
   },
-  /*
   {
     path: 'admin',
     loadComponent: () =>
@@ -39,6 +38,5 @@ export const routes: Routes = [
         (m) => m.AdminListComponent,
       ),
   },
-  */
   { path: '**', redirectTo: 'home' },
 ];
