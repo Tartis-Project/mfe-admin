@@ -11,7 +11,7 @@ module.exports = withNativeFederation({
     './Rates': './src/app/pages/rates/pages/rates/rates.component.ts',
     './Vehicles': './src/app/pages/vehicles/pages/vehicle-list/vehicle-list.component.ts',
     './VehiclesDetail': './src/app/pages/vehicles/pages/vehicle-detail/vehicle-detail.component.ts',
-    './AdminList': './src/app/pages/vehicles/pages/admin/pages/admin-list/admin-list.component.ts',
+    // './AdminList': './src/app/pages/vehicles/pages/admin/pages/admin-list/admin-list.component.ts',
   },
 
   shared: {

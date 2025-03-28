@@ -20,7 +20,7 @@ import { VehicleService } from '../vehicles/services/vehicle.service';
 import { EventSourceService } from './services/sse/eventsource.service';
 import { Entry } from '../../shared/interfaces/entry.model';
 import { KeycloakService } from 'keycloak-angular';
-import { AdminService } from '../admin/services/administrator.service';
+// import { AdminService } from '../admin/services/administrator.service';
 
 
 
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private eventSourceService: EventSourceService,
-    private administratorService: AdminService,
+    // private administratorService: AdminService,
   ) {
     this.eventSourceService.connect();
 
@@ -136,11 +136,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     // this.router.navigate(['/vehicles', id]);
   }
 
-  logout() {
-    this.administratorService.logout();
-  }
+  // logout() {
+  //   this.administratorService.logout();
+  // }
 
-  getUserFirstName(): string | null {
-    return this.administratorService.getUserFirstName();
-  }
+  // getUserFirstName(): string | null {
+  //   return this.administratorService.getUserFirstName();
+  // }
 }
